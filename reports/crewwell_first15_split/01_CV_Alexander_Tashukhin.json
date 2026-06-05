@@ -1,0 +1,466 @@
+{
+  "file": "CV_Alexander_Tashukhin.pdf",
+  "parser": "CrewwellPDFParser",
+  "parsed": {
+    "personal_data": {
+      "full_name": "Alexander Tashukhin",
+      "first_name": "Alexander",
+      "surname": "Tashukhin",
+      "position_applied_for": "Chief Officer",
+      "rank_applied_for": "Chief Officer",
+      "date_of_birth": "1982-01-21",
+      "place_of_birth": "Krasnoyarsk, USSR",
+      "primary_phone": "+79155715600",
+      "citizenship": "Russia",
+      "nationality": "Russia",
+      "email": "a.tashukhin@mail.ru",
+      "english_level": "Medium",
+      "usa_visa_expiry_date": "No",
+      "visa_status_note": "Schengen visa valid up: No",
+      "gender": "male",
+      "height_cm": "172",
+      "school_name": "WATER TRASPORT Additional skills:",
+      "medical_fitness_issue_date": "2026-04-02",
+      "medical_fitness_expiry_date": "2027-04-02"
+    },
+    "documents": [
+      {
+        "document_type": "Seaman's book",
+        "document_number": "RUS0671090",
+        "date_of_issue": "2023-10-03",
+        "date_of_expiry": "2028-10-03",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "document_type": "International passport",
+        "document_number": "77 1638322",
+        "date_of_issue": "2023-10-18",
+        "date_of_expiry": "2033-10-18",
+        "country_of_issue": "RUSSIA"
+      }
+    ],
+    "certificates": [
+      {
+        "certificate_type": "GMDSS Operator",
+        "certificate_number": "ASF207145711",
+        "date_issued": "2022-08-16",
+        "expiry_date": "2027-03-30",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Basic Safety Training",
+        "certificate_number": "BBA1841494",
+        "date_issued": "2022-06-23",
+        "expiry_date": "2027-06-23",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Advanced Fire Fighting",
+        "certificate_number": "BFA1876975",
+        "date_issued": "2022-07-08",
+        "expiry_date": "2027-07-08",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Proficiency in Survival",
+        "certificate_number": "ВСА1751404",
+        "date_issued": "2022-06-25",
+        "expiry_date": "2027-06-25",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Craft and RB Medical Care",
+        "certificate_number": "MAC00002231",
+        "date_issued": "2022-03-12",
+        "expiry_date": "2027-03-12",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Medical First Aid",
+        "certificate_number": "BMA1495294",
+        "date_issued": "2022-07-06",
+        "expiry_date": "2027-07-06",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Ship Security Officer",
+        "certificate_number": "BOA1538993",
+        "date_issued": "2022-03-18",
+        "expiry_date": "2027-03-18",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Designated Security",
+        "certificate_number": "BSA1726359",
+        "date_issued": "2022-06-21",
+        "expiry_date": "2027-06-21",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Duties Security Awareness",
+        "certificate_number": "ARH208012773",
+        "date_issued": "2023-12-27",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Training Radar Management",
+        "certificate_number": "BAA1810906",
+        "date_issued": "2022-06-30",
+        "expiry_date": "2027-06-30",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "(ARPA+Radar) ECDIS",
+        "certificate_number": "BEA1679003",
+        "date_issued": "2022-07-02",
+        "expiry_date": "2027-07-02",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Bridge Team Management",
+        "certificate_number": "BTM00001770",
+        "date_issued": "2024-10-04",
+        "expiry_date": "2029-10-04",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Radar observation and",
+        "certificate_number": "BRA1501115",
+        "date_issued": "2022-06-28",
+        "expiry_date": "2027-06-28",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "ploting Oil Tank Specialized",
+        "certificate_number": "BTA1862397",
+        "date_issued": "2022-03-23",
+        "expiry_date": "2027-03-23",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Training Cmk Tank Specialized",
+        "certificate_number": "BTA1823104",
+        "date_issued": "2022-03-26",
+        "expiry_date": "2027-03-26",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Training Contribute to the prevention of and",
+        "certificate_number": "BBAA0000696",
+        "date_issued": "2026-04-17",
+        "expiry_date": "2031-04-17",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Drug Alcohol Test",
+        "date_issued": "2026-04-02",
+        "expiry_date": "2027-04-02",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "MEDICAL CERTIFICATE",
+        "date_issued": "2026-04-02",
+        "expiry_date": "2027-04-02",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "OF FITNESS Sea service (last 5 years) Vessel type / Shipowner / Position Vessel Name / Flag ME Type / kW From - Till DWT Country Marchem Trans Sild / Saint Kitts and Chemical",
+        "date_issued": "2025-08-06",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "Chief Officer DMSS / United Nevis tanker /",
+        "date_issued": "2025-12-25",
+        "certificate_number": "2973"
+      },
+      {
+        "certificate_type": "Arab Emirates Marchem Trans Sild / Saint Kitts and Chemical",
+        "date_issued": "2024-11-19",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "2nd Officer DMSS / United Nevis tanker /",
+        "date_issued": "2025-03-31",
+        "certificate_number": "2973"
+      },
+      {
+        "certificate_type": "Arab Emirates Marchem Trans Sild / Saint Kitts and Chemical",
+        "date_issued": "2024-04-06",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "2nd Officer DMSS / United Nevis tanker /",
+        "date_issued": "2024-07-25",
+        "certificate_number": "2973"
+      },
+      {
+        "certificate_type": "Arab Emirates Oil/chemical",
+        "date_issued": "2023-11-23",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "Chief Officer ARARAT / RUSSIA tanker /",
+        "date_issued": "2024-01-08",
+        "certificate_number": "19996",
+        "country_of_issue": "RUSSSIA"
+      },
+      {
+        "certificate_type": "WELTON Oil tanker /",
+        "date_issued": "2023-07-07",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "Chief Officer ONYX / LATVIA ENTERPRISES",
+        "date_issued": "2023-09-14",
+        "certificate_number": "15441"
+      },
+      {
+        "certificate_type": "/ ESTONIA WELTON Oil tanker /",
+        "date_issued": "2023-01-20",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "Chief Officer ONYX / LATVIA ENTERPRISES",
+        "date_issued": "2023-04-06",
+        "certificate_number": "15441"
+      },
+      {
+        "certificate_type": "/ ESTONIA WELTON Oil tanker /",
+        "date_issued": "2022-09-02",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "Chief Officer ONYX / LATVIA ENTERPRISES",
+        "date_issued": "2022-11-24",
+        "certificate_number": "15441"
+      },
+      {
+        "certificate_type": "/ ESTONIA WELTON Oil tanker /",
+        "date_issued": "2022-04-07",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "Chief Officer ONYX / LATVIA ENTERPRISES",
+        "date_issued": "2022-06-18",
+        "certificate_number": "15441"
+      },
+      {
+        "certificate_type": "/ ESTONIA WELTON Oil tanker /",
+        "date_issued": "2022-01-09",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "Chief Officer ONYX / LATVIA ENTERPRISES",
+        "date_issued": "2022-03-07",
+        "certificate_number": "15441"
+      },
+      {
+        "certificate_type": "/ ESTONIA WELTON Oil/chemical",
+        "date_issued": "2021-08-14",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "2nd Officer ONYX / LATVIA ENTERPRISES tanker /",
+        "date_issued": "2021-10-26",
+        "certificate_number": "15441"
+      },
+      {
+        "certificate_type": "/ ESTONIA WELTON Oil/chemical",
+        "date_issued": "2021-04-04",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "2nd Officer ONYX / LATVIA ENTERPRISES tanker /",
+        "date_issued": "2021-06-05",
+        "certificate_number": "15441"
+      },
+      {
+        "certificate_type": "/ ESTONIA WELTON Oil/chemical",
+        "date_issued": "2020-12-01",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "2nd Officer ONYX / LATVIA ENTERPRISES tanker /",
+        "date_issued": "2021-01-30",
+        "certificate_number": "15441"
+      },
+      {
+        "certificate_type": "/ ESTONIA WELTON Oil/chemical",
+        "date_issued": "2020-07-04",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "2nd Officer ONYX / LATVIA ENTERPRISES tanker /",
+        "date_issued": "2020-10-04",
+        "certificate_number": "15441"
+      },
+      {
+        "certificate_type": "/ ESTONIA WELTON Oil/chemical",
+        "date_issued": "2019-12-15",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "2nd Officer ONYX / LATVIA ENTERPRISES tanker /",
+        "date_issued": "2020-02-27",
+        "certificate_number": "15441"
+      },
+      {
+        "certificate_type": "/ ESTONIA WELTON Oil/chemical",
+        "date_issued": "2019-07-30",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "2nd Officer ONYX / LATVIA ENTERPRISES tanker /",
+        "date_issued": "2019-10-04",
+        "certificate_number": "15441"
+      },
+      {
+        "certificate_type": "/ ESTONIA WELTON Oil/chemical",
+        "date_issued": "2019-04-16",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "2nd Officer ONYX / LATVIA ENTERPRISES tanker /",
+        "date_issued": "2019-06-03",
+        "certificate_number": "15441"
+      },
+      {
+        "certificate_type": "/ ESTONIA WELTON Oil/chemical",
+        "date_issued": "2018-12-24",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "2nd Officer ONYX / LATVIA ENTERPRISES tanker /",
+        "date_issued": "2019-02-26",
+        "certificate_number": "15441"
+      }
+    ],
+    "sea_service": [
+      {
+        "sign_on_date": "2025-08-06",
+        "sign_off_date": "2025-12-25",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "Sild"
+      },
+      {
+        "sign_on_date": "2024-11-19",
+        "sign_off_date": "2025-03-31",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "Sild"
+      },
+      {
+        "sign_on_date": "2024-04-06",
+        "sign_off_date": "2024-07-25",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "Sild"
+      },
+      {
+        "sign_on_date": "2023-11-23",
+        "sign_off_date": "2024-01-08",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "Oil",
+        "dwt": "19996"
+      },
+      {
+        "sign_on_date": "2023-07-07",
+        "sign_off_date": "2023-09-14",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "Oil tanker",
+        "dwt": "19996"
+      },
+      {
+        "sign_on_date": "2023-01-20",
+        "sign_off_date": "2023-04-06",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "Oil tanker",
+        "dwt": "15441"
+      },
+      {
+        "sign_on_date": "2022-09-02",
+        "sign_off_date": "2022-11-24",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "Oil tanker",
+        "dwt": "15441"
+      },
+      {
+        "sign_on_date": "2022-04-07",
+        "sign_off_date": "2022-06-18",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "Oil tanker",
+        "dwt": "15441"
+      },
+      {
+        "sign_on_date": "2022-01-09",
+        "sign_off_date": "2022-03-07",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "Oil tanker",
+        "dwt": "15441"
+      },
+      {
+        "sign_on_date": "2021-08-14",
+        "sign_off_date": "2021-10-26",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "Oil",
+        "dwt": "15441"
+      },
+      {
+        "sign_on_date": "2021-04-04",
+        "sign_off_date": "2021-06-05",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "Oil",
+        "dwt": "15441"
+      },
+      {
+        "sign_on_date": "2020-12-01",
+        "sign_off_date": "2021-01-30",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "Oil",
+        "dwt": "15441"
+      },
+      {
+        "sign_on_date": "2020-07-04",
+        "sign_off_date": "2020-10-04",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "Oil",
+        "dwt": "15441"
+      },
+      {
+        "sign_on_date": "2019-12-15",
+        "sign_off_date": "2020-02-27",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "Oil",
+        "dwt": "15441"
+      },
+      {
+        "sign_on_date": "2019-07-30",
+        "sign_off_date": "2019-10-04",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "Oil",
+        "dwt": "15441"
+      },
+      {
+        "sign_on_date": "2019-04-16",
+        "sign_off_date": "2019-06-03",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "Oil",
+        "dwt": "15441"
+      },
+      {
+        "sign_on_date": "2018-12-24",
+        "sign_off_date": "2019-02-26",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "Oil",
+        "dwt": "15441"
+      }
+    ],
+    "applications": [
+      {
+        "position_applied_for": "Chief Officer",
+        "rank_applied_for": "Chief Officer"
+      }
+    ],
+    "flag_documents": [],
+    "family_contacts": [],
+    "uploaded_files": []
+  }
+}

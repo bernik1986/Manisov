@@ -1,0 +1,15 @@
+{
+  "name": "parcer",
+  "private": true,
+  "description": "Root scripts (E2E). Frontend stays under app/frontend.",
+  "scripts": {
+    "test": "python -m pytest -v --tb=short && playwright test --reporter=list",
+    "test:e2e": "playwright test",
+    "test:e2e:ui": "playwright test --ui",
+    "test:e2e:headed": "playwright test --headed",
+    "test:e2e:install": "playwright install chromium"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.1"
+  }
+}

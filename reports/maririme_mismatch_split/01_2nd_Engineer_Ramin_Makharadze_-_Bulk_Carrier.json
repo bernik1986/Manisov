@@ -1,0 +1,28 @@
+{
+  "file": "2nd_Engineer_Ramin_Makharadze_-_Bulk_Carrier.pdf",
+  "parser": "PDFParser",
+  "expected": {
+    "documents": 2,
+    "certificates": 23,
+    "sea_service": 10,
+    "applications": 1
+  },
+  "saved": {
+    "documents": 2,
+    "certificates": 23,
+    "sea_service": 9,
+    "applications": 1
+  },
+  "sea_service_missing_count": 1,
+  "sea_service_missing_examples": [
+    {
+      "rank_on_vessel": "3rd Engineer",
+      "vessel_name": null,
+      "sign_on_date": "2020-10-13",
+      "sign_off_date": "2021-05-01",
+      "dwt": null
+    }
+  ],
+  "sea_service_parsed_count": 10,
+  "sea_service_saved_count": 9
+}

@@ -1,0 +1,28 @@
+{
+  "file": "Master_Oleksiy_Nadtochiy_-_Bulk_Carrier.pdf",
+  "parser": "PDFParser",
+  "expected": {
+    "documents": 2,
+    "certificates": 18,
+    "sea_service": 12,
+    "applications": 1
+  },
+  "saved": {
+    "documents": 2,
+    "certificates": 18,
+    "sea_service": 11,
+    "applications": 1
+  },
+  "sea_service_missing_count": 1,
+  "sea_service_missing_examples": [
+    {
+      "rank_on_vessel": "Master",
+      "vessel_name": null,
+      "sign_on_date": "2018-11-10",
+      "sign_off_date": "2019-05-08",
+      "dwt": null
+    }
+  ],
+  "sea_service_parsed_count": 12,
+  "sea_service_saved_count": 11
+}

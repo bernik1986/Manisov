@@ -1,0 +1,259 @@
+{
+  "file": "CV_DENIS_LEBEDEV.pdf",
+  "parser": "CrewwellPDFParser",
+  "parsed": {
+    "personal_data": {
+      "full_name": "DENIS LEBEDEV",
+      "first_name": "DENIS",
+      "surname": "LEBEDEV",
+      "position_applied_for": "Master",
+      "rank_applied_for": "Master",
+      "date_of_birth": "1985-08-11",
+      "place_of_birth": ", ARKHANGELSK",
+      "primary_phone": "+79217603633",
+      "citizenship": "Russia",
+      "nationality": "Russia",
+      "email": "ldenis85@rambler.ru",
+      "country": "Federation",
+      "city": "Saint",
+      "english_level": "Good",
+      "usa_visa_expiry_date": "2027-10-01",
+      "visa_status_note": "Schengen visa valid up: No",
+      "gender": "male",
+      "height_cm": "184",
+      "education_notes": "COLLEGE VORONIN",
+      "next_of_kin_relationship": "WIFE",
+      "next_of_kin_phone": "+79522578524",
+      "next_of_kin_full_name": "ANASTASYA LEBEDEVA",
+      "next_of_kin_address": "KAMISHOVAYA STREET"
+    },
+    "documents": [
+      {
+        "document_type": "Seaman's book",
+        "document_number": "RUS 0634547",
+        "date_of_issue": "2023-05-11",
+        "date_of_expiry": "2028-05-10"
+      },
+      {
+        "document_type": "International passport",
+        "document_number": "66#4880819",
+        "date_of_issue": "2023-04-25",
+        "date_of_expiry": "2028-04-25"
+      },
+      {
+        "document_type": "National passport",
+        "document_number": "1104 391139",
+        "date_of_issue": "2006-02-24"
+      }
+    ],
+    "certificates": [
+      {
+        "certificate_type": "Basic Safety Training",
+        "certificate_number": "BST-05610/23",
+        "date_issued": "2023-04-04",
+        "expiry_date": "2028-04-04",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Advanced Fire Fighting",
+        "certificate_number": "AFF-03099/23",
+        "date_issued": "2023-03-14",
+        "expiry_date": "2028-03-14",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Proficiency in Survival",
+        "certificate_number": "PSC-03819/23",
+        "date_issued": "2023-03-15",
+        "expiry_date": "2028-03-15",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Craft and RB Medical Care",
+        "certificate_number": "913-138/23-09C",
+        "date_issued": "2023-05-19",
+        "expiry_date": "2028-05-19",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Medical First Aid",
+        "certificate_number": "MFA-03092/23",
+        "date_issued": "2023-03-13",
+        "expiry_date": "2028-03-13",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "GMDSS Operator",
+        "certificate_number": "LED207574337",
+        "date_issued": "2023-04-14",
+        "expiry_date": "2028-03-22",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Ship Security Officer",
+        "certificate_number": "ISPS-SSO-00574/23",
+        "date_issued": "2023-03-10",
+        "expiry_date": "2028-03-10",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Radar Management",
+        "certificate_number": "A-01388/23",
+        "date_issued": "2023-03-30",
+        "expiry_date": "2028-03-30",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "(ARPA+Radar) RADAR OBSERVATION",
+        "certificate_number": "R-01429/23",
+        "date_issued": "2023-03-28",
+        "expiry_date": "2028-03-28",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "AND PLOTTING ECDIS",
+        "certificate_number": "E-01426/23",
+        "date_issued": "2023-03-07",
+        "expiry_date": "2028-03-07",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "PREVENTING BULLYING",
+        "certificate_number": "MH00000034690",
+        "date_issued": "2026-02-26",
+        "expiry_date": "2028-04-04",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "MEDICAL FITNESS",
+        "date_issued": "2026-03-02",
+        "expiry_date": "2027-03-01",
+        "certificate_number": "2216626",
+        "country_of_issue": "RUSSIA"
+      }
+    ],
+    "sea_service": [
+      {
+        "sign_on_date": "2025-10-26",
+        "sign_off_date": "2026-02-06",
+        "rank_on_vessel": "Master",
+        "vessel_name": "ADAM SCHULTE",
+        "vessel_type": "Bulk carrier",
+        "dwt": "8050"
+      },
+      {
+        "sign_on_date": "2025-03-15",
+        "sign_off_date": "2025-08-12",
+        "rank_on_vessel": "Master",
+        "vessel_name": "ADAM SCHULTE",
+        "vessel_type": "Bulk carrier",
+        "dwt": "8050"
+      },
+      {
+        "sign_on_date": "2024-12-26",
+        "sign_off_date": "2025-01-13",
+        "rank_on_vessel": "Master",
+        "vessel_name": "KASPAR SCHULTE",
+        "vessel_type": "Bulk carrier",
+        "dwt": "8050"
+      },
+      {
+        "sign_on_date": "2024-08-04",
+        "sign_off_date": "2024-11-13",
+        "rank_on_vessel": "Master",
+        "vessel_name": "ADAM SCHULTE",
+        "vessel_type": "Bulk carrier",
+        "dwt": "8630"
+      },
+      {
+        "sign_on_date": "2024-02-04",
+        "sign_off_date": "2024-05-25",
+        "rank_on_vessel": "Master",
+        "vessel_name": "PPS LUCK",
+        "vessel_type": "Bulk carrier",
+        "dwt": "8050"
+      },
+      {
+        "sign_on_date": "2023-06-15",
+        "sign_off_date": "2023-10-14",
+        "rank_on_vessel": "Master",
+        "vessel_name": "CLIPPER NASSAU",
+        "vessel_type": "Bulk carrier",
+        "dwt": "30811"
+      },
+      {
+        "sign_on_date": "2022-10-23",
+        "sign_off_date": "2023-02-15",
+        "rank_on_vessel": "Master",
+        "vessel_name": "CLIPPER NASSAU",
+        "vessel_type": "Bulk carrier",
+        "dwt": "36186"
+      },
+      {
+        "sign_on_date": "2022-04-27",
+        "sign_off_date": "2022-09-13",
+        "rank_on_vessel": "Master",
+        "vessel_name": "CLIPPER COMO",
+        "vessel_type": "Bulk carrier",
+        "dwt": "36186"
+      },
+      {
+        "sign_on_date": "2021-10-02",
+        "sign_off_date": "2021-12-03",
+        "rank_on_vessel": "Master",
+        "vessel_name": "CLIPPER COMO",
+        "vessel_type": "Bulk carrier",
+        "dwt": "37301"
+      },
+      {
+        "sign_on_date": "2021-06-14",
+        "sign_off_date": "2021-10-01",
+        "rank_on_vessel": "Master",
+        "vessel_name": "CLIPPER COMO",
+        "vessel_type": "Bulk carrier",
+        "dwt": "37301"
+      },
+      {
+        "sign_on_date": "2020-12-03",
+        "sign_off_date": "2021-04-06",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "KALAVRYTA",
+        "vessel_type": "Bulk carrier",
+        "dwt": "37301"
+      },
+      {
+        "sign_on_date": "2020-02-27",
+        "sign_off_date": "2020-07-25",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "KALAVRYTA",
+        "vessel_type": "Bulk carrier",
+        "dwt": "63325"
+      },
+      {
+        "sign_on_date": "2019-04-26",
+        "sign_off_date": "2019-10-24",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "KALAVRYTA",
+        "vessel_type": "Bulk carrier",
+        "dwt": "63325"
+      },
+      {
+        "sign_on_date": "2018-05-21",
+        "sign_off_date": "2018-10-08",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "KALAVRYTA",
+        "vessel_type": "Bulk carrier",
+        "dwt": "63325"
+      }
+    ],
+    "applications": [
+      {
+        "position_applied_for": "Master",
+        "rank_applied_for": "Master"
+      }
+    ],
+    "flag_documents": [],
+    "family_contacts": [],
+    "uploaded_files": []
+  }
+}

@@ -1,0 +1,344 @@
+{
+  "file": "CV_ANDREI_TOKAREV (2).pdf",
+  "parser": "CrewwellPDFParser",
+  "parsed": {
+    "personal_data": {
+      "full_name": "ANDREI TOKAREV",
+      "first_name": "ANDREI",
+      "surname": "TOKAREV",
+      "position_applied_for": "Chief Officer",
+      "rank_applied_for": "Chief Officer",
+      "date_of_birth": "1975-12-14",
+      "place_of_birth": "Ukraine, Mariupol",
+      "primary_phone": "+79604966217",
+      "citizenship": "Russia",
+      "nationality": "Russia",
+      "email": "tokaryev75@gmail.com",
+      "country": "Russia",
+      "city": "Krasnodar",
+      "english_level": "Good",
+      "usa_visa_expiry_date": "2029-09-26",
+      "visa_status_note": "Schengen visa valid up: No",
+      "gender": "male",
+      "height_cm": "180",
+      "education_notes": "COLLEGE IN 2007",
+      "graduation_year": "2007",
+      "next_of_kin_relationship": "WIFE",
+      "next_of_kin_phone": "+79628539593",
+      "next_of_kin_full_name": "TOKAREVA VICTORIIA",
+      "next_of_kin_address": "KRASNODAR",
+      "secondary_email": "tokaryev75@mail.ru",
+      "secondary_phone": "+380663785635",
+      "medical_fitness_certificate_number": "1833",
+      "medical_fitness_issue_date": "2026-01-14",
+      "medical_fitness_expiry_date": "2027-01-14",
+      "yellow_fever_issue_date": "2013-02-14",
+      "yellow_fever_expiry_date": "2099-02-14"
+    },
+    "documents": [
+      {
+        "document_type": "Seaman's book",
+        "document_number": "№RUS 0715305",
+        "date_of_issue": "2024-02-07",
+        "date_of_expiry": "2029-02-06",
+        "country_of_issue": "Russia"
+      },
+      {
+        "document_type": "International passport",
+        "document_number": "№77 2199007",
+        "date_of_issue": "2024-01-11",
+        "date_of_expiry": "2034-01-11",
+        "country_of_issue": "Russia"
+      }
+    ],
+    "certificates": [
+      {
+        "certificate_type": "Basic Safety Training",
+        "certificate_number": "00027087",
+        "date_issued": "2026-01-13",
+        "expiry_date": "2031-01-12",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Advanced Fire Fighting",
+        "certificate_number": "00027179",
+        "date_issued": "2026-01-15",
+        "expiry_date": "2031-01-14",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Proficiency in Survival",
+        "certificate_number": "00027132",
+        "date_issued": "2026-01-14",
+        "expiry_date": "2031-01-13",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Craft and RB Medical First Aid",
+        "certificate_number": "00027098",
+        "date_issued": "2026-01-14",
+        "expiry_date": "2031-01-13",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Medical Care",
+        "certificate_number": "00027493",
+        "date_issued": "2026-01-28",
+        "expiry_date": "2031-01-27",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "GMDSS Operator",
+        "certificate_number": "TAG209409918",
+        "date_issued": "2026-02-13",
+        "expiry_date": "2031-02-03",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Ship Security Officer",
+        "certificate_number": "00027042",
+        "date_issued": "2025-12-30",
+        "expiry_date": "2030-12-29",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Radar Management",
+        "certificate_number": "00027539",
+        "date_issued": "2026-01-29",
+        "expiry_date": "2031-01-28",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "(ARPA+Radar) ECDIS",
+        "certificate_number": "00027202",
+        "date_issued": "2026-01-16",
+        "expiry_date": "2031-01-15",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Ship Carrying",
+        "certificate_number": "00012359",
+        "date_issued": "2026-01-26",
+        "expiry_date": "2031-01-25",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Dangr/hazard Cargo Bridge Team Management",
+        "certificate_number": "00012578",
+        "date_issued": "2026-01-31",
+        "expiry_date": "2031-01-30",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "ARPA",
+        "certificate_number": "00027351",
+        "date_issued": "2026-01-22",
+        "expiry_date": "2031-01-21",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "ECDIS SPECIFIC JRC",
+        "certificate_number": "131126/447948",
+        "date_issued": "2018-12-04",
+        "country_of_issue": "UKRAINE"
+      },
+      {
+        "certificate_type": "ECDIS SPECIFIC SIMRAD",
+        "certificate_number": "107208/373187",
+        "date_issued": "2018-02-14",
+        "country_of_issue": "UKRAINE"
+      },
+      {
+        "certificate_type": "ECDIS SPECIFIC JRC",
+        "certificate_number": "M00120Z12T5PJRD2",
+        "date_issued": "2024-04-16",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Designated Security",
+        "certificate_number": "00027025",
+        "date_issued": "2025-12-29",
+        "expiry_date": "2030-12-28",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "COVID-19 CERTIFICATE",
+        "date_issued": "2022-02-14",
+        "expiry_date": "2027-02-14",
+        "country_of_issue": "UKRAINE"
+      },
+      {
+        "certificate_type": "MAR2022 MARSHAL",
+        "date_issued": "2026-01-14",
+        "expiry_date": "2027-01-14",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "ISLANDS RLM-105M LIBERIAN",
+        "date_issued": "2026-01-14",
+        "expiry_date": "2027-01-14",
+        "certificate_number": "155781",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "DRUG/ALCOHOL TEST",
+        "date_issued": "2026-01-14",
+        "expiry_date": "2027-01-14",
+        "certificate_number": "1423",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "MEDICAL CERTIFICATE",
+        "date_issued": "2026-01-14",
+        "expiry_date": "2027-01-14",
+        "certificate_number": "1833",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "YELLOW FEVER",
+        "date_issued": "2013-02-14",
+        "expiry_date": "2099-02-14",
+        "country_of_issue": "UKRAINE"
+      }
+    ],
+    "sea_service": [
+      {
+        "sign_on_date": "2025-05-09",
+        "sign_off_date": "2025-11-19",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "GABRIELLA",
+        "vessel_type": "Bulk carrier",
+        "dwt": "36887"
+      },
+      {
+        "sign_on_date": "2024-04-19",
+        "sign_off_date": "2024-10-05",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "GOLD OAK",
+        "vessel_type": "Bulk carrier",
+        "dwt": "36887"
+      },
+      {
+        "sign_on_date": "2023-05-20",
+        "sign_off_date": "2023-11-14",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "LTD",
+        "vessel_type": "Bulk carrier",
+        "dwt": "37732"
+      },
+      {
+        "sign_on_date": "2022-02-15",
+        "sign_off_date": "2023-01-15",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "LIBERIA LTD",
+        "vessel_type": "Bulk carrier",
+        "dwt": "38629"
+      },
+      {
+        "sign_on_date": "2021-07-28",
+        "sign_off_date": "2021-09-14",
+        "rank_on_vessel": "Master",
+        "vessel_name": "LTD",
+        "vessel_type": "Bulk carrier",
+        "dwt": "63000"
+      },
+      {
+        "sign_on_date": "2021-03-23",
+        "sign_off_date": "2021-07-27",
+        "rank_on_vessel": "Master",
+        "vessel_name": "LTD",
+        "vessel_type": "Bulk carrier",
+        "dwt": "35000"
+      },
+      {
+        "sign_on_date": "2019-11-02",
+        "sign_off_date": "2020-09-03",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "LTD",
+        "vessel_type": "Bulk carrier",
+        "dwt": "35000"
+      },
+      {
+        "sign_on_date": "2018-12-16",
+        "sign_off_date": "2019-07-22",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "LTD",
+        "vessel_type": "Bulk carrier",
+        "dwt": "38629"
+      },
+      {
+        "sign_on_date": "2018-03-15",
+        "sign_off_date": "2018-09-23",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "LTD",
+        "vessel_type": "Bulk carrier",
+        "dwt": "38629"
+      },
+      {
+        "sign_on_date": "2016-12-20",
+        "sign_off_date": "2017-07-26",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "LTD",
+        "vessel_type": "Bulk carrier",
+        "dwt": "35000"
+      },
+      {
+        "sign_on_date": "2016-01-21",
+        "sign_off_date": "2016-08-11",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "LTD",
+        "vessel_type": "Bulk carrier",
+        "dwt": "58429"
+      },
+      {
+        "sign_on_date": "2015-01-26",
+        "sign_off_date": "2015-09-19",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "LTD",
+        "vessel_type": "Bulk carrier",
+        "dwt": "58429"
+      },
+      {
+        "sign_on_date": "2014-02-24",
+        "sign_off_date": "2014-11-01",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "56988 12899 19.09.2015 LTD",
+        "vessel_type": "Bulk carrier",
+        "dwt": "56988"
+      },
+      {
+        "sign_on_date": "2013-03-18",
+        "sign_off_date": "2013-10-14",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "LTD",
+        "vessel_type": "Bulk carrier",
+        "dwt": "58429"
+      },
+      {
+        "sign_on_date": "2012-08-11",
+        "sign_off_date": "2012-12-07",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "LTD",
+        "vessel_type": "Bulk carrier",
+        "dwt": "58407"
+      },
+      {
+        "sign_on_date": "2012-03-18",
+        "sign_off_date": "2012-07-07",
+        "rank_on_vessel": "Chief Officer",
+        "vessel_name": "LTD",
+        "vessel_type": "Bulk carrier",
+        "dwt": "56988"
+      }
+    ],
+    "applications": [
+      {
+        "position_applied_for": "Chief Officer",
+        "rank_applied_for": "Chief Officer"
+      }
+    ],
+    "flag_documents": [],
+    "family_contacts": [],
+    "uploaded_files": []
+  }
+}

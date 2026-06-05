@@ -1,0 +1,930 @@
+[
+  {
+    "file": "2E Yarkov OSM Application Form Eff. 04 Feb, 2020.docx",
+    "parsed": {
+      "personal_data": {
+        "proposed_vessel": "SMS Steinbock",
+        "date_applied": "03.09.2021",
+        "position_applied_for": "Second Engineer",
+        "certificate_of_competency_rank": "Chief engineer",
+        "date_available": "Ready",
+        "surname": "Yarkov",
+        "first_name": "Ivan",
+        "middle_name": "Aleksandr",
+        "nationality": "Russian",
+        "citizenship": "Russian",
+        "age": "30",
+        "permanent_address": "32B Komarova street, Kamenka vil., Arkhangelsk, Russia",
+        "date_of_birth": "14.09.1990",
+        "place_of_birth": "Russia",
+        "email": "ivyarkov@yandex.ru",
+        "primary_phone": "+78184854078",
+        "number_of_children": "1",
+        "height_cm": "170",
+        "weight_kg": "68",
+        "rank_applied_for": "Second Engineer"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman Book",
+          "document_number": "MK 0172135",
+          "date_of_issue": "13.03.2013",
+          "date_of_expiry": "Unlimited"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "72 6586572",
+          "date_of_issue": "22.10.2013",
+          "date_of_expiry": "22.10.2023"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Certificate of Competency",
+          "certificate_number": "ARH203109687",
+          "date_issued": "30.10.2018",
+          "expiry_date": "28.09.2023"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Daxia",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Liberia",
+          "dwt": "56811",
+          "main_engine": "Mitsui MAN B&W 6S50MC-C",
+          "rank_on_vessel": "2E",
+          "sign_on_date": "22.07.2020",
+          "sign_off_date": "04.04.2021",
+          "employer": "Briese Schiffahrts GmbH& Co.",
+          "manning_agency": "Briese Shipping Arkhangelsk",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "BBC Volga",
+          "vessel_type": "Premium Project Carrier Vessel",
+          "flag": "Antigua & Barbuda",
+          "dwt": "17302",
+          "main_engine": "MAN B&W 6S46MC-C",
+          "rank_on_vessel": "2E",
+          "sign_on_date": "16.08.2019",
+          "sign_off_date": "15.01.2020",
+          "employer": "Briese Schiffahrts GmbH& Co",
+          "manning_agency": "Briese Shipping Arkhangelsk",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Daxia",
+          "vessel_type": "Bulker",
+          "flag": "Liberia",
+          "dwt": "56811",
+          "main_engine": "Mitsui MAN B&W 6S50MC-C",
+          "rank_on_vessel": "2E",
+          "sign_on_date": "13.11.2018",
+          "sign_off_date": "13.04.2019",
+          "employer": "Briese Schiffahrts GmbH& Co",
+          "manning_agency": "Briese Shipping Arkhangelsk",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "BBC Kwiatkowski",
+          "vessel_type": "Multipurpose",
+          "flag": "Antigua & Barbuda",
+          "dwt": "7787",
+          "main_engine": "MAK 9M32C-C",
+          "rank_on_vessel": "2E",
+          "sign_on_date": "24.04.2018",
+          "sign_off_date": "07.09.2018",
+          "employer": "Briese Schiffahrts GmbH& Co",
+          "manning_agency": "Briese Shipping Arkhangelsk",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "BBC Marmara",
+          "vessel_type": "Multipurpose",
+          "flag": "Gibraltar",
+          "dwt": "6300",
+          "main_engine": "MAK 8M32C-C",
+          "rank_on_vessel": "2E",
+          "sign_on_date": "24.09.2017",
+          "sign_off_date": "26.12.2017",
+          "employer": "Briese Schiffahrts GmbH& Co",
+          "manning_agency": "Briese Shipping Arkhangelsk",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Blikur",
+          "vessel_type": "Container",
+          "flag": "Antigua & Barbuda",
+          "dwt": "5560",
+          "main_engine": "MAK 9M32C-C",
+          "rank_on_vessel": "2E",
+          "sign_on_date": "07.11.2016",
+          "sign_off_date": "20.04.2017",
+          "employer": "Briese Schiffahrts GmbH& Co",
+          "manning_agency": "Briese Swallow Arkhangelsk",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "S.Rafael",
+          "vessel_type": "Container",
+          "flag": "Antigua & Barbuda",
+          "dwt": "5539",
+          "main_engine": "MAN B&W 9L32/40",
+          "rank_on_vessel": "2E",
+          "sign_on_date": "05.02.2016",
+          "sign_off_date": "04.06.2016",
+          "employer": "Briese Schiffahrts GmbH& Co",
+          "manning_agency": "Briese Swallow Arkhangelsk",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Second Engineer",
+          "rank_applied_for": "Second Engineer"
+        }
+      ]
+    }
+  },
+  {
+    "file": "CE Varnaliy OSM Application Form Eff. 04 Feb, 2020.docx",
+    "parsed": {
+      "personal_data": {
+        "proposed_vessel": "Bulk Finland",
+        "date_applied": "26.04.2023",
+        "position_applied_for": "Chief Engineer",
+        "certificate_of_competency_rank": "First – class engineer",
+        "date_available": "May",
+        "surname": "Varnaliy",
+        "first_name": "Sergiy",
+        "middle_name": "Viktor",
+        "nationality": "Ukrainian",
+        "citizenship": "Ukrainian",
+        "age": "46",
+        "permanent_address": "127 Dneprodoroga street, apt. 235, Odesa, Ukarine",
+        "date_of_birth": "15.06.1975",
+        "place_of_birth": "Ukraine",
+        "email": "varnaliysv@gmail.com",
+        "primary_phone": "+380972700277",
+        "number_of_children": "2",
+        "height_cm": "170",
+        "weight_kg": "92",
+        "total_sea_service_in_rank": "2 y 10 m",
+        "total_sea_service": "12 y 9 m",
+        "rank_applied_for": "Chief Engineer"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman Book",
+          "document_number": "AB608855",
+          "date_of_issue": "19.09.2017",
+          "date_of_expiry": "19.09.2027"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FL457660",
+          "date_of_issue": "02.022018",
+          "date_of_expiry": "02.02.2028"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Certificate of Competency",
+          "certificate_number": "13139/2015/07",
+          "date_issued": "06.08.2015",
+          "expiry_date": "07.07.2025"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Kobayashi Maru",
+          "vessel_type": "Bulk Carrier",
+          "flag": "MI",
+          "dwt": "60397",
+          "main_engine": "MAN-B&W 6S50ME-B 9.3",
+          "rank_on_vessel": "CE",
+          "sign_on_date": "01.10.2022",
+          "sign_off_date": "24.01.2023",
+          "employer": "Kassian Maritime Ltd",
+          "manning_agency": "Elvictor",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Mykonos",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Liberia",
+          "dwt": "30060",
+          "main_engine": "MAN-B&W 6S42MCMK7",
+          "rank_on_vessel": "CE",
+          "sign_on_date": "10.02.2022",
+          "sign_off_date": "30.05.2022",
+          "employer": "Primebulk Shipmanagement Ltd",
+          "manning_agency": "Overseas/ Yialos Manning Services",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "South Trader",
+          "vessel_type": "Bulk Carrier",
+          "flag": "MI",
+          "dwt": "181343",
+          "main_engine": "MAN B&W 6S70MC-C",
+          "rank_on_vessel": "CE",
+          "sign_on_date": "17.04.2021",
+          "sign_off_date": "17.11.2021",
+          "employer": "Adk Maritime Pte Ltd",
+          "manning_agency": "Overseas/ Yialos Manning Services",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Allonissos",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Malta",
+          "dwt": "57155",
+          "main_engine": "MAN B&W 6S60MC-C",
+          "rank_on_vessel": "CE",
+          "sign_on_date": "10.09.2020",
+          "sign_off_date": "16.12.2020",
+          "employer": "Searobin Ltd",
+          "manning_agency": "Eurocrew",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Lila II",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Liberia",
+          "dwt": "34604",
+          "main_engine": "MAN B&W 6S46MC-C",
+          "rank_on_vessel": "CE",
+          "sign_on_date": "16.09.2019",
+          "sign_off_date": "29.02.2020",
+          "employer": "Arka Global Marine Services",
+          "manning_agency": "ASAP",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Lila Shanghai",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Liberia",
+          "dwt": "79410",
+          "main_engine": "MAN B&W 7S50MC-C7",
+          "rank_on_vessel": "CE",
+          "sign_on_date": "04.11.2018",
+          "sign_off_date": "02.05.2019",
+          "employer": "Arka Global Marine Services",
+          "manning_agency": "ASAP",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Lila Shanghai",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Liberia",
+          "dwt": "79410",
+          "main_engine": "MAN B&W 7S50MC-C7",
+          "rank_on_vessel": "CE",
+          "sign_on_date": "11.04.2018",
+          "sign_off_date": "17.08.2018",
+          "employer": "Arka Global Marine Services",
+          "manning_agency": "ASAP",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "ABBA",
+          "vessel_type": "General Cargo Ship",
+          "flag": "Iran",
+          "dwt": "22948",
+          "main_engine": "Sulzer 6RTA52",
+          "rank_on_vessel": "CE",
+          "sign_on_date": "20.10.2017",
+          "sign_off_date": "19.01.2018",
+          "employer": "Rahbaran Omid Darya Ship Mgmt",
+          "manning_agency": "SVS",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Gloriuship",
+          "vessel_type": "Bulk Carrier",
+          "flag": "MI",
+          "dwt": "171314",
+          "main_engine": "MAN B&W 6S70MC",
+          "rank_on_vessel": "2E",
+          "sign_on_date": "21.01.2017",
+          "sign_off_date": "11.06.2017",
+          "employer": "V Ships Ltd",
+          "manning_agency": "V Ships",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Chief Engineer",
+          "rank_applied_for": "Chief Engineer"
+        }
+      ]
+    }
+  },
+  {
+    "file": "ETO Krytsky OSM APPLICATION FORM Rev 6.docx",
+    "parsed": {
+      "personal_data": {
+        "last_salary_usd": "5000$",
+        "proposed_vessel": "Buk Mustique",
+        "date_applied": "02.03.2020",
+        "position_applied_for": "ETO",
+        "certificate_of_competency_rank": "Second-class electro-technical officer",
+        "date_available": "Ready",
+        "surname": "Krytsky",
+        "first_name": "Sergiy",
+        "middle_name": "Anatoliy",
+        "nationality": "Ukraine",
+        "citizenship": "Ukraine",
+        "age": "41",
+        "permanent_address": "2B Oleni Pchilki, Apt. 462, Kiev, Ukraine",
+        "date_of_birth": "13.09.1977",
+        "place_of_birth": "Ukraine",
+        "email": "krytskysergiy@gmail.com",
+        "primary_phone": "+380679348467",
+        "number_of_children": "-",
+        "weight_kg": "65",
+        "cv_prepared_by": "Shchuka Valentina",
+        "height_cm": "180",
+        "rank_applied_for": "ETO"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman Book",
+          "document_number": "AB 585891",
+          "date_of_issue": "11.01.2017",
+          "date_of_expiry": "11.01.2022"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FK 044353",
+          "date_of_issue": "20.11.2017",
+          "date_of_expiry": "20.11.2027"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Certificate of Competency",
+          "certificate_number": "01022/2017/01",
+          "date_issued": "27.03.2017",
+          "expiry_date": "17.03.2022"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Emerald Bay",
+          "vessel_type": "General Cargo",
+          "flag": "UK",
+          "dwt": "32311",
+          "main_engine": "Mitsubishi 6UEC52LA",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "11.03.2019",
+          "sign_off_date": "16.10.2019",
+          "employer": "V. Ships",
+          "manning_agency": "V. Ships",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Panda",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Cayman Is",
+          "dwt": "34960",
+          "main_engine": "Mitsubishi 6UEC45LSE",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "18.07.2018",
+          "sign_off_date": "18.12.2018",
+          "employer": "Blumenthal Asia Pte Ltd",
+          "manning_agency": "MJS",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Stamford Eagle",
+          "vessel_type": "Bulk Carrier",
+          "flag": "MI",
+          "dwt": "61530",
+          "main_engine": "MAN B&W 6S50ME-B9",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "01.03.2018",
+          "sign_off_date": "02.07.2018",
+          "employer": "Eagle Ship Management Llc",
+          "manning_agency": "Danica",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Stamford Eagle",
+          "vessel_type": "Bulk Carrier",
+          "flag": "MI",
+          "dwt": "61530",
+          "main_engine": "MAN B&W 6S50ME-B9",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "24.05.2017",
+          "sign_off_date": "04.11.2017",
+          "employer": "Eagle Ship Management Llc",
+          "manning_agency": "Danica",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Hercules",
+          "vessel_type": "Bulk Carrier",
+          "flag": "MI",
+          "dwt": "56546",
+          "main_engine": "MAN B&W 6S50MC-C",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "03.12.2015",
+          "sign_off_date": "25.06.2016",
+          "employer": "V. Ships",
+          "manning_agency": "V. Ships",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Andalucia",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Liberia",
+          "dwt": "37500",
+          "main_engine": "Wartsila 5RT-flex50",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "15.11.2014",
+          "sign_off_date": "30.05.2015",
+          "employer": "Nordic Hamburg Shipmgmt Gmbh",
+          "manning_agency": "Danica",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Willi",
+          "vessel_type": "Container Ship",
+          "flag": "Palau",
+          "dwt": "30738",
+          "main_engine": "HYUN B&W",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "25.03.2014",
+          "sign_off_date": "29.07.2014",
+          "employer": "Uniteam Marine Ltd",
+          "manning_agency": "Vita Maritime",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Sima Singapore",
+          "vessel_type": "Container Ship",
+          "flag": "China",
+          "dwt": "35551",
+          "main_engine": "MAN-B&W 7L70MC-C",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "25.04.2013",
+          "sign_off_date": "27.08.2013",
+          "employer": "BSM",
+          "manning_agency": "South Star",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Ultra Corbita",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Liberia",
+          "dwt": "56811",
+          "main_engine": "6RT-FLEX50",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "16.08.2012",
+          "sign_off_date": "16.11.2012",
+          "employer": "BSM",
+          "manning_agency": "South Star",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "ETO",
+          "rank_applied_for": "ETO"
+        }
+      ]
+    }
+  },
+  {
+    "file": "ETR Treschov OSM APPLICATION FORM Rev 6 (5).docx",
+    "parsed": {
+      "personal_data": {
+        "proposed_vessel": "Bulk Antigua",
+        "date_applied": "18.08.2022",
+        "position_applied_for": "ETR",
+        "certificate_of_competency_rank": "Electro technical rating",
+        "date_available": "Ready",
+        "surname": "Treschov",
+        "first_name": "Igor",
+        "middle_name": "Viktor",
+        "nationality": "Ukrainian",
+        "citizenship": "Ukrainian",
+        "age": "39",
+        "permanent_address": "34 Vostochnaya street, apt. 47, Kherson, Ukraine",
+        "date_of_birth": "26.11.1981",
+        "place_of_birth": "Ukraine",
+        "email": "wicked22@ukr.net",
+        "primary_phone": "+380662875042",
+        "number_of_children": "1",
+        "height_cm": "178",
+        "weight_kg": "79",
+        "rank_applied_for": "ETR"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman Book",
+          "document_number": "AB 658991",
+          "date_of_issue": "01.10.2019",
+          "date_of_expiry": "01.10.2024"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FH 746157",
+          "date_of_issue": "05.09.2017",
+          "date_of_expiry": "05.09.2027"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Certificate of Competency",
+          "certificate_number": "11542/2017/11",
+          "date_issued": "04.08.2017",
+          "expiry_date": "Unlimited"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "West Trader",
+          "vessel_type": "Bulk Carrier",
+          "flag": "MI",
+          "dwt": "175879",
+          "main_engine": "MAN-B&W 6S70MC 6",
+          "rank_on_vessel": "Electrician",
+          "sign_on_date": "17.09.2021",
+          "sign_off_date": "13.03.2022",
+          "employer": "Adk Maritime Pte Ltd",
+          "manning_agency": "Overseas/ Yialos Manning Services",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Anna",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Bahamas",
+          "dwt": "75162",
+          "main_engine": "MAN-B&W 6S60MC",
+          "rank_on_vessel": "Electrician",
+          "sign_on_date": "03.07.2020",
+          "sign_off_date": "21.12.2020",
+          "employer": "Adelfia Navigation Sa",
+          "manning_agency": "MPS Izmail",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Alpha Cosmos",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Malta",
+          "dwt": "170434",
+          "main_engine": "MAN-B&W 6S60MC",
+          "rank_on_vessel": "Electrician",
+          "sign_on_date": "11.11.2018",
+          "sign_off_date": "03.07.2019",
+          "employer": "Alpha Bulkers Shipmanagement",
+          "manning_agency": "Eurocrew",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Thetis",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Liberia",
+          "dwt": "73624",
+          "main_engine": "MAN-B&W 5S60MC",
+          "rank_on_vessel": "Electrician",
+          "sign_on_date": "09.10.2017",
+          "sign_off_date": "28.01.2018",
+          "employer": "Diana Shipping Services Sa",
+          "manning_agency": "Sea wave Kherson",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Danae",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Panama",
+          "dwt": "75106",
+          "main_engine": "MAN-B&W 6S60MC",
+          "rank_on_vessel": "Electrician",
+          "sign_on_date": "14.11.2016",
+          "sign_off_date": "27.03.2017",
+          "employer": "Diana Shipping Agencies Sa",
+          "manning_agency": "Sea wave Kherson",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Baltimore",
+          "vessel_type": "Bulk Carrier",
+          "flag": "MI",
+          "dwt": "177243",
+          "main_engine": "Mitsubishi 6UEC68LSE",
+          "rank_on_vessel": "Electrician",
+          "sign_on_date": "26.01.2016",
+          "sign_off_date": "15.07.2016",
+          "employer": "Diana Shipping Services Sa",
+          "manning_agency": "Sea wave Kherson",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Venture Pearl",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Liberia",
+          "dwt": "55639",
+          "main_engine": "MAN-B&W 6S50MC-C7",
+          "rank_on_vessel": "Electrician",
+          "sign_on_date": "17.11.2014",
+          "sign_off_date": "27.05.2015",
+          "employer": "Tms Ship Management Gmbh",
+          "manning_agency": "Insider Marine",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "ETR",
+          "rank_applied_for": "ETR"
+        }
+      ]
+    }
+  },
+  {
+    "file": "Master Borynsky OSM APPLICATION FORM Rev 6 (5) Master Borynsky Y.docx",
+    "parsed": {
+      "personal_data": {
+        "last_salary_usd": "9100",
+        "proposed_vessel": "BULKCARRIERS",
+        "position_applied_for": "MASTER",
+        "certificate_of_competency_rank": "DEEP SEA CAPTAIN",
+        "surname": "BORYNSKY",
+        "first_name": "YURIY",
+        "nationality": "UKRAINE",
+        "citizenship": "UKRAINE",
+        "age": "55",
+        "permanent_address": "AKADEMIKA ZABOLOTNOGO STR 43A APP 88  ODESSA UKRAINE",
+        "date_of_birth": "24.04.1962  ODESSA UKRAINE",
+        "email": "borynskyyura@gmail.com",
+        "number_of_children": "2",
+        "primary_phone": "380987500359",
+        "height_cm": "181",
+        "weight_kg": "83",
+        "rank_applied_for": "MASTER"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman Book",
+          "document_number": "AB509183",
+          "date_of_issue": "01.06.2013",
+          "date_of_expiry": "07.09.2022"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FN735650",
+          "date_of_issue": "04.09.2017",
+          "date_of_expiry": "04.09.2027"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Certificate of Competency",
+          "certificate_number": "15337/2016/07",
+          "date_issued": "16.09.2016",
+          "expiry_date": "16.09.2021"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Sinokor Sunrice",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Mirshal Island",
+          "dwt": "79393",
+          "rank_on_vessel": "MASTER",
+          "sign_on_date": "01.11.2017",
+          "sign_off_date": "17.07.2018",
+          "employer": "ADK Maritime",
+          "manning_agency": "STMA",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Navios Northen Star",
+          "vessel_type": "Bulk Carrier",
+          "flag": "MALTA",
+          "dwt": "71000",
+          "rank_on_vessel": "MASTER",
+          "sign_on_date": "19.10.2016",
+          "sign_off_date": "28.08.2017",
+          "employer": "Navios Man-nt",
+          "manning_agency": "EPSILON ODESSA",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Navios Magellan",
+          "vessel_type": "Bulk Carrier",
+          "flag": "PANAMA",
+          "dwt": "71000",
+          "rank_on_vessel": "MASTER",
+          "sign_on_date": "20.09.2015",
+          "sign_off_date": "17.03.2016",
+          "employer": "Navios Man-nt",
+          "manning_agency": "EPSILON ODESSA",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Navios Amitie",
+          "vessel_type": "Bulk Carrier",
+          "flag": "MALTA",
+          "dwt": "71000",
+          "rank_on_vessel": "MASTER",
+          "sign_on_date": "22.09.2014",
+          "sign_off_date": "24.08.2015",
+          "employer": "Navios Man-nt",
+          "manning_agency": "EPSILON ODESSA",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Navios Galileo",
+          "vessel_type": "Bulk Carrier",
+          "flag": "MALTA",
+          "dwt": "71000",
+          "rank_on_vessel": "MASTER",
+          "sign_on_date": "01.08.2013",
+          "sign_off_date": "13.08.2014",
+          "employer": "Navios Man-nt",
+          "manning_agency": "EPSILON ODESSA",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Navios Felicity",
+          "vessel_type": "Bulk Carrier",
+          "flag": "PANAMA",
+          "dwt": "71000",
+          "rank_on_vessel": "MASTER",
+          "sign_on_date": "26.03.2012",
+          "sign_off_date": "28.03.2013",
+          "employer": "Navios Man-nt",
+          "manning_agency": "EPSILON ODESSA",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Navios Gemini S",
+          "vessel_type": "Bulk Carrier",
+          "flag": "PANAMA",
+          "dwt": "71000",
+          "rank_on_vessel": "MASTER",
+          "sign_on_date": "26.08.2011",
+          "sign_off_date": "20.02.2012",
+          "employer": "Navios Man-nt",
+          "manning_agency": "EPSILON ODESSA",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Navios Mercator",
+          "vessel_type": "Bulk Carrier",
+          "flag": "MALTA",
+          "dwt": "59000",
+          "rank_on_vessel": "MASTER",
+          "sign_on_date": "15.08.2008",
+          "sign_off_date": "20.12.2009",
+          "employer": "Navios Man-nt",
+          "manning_agency": "ELVICTOR ODESSA",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "MASTER",
+          "rank_applied_for": "MASTER"
+        }
+      ]
+    }
+  },
+  {
+    "file": "MST Shtregarski  OVERSEAS Application Form Eff. 04 Feb, 2020 (11).docx",
+    "parsed": {
+      "personal_data": {
+        "proposed_vessel": "Bulk Honduras",
+        "date_applied": "23.05.2023",
+        "position_applied_for": "Master",
+        "certificate_of_competency_rank": "Master on ships of 3000GT or more",
+        "date_available": "End of July",
+        "surname": "Shtregarski",
+        "first_name": "Bonyo",
+        "middle_name": "Mityo",
+        "nationality": "Bulgaria",
+        "citizenship": "Bulgaria",
+        "age": "47",
+        "permanent_address": "209 Vl.Varnenchvik street,  apt. 5, Varna, Bulgaria",
+        "date_of_birth": "22.07.1975",
+        "place_of_birth": "Bulgaria",
+        "email": "bonimitev@gmail.com",
+        "primary_phone": "+359887605456",
+        "number_of_children": "2",
+        "weight_kg": "95",
+        "cv_prepared_by": "Byvsheva V.",
+        "height_cm": "1.64",
+        "rank_applied_for": "Master"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman Book",
+          "document_number": "500837299",
+          "date_of_issue": "10.07.2019",
+          "date_of_expiry": "01.07.2024"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "386961808",
+          "date_of_issue": "25.08.2020",
+          "date_of_expiry": "25.08.2025"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Certificate of Competency",
+          "certificate_number": "5702200",
+          "date_issued": "10.12.2014",
+          "expiry_date": "28.08.2024"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Katie K",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Liberia",
+          "dwt": "206839",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "24.10.2022",
+          "sign_off_date": "29.03.2023",
+          "employer": "Starbulk S.A",
+          "manning_agency": "Safwat Bg Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Hemingway",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Liberia",
+          "dwt": "207634",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "20.07.2021",
+          "sign_off_date": "09.03.2022",
+          "employer": "Starbulk S.A",
+          "manning_agency": "Safwat Bg Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Star Angelina",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Marshall Islands",
+          "dwt": "82981",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "08.10.2019",
+          "sign_off_date": "27.07.2020",
+          "employer": "Starbulk S.A",
+          "manning_agency": "Safwat Bg Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Star Angelina",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Marshall Islands",
+          "dwt": "82981",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "29.10.2018",
+          "sign_off_date": "03.06.2019",
+          "employer": "Starbulk S.A",
+          "manning_agency": "Safwat Bg Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Pendulum",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Marshall Islands",
+          "dwt": "82619",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "25.11.2017",
+          "sign_off_date": "09.06.2018",
+          "employer": "Starbulk S.A",
+          "manning_agency": "Safwat Bg Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Pendulum",
+          "vessel_type": "Bulk Carrier",
+          "flag": "Marshall Islands",
+          "dwt": "82619",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "28.12.2016",
+          "sign_off_date": "24.03.2017",
+          "employer": "Starbulk S.A",
+          "manning_agency": "Safwat Bg Ltd",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Master",
+          "rank_applied_for": "Master"
+        }
+      ]
+    }
+  }
+]

@@ -1,0 +1,64 @@
+services:
+  db:
+    image: postgres:16-alpine
+    container_name: maritime-db
+    environment:
+      POSTGRES_DB: maritime
+      POSTGRES_USER: maritime
+      POSTGRES_PASSWORD: maritime
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U maritime -d maritime"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: maritime-backend
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      DATABASE_URL: postgresql+psycopg2://maritime:maritime@db:5432/maritime
+      JWT_SECRET_KEY: change-me-in-docker
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./generated:/app/generated
+      - ./templates:/app/templates
+      - ./app:/app/app
+      - ./parser:/app/parser
+      - ./synonyms.py:/app/synonyms.py
+      - ./models:/app/models
+      - ./migrations:/app/migrations
+      - ./alembic.ini:/app/alembic.ini
+    command: >
+      sh -c "alembic upgrade head &&
+      uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload --reload-dir app --reload-dir parser"
+
+  frontend:
+    build:
+      context: ./app/frontend
+      dockerfile: Dockerfile
+    container_name: maritime-frontend
+    depends_on:
+      - backend
+    ports:
+      - "5173:5173"
+    environment:
+      CHOKIDAR_USEPOLLING: "true"
+      VITE_API_BASE_URL: /api
+      VITE_PROXY_TARGET: http://backend:8000
+    volumes:
+      - ./app/frontend:/app
+      - /app/node_modules
+
+volumes:
+  postgres_data:

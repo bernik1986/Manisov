@@ -1,0 +1,66 @@
+[
+  {
+    "file": "2nd_Officer_Artem_Makarov_-_Bulk_Carrier.pdf",
+    "personal_fields": 14,
+    "documents": 2,
+    "certificates": 14,
+    "sea_service": 15,
+    "applications": 1
+  },
+  {
+    "file": "2nd_Electrical_Engineer_Alexey_Bondarenko_-_Bulk_Carrier.pdf",
+    "personal_fields": 13,
+    "documents": 2,
+    "certificates": 7,
+    "sea_service": 8,
+    "applications": 1
+  },
+  {
+    "file": "2nd_Engineer_Davit_Vakhtangidze_-_Crude_Oil_Tanker.pdf",
+    "personal_fields": 13,
+    "documents": 2,
+    "certificates": 17,
+    "sea_service": 5,
+    "applications": 1
+  },
+  {
+    "file": "2nd_Engineer_Koiev_Stanislav_-_Bulk_Carrier.pdf",
+    "personal_fields": 13,
+    "documents": 2,
+    "certificates": 9,
+    "sea_service": 7,
+    "applications": 1
+  },
+  {
+    "file": "2nd_Engineer_Mykhaylo_Tatarchuk_-_Bulk_Carrier.pdf",
+    "personal_fields": 13,
+    "documents": 2,
+    "certificates": 21,
+    "sea_service": 8,
+    "applications": 1
+  },
+  {
+    "file": "2nd_Engineer_Oleg_Kyrylenko_-_Bulk_Carrier.pdf",
+    "personal_fields": 10,
+    "documents": 0,
+    "certificates": 6,
+    "sea_service": 5,
+    "applications": 1
+  },
+  {
+    "file": "2nd_Engineer_Oleksandr_Ivanko_-_Bulk_Carrier.pdf",
+    "personal_fields": 12,
+    "documents": 2,
+    "certificates": 10,
+    "sea_service": 17,
+    "applications": 1
+  },
+  {
+    "file": "2nd_Engineer_Ramin_Makharadze_-_Bulk_Carrier.pdf",
+    "personal_fields": 13,
+    "documents": 2,
+    "certificates": 23,
+    "sea_service": 10,
+    "applications": 1
+  }
+]

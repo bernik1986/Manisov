@@ -1,0 +1,28 @@
+{
+  "file": "Fitter__Welder_Solod_Mykola_-_LNG.pdf",
+  "parser": "PDFParser",
+  "expected": {
+    "documents": 2,
+    "certificates": 16,
+    "sea_service": 27,
+    "applications": 1
+  },
+  "saved": {
+    "documents": 2,
+    "certificates": 16,
+    "sea_service": 26,
+    "applications": 1
+  },
+  "sea_service_missing_count": 1,
+  "sea_service_missing_examples": [
+    {
+      "rank_on_vessel": "Fitter / Welder",
+      "vessel_name": null,
+      "sign_on_date": "2016-07-19",
+      "sign_off_date": "2016-10-23",
+      "dwt": null
+    }
+  ],
+  "sea_service_parsed_count": 27,
+  "sea_service_saved_count": 26
+}

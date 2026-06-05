@@ -1,0 +1,297 @@
+{
+  "file": "CV_Anton_Bukreev.pdf",
+  "parser": "CrewwellPDFParser",
+  "parsed": {
+    "personal_data": {
+      "full_name": "Anton Bukreev",
+      "first_name": "Anton",
+      "surname": "Bukreev",
+      "position_applied_for": "2nd Officer",
+      "rank_applied_for": "2nd Officer",
+      "date_of_birth": "1989-09-22",
+      "place_of_birth": "Krasnodar",
+      "primary_phone": "+79528482956",
+      "citizenship": "Russia",
+      "nationality": "Russia",
+      "email": "vanu84@mail.ru",
+      "english_level": "Good",
+      "usa_visa_expiry_date": "2026-04-24",
+      "visa_status_note": "Schengen visa valid up: No",
+      "gender": "male",
+      "height_cm": "180",
+      "school_name": "High Additional skills: English",
+      "next_of_kin_relationship": "Wife",
+      "next_of_kin_phone": "+79531148640",
+      "next_of_kin_full_name": "Bukreeva Natalya",
+      "next_of_kin_address": "Sim as me"
+    },
+    "documents": [
+      {
+        "document_type": "Seaman's book",
+        "document_number": "RUS 0595749",
+        "date_of_issue": "2023-04-20",
+        "date_of_expiry": "2028-04-19",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "document_type": "International passport",
+        "document_number": "75 4377450",
+        "date_of_issue": "2017-02-28",
+        "date_of_expiry": "2027-02-28",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "document_type": "National passport",
+        "document_number": "0309 324450",
+        "date_of_issue": "2009-10-03",
+        "country_of_issue": "Russian Federation"
+      }
+    ],
+    "certificates": [
+      {
+        "certificate_type": "Basic Safety Training",
+        "certificate_number": "5032206877",
+        "date_issued": "2023-05-11",
+        "expiry_date": "2028-05-11",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "Designated Security",
+        "certificate_number": "800517",
+        "date_issued": "2021-06-04",
+        "expiry_date": "2026-06-04",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "Duties Advanced Fire Fighting",
+        "certificate_number": "5032206116",
+        "date_issued": "2023-05-02",
+        "expiry_date": "2028-05-02",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "Proficiency in Survival",
+        "certificate_number": "5032206117",
+        "date_issued": "2023-05-02",
+        "expiry_date": "2028-05-02",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "Craft and RB Medical First Aid",
+        "certificate_number": "5032206118",
+        "date_issued": "2023-05-02",
+        "expiry_date": "2028-05-02",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "GMDSS Endorsement",
+        "certificate_number": "NVS207667806",
+        "date_issued": "2023-06-07",
+        "expiry_date": "2028-04-28",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "ECDIS",
+        "certificate_number": "5032208207",
+        "date_issued": "2023-05-19",
+        "expiry_date": "2028-05-19",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "Bridge Team Management",
+        "certificate_number": "6032210032",
+        "date_issued": "2023-06-09",
+        "expiry_date": "2028-06-09",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "Tanker Familiarization",
+        "certificate_number": "NVS207686859",
+        "date_issued": "2023-06-19",
+        "expiry_date": "2028-06-19",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "Oil Tank Specialized",
+        "certificate_number": "4052266014",
+        "date_issued": "2025-04-01",
+        "expiry_date": "2030-04-01",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "Training Type specific ECDIS training Transas Navi-",
+        "certificate_number": "0001875",
+        "date_issued": "2020-09-22",
+        "expiry_date": "2030-09-22",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "Sailor 4000/4100 Amos Business Suite",
+        "certificate_number": "002328",
+        "date_issued": "2020-07-24",
+        "expiry_date": "2030-07-24",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "Cmk Tank Specialized",
+        "certificate_number": "110013",
+        "date_issued": "2021-09-22",
+        "expiry_date": "2026-09-22",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "Training Basic training for ships",
+        "certificate_number": "9012068073",
+        "date_issued": "2021-09-03",
+        "expiry_date": "2026-09-03",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "operating in polar waters Security Awareness",
+        "certificate_number": "800517",
+        "date_issued": "2021-06-04",
+        "expiry_date": "2026-06-04",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "Training Ship Security Officer",
+        "certificate_number": "8022087814",
+        "date_issued": "2022-08-05",
+        "expiry_date": "2027-08-05",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "ARPA",
+        "certificate_number": "5032207659",
+        "date_issued": "2023-05-16",
+        "expiry_date": "2028-05-16",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "RADAR",
+        "certificate_number": "5032207846",
+        "date_issued": "2023-05-17",
+        "expiry_date": "2028-05-17",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "ISM Code",
+        "certificate_number": "8022088141",
+        "date_issued": "2022-08-08",
+        "expiry_date": "2027-08-08",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "FRAMO Advanced Course",
+        "certificate_number": "8022088270",
+        "date_issued": "2022-08-10",
+        "expiry_date": "2027-08-10",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "OIL Tanker Cargo and",
+        "certificate_number": "5032206353",
+        "date_issued": "2023-05-05",
+        "expiry_date": "2028-05-05",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "Ballast Handling Sim. CHEMICAL Tanker Cargo",
+        "certificate_number": "5032206866",
+        "date_issued": "2023-05-12",
+        "expiry_date": "2028-05-12",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "and Ballast Handling Sim. Prevention Harassment",
+        "certificate_number": "1062001380",
+        "date_issued": "2026-01-20",
+        "country_of_issue": "Russian Federation"
+      },
+      {
+        "certificate_type": "Medical Book",
+        "date_issued": "2020-09-15",
+        "expiry_date": "2030-09-15",
+        "certificate_number": "45374656",
+        "country_of_issue": "Russian"
+      }
+    ],
+    "sea_service": [
+      {
+        "sign_on_date": "2025-05-20",
+        "sign_off_date": "2025-10-03",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "STONE I",
+        "dwt": "9480"
+      },
+      {
+        "sign_on_date": "2024-06-19",
+        "sign_off_date": "2024-12-02",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "STONE I",
+        "dwt": "9480"
+      },
+      {
+        "sign_on_date": "2023-07-19",
+        "sign_off_date": "2024-01-15",
+        "rank_on_vessel": "3rd Officer",
+        "vessel_name": "STONE I",
+        "dwt": "23284"
+      },
+      {
+        "sign_on_date": "2022-08-28",
+        "sign_off_date": "2023-03-10",
+        "rank_on_vessel": "3rd Officer",
+        "vessel_name": "OWL 4",
+        "dwt": "9480"
+      },
+      {
+        "sign_on_date": "2021-10-06",
+        "sign_off_date": "2022-02-18",
+        "rank_on_vessel": "3rd Officer",
+        "vessel_name": "NS POWER",
+        "dwt": "6060"
+      },
+      {
+        "sign_on_date": "2020-12-21",
+        "sign_off_date": "2021-05-17",
+        "rank_on_vessel": "3rd Officer",
+        "vessel_name": "ALEKSEY KOSYGIN",
+        "dwt": "45000"
+      },
+      {
+        "sign_on_date": "2019-09-18",
+        "sign_off_date": "2019-12-06",
+        "rank_on_vessel": "3rd Officer",
+        "vessel_name": "GAS RAY",
+        "dwt": "22946"
+      },
+      {
+        "sign_on_date": "2016-05-05",
+        "sign_off_date": "2016-12-14",
+        "vessel_name": "TEATRALNY BRIDGE Product tanker",
+        "dwt": "22946"
+      },
+      {
+        "sign_on_date": "2017-06-20",
+        "sign_off_date": "2018-01-19",
+        "vessel_name": "SCF",
+        "dwt": "46564"
+      },
+      {
+        "sign_on_date": "2018-07-22",
+        "sign_off_date": "2019-01-24",
+        "vessel_name": "SCF"
+      }
+    ],
+    "applications": [
+      {
+        "position_applied_for": "2nd Officer",
+        "rank_applied_for": "2nd Officer"
+      }
+    ],
+    "flag_documents": [],
+    "family_contacts": [],
+    "uploaded_files": []
+  }
+}

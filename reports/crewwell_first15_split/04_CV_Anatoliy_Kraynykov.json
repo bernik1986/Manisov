@@ -1,0 +1,197 @@
+{
+  "file": "CV_Anatoliy_Kraynykov.pdf",
+  "parser": "CrewwellPDFParser",
+  "parsed": {
+    "personal_data": {
+      "full_name": "Anatoliy Kraynykov",
+      "first_name": "Anatoliy",
+      "surname": "Kraynykov",
+      "position_applied_for": "Master",
+      "rank_applied_for": "Master",
+      "date_of_birth": "1967-06-01",
+      "place_of_birth": "Ukraine",
+      "primary_phone": "+380632732202",
+      "citizenship": "Ukraine",
+      "nationality": "Ukraine",
+      "email": "anatoliykraynykov@gmail.com",
+      "english_level": "Good",
+      "usa_visa_expiry_date": "2027-12-05",
+      "visa_status_note": "Schengen visa valid up: No",
+      "gender": "male",
+      "height_cm": "170",
+      "education_notes": "Academy",
+      "next_of_kin_relationship": "Daughter",
+      "next_of_kin_full_name": "Oxana"
+    },
+    "documents": [
+      {
+        "document_type": "Seaman's book",
+        "document_number": "AA 1018090",
+        "date_of_issue": "2024-11-25",
+        "date_of_expiry": "2029-11-25",
+        "country_of_issue": "Poland"
+      },
+      {
+        "document_type": "International passport",
+        "document_number": "FK952294",
+        "date_of_issue": "2018-01-15",
+        "date_of_expiry": "2028-01-15",
+        "country_of_issue": "Ukraine"
+      }
+    ],
+    "certificates": [
+      {
+        "certificate_type": "Basic Safety Training",
+        "certificate_number": "215932/2025",
+        "date_issued": "2025-11-19",
+        "expiry_date": "2030-11-19",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Security Awareness",
+        "certificate_number": "215829/2025",
+        "date_issued": "2025-11-18",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Training Advanced Fire Fighting",
+        "certificate_number": "216048/2025",
+        "date_issued": "2025-11-20",
+        "expiry_date": "2030-11-20",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Proficiency in Survival",
+        "certificate_number": "215933/2025",
+        "date_issued": "2025-11-19",
+        "expiry_date": "2030-11-19",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Craft and RB Medical Care",
+        "certificate_number": "215934/2025",
+        "date_issued": "2025-11-19",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Medical First Aid",
+        "certificate_number": "215831/2025",
+        "date_issued": "2025-11-18",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "GMDSS Operator",
+        "certificate_number": "31302/2025",
+        "date_issued": "2025-12-11",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "GMDSS Endorsement",
+        "certificate_number": "31302/2025",
+        "date_issued": "2025-12-11",
+        "expiry_date": "2030-12-09",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Ship Security Officer",
+        "certificate_number": "215830/2025",
+        "date_issued": "2025-11-18",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Radar Management",
+        "certificate_number": "217019/2025",
+        "date_issued": "2025-11-21",
+        "expiry_date": "2030-11-21",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "(ARPA+Radar) ECDIS",
+        "certificate_number": "227",
+        "date_issued": "2025-01-31",
+        "expiry_date": "2030-01-31",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Ship Carrying",
+        "certificate_number": "216050/2025",
+        "date_issued": "2025-11-20",
+        "expiry_date": "2030-11-20",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Dangr/hazard Cargo Bridge Team Management",
+        "certificate_number": "216049/2025",
+        "date_issued": "2025-11-20",
+        "expiry_date": "2030-11-20",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Medical Report",
+        "date_issued": "2025-02-20",
+        "expiry_date": "2027-02-19",
+        "certificate_number": "1002",
+        "country_of_issue": "Romania"
+      }
+    ],
+    "sea_service": [
+      {
+        "sign_on_date": "2025-06-19",
+        "sign_off_date": "2025-11-18",
+        "rank_on_vessel": "Master",
+        "vessel_name": "Isabelle G",
+        "vessel_type": "Bulk carrier",
+        "dwt": "7860"
+      },
+      {
+        "sign_on_date": "2025-03-09",
+        "sign_off_date": "2025-05-20",
+        "rank_on_vessel": "Master",
+        "vessel_name": "Miyama",
+        "vessel_type": "Bulk carrier",
+        "dwt": "37193"
+      },
+      {
+        "sign_on_date": "2024-02-27",
+        "sign_off_date": "2024-10-21",
+        "rank_on_vessel": "Master",
+        "vessel_name": "Helena G",
+        "vessel_type": "Bulk carrier",
+        "dwt": "7860"
+      },
+      {
+        "sign_on_date": "2023-02-20",
+        "sign_off_date": "2023-11-18",
+        "rank_on_vessel": "Master",
+        "vessel_name": "Gooby",
+        "vessel_type": "Bulk carrier",
+        "dwt": "37251"
+      },
+      {
+        "sign_on_date": "2021-03-12",
+        "sign_off_date": "2021-11-21",
+        "rank_on_vessel": "Master",
+        "vessel_name": "Gooby",
+        "vessel_type": "Bulk carrier",
+        "dwt": "57949"
+      },
+      {
+        "sign_on_date": "2019-06-01",
+        "sign_off_date": "2019-09-13",
+        "rank_on_vessel": "Master",
+        "vessel_name": "Miyama",
+        "vessel_type": "Bulk carrier",
+        "dwt": "76595"
+      }
+    ],
+    "applications": [
+      {
+        "position_applied_for": "Master",
+        "rank_applied_for": "Master"
+      }
+    ],
+    "flag_documents": [],
+    "family_contacts": [],
+    "uploaded_files": []
+  }
+}

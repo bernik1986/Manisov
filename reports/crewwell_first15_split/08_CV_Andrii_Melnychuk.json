@@ -1,0 +1,165 @@
+{
+  "file": "CV_Andrii_Melnychuk.pdf",
+  "parser": "CrewwellPDFParser",
+  "parsed": {
+    "personal_data": {
+      "full_name": "Andrii Melnychuk",
+      "first_name": "Andrii",
+      "surname": "Melnychuk",
+      "position_applied_for": "3rd Engineer",
+      "rank_applied_for": "3rd Engineer",
+      "date_of_birth": "1981-12-01",
+      "place_of_birth": "Ukraine",
+      "primary_phone": "+380959224359",
+      "citizenship": "Ukraine",
+      "nationality": "Ukraine",
+      "email": "Melnichuk_fiat@ukr.net",
+      "english_level": "Good",
+      "usa_visa_expiry_date": "2034-02-07",
+      "visa_status_note": "Schengen visa valid up: No",
+      "gender": "male",
+      "height_cm": "183",
+      "school_name": "Higher education Additional skills:",
+      "next_of_kin_relationship": "Wife"
+    },
+    "documents": [
+      {
+        "document_type": "Seaman's book",
+        "document_number": "AA1002827",
+        "date_of_issue": "2024-07-19",
+        "date_of_expiry": "2029-07-19",
+        "country_of_issue": "Poland"
+      },
+      {
+        "document_type": "International passport",
+        "document_number": "FE315104",
+        "date_of_issue": "2024-03-25",
+        "date_of_expiry": "2034-03-25",
+        "country_of_issue": "Ukraine"
+      }
+    ],
+    "certificates": [
+      {
+        "certificate_type": "Basic Safety Training",
+        "certificate_number": "32334224/01/5992/024",
+        "date_issued": "2024-06-08",
+        "expiry_date": "2029-06-08",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Security Awareness",
+        "certificate_number": "32334224/09/2047/024",
+        "date_issued": "2024-06-18",
+        "expiry_date": "2029-06-18",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Training Advanced Fire Fighting",
+        "certificate_number": "32334224/04/0815/025",
+        "date_issued": "2025-03-13",
+        "expiry_date": "2030-03-13",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Proficiency in Survival",
+        "certificate_number": "32334224/02/0899/025",
+        "date_issued": "2025-03-13",
+        "expiry_date": "2030-03-13",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Craft and RB Medical First Aid",
+        "certificate_number": "30488913/05/0064/025",
+        "date_issued": "2025-03-13",
+        "expiry_date": "2030-03-13",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Designated Security",
+        "certificate_number": "32334224/09/2047/024",
+        "date_issued": "2024-06-18",
+        "expiry_date": "2029-06-18",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Duties Flag Documents and Other Countries Seaman's Books Country Document type No. Date of issue Valid up Seafarers identification and Cyprus",
+        "certificate_number": "Cy360930",
+        "date_issued": "2023-04-12",
+        "expiry_date": "2033-04-11"
+      },
+      {
+        "certificate_type": "service record book Seafarers identification and Marshall Islands",
+        "certificate_number": "MH1103955",
+        "date_issued": "2025-04-01",
+        "expiry_date": "2030-03-31"
+      }
+    ],
+    "sea_service": [
+      {
+        "sign_on_date": "2025-04-06",
+        "sign_off_date": "2025-08-23",
+        "rank_on_vessel": "3rd Engineer",
+        "vessel_name": "3rd Engineer Volta",
+        "vessel_type": "Bulk carrier",
+        "dwt": "177036"
+      },
+      {
+        "sign_on_date": "2024-10-18",
+        "sign_off_date": "2024-12-07",
+        "rank_on_vessel": "3rd Engineer",
+        "vessel_name": "3rd Engineer Volta",
+        "vessel_type": "Bulk carrier",
+        "dwt": "177036"
+      },
+      {
+        "sign_on_date": "2024-05-27",
+        "sign_off_date": "2024-08-31",
+        "rank_on_vessel": "3rd Engineer",
+        "vessel_name": "3rd Engineer Agia Sofia",
+        "vessel_type": "Bulk carrier",
+        "dwt": "28320"
+      },
+      {
+        "sign_on_date": "2023-02-28",
+        "sign_off_date": "2023-08-10",
+        "rank_on_vessel": "3rd Engineer",
+        "vessel_name": "3rd Engineer Aquavita AIM",
+        "vessel_type": "Bulk carrier",
+        "dwt": "82192"
+      },
+      {
+        "sign_on_date": "2022-06-06",
+        "sign_off_date": "2022-09-23",
+        "rank_on_vessel": "2nd Engineer",
+        "vessel_name": "3rd Engineer LMZ Francisco",
+        "vessel_type": "Bulk carrier",
+        "dwt": "81800"
+      },
+      {
+        "sign_on_date": "2021-06-26",
+        "sign_off_date": "2022-03-11",
+        "rank_on_vessel": "2nd Engineer",
+        "vessel_name": "2nd Engineer Tattoo",
+        "vessel_type": "Bulk carrier",
+        "dwt": "56418"
+      },
+      {
+        "sign_on_date": "2020-11-26",
+        "sign_off_date": "2021-02-20",
+        "rank_on_vessel": "3rd Engineer",
+        "vessel_name": "3rd Engineer LMZ Ariel",
+        "vessel_type": "Bulk carrier",
+        "dwt": "56418"
+      }
+    ],
+    "applications": [
+      {
+        "position_applied_for": "3rd Engineer",
+        "rank_applied_for": "3rd Engineer"
+      }
+    ],
+    "flag_documents": [],
+    "family_contacts": [],
+    "uploaded_files": []
+  }
+}

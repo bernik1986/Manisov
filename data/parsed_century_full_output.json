@@ -1,0 +1,4964 @@
+[
+  {
+    "file": "ETO Osaulets CR-RT 05A - Seaman's Application and Interview Record - Copy.docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Electrical Engineer",
+        "surname": "Osaulets",
+        "first_name": "Dmytro",
+        "middle_name": "Leonidovich",
+        "date_of_birth": "23.01.1983",
+        "place_of_birth": "Zaporizhzhya",
+        "nationality": "Ukrainian",
+        "permanent_address": "Ukraine, Zaporizhzhya, Zelena street, 25",
+        "primary_phone": "+380676234462  +380612869375",
+        "father_name": "Leonid",
+        "mother_name": "Lidiya",
+        "highest_educational_attainment": "NUOS 2017",
+        "graduation_year": "2017",
+        "marital_status": "SINGLE",
+        "number_of_children": "NONE",
+        "beneficiary_full_name": "Ogijchenko Lidiya Grigorievna",
+        "beneficiary_relationship": "Mother",
+        "seaman_book_number": "AB574735",
+        "passport_number": "FB883805",
+        "passport_issue_date": "22.10.2015",
+        "passport_expiry_date": "22.10.2025",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "P1901663",
+        "yellow_fever_vaccination": "YES",
+        "english_level": "GOOD",
+        "height_m": "1.85",
+        "weight_kg": "105"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AB574735",
+          "date_of_issue": "10.03.2016",
+          "date_of_expiry": "10.03.2021",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FB883805",
+          "date_of_issue": "22.10.2015",
+          "date_of_expiry": "22.10.2025",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "P1901663",
+          "date_of_issue": "24.05.2019",
+          "date_of_expiry": "22.05.2029",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "YES",
+          "date_of_issue": "25.05.2016",
+          "date_of_expiry": "UNLIM",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "certificate_number": "33413",
+          "date_issued": "08.12.2015",
+          "expiry_date": "08.12.2020"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "certificate_number": "6052",
+          "date_issued": "18.03.2016",
+          "expiry_date": "18.03.2021"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "certificate_number": "11900",
+          "date_issued": "12.05.2016",
+          "expiry_date": "12.05.2021"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "certificate_number": "8147",
+          "date_issued": "06.04.2017",
+          "expiry_date": "06.04.2022"
+        },
+        {
+          "certificate_type": "BRM"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS"
+        },
+        {
+          "certificate_type": "ECDIS"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)",
+          "certificate_number": "5178",
+          "date_issued": "12.05.2016",
+          "expiry_date": "12.05.2021"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "CHEMTRANS NOVA",
+          "vessel_type": "Product Oil Tanker",
+          "main_engine": "HHM MAN B&W 5S60MC",
+          "dwt": "42167",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "04.06.2019",
+          "sign_off_date": "04.10.2019",
+          "employer": "Eurocrew/ CST",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "PHAEDRA BRIGHT 1",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN B&W 7S60MC",
+          "dwt": "62385",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "06.05.2018",
+          "sign_off_date": "30.11.2018",
+          "employer": "Intership",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "ABDIAS NASCIMENTO",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN B&W 6S70MC",
+          "dwt": "81429",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "22.01.2018",
+          "sign_off_date": "15.04.2018",
+          "employer": "Intership .",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Bram",
+          "vessel_type": "Bunkering",
+          "main_engine": "Pielstick",
+          "dwt": "1577",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "20.01.2017",
+          "sign_off_date": "30.07.2017",
+          "employer": "Intership",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Electrical Engineer",
+          "rank_applied_for": "Electrical Engineer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 27,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 4
+    }
+  },
+  {
+    "file": "ETO Shcherbyna CR-RT 05A - Seaman's Application and Interview Record — копия - Copy.docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "ETO",
+        "surname": "Shcherbyna",
+        "first_name": "Oleksandr",
+        "middle_name": "Oleksandr",
+        "date_of_birth": "05.04.1987",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukraine",
+        "permanent_address": "18-D Dimitrova street, apt. 31, Kherson, Ukraine",
+        "primary_phone": "+380505218029",
+        "father_name": "Oleksandr",
+        "mother_name": "Iryna",
+        "highest_educational_attainment": "Third – class electro – technical officer",
+        "school_name": "Kherson marine college",
+        "graduation_year": "2006",
+        "marital_status": "Married",
+        "number_of_children": "-",
+        "beneficiary_full_name": "Tetyana",
+        "beneficiary_relationship": "Wife",
+        "seaman_book_number": "AB 584234",
+        "passport_number": "FH 367888",
+        "passport_issue_date": "08.08.2017",
+        "passport_expiry_date": "08.08.2027",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "P2357578",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "height_m": "192",
+        "weight_kg": "95"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AB 584234",
+          "date_of_issue": "12.08.2016",
+          "date_of_expiry": "06.07.2026",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FH 367888",
+          "date_of_issue": "08.08.2017",
+          "date_of_expiry": "08.08.2027",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "P2357578",
+          "date_of_issue": "30.10.2019",
+          "date_of_expiry": "28.10.2029",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "27.09.2011",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "31018",
+          "date_issued": "27.07.2016",
+          "expiry_date": "27.07.2021"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "22972",
+          "date_issued": "27.07.2016",
+          "expiry_date": "27.07.2021"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "19203",
+          "date_issued": "27.07.2016",
+          "expiry_date": "27.07.2021"
+        },
+        {
+          "certificate_type": "MEDICAL CARE",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "15302",
+          "date_issued": "27.07.2016",
+          "expiry_date": "27.07.2021"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID"
+        },
+        {
+          "certificate_type": "BRM"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS"
+        },
+        {
+          "certificate_type": "ECDIS"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "13972",
+          "date_issued": "27.07.2016",
+          "expiry_date": "27.07.2021"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Ranger",
+          "vessel_type": "Bulk carrier",
+          "main_engine": "MAN B&W 6S60MC-C",
+          "dwt": "43022",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "02.03.2021",
+          "sign_off_date": "25.06.2021",
+          "employer": "Orion Reederei Gmbh & Co Kg / L-Stream",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Florentine Oetker",
+          "vessel_type": "Bulk carrier",
+          "main_engine": "MAN B&W 6S50ME-B9.3",
+          "dwt": "35835",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "10.01.2020",
+          "sign_off_date": "17.11.2020",
+          "employer": "Orion Reederei Gmbh & Co Kg / L-Stream",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Teresa Oetker",
+          "vessel_type": "Bulk carrier",
+          "main_engine": "MAN B&W 6S50MC-C",
+          "dwt": "32839",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "23.01.2019",
+          "sign_off_date": "24.09.2019",
+          "employer": "Orion Reederei Gmbh & Co Kg / L-Stream",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Pax",
+          "vessel_type": "Bulk carrier",
+          "main_engine": "Mitsubishi 6UEC52LA",
+          "dwt": "19846",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "23.07.2018",
+          "sign_off_date": "23.11.2018",
+          "employer": "Orion Reederei Gmbh & Co Kg / L-Stream",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Florentine Oetker",
+          "vessel_type": "Bulk carrier",
+          "main_engine": "MAN B&W 6S50ME-9.3",
+          "dwt": "35835",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "07.11.2017",
+          "sign_off_date": "23.06.2018",
+          "employer": "Orion Reederei Gmbh & Co Kg / L-Stream",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Caro",
+          "vessel_type": "Bulk carrier",
+          "main_engine": "MAN B&W 6S70MC",
+          "dwt": "91373",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "28.10.2016",
+          "sign_off_date": "26.06.2017",
+          "employer": "Orion Reederei Gmbh & Co Kg / L-Stream",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Ultra Daniela",
+          "vessel_type": "Bulk carrier",
+          "main_engine": "MAN B&W  6S50ME-B9",
+          "dwt": "34748",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "21.01.2016",
+          "sign_off_date": "30.05.2016",
+          "employer": "Orion Reederei Gmbh & Co Kg / L-Stream",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Gotia",
+          "vessel_type": "Bulk carrier",
+          "main_engine": "MAN B&W 6S70MC",
+          "dwt": "91373",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "15.04.2015",
+          "sign_off_date": "30.09.2015",
+          "employer": "Orion Reederei Gmbh & Co Kg / L-Stream",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "ETO",
+          "rank_applied_for": "ETO"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 28,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 8
+    }
+  },
+  {
+    "file": "ETO Stadnytskyi CR-RT 05A - SEAMEN'S APPLICATION & INTERVIEW RECORD - Copy.docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Electrical Engineer",
+        "surname": "Stadnytskyi",
+        "first_name": "Oleksandr",
+        "middle_name": "Victor",
+        "date_of_birth": "18.02.1990",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukrainian",
+        "permanent_address": "11 B Kosmonavtov str., apt.58, Odesa, Ukraine",
+        "primary_phone": "+380689120774",
+        "father_name": "Victor",
+        "mother_name": "Tetyana",
+        "highest_educational_attainment": "Third – class electro – technical officer",
+        "school_name": "Kherson state maritime academy",
+        "graduation_year": "2017",
+        "marital_status": "Married",
+        "number_of_children": "-",
+        "beneficiary_full_name": "Kateryna",
+        "beneficiary_relationship": "Wife",
+        "seaman_book_number": "AB 668682",
+        "passport_number": "FT 424770",
+        "passport_issue_date": "03.12.2018",
+        "passport_expiry_date": "03.12.2028",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "L 0541932",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "height_m": "185",
+        "weight_kg": "73"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AB 668682",
+          "date_of_issue": "11.11.2020",
+          "date_of_expiry": "11.11.2025",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FT 424770",
+          "date_of_issue": "03.12.2018",
+          "date_of_expiry": "03.12.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "L 0541932",
+          "date_of_issue": "16.03.2016",
+          "date_of_expiry": "15.03.2026",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "24.03.2016",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "239633",
+          "date_issued": "29.12.2020",
+          "expiry_date": "29.12.2025"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "239638",
+          "date_issued": "29.12.2020",
+          "expiry_date": "29.12.2025"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "239639",
+          "date_issued": "29.12.2020",
+          "expiry_date": "29.12.2025"
+        },
+        {
+          "certificate_type": "TANKER SAFETY/ V1-1 (GTF)"
+        },
+        {
+          "certificate_type": "TANKER SAFETY/ V1-2"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "239640",
+          "date_issued": "29.12.2020",
+          "expiry_date": "29.12.2025"
+        },
+        {
+          "certificate_type": "BRM"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS"
+        },
+        {
+          "certificate_type": "ECDIS"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)"
+        },
+        {
+          "certificate_type": "D.  FLAG DOCUMENTS",
+          "issuing_authority": "D.  FLAG DOCUMENTS",
+          "certificate_number": "D.  FLAG DOCUMENTS",
+          "date_issued": "D.  FLAG DOCUMENTS",
+          "expiry_date": "D.  FLAG DOCUMENTS"
+        },
+        {
+          "certificate_type": "FLAG",
+          "issuing_authority": "DOC No",
+          "certificate_number": "DATE OF ISSUANCE",
+          "date_issued": "DATE OF ISSUANCE",
+          "expiry_date": "DATE OF EXPIRY"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Sulu Sea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN B&W  6RTA-62U",
+          "dwt": "56204",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "05.01.2020",
+          "sign_off_date": "07.09.2020",
+          "employer": "Eastern Pacific Shipping Pte",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Pacific Onyx",
+          "vessel_type": "Oil Products Tanker",
+          "main_engine": "MAN B&W 6S50MC-C",
+          "dwt": "28426",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "20.03.2019",
+          "sign_off_date": "16.09.2019",
+          "employer": "Eastern Pacific Shipping Pte",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Marmara Sea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN B&W 6S70MC-C",
+          "dwt": "56355",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "19.06.2018",
+          "sign_off_date": "20.11.2018",
+          "employer": "Eastern Pacific Shipping Pte",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Pacific Zircon",
+          "vessel_type": "Oil Products Tanker",
+          "main_engine": "MAN B&W 6S50MC",
+          "dwt": "28426",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "28.10.2017",
+          "sign_off_date": "26.01.2018",
+          "employer": "Eastern Pacific Shipping Pte",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Pacific Zircon",
+          "vessel_type": "Oil Products Tanker",
+          "main_engine": "MAN B&W 6S50MC",
+          "dwt": "28426",
+          "rank_on_vessel": "Electric Cadet",
+          "sign_on_date": "22.08.2017",
+          "sign_off_date": "27.10.2017",
+          "employer": "Eastern Pacific Shipping Pte",
+          "remarks": "Promoted"
+        },
+        {
+          "vessel_name": "Fairway",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN-B&W 6S70MC-C",
+          "dwt": "84628",
+          "rank_on_vessel": "Electric Cadet",
+          "sign_on_date": "22.06.2016",
+          "sign_off_date": "10.01.2017",
+          "employer": "Eastern Pacific Shipping Pte",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Electrical Engineer",
+          "rank_applied_for": "Electrical Engineer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 28,
+      "documents": 4,
+      "certificates": 14,
+      "sea_service": 6
+    }
+  },
+  {
+    "file": "FTR Kharytonov  CENTURY Bulker CR-RT 05A - Seaman's Application and Interview Record (3) (1) - Copy.docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Fitter",
+        "surname": "Kharytonov",
+        "first_name": "Ievgenii",
+        "middle_name": "Maksym",
+        "date_of_birth": "11.03.1976",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukraine",
+        "permanent_address": "9 Suvorova street,  Bogdanovka, Odessa region, Ukraine",
+        "primary_phone": "+380688959536",
+        "father_name": "Maksym",
+        "mother_name": "Lidiya",
+        "marital_status": "Married",
+        "number_of_children": "2",
+        "beneficiary_full_name": "Valentyna",
+        "beneficiary_relationship": "Wife",
+        "seaman_book_number": "AB 697883",
+        "passport_number": "FJ 627144",
+        "passport_issue_date": "26.10.2017",
+        "passport_expiry_date": "26.10.2027",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "N 8329355",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "height_m": "180",
+        "weight_kg": "86"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AB 697883",
+          "date_of_issue": "23.06.2023",
+          "date_of_expiry": "23.06.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FJ 627144",
+          "date_of_issue": "26.10.2017",
+          "date_of_expiry": "26.10.2027",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "N 8329355",
+          "date_of_issue": "10.01.2019",
+          "date_of_expiry": "08.01.2029",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "16.02.2016",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1570394",
+          "date_issued": "06.06.2023",
+          "expiry_date": "06.06.2028"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1570385",
+          "date_issued": "06.06.2023",
+          "expiry_date": "06.06.2028"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1570383",
+          "date_issued": "06.06.2023",
+          "expiry_date": "06.06.2028"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID"
+        },
+        {
+          "certificate_type": "BRM"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS"
+        },
+        {
+          "certificate_type": "ECDIS"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1570391",
+          "date_issued": "06.06.2023",
+          "expiry_date": "06.06.2028"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Eckert Oldendorff",
+          "vessel_type": "General Cargo Ship",
+          "main_engine": "MAN-B&W 5S50ME-B9.2",
+          "dwt": "25431",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "24.09.2022",
+          "sign_off_date": "28.07.2023",
+          "employer": "Oldendorff Carriers Gmbh & Co /  Asp Crew Management Services Ukraine Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Margret Oldendorff",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "MAN-B&W 6G70ME-C9.2",
+          "dwt": "108051",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "20.10.2021",
+          "sign_off_date": "17.03.2022",
+          "employer": "Oldendorff Carriers Gmbh & Co /  Asp Crew Management Services Ukraine Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Mathilde Oldendorff",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "MAN-B&W 6S70MC-C",
+          "dwt": "106847",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "30.08.2020",
+          "sign_off_date": "07.05.2021",
+          "employer": "Oldendorff Carriers Gmbh & Co /  Asp Crew Management Services Ukraine Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Msc Bianka",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 8G95ME-C",
+          "dwt": "112695",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "27.02.2020",
+          "sign_off_date": "03.07.2020",
+          "employer": "Msc Shipmanagement Ltd /  Msc Crewing Services Llc",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Goldeneye",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "MAN-B&W 5S50ME-B9",
+          "dwt": "23433",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "06.05.2019",
+          "sign_off_date": "20.12.2019",
+          "employer": "Navarone Sa / Daphne Shipping Agency",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Veerseborg",
+          "vessel_type": "General Cargo Ship",
+          "main_engine": "Wärtsilä 6R38",
+          "dwt": "6130",
+          "rank_on_vessel": "Motorman-Fitter",
+          "sign_on_date": "02.03.2018",
+          "sign_off_date": "11.09.2018",
+          "employer": "Albros Shipping & Trading Co /  Marine Job Services",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Fitter",
+          "rank_applied_for": "Fitter"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 25,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 6
+    }
+  },
+  {
+    "file": "MST Ilyash CENTURY Bulker CR-RT 05A - Seaman's Application and Interview Record (3) (1) - Copy.docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Master",
+        "surname": "Ilyash",
+        "first_name": "Igor",
+        "middle_name": "Oleg",
+        "date_of_birth": "08.04.1966",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukraine",
+        "permanent_address": "58 Ak Koroleva  street, apt. 14, Odessa, Ukraine",
+        "primary_phone": "+380503365572",
+        "father_name": "Oleg",
+        "mother_name": "Svetlana",
+        "highest_educational_attainment": "-",
+        "marital_status": "Married",
+        "number_of_children": "1",
+        "beneficiary_full_name": "Alla",
+        "beneficiary_relationship": "Wife",
+        "seaman_book_number": "AC 008418",
+        "passport_number": "FE 119789",
+        "passport_issue_date": "03.02.2016",
+        "passport_expiry_date": "03.02.2026",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "-",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "english_certificate": "-",
+        "height_m": "188",
+        "weight_kg": "95"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AC 008418",
+          "date_of_issue": "19.05.2023",
+          "date_of_expiry": "19.05.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FE 119789",
+          "date_of_issue": "03.02.2016",
+          "date_of_expiry": "03.02.2026",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "-",
+          "date_of_issue": "-",
+          "date_of_expiry": "-",
+          "issuing_authority": "-"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "15.05.2015",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "21099",
+          "date_issued": "19.11.2019",
+          "expiry_date": "19.11.2024"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "17728",
+          "date_issued": "19.11.2019",
+          "expiry_date": "19.11.2024"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "15526",
+          "date_issued": "19.11.2019",
+          "expiry_date": "19.11.2024"
+        },
+        {
+          "certificate_type": "MEDICAL CARE",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1312625",
+          "date_issued": "29.04.2021",
+          "expiry_date": "29.04.2026"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1312626",
+          "date_issued": "29.04.2021",
+          "expiry_date": "29.04.2026"
+        },
+        {
+          "certificate_type": "BRM",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "3616",
+          "date_issued": "19.11.2019",
+          "expiry_date": "19.11.2024"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "15901/2022/08",
+          "date_issued": "17.09.2022",
+          "expiry_date": "16.09.2027"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "7033",
+          "date_issued": "25.11.2019",
+          "expiry_date": "25.11.2024"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Navios Beaufiks",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "90085",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "16.07.2023",
+          "sign_off_date": "10.10.2023",
+          "employer": "Navios Corporation Management /   Epsilon Maritime Services",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Navios Melodia",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "92715",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "13.06.2021",
+          "sign_off_date": "22.02.2022",
+          "employer": "Navios Corporation Management /   Epsilon Maritime Services",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Minoas",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "32987",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "26.06.2020",
+          "sign_off_date": "11.11.2020",
+          "employer": "Aramis Management Inc / Akmar Transport Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Star Harmony",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "29372",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "12.04.2019",
+          "sign_off_date": "23.10.2019",
+          "employer": "Dekoil Inc / Novis Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Strange Attractor",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "31279",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "01.04.2018",
+          "sign_off_date": "21.09.2018",
+          "employer": "Starbulk Sa / Alpha Navigation",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Navios Felicity",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "38364",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "06.04.2017",
+          "sign_off_date": "18.09.2017",
+          "employer": "Navios Shipmanagement Inc /   Epsilon Maritime Services",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Navios Sagittarius",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "38849",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "02.06.2016",
+          "sign_off_date": "17.11.2016",
+          "employer": "Navios Shipmanagement Inc /   Epsilon Maritime Services",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Master",
+          "rank_applied_for": "Master"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 27,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 7
+    }
+  },
+  {
+    "file": "MST Syebov CENTURY Bulker CR-RT 05A - Seaman's Application and Interview Record (3) (1).docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Master",
+        "surname": "Syebov",
+        "first_name": "Yuriy",
+        "middle_name": "Ivan",
+        "date_of_birth": "08.04.1968",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukraine",
+        "permanent_address": "USA",
+        "primary_phone": "+17245547787",
+        "father_name": "Ivan",
+        "highest_educational_attainment": "-",
+        "marital_status": "Single",
+        "beneficiary_full_name": "Lechner Anastasiia",
+        "beneficiary_relationship": "Daughter",
+        "seaman_book_number": "AB 659250",
+        "passport_number": "FB 820796",
+        "passport_issue_date": "22.09.2015",
+        "passport_expiry_date": "22.09.2025",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "R 1235842",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "english_certificate": "-",
+        "height_m": "174",
+        "weight_kg": "75"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AB 659250",
+          "date_of_issue": "28.10.2019",
+          "date_of_expiry": "28.10.2024",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FB 820796",
+          "date_of_issue": "22.09.2015",
+          "date_of_expiry": "22.09.2025",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "R 1235842",
+          "date_of_issue": "28.07.2021",
+          "date_of_expiry": "26.07.2031",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "17.01.2011",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "17017",
+          "date_issued": "18.09.2019",
+          "expiry_date": "18.09.2024"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "14161",
+          "date_issued": "18.09.2019",
+          "expiry_date": "18.09.2024"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "12511",
+          "date_issued": "18.09.2019",
+          "expiry_date": "18.09.2024"
+        },
+        {
+          "certificate_type": "MEDICAL CARE",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "2667",
+          "date_issued": "18.09.2019",
+          "expiry_date": "18.09.2024"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "10701",
+          "date_issued": "18.09.2019",
+          "expiry_date": "18.09.2024"
+        },
+        {
+          "certificate_type": "BRM",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "2752",
+          "date_issued": "18.09.2019",
+          "expiry_date": "18.09.2024"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "13637/2014/11",
+          "date_issued": "03.11.2014",
+          "expiry_date": "15.10.2024"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "5858",
+          "date_issued": "18.09.2019",
+          "expiry_date": "18.09.2024"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "11676",
+          "date_issued": "18.09.2019",
+          "expiry_date": "18.09.2024"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Artemis Bulker",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "35832",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "12.02.2023",
+          "sign_off_date": "21.06.2023",
+          "employer": "Sugahara Kisen Kk /  L-Stream Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Genesis",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "44336",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "30.06.2022",
+          "sign_off_date": "17.10.2022",
+          "employer": "Marlow Navigation Co Ltd-Cyp /  Marlow Navigation Ukraine",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Nikomarin",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "43158",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "15.09.2021",
+          "sign_off_date": "26.01.2022",
+          "employer": "Anosis Maritime Sa / Global Seaways Odessa Ltd.",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Marilita",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "43011",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "14.12.2020",
+          "sign_off_date": "08.04.2021",
+          "employer": "Anosis Maritime Sa / Global Seaways Odessa Ltd.",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Agios Nikolas",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "32360",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "07.01.2020",
+          "sign_off_date": "08.09.2020",
+          "employer": "Anosis Maritime Sa / Global Seaways Odessa Ltd.",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Topaz",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "38845",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "02.02.2019",
+          "sign_off_date": "12.08.2019",
+          "employer": "Am Nomikos Transworld Maritime /  Marine Pro Service",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Dimi",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "32987",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "12.08.2018",
+          "sign_off_date": "09.12.2018",
+          "employer": "Soloi Inc",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Andromache",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "44028",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "24.01.2018",
+          "sign_off_date": "26.05.2018",
+          "employer": "Soloi Inc",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Vangelis",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "94863",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "14.08.2016",
+          "sign_off_date": "11.05.2017",
+          "employer": "TRANSMED SHIPPING CO LTD / Crew Recruitment Services",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Fyla",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "45999",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "12.11.2015",
+          "sign_off_date": "20.04.2016",
+          "employer": "TRANSMED SHIPPING LTD-LIB / Crew Recruitment Services",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Newmax",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "106804",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "15.01.2015",
+          "sign_off_date": "14.07.2015",
+          "employer": "TRANSMED SHIPPING LTD-LIB / Crew Recruitment Services",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Master",
+          "rank_applied_for": "Master"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 25,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 11
+    }
+  },
+  {
+    "file": "MST Tokayev CENTURY Bulker CR-RT 05A - Seaman's Application and Interview Record (3) (1).docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Master",
+        "surname": "Tokayev",
+        "first_name": "Oleksandr",
+        "middle_name": "Anatoliy",
+        "date_of_birth": "04.04.1960",
+        "place_of_birth": "Russia",
+        "nationality": "Ukraine",
+        "permanent_address": "CL Huerto 49 Bl:1 Es:2 Pl:04 Edif. Europa III Torrevieja, Alicante",
+        "primary_phone": "+79497094037",
+        "father_name": "Anatoliy",
+        "mother_name": "Vera",
+        "highest_educational_attainment": "-",
+        "school_name": "-",
+        "marital_status": "Married",
+        "number_of_children": "1",
+        "beneficiary_full_name": "Lyudmyla",
+        "beneficiary_relationship": "Wife",
+        "seaman_book_number": "AC 006657",
+        "passport_number": "FH 921581",
+        "passport_issue_date": "18.09.2017",
+        "passport_expiry_date": "18.09.2027",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "-",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "english_certificate": "-",
+        "height_m": "185",
+        "weight_kg": "99"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AC 006657",
+          "date_of_issue": "28.02.2023",
+          "date_of_expiry": "28.02.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FH 921581",
+          "date_of_issue": "18.09.2017",
+          "date_of_expiry": "18.09.2027",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "-",
+          "date_of_issue": "-",
+          "date_of_expiry": "-",
+          "issuing_authority": "-"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "27.05.2023",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1548211",
+          "date_issued": "15.02.2023",
+          "expiry_date": "15.02.2028"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1548223",
+          "date_issued": "15.02.2023",
+          "expiry_date": "15.02.2028"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1548232",
+          "date_issued": "15.02.2023",
+          "expiry_date": "15.02.2028"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID"
+        },
+        {
+          "certificate_type": "BRM",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1548412",
+          "date_issued": "15.02.2023",
+          "expiry_date": "15.02.2028"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "00113/2023/08",
+          "date_issued": "09.03.2023",
+          "expiry_date": "07.03.2028"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1548386",
+          "date_issued": "15.02.2023",
+          "expiry_date": "15.02.2028"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Navios Vega",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "32379",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "08.12.2021",
+          "sign_off_date": "07.09.2022",
+          "employer": "Navios Corporation Management / Epsilon",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Navios Antares",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "88421",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "25.12.2020",
+          "sign_off_date": "21.09.2021",
+          "employer": "Navios Corporation Management / Epsilon",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Navios Northern Star",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "39643",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "20.08.2019",
+          "sign_off_date": "20.08.2020",
+          "employer": "Kleimar Nv / Epsilon",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Navios Fantastiks",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "90389",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "15.09.2018",
+          "sign_off_date": "29.03.2019",
+          "employer": "Navios Corporation Management / Epsilon",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Navios Lumen",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "94817",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "07.11.2017",
+          "sign_off_date": "04.08.2018",
+          "employer": "Navios Corporation Management / Epsilon",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Navios Antares",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "88421",
+          "rank_on_vessel": "MST",
+          "sign_on_date": "19.11.2016",
+          "sign_off_date": "29.07.2017",
+          "employer": "Navios Corporation Management / Epsilon",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Master",
+          "rank_applied_for": "Master"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 28,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 6
+    }
+  },
+  {
+    "file": "2O Dubinyak  CENTURY Bulker CR-RT 05A - Seaman's Application and Interview Record (3) (1).docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Second Officer",
+        "surname": "Dubinyak",
+        "first_name": "Volodymyr",
+        "middle_name": "Volodymyr",
+        "date_of_birth": "08.01.1977",
+        "place_of_birth": "Belarus",
+        "nationality": "Ukraine",
+        "permanent_address": "29  Volodymyra Vysotskogo street, apt. 36, Odesa, Ukraine",
+        "primary_phone": "+380505543193",
+        "father_name": "Volodymyr",
+        "mother_name": "Valentina",
+        "highest_educational_attainment": "-",
+        "school_name": "-",
+        "marital_status": "Married",
+        "number_of_children": "1",
+        "beneficiary_full_name": "Maryna",
+        "beneficiary_relationship": "Wife",
+        "seaman_book_number": "AC 009680",
+        "passport_number": "FT 315732",
+        "passport_issue_date": "22.11.2018",
+        "passport_expiry_date": "22.11.2028",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "-",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "english_certificate": "-",
+        "height_m": "168",
+        "weight_kg": "78"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AC 009680",
+          "date_of_issue": "04.09.2023",
+          "date_of_expiry": "04.09.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FT 315732",
+          "date_of_issue": "22.11.2018",
+          "date_of_expiry": "22.11.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "-",
+          "date_of_issue": "-",
+          "date_of_expiry": "-",
+          "issuing_authority": "-"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "27.04.2012",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "200558",
+          "date_issued": "08.10.2020",
+          "expiry_date": "08.10.2025"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "200579",
+          "date_issued": "08.10.2020",
+          "expiry_date": "08.10.2025"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "200539",
+          "date_issued": "08.10.2020",
+          "expiry_date": "08.10.2025"
+        },
+        {
+          "certificate_type": "MEDICAL CARE",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "200545",
+          "date_issued": "08.10.2020",
+          "expiry_date": "08.10.2025"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "200550",
+          "date_issued": "08.10.2020",
+          "expiry_date": "08.10.2025"
+        },
+        {
+          "certificate_type": "BRM",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "200567",
+          "date_issued": "08.10.2020",
+          "expiry_date": "08.10.2025"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "14311/2015/07",
+          "date_issued": "13.10.2015",
+          "expiry_date": "10.12.2025"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "200542",
+          "date_issued": "08.10.2020",
+          "expiry_date": "08.10.2025"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1573920",
+          "date_issued": "18.07.2023",
+          "expiry_date": "18.07.2028"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Pacific Hero",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "33090",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "10.08.2022",
+          "sign_off_date": "23.11.2022",
+          "employer": "Tamar Ship Management Ltd /  K-Shipping",
+          "remarks": "The vessel was sold"
+        },
+        {
+          "vessel_name": "Sider Atlantic",
+          "vessel_type": "General Cargo Ship",
+          "dwt": "15545",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "28.05.2021",
+          "sign_off_date": "22.11.2021",
+          "employer": "Nova Ship Tech Sa / D&D Crewing Services",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Venture Dylan",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "26411",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "23.01.2020",
+          "sign_off_date": "02.09.2020",
+          "employer": "Su-Nav Ship Management Pvt Ltd / Zenith Marine LTD",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Notos Venture",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "26411",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "17.01.2019",
+          "sign_off_date": "09.08.2019",
+          "employer": "Su-Nav Ship Management Pvt Ltd / Zenith Marine LTD",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Notos Venture",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "26411",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "16.11.2017",
+          "sign_off_date": "12.08.2018",
+          "employer": "Su-Nav Ship Management Pvt Ltd / Zenith Marine LTD",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Boreas Venture",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "26411",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "27.09.2016",
+          "sign_off_date": "11.03.2017",
+          "employer": "Su-Nav Ship Management Pvt Ltd / Zenith Marine LTD",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Venture Goal",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "26411",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "30.10.2015",
+          "sign_off_date": "18.04.2016",
+          "employer": "Su-Nav Ship Management Pvt Ltd / Zenith Marine LTD",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Venture Goal",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "26411",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "23.01.2015",
+          "sign_off_date": "27.05.2015",
+          "employer": "Su-Nav Ship Management Pvt Ltd / Zenith Marine LTD",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Virtuous Striker",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "33044",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "18.02.2014",
+          "sign_off_date": "16.06.2014",
+          "employer": "Su-Nav Ship Management Pvt Ltd / Zenith Marine LTD",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Second Officer",
+          "rank_applied_for": "Second Officer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 28,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 9
+    }
+  },
+  {
+    "file": "2O Fashchenko CENTURY Bulker CR-RT 05A - Seaman's Application and Interview Record (3) (1).docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Second Officer",
+        "surname": "Fashchenko",
+        "first_name": "Oleksandr",
+        "middle_name": "Yevhenii",
+        "date_of_birth": "30.03.1997",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukraine",
+        "permanent_address": "39 Mira street, Izmail, Odessa region, Ukraine",
+        "primary_phone": "+380965843885",
+        "father_name": "Yevhenii",
+        "mother_name": "Viktoriia",
+        "marital_status": "Single",
+        "number_of_children": "-",
+        "beneficiary_full_name": "Viktoriia",
+        "beneficiary_relationship": "Mother",
+        "seaman_book_number": "AB 555389",
+        "passport_number": "FJ 580317",
+        "passport_issue_date": "26.10.2017",
+        "passport_expiry_date": "26.10.2027",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "M 0857743",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "english_certificate": "-",
+        "height_m": "174",
+        "weight_kg": "85"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AB 555389",
+          "date_of_issue": "22.10.2015",
+          "date_of_expiry": "22.10.2025",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FJ 580317",
+          "date_of_issue": "26.10.2017",
+          "date_of_expiry": "26.10.2027",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "M 0857743",
+          "date_of_issue": "23.01.2017",
+          "date_of_expiry": "19.01.2027",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "16.01.2017",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "8705",
+          "date_issued": "07.05.2019",
+          "expiry_date": "07.05.2024"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "6667",
+          "date_issued": "07.05.2019",
+          "expiry_date": "07.05.2024"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "6015",
+          "date_issued": "07.05.2019",
+          "expiry_date": "07.05.2024"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "5039",
+          "date_issued": "07.05.2019",
+          "expiry_date": "07.05.2024"
+        },
+        {
+          "certificate_type": "BRM"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS"
+        },
+        {
+          "certificate_type": "ECDIS"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "6131",
+          "date_issued": "07.05.2019",
+          "expiry_date": "07.05.2024"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "BBC Saturn",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "25163",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "17.04.2023",
+          "sign_off_date": "24.08.2023",
+          "employer": "Briese Dry Cargo Gmbh & Co Kg . /  Briese Crewing Ukraine",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "BBC Australia",
+          "vessel_type": "General Cargo Ship",
+          "dwt": "5344",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "08.08.2022",
+          "sign_off_date": "08.01.2023",
+          "employer": "Briese Dry Cargo Gmbh & Co Kg /  Briese Crewing Ukraine",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "BBC Arizona",
+          "vessel_type": "General Cargo Ship",
+          "dwt": "9618",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "21.09.2021",
+          "sign_off_date": "27.01.2022",
+          "employer": "Delft Schiffahrt Gmbh & Co Kg /  Briese Crewing Ukraine",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "BBC Nyhavn",
+          "vessel_type": "General Cargo Ship",
+          "dwt": "6351",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "19.02.2021",
+          "sign_off_date": "14.07.2021",
+          "employer": "Held Bereederungs Gmbh & Co Kg/ Briese Crewing Ukraine",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aramis",
+          "vessel_type": "General Cargo Ship",
+          "dwt": "3415",
+          "rank_on_vessel": "OOW/2O",
+          "sign_on_date": "02.06.2020",
+          "sign_off_date": "26.09.2020",
+          "employer": "Briese Dry Cargo Gmbh & Co Kg /  Briese Crewing Ukraine",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "BBC Manitoba",
+          "vessel_type": "General Cargo Ship",
+          "dwt": "9611",
+          "rank_on_vessel": "OS",
+          "sign_on_date": "24.07.2019",
+          "sign_off_date": "21.02.2020",
+          "employer": "Briese Dry Cargo Gmbh & Co Kg /  Briese Crewing Ukraine",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Second Officer",
+          "rank_applied_for": "Second Officer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 26,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 6
+    }
+  },
+  {
+    "file": "2O Kasko CENTURY Bulker CR-RT 05A - Seaman's Application and Interview Record (3) (1).docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Second Officer",
+        "surname": "Kasko",
+        "first_name": "Sergiy",
+        "middle_name": "Sergiy",
+        "date_of_birth": "01.03.1988",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukraine",
+        "permanent_address": "22 Mira Avenue, apt.60, Chornomorsk, Odessa region, Ukraine",
+        "primary_phone": "+380638971626",
+        "father_name": "Sergiy",
+        "mother_name": "Olga",
+        "marital_status": "Married",
+        "number_of_children": "2",
+        "beneficiary_full_name": "Kotelevskaya Tatiana",
+        "beneficiary_relationship": "Wfe",
+        "seaman_book_number": "AB 546990",
+        "passport_number": "FF 359490",
+        "passport_issue_date": "14.12.2016",
+        "passport_expiry_date": "12.12.2026",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "-",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "height_m": "195",
+        "weight_kg": "110"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AB 546990",
+          "date_of_issue": "03.06.2015",
+          "date_of_expiry": "25.11.2024",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FF 359490",
+          "date_of_issue": "14.12.2016",
+          "date_of_expiry": "12.12.2026",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "-",
+          "date_of_issue": "-",
+          "date_of_expiry": "-",
+          "issuing_authority": "-"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "27.07.2018",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "21520",
+          "date_issued": "25.11.2019",
+          "expiry_date": "25.11.2024"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "18189",
+          "date_issued": "27.11.2019",
+          "expiry_date": "27.11.2024"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "15893",
+          "date_issued": "26.11.2019",
+          "expiry_date": "26.11.2024"
+        },
+        {
+          "certificate_type": "MEDICAL CARE",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "3577",
+          "date_issued": "28.11.2019",
+          "expiry_date": "28.11.2024"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "13630",
+          "date_issued": "27.11.2019",
+          "expiry_date": "27.11.2024"
+        },
+        {
+          "certificate_type": "BRM",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "3763",
+          "date_issued": "28.11.2019",
+          "expiry_date": "28.11.2024"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "00180/2015/03",
+          "date_issued": "27.04.2015",
+          "expiry_date": "16.12.2024"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "7093",
+          "date_issued": "27.11.2019",
+          "expiry_date": "27.11.2024"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Lmz Phoebe",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "32987",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "14.04.2023",
+          "sign_off_date": "22.10.2023",
+          "employer": "Lmz Shipping Sa Fze / Crossworld Marine Services Odesa",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Lmz Francisco",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "44114",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "19.05.2021",
+          "sign_off_date": "27.01.2022",
+          "employer": "Lmz Shipping Sa / Crossworld Marine Services Odesa",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Lmz Vega",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "32983",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "15.06.2020",
+          "sign_off_date": "30.01.2021",
+          "employer": "Lmz Shipping Sa Fze /  Crossworld Marine Services Odesa",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Ssi Avenger",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "29414",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "10.10.2018",
+          "sign_off_date": "31.03.2019",
+          "employer": "Densay Gemi Isletmeciligi /  Euro Flagman",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Global Striker",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "20254",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "12.02.2018",
+          "sign_off_date": "29.06.2018",
+          "employer": "Sejin Marine Co Ltd/ Euro Flagman",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Benjamas Naree",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "23670",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "03.10.2017",
+          "sign_off_date": "27.01.2018",
+          "employer": "Great Circle Shipping Agency / Oceancrew",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Second Officer",
+          "rank_applied_for": "Second Officer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 25,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 6
+    }
+  },
+  {
+    "file": "2O Ulianov CENTURY Bulker CR-RT 05A - Seaman's Application and Interview Record (3) (1).docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Second Officer",
+        "surname": "Ulianov",
+        "first_name": "Pavlo",
+        "middle_name": "Pavlo",
+        "date_of_birth": "24.01.1995",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukraine",
+        "permanent_address": "1 Masterska str., apt.30, Odessa, Ukraine",
+        "primary_phone": "+380932795479",
+        "father_name": "Pavlo",
+        "mother_name": "Ludmila",
+        "highest_educational_attainment": "-",
+        "marital_status": "-",
+        "number_of_children": "-",
+        "beneficiary_full_name": "Ludmila",
+        "beneficiary_relationship": "Mother",
+        "seaman_book_number": "AC 009069",
+        "passport_number": "FY 238685",
+        "passport_issue_date": "14.01.2020",
+        "passport_expiry_date": "14.01.2030",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "P 1907871",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "english_certificate": "-",
+        "height_m": "190",
+        "weight_kg": "75"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AC 009069",
+          "date_of_issue": "10.07.2023",
+          "date_of_expiry": "10.07.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FY 238685",
+          "date_of_issue": "14.01.2020",
+          "date_of_expiry": "14.01.2030",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "P 1907871",
+          "date_of_issue": "27.06.2019",
+          "date_of_expiry": "25.06.2029",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "23.07.2012",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1331858",
+          "date_issued": "02.06.2021",
+          "expiry_date": "02.06.2026"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1332556",
+          "date_issued": "03.06.2021",
+          "expiry_date": "03.06.2026"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1334214",
+          "date_issued": "07.06.2021",
+          "expiry_date": "07.06.2026"
+        },
+        {
+          "certificate_type": "MEDICAL CARE",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1333608",
+          "date_issued": "04.06.2021",
+          "expiry_date": "04.06.2026"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1356578",
+          "date_issued": "06.07.2021",
+          "expiry_date": "06.07.2026"
+        },
+        {
+          "certificate_type": "BRM",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "510",
+          "date_issued": "05.02.2020",
+          "expiry_date": "05.02.2025"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "06210/2023/08",
+          "date_issued": "21.07.2023",
+          "expiry_date": "18.07.2028"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "659",
+          "date_issued": "05.02.2020",
+          "expiry_date": "05.02.2025"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "7937",
+          "date_issued": "12.06.2019",
+          "expiry_date": "12.06.2024"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Sheila",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "34206",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "07.10.2021",
+          "sign_off_date": "03.03.2022",
+          "employer": "Lemissoler Shipmanagement Ltd / Lemissoler SM",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Acra",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "44192",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "07.11.2020",
+          "sign_off_date": "11.01.2021",
+          "employer": "Marmaras Navigation Ltd/ Univis",
+          "remarks": "The seafarer’s request"
+        },
+        {
+          "vessel_name": "Aston",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "36551",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "16.03.2020",
+          "sign_off_date": "13.09.2020",
+          "employer": "Virono Union Maritime Sa / BSM",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Anogyra",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "33044",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "26.08.2019",
+          "sign_off_date": "29.11.2019",
+          "employer": "Lemissoler Shipmanagement Ltd / Lemissoler SM",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Lefkoniko",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "33044",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "27.02.2018",
+          "sign_off_date": "13.07.2018",
+          "employer": "Lemissoler Shipmanagement Ltd / Lemissoler SM",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Lefkoniko",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "33044",
+          "rank_on_vessel": "3O",
+          "sign_on_date": "04.07.2017",
+          "sign_off_date": "27.12.2017",
+          "employer": "Lemissoler Shipmanagement Ltd / Lemissoler SM",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Second Officer",
+          "rank_applied_for": "Second Officer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 27,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 6
+    }
+  },
+  {
+    "file": "2O Volkov CENTURY Bulker CR-RT 05A - Seaman's Application and Interview Record (3) (1).docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Second Officer",
+        "surname": "Volkov",
+        "first_name": "Oleksandr",
+        "middle_name": "Sergii",
+        "date_of_birth": "29.01.1989",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukraine",
+        "permanent_address": "11  Chrobrego street, Poznan, Poland",
+        "primary_phone": "+48536095131",
+        "father_name": "Sergii",
+        "mother_name": "Nina",
+        "marital_status": "Married",
+        "number_of_children": "1",
+        "beneficiary_full_name": "Olena",
+        "beneficiary_relationship": "Wife",
+        "seaman_book_number": "AB 664128",
+        "passport_number": "FJ 867208",
+        "passport_issue_date": "06.11.2017",
+        "passport_expiry_date": "06.11.2027",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "-",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Moderate",
+        "english_certificate": "-",
+        "height_m": "182",
+        "weight_kg": "78"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AB 664128",
+          "date_of_issue": "22.07.2020",
+          "date_of_expiry": "22.07.2025",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FJ 867208",
+          "date_of_issue": "06.11.2017",
+          "date_of_expiry": "06.11.2027",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "-",
+          "date_of_issue": "-",
+          "date_of_expiry": "-",
+          "issuing_authority": "-"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "22.03.2016",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "142006",
+          "date_issued": "07.05.2020",
+          "expiry_date": "07.05.2025"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "133/2020/4",
+          "date_issued": "23.10.2020",
+          "expiry_date": "23.10.2025"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "142012",
+          "date_issued": "07.05.2020",
+          "expiry_date": "07.05.2025"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "141995",
+          "date_issued": "07.05.2020",
+          "expiry_date": "07.05.2025"
+        },
+        {
+          "certificate_type": "BRM",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "230485",
+          "date_issued": "18.08.2020",
+          "expiry_date": "18.08.2025"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "13308/2016/07",
+          "date_issued": "08.07.2016",
+          "expiry_date": "23.06.2025"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "32334224/28/0096/023",
+          "date_issued": "23.08.2023",
+          "expiry_date": "23.08.2028"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Anthia",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "17697",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "11.01.2023",
+          "sign_off_date": "19.07.2023",
+          "employer": "Alloceans Shipping Co Ltd /  Seagull Odesa",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Amapola",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "22223",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "27.08.2021",
+          "sign_off_date": "04.09.2022",
+          "employer": "Alloceans Shipping Co Ltd /  Seagull Odesa",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Adelina",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "22223",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "25.11.2020",
+          "sign_off_date": "30.05.2021",
+          "employer": "Alloceans Shipping Co Ltd /  Seagull Odesa",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Araya",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "17697",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "02.05.2019",
+          "sign_off_date": "22.02.2020",
+          "employer": "Alloceans Shipping Co Ltd /  Seagull Odesa",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Anthia",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "17697",
+          "rank_on_vessel": "3O",
+          "sign_on_date": "12.02.2018",
+          "sign_off_date": "12.11.2018",
+          "employer": "Alloceans Shipping Co Ltd /  Seagull Odesa",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Araya",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "17697",
+          "rank_on_vessel": "3O",
+          "sign_on_date": "29.11.2016",
+          "sign_off_date": "12.09.2017",
+          "employer": "Alloceans Shipping Co Ltd /  Seagull Odesa",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Second Officer",
+          "rank_applied_for": "Second Officer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 26,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 6
+    }
+  },
+  {
+    "file": "2O Yurchenko CENTURY Bulker CR-RT 05A - Seaman's Application and Interview Record (3) (1).docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Second Officer",
+        "surname": "Yurchenko",
+        "first_name": "Vyacheslav",
+        "middle_name": "Henadiy",
+        "date_of_birth": "16.07.1986",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukraine",
+        "permanent_address": "3 Second Kulikovskyi lane, apt. 69, Odesa, Ukraine",
+        "primary_phone": "+37360525760",
+        "father_name": "Henadiy",
+        "mother_name": "Olena",
+        "marital_status": "Married",
+        "number_of_children": "1",
+        "beneficiary_full_name": "Natalia",
+        "beneficiary_relationship": "Wife",
+        "seaman_book_number": "AC 010195",
+        "passport_number": "FE 054972",
+        "passport_issue_date": "13.01.2016",
+        "passport_expiry_date": "13.01.2026",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "-",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "english_certificate": "-",
+        "height_m": "183",
+        "weight_kg": "83"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AC 010195",
+          "date_of_issue": "08.08.2023",
+          "date_of_expiry": "08.08.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FE 054972",
+          "date_of_issue": "13.01.2016",
+          "date_of_expiry": "13.01.2026",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "-",
+          "date_of_issue": "-",
+          "date_of_expiry": "-",
+          "issuing_authority": "-"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "10.08.2018",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "010211",
+          "date_issued": "11.07.2023",
+          "expiry_date": "11.07.2028"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "020160",
+          "date_issued": "11.07.2023",
+          "expiry_date": "11.07.2028"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "030147",
+          "date_issued": "11.07.2023",
+          "expiry_date": "11.08.2026"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "040110",
+          "date_issued": "11.07.2023",
+          "expiry_date": "11.03.2028"
+        },
+        {
+          "certificate_type": "BRM",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "260039",
+          "date_issued": "11.07.2023",
+          "expiry_date": "11.03.2028"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "06406/2023/08",
+          "date_issued": "01.08.2023",
+          "expiry_date": "26.07.2028"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "250053",
+          "date_issued": "11.07.2023",
+          "expiry_date": "11.03.2028"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "198825",
+          "date_issued": "06.10.2020",
+          "expiry_date": "06.10.2025"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Elong Elong",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "13691",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "21.06.2022",
+          "sign_off_date": "21.12.2022",
+          "employer": "Marine Repair & Supply Pte Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Elong Elong",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "13691",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "21.12.2021",
+          "sign_off_date": "21.06.2022",
+          "employer": "Marine Repair & Supply Pte Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Rio Congue",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "7078",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "11.12.2020",
+          "sign_off_date": "09.07.2021",
+          "employer": "Marine Repair & Supply Pte Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Elong Elong",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "13691",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "12.03.2020",
+          "sign_off_date": "17.08.2020",
+          "employer": "Marine Repair & Supply Pte Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Elong Elong",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "13691",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "09.11.2019",
+          "sign_off_date": "12.03.2020",
+          "employer": "Marine Repair & Supply Pte Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Elong Elong",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "13691",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "26.05.2019",
+          "sign_off_date": "09.11.2019",
+          "employer": "Marine Repair & Supply Pte Ltd",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Second Officer",
+          "rank_applied_for": "Second Officer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 26,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 6
+    }
+  },
+  {
+    "file": "3E Khmelevskyi CENTURY Bulker CR-RT 05A - Seaman's Application and Interview Record (3) (1).docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Third Engineer",
+        "surname": "Khmelevskyi",
+        "first_name": "Igor",
+        "middle_name": "Anatoliy",
+        "date_of_birth": "14.01.1987",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukraine",
+        "permanent_address": "25 Mira avenue, apt. 69, Chernomorsk, Odessa region, Ukraine",
+        "primary_phone": "+380939265282",
+        "father_name": "Anatoliy",
+        "mother_name": "Ludmila",
+        "marital_status": "Married",
+        "beneficiary_full_name": "Oleksandra",
+        "beneficiary_relationship": "Wife",
+        "seaman_book_number": "AA 0029632",
+        "passport_number": "FH 905730",
+        "passport_issue_date": "15.09.2017",
+        "passport_expiry_date": "15.09.2027",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "We will revert",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "english_certificate": "-",
+        "height_m": "183",
+        "weight_kg": "76"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AA 0029632",
+          "date_of_issue": "05.06.2023",
+          "date_of_expiry": "05.06.2028",
+          "issuing_authority": "Poland"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FH 905730",
+          "date_of_issue": "15.09.2017",
+          "date_of_expiry": "15.09.2027",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "We will revert"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "24.01.2012",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "244915",
+          "date_issued": "12.01.2021",
+          "expiry_date": "12.01.2026"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "244916",
+          "date_issued": "12.01.2021",
+          "expiry_date": "12.01.2026"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "244921",
+          "date_issued": "12.01.2021",
+          "expiry_date": "12.01.2026"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID"
+        },
+        {
+          "certificate_type": "BRM"
+        },
+        {
+          "certificate_type": "ERM",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "03209",
+          "date_issued": "07.11.2023",
+          "expiry_date": "07.11.2028"
+        },
+        {
+          "certificate_type": "GMDSS"
+        },
+        {
+          "certificate_type": "ECDIS"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "244924",
+          "date_issued": "12.01.2021",
+          "expiry_date": "12.01.2026"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "MSC JUSTICE VIII",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 10K98ME-C",
+          "dwt": "94419",
+          "rank_on_vessel": "3E",
+          "sign_on_date": "12.06.2023",
+          "sign_off_date": "01.10.2023",
+          "employer": "Msc Shipmanagement Ltd / /Uniteam Ukraine",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Northern Magnum",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 10K98MC-C",
+          "dwt": "75590",
+          "rank_on_vessel": "3E",
+          "sign_on_date": "22.10.2022",
+          "sign_off_date": "04.05.2023",
+          "employer": "V Ships Hamburg Gmbh & Co Kg /Uniteam Ukraine",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "MSC Mundra (ex.  Northern Julie)",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 12K98ME-C",
+          "dwt": "94483",
+          "rank_on_vessel": "3E",
+          "sign_on_date": "30.09.2021",
+          "sign_off_date": "17.10.2021",
+          "employer": "V Ships Hamburg Gmbh & Co Kg /Uniteam Ukraine",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Northern Julie",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 12K98ME-C",
+          "dwt": "94483",
+          "rank_on_vessel": "3E",
+          "sign_on_date": "14.05.2021",
+          "sign_off_date": "30.09.2021",
+          "employer": "V Ships Hamburg Gmbh & Co Kg /Uniteam Ukraine",
+          "remarks": "The vessel was renamed"
+        },
+        {
+          "vessel_name": "Northern Jade",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 12K98ME-C",
+          "dwt": "94483",
+          "rank_on_vessel": "3E",
+          "sign_on_date": "17.07.2020",
+          "sign_off_date": "26.11.2020",
+          "employer": "V Ships Hamburg Gmbh & Co Kg /Uniteam Ukraine",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Antwerp Trader",
+          "vessel_type": "Container Ship",
+          "main_engine": "Sulzer 7RTA72U-B",
+          "dwt": "27059",
+          "rank_on_vessel": "3E",
+          "sign_on_date": "06.01.2020",
+          "sign_off_date": "25.06.2020",
+          "employer": "Uniteam Marine Shipping Gmbh / Uniteam Ukraine",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Kiel Trader",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 7L70MC",
+          "dwt": "25703",
+          "rank_on_vessel": "3E",
+          "sign_on_date": "16.04.2019",
+          "sign_off_date": "03.10.2019",
+          "employer": "Uniteam Marine Shipping Gmbh / Uniteam Ukraine",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Third Engineer",
+          "rank_applied_for": "Third Engineer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 25,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 7
+    }
+  },
+  {
+    "file": "3O Valyanov CR-RT 05A - Seaman's Application and Interview Record.docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Third Officer",
+        "surname": "Valyanov",
+        "first_name": "Yevgen",
+        "middle_name": "Dmytro",
+        "date_of_birth": "08.01.1985",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukrainian",
+        "permanent_address": "14/1 Lenin Avenue 14/1 apt. 43, Izmail, Odessa region, Ukraine",
+        "primary_phone": "+380634873178",
+        "father_name": "Dmytro",
+        "mother_name": "Maria",
+        "highest_educational_attainment": "Navigator",
+        "school_name": "Marine and river fleet college of Kyiv state maritime academy",
+        "graduation_year": "2017",
+        "marital_status": "Married",
+        "number_of_children": "2",
+        "beneficiary_full_name": "Valyanova Alla",
+        "beneficiary_relationship": "Wife",
+        "seaman_book_number": "AB 637593",
+        "passport_number": "FP 346200",
+        "passport_issue_date": "23.06.2018",
+        "passport_expiry_date": "23.06.2028",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "N 6681710",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "height_m": "1.82",
+        "weight_kg": "89"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AB 637593",
+          "date_of_issue": "03.06.2019",
+          "date_of_expiry": "03.06.2024",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FP 346200",
+          "date_of_issue": "23.06.2018",
+          "date_of_expiry": "23.06.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "N 6681710",
+          "date_of_issue": "14.08.2018",
+          "date_of_expiry": "12.08.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "13.03.2007",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "certificate_number": "1446852",
+          "date_issued": "18.04.2022",
+          "expiry_date": "18.04.2027"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID"
+        },
+        {
+          "certificate_type": "BRM"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS"
+        },
+        {
+          "certificate_type": "ECDIS"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Rea",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "20809",
+          "rank_on_vessel": "3O",
+          "sign_on_date": "09.09.2021",
+          "sign_off_date": "16.06.2022",
+          "employer": "Franco Naviera Co Sa/Epsilon",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aeolia",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "35812",
+          "rank_on_vessel": "3O",
+          "sign_on_date": "11.11.2020",
+          "sign_off_date": "18.07.2021",
+          "employer": "Livanos Maritime Co Ltd / Epsilon",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Arietta A",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "33044",
+          "rank_on_vessel": "3O",
+          "sign_on_date": "30.10.2019",
+          "sign_off_date": "14.06.2020",
+          "employer": "Livanos Maritime Co Ltd  / Epsilon",
+          "remarks": "Promoted"
+        },
+        {
+          "vessel_name": "Arietta A",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "33044",
+          "rank_on_vessel": "AB",
+          "sign_on_date": "22.07.2019",
+          "sign_off_date": "30.10.2019",
+          "employer": "Livanos Maritime Co Ltd  / Epsilon",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Ariadne",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "33044",
+          "rank_on_vessel": "AB",
+          "sign_on_date": "06.10.2019",
+          "sign_off_date": "10.05.2019",
+          "employer": "Livanos Maritime Co Ltd / Epsilon",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Cape Bacton",
+          "vessel_type": "Chemical / Oil Products Tanker",
+          "dwt": "25108",
+          "rank_on_vessel": "AB",
+          "sign_on_date": "16.09.2017",
+          "sign_off_date": "26.05.2018",
+          "employer": "Columbia Shipmanagement Ltd  / Columbia",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Cape Baldez",
+          "vessel_type": "Crude Oil Tanker",
+          "dwt": "81093",
+          "rank_on_vessel": "3O",
+          "sign_on_date": "20.06.2017",
+          "sign_off_date": "07.08.2017",
+          "employer": "Wallem Shipmanagement Ltd / Columbia",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Nordic Zenith",
+          "vessel_type": "Crude Oil Tanker",
+          "dwt": "81509",
+          "rank_on_vessel": "AB",
+          "sign_on_date": "17.06.2016",
+          "sign_off_date": "25.12.2016",
+          "employer": "Columbia Shipmanagement-Geu  / Columbia",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Mare Battic",
+          "vessel_type": "Chemical / Oil Products Tanker",
+          "dwt": "24112",
+          "rank_on_vessel": "OS",
+          "sign_on_date": "01.08.2015",
+          "sign_off_date": "04.02.2016",
+          "employer": "Columbia Shipmanagement-Geu/ Columbia",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Cape Bellavista",
+          "vessel_type": "Crude Oil Tanker",
+          "dwt": "81270",
+          "rank_on_vessel": "OS",
+          "sign_on_date": "11.07.2014",
+          "sign_off_date": "06.02.2015",
+          "employer": "Columbia Shipmanagement-Geu  / Columbia",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Third Officer",
+          "rank_applied_for": "Third Officer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 28,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 10
+    }
+  },
+  {
+    "file": "CENTURY Bulker CR-RT 05A - Seaman's Application and Interview Record (3) (1) - Copy.docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Third Engineer",
+        "surname": "Goncharov",
+        "first_name": "Andriy",
+        "middle_name": "Serhii",
+        "date_of_birth": "08.08.1989",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukraine",
+        "permanent_address": "1 Kotovskogo street, Vilkovo, Odesa region, Ukraine",
+        "primary_phone": "+380731202347",
+        "father_name": "Serhii",
+        "mother_name": "Anna",
+        "marital_status": "Single",
+        "number_of_children": "-",
+        "beneficiary_full_name": "Goncharova Anna",
+        "beneficiary_relationship": "Mother",
+        "seaman_book_number": "AB 622031",
+        "passport_number": "FU 198552",
+        "passport_issue_date": "19.02.2019",
+        "passport_expiry_date": "19.02.2029",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "-",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "height_m": "185",
+        "weight_kg": "85"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AB 622031",
+          "date_of_issue": "19.02.2018",
+          "date_of_expiry": "19.02.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FU 198552",
+          "date_of_issue": "19.02.2019",
+          "date_of_expiry": "19.02.2029",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "-",
+          "date_of_issue": "-",
+          "date_of_expiry": "-",
+          "issuing_authority": "-"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "10.06.2019",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "139945",
+          "date_issued": "08.04.2020",
+          "expiry_date": "08.04.2025"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "139946",
+          "date_issued": "08.04.2020",
+          "expiry_date": "08.04.2025"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "139947",
+          "date_issued": "08.04.2020",
+          "expiry_date": "08.04.2025"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "139948",
+          "date_issued": "08.04.2020",
+          "expiry_date": "08.04.2025"
+        },
+        {
+          "certificate_type": "BRM"
+        },
+        {
+          "certificate_type": "ERM",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "0006",
+          "date_issued": "17.03.2020",
+          "expiry_date": "17.03.2025"
+        },
+        {
+          "certificate_type": "GMDSS"
+        },
+        {
+          "certificate_type": "ECDIS"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "0795",
+          "date_issued": "19.09.2023",
+          "expiry_date": "19.09.2028"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "St. Andrew",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "MAN-B&W 6S42MC",
+          "dwt": "20809",
+          "rank_on_vessel": "3E",
+          "sign_on_date": "09.11.2022",
+          "sign_off_date": "24.05.2023",
+          "employer": "Tri Bulk Shipping Ltd/  Olive Crew Management",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Td Hamburg",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "Man-B&W 5s60me-C",
+          "dwt": "36347",
+          "rank_on_vessel": "3e",
+          "sign_on_date": "01.03.2021",
+          "sign_off_date": "24.02.2022",
+          "employer": "Splosna Plovba Doo/  Di. Star Marine",
+          "remarks": "Eoc"
+        },
+        {
+          "vessel_name": "Td Tokyo",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "Man-B&W 5s60me-C",
+          "dwt": "36347",
+          "rank_on_vessel": "3e",
+          "sign_on_date": "26.07.2019",
+          "sign_off_date": "13.03.2020",
+          "employer": "Splosna Plovba Doo/  Di. Star Marine",
+          "remarks": "Eoc"
+        },
+        {
+          "vessel_name": "Wadi Alyarmour",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "Man-B&W 7s50mc-C",
+          "dwt": "43726",
+          "rank_on_vessel": "3e",
+          "sign_on_date": "10.09.2018",
+          "sign_off_date": "15.02.2019",
+          "employer": "National Navigation Co",
+          "remarks": "Eoc"
+        },
+        {
+          "vessel_name": "Wadi Tiba",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "Man-B&W 7s50mc-C",
+          "dwt": "43736",
+          "rank_on_vessel": "3e",
+          "sign_on_date": "02.03.2018",
+          "sign_off_date": "11.07.2018",
+          "employer": "National Navigation Co",
+          "remarks": "Eoc"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Third Engineer",
+          "rank_applied_for": "Third Engineer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 25,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 5
+    }
+  },
+  {
+    "file": "CHANDRIS CR-RT 05A - SEAMEN'S APPLICATION & INTERVIEW RECORD.docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "COLOURED PHOTO",
+        "middle_name": "COLOURED PHOTO",
+        "nationality": "COLOURED PHOTO",
+        "permanent_address": "COLOURED PHOTO",
+        "primary_phone": "COLOURED PHOTO",
+        "mother_name": "COLOURED PHOTO"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book"
+        },
+        {
+          "document_type": "Passport"
+        },
+        {
+          "document_type": "USA Visa"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING"
+        },
+        {
+          "certificate_type": "TANKER SAFETY/ V1-1 (GTF)"
+        },
+        {
+          "certificate_type": "TANKER SAFETY/ V1-2"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID"
+        },
+        {
+          "certificate_type": "BRM"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS"
+        },
+        {
+          "certificate_type": "ECDIS"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)"
+        },
+        {
+          "certificate_type": "Seafarer’s Signature_______________________",
+          "issuing_authority": "Seafarer’s Signature_______________________",
+          "certificate_number": "Seafarer’s Signature_______________________",
+          "date_issued": "Seafarer’s Signature_______________________",
+          "expiry_date": "Seafarer’s Signature_______________________"
+        },
+        {
+          "certificate_type": "D.  FLAG DOCUMENTS",
+          "issuing_authority": "D.  FLAG DOCUMENTS",
+          "certificate_number": "D.  FLAG DOCUMENTS",
+          "date_issued": "D.  FLAG DOCUMENTS",
+          "expiry_date": "D.  FLAG DOCUMENTS"
+        },
+        {
+          "certificate_type": "FLAG",
+          "issuing_authority": "DOC No",
+          "certificate_number": "DATE OF ISSUANCE",
+          "date_issued": "DATE OF ISSUANCE",
+          "expiry_date": "DATE OF EXPIRY"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "COLOURED PHOTO",
+          "rank_applied_for": "COLOURED PHOTO"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 6,
+      "documents": 4,
+      "certificates": 15,
+      "sea_service": 0
+    }
+  },
+  {
+    "file": "CO Skladny CENTURY Bulker CR-RT 05A - Seaman's Application and Interview Record (3) (1).docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Chief Officer",
+        "surname": "Skladny",
+        "first_name": "Yuriy",
+        "middle_name": "Yuriy",
+        "date_of_birth": "08.08.1969",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukraine",
+        "permanent_address": "M. Dontza 19b ap.11, Kyiv, \tUkraine",
+        "primary_phone": "+380985565050",
+        "father_name": "Yuriy",
+        "mother_name": "Anna",
+        "marital_status": "Married",
+        "number_of_children": "3",
+        "beneficiary_full_name": "Olesya",
+        "beneficiary_relationship": "Wife",
+        "seaman_book_number": "AB 616459",
+        "passport_number": "FT 381362",
+        "passport_issue_date": "28.11.2018",
+        "passport_expiry_date": "28.11.2028",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "N 3847224",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "english_certificate": "-",
+        "height_m": "187",
+        "weight_kg": "96"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AB 616459",
+          "date_of_issue": "12.09.2017",
+          "date_of_expiry": "09.09.2027",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FT 381362",
+          "date_of_issue": "28.11.2018",
+          "date_of_expiry": "28.11.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "N 3847224",
+          "date_of_issue": "05.06.2018",
+          "date_of_expiry": "03.06.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "30.05.2018",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "05996",
+          "date_issued": "12.04.2019",
+          "expiry_date": "12.04.2024"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "04785",
+          "date_issued": "12.04.2019",
+          "expiry_date": "12.04.2024"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "04399",
+          "date_issued": "12.04.2019",
+          "expiry_date": "12.04.2024"
+        },
+        {
+          "certificate_type": "MEDICAL CARE",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "00649",
+          "date_issued": "12.04.2019",
+          "expiry_date": "12.04.2024"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "03592",
+          "date_issued": "12.04.2019",
+          "expiry_date": "12.04.2024"
+        },
+        {
+          "certificate_type": "BRM",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "00472",
+          "date_issued": "12.04.2019",
+          "expiry_date": "12.04.2024"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "10984/2014/07",
+          "date_issued": "29.04.2014",
+          "expiry_date": "15.05.2024"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "02816",
+          "date_issued": "12.04.2019",
+          "expiry_date": "12.04.2024"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Delta Avon",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "33044",
+          "rank_on_vessel": "СО",
+          "sign_on_date": "27.07.2023",
+          "sign_off_date": "22.10.2023",
+          "employer": "Delta Corp Ship Mgmt Dmcco/ Vival Marine",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Maria D",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "41662",
+          "rank_on_vessel": "СО",
+          "sign_on_date": "15.01.2023",
+          "sign_off_date": "13.07.2023",
+          "employer": "V Ships Greece Ltd / V Ships",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Maria D",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "41662",
+          "rank_on_vessel": "СО",
+          "sign_on_date": "04.11.2021",
+          "sign_off_date": "30.08.2022",
+          "employer": "V Ships Greece Ltd / V Ships",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Egyptian Mike",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "45263",
+          "rank_on_vessel": "СО",
+          "sign_on_date": "07.08.2020",
+          "sign_off_date": "07.08.2021",
+          "employer": "V Ships Greece Ltd / V Ships",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Antoine",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "31280",
+          "rank_on_vessel": "СО",
+          "sign_on_date": "15.09.2019",
+          "sign_off_date": "11.07.2020",
+          "employer": "V Ships Greece Ltd / V Ships",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Harm",
+          "vessel_type": "Bulk Carrier",
+          "dwt": "51225",
+          "rank_on_vessel": "СО",
+          "sign_on_date": "02.07.2018",
+          "sign_off_date": "17.10.2018",
+          "employer": "Transeste Schiffahrt Gmbh / Di Star Marine",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Chief Officer",
+          "rank_applied_for": "Chief Officer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 26,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 6
+    }
+  },
+  {
+    "file": "CR-RT 05A - SEAMEN'S APPLICATION & INTERVIEW RECORD - Copy.docx",
+    "parsed": {
+      "personal_data": {
+        "surname": "Tsankov",
+        "first_name": "Sergiy",
+        "middle_name": "Mykola",
+        "date_of_birth": "13.07.1981",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukraine",
+        "permanent_address": "8A Kievskaya str., apt.43,  Nikolaev, Ukraine",
+        "primary_phone": "+380939128883",
+        "father_name": "Mykola",
+        "mother_name": "Vera",
+        "beneficiary_full_name": "Tsankova Vera",
+        "beneficiary_relationship": "Mother",
+        "height_m": "173",
+        "weight_kg": "80"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book"
+        },
+        {
+          "document_type": "Passport"
+        },
+        {
+          "document_type": "USA Visa"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING"
+        },
+        {
+          "certificate_type": "TANKER SAFETY/ V1-1 (GTF)"
+        },
+        {
+          "certificate_type": "TANKER SAFETY/ V1-2"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID"
+        },
+        {
+          "certificate_type": "BRM"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS"
+        },
+        {
+          "certificate_type": "ECDIS"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)"
+        },
+        {
+          "certificate_type": "D.  FLAG DOCUMENTS",
+          "issuing_authority": "D.  FLAG DOCUMENTS",
+          "certificate_number": "D.  FLAG DOCUMENTS",
+          "date_issued": "D.  FLAG DOCUMENTS",
+          "expiry_date": "D.  FLAG DOCUMENTS"
+        },
+        {
+          "certificate_type": "FLAG",
+          "issuing_authority": "DOC No",
+          "certificate_number": "DATE OF ISSUANCE",
+          "date_issued": "DATE OF ISSUANCE",
+          "expiry_date": "DATE OF EXPIRY"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Breede",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MANB&W 6S35MC",
+          "dwt": "11271",
+          "rank_on_vessel": "ETO",
+          "employer": "Unicorn Shipping"
+        },
+        {
+          "vessel_name": "Inyala",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MANB&W 6S50MC-С",
+          "dwt": "25400",
+          "rank_on_vessel": "ETO",
+          "employer": "Unicorn Shipping"
+        },
+        {
+          "vessel_name": "Inyala",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MANB&W 6S50MC-С",
+          "dwt": "25400",
+          "rank_on_vessel": "ETO",
+          "employer": "Unicorn Shipping"
+        },
+        {
+          "vessel_name": "Umgeni",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MANB&W 6S35MC",
+          "dwt": "11271",
+          "rank_on_vessel": "ETO",
+          "employer": "Unicorn Shipping"
+        },
+        {
+          "vessel_name": "Umgeni",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MANB&W 6S35MC",
+          "dwt": "11271",
+          "rank_on_vessel": "ETO",
+          "employer": "Unicorn Shipping"
+        },
+        {
+          "vessel_name": "Inyala",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MANB&W 6S50MC-С",
+          "dwt": "25400",
+          "rank_on_vessel": "ETO",
+          "employer": "Unicorn Shipping"
+        },
+        {
+          "vessel_name": "Berg",
+          "vessel_type": "Oil Products Tanker",
+          "main_engine": "MANB&W 6S35MC",
+          "dwt": "11271",
+          "rank_on_vessel": "ETO",
+          "employer": "Unicorn Shipping"
+        },
+        {
+          "vessel_name": "Inyala",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MANB&W 6S50MC-С",
+          "dwt": "25400",
+          "rank_on_vessel": "ETO",
+          "employer": "Unicorn Shipping"
+        },
+        {
+          "vessel_name": "Breede",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MANB&W 6S35MC",
+          "dwt": "11271",
+          "rank_on_vessel": "ETO",
+          "employer": "Unicorn Shipping"
+        },
+        {
+          "vessel_name": "Leopard Star",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MANB&W 6S50ME",
+          "dwt": "29939",
+          "rank_on_vessel": "ETO",
+          "employer": "Unicorn Shipping"
+        },
+        {
+          "vessel_name": "Leopard Sun",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MANB&W 6S50ME",
+          "dwt": "29939",
+          "rank_on_vessel": "ETO",
+          "employer": "Unicorn Shipping"
+        },
+        {
+          "vessel_name": "Rhino",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MANB&W 6S60MC",
+          "dwt": "25432",
+          "rank_on_vessel": "ETO",
+          "employer": "Unicorn Shipping"
+        },
+        {
+          "vessel_name": "Oliphant",
+          "vessel_type": "Oil Products Tanker",
+          "main_engine": "MANB&W 6S50MC",
+          "dwt": "25400",
+          "rank_on_vessel": "ETO",
+          "employer": "Unicorn Shipping"
+        },
+        {
+          "vessel_name": "Lavela",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MANB&W 6S50MC-C",
+          "dwt": "25400",
+          "rank_on_vessel": "ETO",
+          "employer": "Unicorn Shipping"
+        }
+      ],
+      "applications": []
+    },
+    "quality": {
+      "personal_fields": 14,
+      "documents": 4,
+      "certificates": 14,
+      "sea_service": 14
+    }
+  },
+  {
+    "file": "ETO Babenko CR-RT 05A - SEAMEN'S APPLICATION & INTERVIEW RECORD - Copy.docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Electrical Engineer",
+        "surname": "Babenko",
+        "first_name": "Dmytro",
+        "middle_name": "Nikolay",
+        "date_of_birth": "28.10.1984",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukrainian",
+        "permanent_address": "23 Bulvarnaya Street, Kherson, Ukraine",
+        "primary_phone": "+380951738875",
+        "father_name": "Nikolay",
+        "mother_name": "Valentina",
+        "highest_educational_attainment": "Third-class electro-technical officer",
+        "school_name": "Kherson marine college",
+        "graduation_year": "2004",
+        "marital_status": "Single",
+        "number_of_children": "-",
+        "beneficiary_full_name": "Valentina",
+        "beneficiary_relationship": "Mother",
+        "seaman_book_number": "AB 512501",
+        "passport_number": "FP810770",
+        "passport_issue_date": "18.07.2018",
+        "passport_expiry_date": "18.07.2028",
+        "passport_place_of_issue": "Ukraine",
+        "english_level": "Good",
+        "height_m": "178",
+        "weight_kg": "84"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AB 512501",
+          "date_of_issue": "03.12.2012",
+          "date_of_expiry": "12.06.2022",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FP810770",
+          "date_of_issue": "18.07.2018",
+          "date_of_expiry": "18.07.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "Unlimited",
+          "date_of_issue": "Unlimited",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING"
+        },
+        {
+          "certificate_type": "TANKER SAFETY/ V1-1 (GTF)"
+        },
+        {
+          "certificate_type": "TANKER SAFETY/ V1-2"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID"
+        },
+        {
+          "certificate_type": "BRM"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS"
+        },
+        {
+          "certificate_type": "ECDIS"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)"
+        },
+        {
+          "certificate_type": "D.  FLAG DOCUMENTS",
+          "issuing_authority": "D.  FLAG DOCUMENTS",
+          "certificate_number": "D.  FLAG DOCUMENTS",
+          "date_issued": "D.  FLAG DOCUMENTS",
+          "expiry_date": "D.  FLAG DOCUMENTS"
+        },
+        {
+          "certificate_type": "FLAG",
+          "issuing_authority": "DOC No",
+          "certificate_number": "DATE OF ISSUANCE",
+          "date_issued": "DATE OF ISSUANCE",
+          "expiry_date": "DATE OF EXPIRY"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "RS Aurora",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN B&W 6G70ME-C9",
+          "dwt": "82779",
+          "rank_on_vessel": "Electrical Engineer",
+          "sign_on_date": "24.12.2018",
+          "sign_off_date": "28.05.2019",
+          "employer": "Prime Tanker Management Inc /  Univis",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Lake Sturgeon",
+          "vessel_type": "Oil Products Tanker",
+          "main_engine": "MAN B&W 6S60MC",
+          "dwt": "40934",
+          "rank_on_vessel": "Electrical Engineer",
+          "sign_on_date": "22.12.2017",
+          "sign_off_date": "03.07.2018",
+          "employer": "Prime Tanker Management Inc /  Univis",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Walleye",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN B&W 5S60MC-C",
+          "dwt": "42771",
+          "rank_on_vessel": "Electrical Engineer",
+          "sign_on_date": "11.07.2016",
+          "sign_off_date": "04.12.2016",
+          "employer": "Prime Tanker Management Inc /  Univis",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "KOI",
+          "vessel_type": "Oil Products Tanker",
+          "main_engine": "MAN B&W 6S60MC-C",
+          "dwt": "42392",
+          "rank_on_vessel": "Electrical Engineer",
+          "sign_on_date": "05.09.2015",
+          "sign_off_date": "29.02.2016",
+          "employer": "Prime Tanker Management Inc /  Univis",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Conger",
+          "vessel_type": "Oil/Chemical Tanker",
+          "main_engine": "HSD 5RTA58T-B",
+          "dwt": "44067",
+          "rank_on_vessel": "Electrical Engineer",
+          "sign_on_date": "09.06.2015",
+          "sign_off_date": "29.06.2015",
+          "employer": "Prime Tanker Management Inc /  Univis",
+          "remarks": "Dry Dock"
+        },
+        {
+          "vessel_name": "Conger",
+          "vessel_type": "Oil/Chemical Tanker",
+          "main_engine": "HSD 5RTA58T-B",
+          "dwt": "44067",
+          "rank_on_vessel": "Electrical Engineer",
+          "sign_on_date": "12.10.2014",
+          "sign_off_date": "11.04.2015",
+          "employer": "Prime Tanker Management Inc /  Univis",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Electrical Engineer",
+          "rank_applied_for": "Electrical Engineer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 26,
+      "documents": 4,
+      "certificates": 14,
+      "sea_service": 6
+    }
+  },
+  {
+    "file": "ETO Babii CR-RT 05A - Seaman's Application and Interview Record - Copy.docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "ETO",
+        "surname": "Babii",
+        "first_name": "Yurii",
+        "middle_name": "Sergiy",
+        "date_of_birth": "04.01.1997",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukraine",
+        "permanent_address": "Staroportofrankivska 59, Odessa, Ukarine",
+        "primary_phone": "+380987222527",
+        "father_name": "Sergiy",
+        "mother_name": "Oksana",
+        "highest_educational_attainment": "Third - class electro – technical engineer",
+        "school_name": "Odessa national maritime university",
+        "graduation_year": "2018",
+        "number_of_children": "-",
+        "beneficiary_full_name": "Oksana",
+        "beneficiary_relationship": "Mother",
+        "seaman_book_number": "AB 579921",
+        "passport_number": "FH388420",
+        "passport_issue_date": "08.08.2017",
+        "passport_expiry_date": "08.08.2027",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "N6681180",
+        "english_level": "Good",
+        "height_m": "1.80",
+        "weight_kg": "90"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AB 579921",
+          "date_of_issue": "01.07.2016",
+          "date_of_expiry": "25.03.2026",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FH388420",
+          "date_of_issue": "08.08.2017",
+          "date_of_expiry": "08.08.2027",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "N6681180",
+          "date_of_issue": "10.08.2018",
+          "date_of_expiry": "08.08.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "Unlimited",
+          "date_of_issue": "Unlimited",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "153756",
+          "date_issued": "16.06.2020",
+          "expiry_date": "16.06.2025"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "1109",
+          "date_issued": "12.06.2017",
+          "expiry_date": "12.06.2022"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "0956",
+          "date_issued": "07.06.2017",
+          "expiry_date": "07.06.2022"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "0955",
+          "date_issued": "15.06.2017",
+          "expiry_date": "15.06.2022"
+        },
+        {
+          "certificate_type": "BRM"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS"
+        },
+        {
+          "certificate_type": "ECDIS"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "0602",
+          "date_issued": "03.04.2018",
+          "expiry_date": "03.04.2028"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Resolute bay",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "MAN-B&W 6S46MC-C",
+          "dwt": "22664",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "12.08.2020",
+          "sign_off_date": "08.03.2021",
+          "employer": "V Ships Ship Management India  / V.Ships",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "MSC Meline",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 9S90ME-C10.2",
+          "dwt": "95497",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "02.09.2019",
+          "sign_off_date": "12.05.2020",
+          "employer": "Msc Shipmanagement Ltd",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aurelia",
+          "vessel_type": "Passenger/Ro-Ro Ship",
+          "main_engine": "A420.15V  A420.15V",
+          "dwt": "21518",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "11.06.2019",
+          "sign_off_date": "28.07.2019",
+          "employer": "Msc Shipmanagement Ltd",
+          "remarks": "Dry dock"
+        },
+        {
+          "vessel_name": "MSC Emma",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 12K98ME6",
+          "dwt": "141649",
+          "rank_on_vessel": "Electrical Cadet",
+          "sign_on_date": "19.10.2018",
+          "sign_off_date": "06.04.2019",
+          "employer": "Msc Shipmanagement Ltd",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "ETO",
+          "rank_applied_for": "ETO"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 26,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 4
+    }
+  },
+  {
+    "file": "ETO Ionov CR-RT 05A - Seaman's Application and Interview Record - Copy.docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "Electrical Engineer",
+        "surname": "Ionov",
+        "first_name": "Oleksandr",
+        "middle_name": "Mykhaylo",
+        "date_of_birth": "04.03.1993",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukrainian",
+        "permanent_address": "46/2 Sergienko street, Bolgrad, Odesa region, Ukraine",
+        "primary_phone": "+380632647743",
+        "father_name": "Mykhaylo",
+        "mother_name": "Larysa",
+        "highest_educational_attainment": "Third-class electro-technical officer",
+        "school_name": "National university “Odessa maritime academy”",
+        "graduation_year": "2016",
+        "marital_status": "Single",
+        "number_of_children": "-",
+        "beneficiary_full_name": "Larysa",
+        "beneficiary_relationship": "Mother",
+        "seaman_book_number": "AB622147",
+        "passport_number": "FN213029",
+        "passport_issue_date": "11.04.2018",
+        "passport_expiry_date": "11.04.2028",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "L0541297",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "height_m": "183",
+        "weight_kg": "71"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AB622147",
+          "date_of_issue": "01.03.2018",
+          "date_of_expiry": "01.03.2023",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FN213029",
+          "date_of_issue": "11.04.2018",
+          "date_of_expiry": "11.04.2028",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "L0541297",
+          "date_of_issue": "14.03.2016",
+          "date_of_expiry": "13.03.2026",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "09.02.2015",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "15828",
+          "date_issued": "09.11.2018",
+          "expiry_date": "09.11.2023"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "31951",
+          "date_issued": "27.10.2016",
+          "expiry_date": "27.10.2021"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "26900",
+          "date_issued": "28.10.2016",
+          "expiry_date": "28.10.2021"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "22157",
+          "date_issued": "24.10.2016",
+          "expiry_date": "24.10.2021"
+        },
+        {
+          "certificate_type": "BRM"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS"
+        },
+        {
+          "certificate_type": "ECDIS"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Dona Bibi",
+          "vessel_type": "BC",
+          "main_engine": "MAN-B&W 6S60MC-C8",
+          "dwt": "44130",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "18.03.2021",
+          "sign_off_date": "15.10.2021",
+          "employer": "Century Bulk Carriers Management Co. / Overseas/ Yialos Manning Services",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Pauline",
+          "vessel_type": "Ro-Ro Cargo",
+          "main_engine": "MAK 12M43",
+          "dwt": "49166",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "23.01.2020",
+          "sign_off_date": "15.06.2020",
+          "employer": "Anglo-Eastern Ship NL / Univis Crewing Agency",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Maersk Halifax",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 8G95ME – C 9.5",
+          "dwt": "153744",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "01.08.2019",
+          "sign_off_date": "20.08.2019",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Maersk Houston",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W Hyundai 8G95ME",
+          "dwt": "153744",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "14.05.2019",
+          "sign_off_date": "04.06.2019",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Vaga Maersk",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN 6S70ME – C 8.5",
+          "dwt": "34882",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "20.03.2019",
+          "sign_off_date": "30.03.2019",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Vilnia Maersk",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN 6S70ME – C 8.5",
+          "dwt": "34882",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "07.01.2019",
+          "sign_off_date": "14.01.2019",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel S",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Maersk Herrera",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 8G95ME – C 9.5",
+          "dwt": "153744",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "31.07.2018",
+          "sign_off_date": "29.08.2018",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Maersk Vayenga",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN 6S70ME-C8.5",
+          "dwt": "34882",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "19.05.2018",
+          "sign_off_date": "30.05.2018",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Maersk Hamburg",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 8G95ME – C 9.5",
+          "dwt": "153744",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "31.04.2018",
+          "sign_off_date": "18.05.2018",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Maersk Hangzhou",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 8G95ME – C 9.5",
+          "dwt": "153744",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "20.03.2018",
+          "sign_off_date": "09.04.2018",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Maersk Hanoi",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 8G95ME – C 9.5",
+          "dwt": "153744",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "07.02.2018",
+          "sign_off_date": "23.02.2018",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Maersk Marseille",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 7G80ME-C 9.5",
+          "dwt": "214286",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "04.01.2018",
+          "sign_off_date": "22.01.2018",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Maersk Hidalgo",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 8G95ME – C 9.5",
+          "dwt": "153744",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "17.10.2017",
+          "sign_off_date": "01.11.2017",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Maersk Honam",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 8G95ME – C 9.5",
+          "dwt": "153744",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "31.08.2017",
+          "sign_off_date": "18.09.2017",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Maersk Horsburgh",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 8G95ME – C 9.5",
+          "dwt": "153744",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "11.08.2017",
+          "sign_off_date": "26.08.2017",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Maersk Hong Kong",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 8G95ME – C 9.5",
+          "dwt": "153744",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "06.07.2017",
+          "sign_off_date": "29.07.2017",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel S",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Maersk Munich",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 7G80ME",
+          "dwt": "214286",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "16.06.2017",
+          "sign_off_date": "28.06.2017",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Maersk Madrid",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN-B&W 7G80ME-C9.5",
+          "dwt": "214286",
+          "rank_on_vessel": "ETO Service",
+          "sign_on_date": "07.04.2017",
+          "sign_off_date": "27.04.2017",
+          "employer": "MAERSK A/S /  Wilhelmsen Marine Personnel",
+          "remarks": "EOC / Shipyard"
+        },
+        {
+          "vessel_name": "Sprin GR",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN B&W 9K80MC-C",
+          "dwt": "23134",
+          "rank_on_vessel": "Electrical Cadet",
+          "sign_on_date": "12.04.2016",
+          "sign_off_date": "07.10.2016",
+          "employer": "Nord Gmbh Reederei /  Alpha Navigation",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Cezanne",
+          "vessel_type": "Container Ship",
+          "main_engine": "MAN B&W 9S90ME-C9.2",
+          "dwt": "95128",
+          "rank_on_vessel": "Electrical Cadet",
+          "sign_on_date": "05.01.2015",
+          "sign_off_date": "03.05.2015",
+          "employer": "Oceanbulk Container Management /  Alpha Navigation",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Electrical Engineer",
+          "rank_applied_for": "Electrical Engineer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 28,
+      "documents": 4,
+      "certificates": 10,
+      "sea_service": 20
+    }
+  },
+  {
+    "file": "ETO Kosenko CR-RT 05A - SEAMEN'S APPLICATION & INTERVIEW RECORD - Copy.docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "ETO",
+        "surname": "Kosenko",
+        "first_name": "Oleksandr",
+        "middle_name": "Oleksandr",
+        "date_of_birth": "24.07.1986",
+        "place_of_birth": "Ukraine",
+        "nationality": "Ukrainian",
+        "permanent_address": "26 Vyshneva street, apt. 14, Kherson, Ukraine",
+        "primary_phone": "+380950160705",
+        "father_name": "Oleksandr",
+        "mother_name": "Larisa",
+        "highest_educational_attainment": "Third-class electro technical officer",
+        "school_name": "Kherson marine college",
+        "graduation_year": "2015",
+        "marital_status": "Married",
+        "number_of_children": "2",
+        "beneficiary_full_name": "Kosenko Yulia",
+        "beneficiary_relationship": "Wife",
+        "seaman_book_number": "AB 665629",
+        "passport_number": "FZ 600909",
+        "passport_issue_date": "13.11.2020",
+        "passport_expiry_date": "13.11.2030",
+        "passport_place_of_issue": "Ukraine",
+        "usa_visa_number": "M 5374836",
+        "yellow_fever_vaccination": "-",
+        "english_level": "Good",
+        "height_m": "1.81",
+        "weight_kg": "96"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "AB 665629",
+          "date_of_issue": "10.08.2020",
+          "date_of_expiry": "10.08.2025",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FZ 600909",
+          "date_of_issue": "13.11.2020",
+          "date_of_expiry": "13.11.2030",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "M 5374836",
+          "date_of_issue": "12.07.2017",
+          "date_of_expiry": "09.07.2027",
+          "issuing_authority": "Ukraine"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "-",
+          "date_of_issue": "05.11.2015",
+          "date_of_expiry": "Unlimited",
+          "issuing_authority": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "16640",
+          "date_issued": "11.09.2019",
+          "expiry_date": "11.09.2024"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "13833",
+          "date_issued": "11.09.2019",
+          "expiry_date": "11.09.2024"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "12215",
+          "date_issued": "11.09.2019",
+          "expiry_date": "11.09.2024"
+        },
+        {
+          "certificate_type": "TANKER SAFETY/ V1-1 (GTF)",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "01103/2020/11",
+          "date_issued": "29.09.2020",
+          "expiry_date": "25.09.2025"
+        },
+        {
+          "certificate_type": "TANKER SAFETY/ V1-2"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "176559",
+          "date_issued": "30.07.2020",
+          "expiry_date": "30.07.2025"
+        },
+        {
+          "certificate_type": "BRM"
+        },
+        {
+          "certificate_type": "ERM",
+          "issuing_authority": "Ukraine",
+          "certificate_number": "821",
+          "date_issued": "10.09.2019",
+          "expiry_date": "10.09.2024"
+        },
+        {
+          "certificate_type": "GMDSS"
+        },
+        {
+          "certificate_type": "ECDIS"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)"
+        },
+        {
+          "certificate_type": "D.  FLAG DOCUMENTS",
+          "issuing_authority": "D.  FLAG DOCUMENTS",
+          "certificate_number": "D.  FLAG DOCUMENTS",
+          "date_issued": "D.  FLAG DOCUMENTS",
+          "expiry_date": "D.  FLAG DOCUMENTS"
+        },
+        {
+          "certificate_type": "FLAG",
+          "issuing_authority": "DOC No",
+          "certificate_number": "DATE OF ISSUANCE",
+          "date_issued": "DATE OF ISSUANCE",
+          "expiry_date": "DATE OF EXPIRY"
+        },
+        {
+          "certificate_type": "Greek License",
+          "issuing_authority": "24905",
+          "certificate_number": "22.10.2020",
+          "date_issued": "22.10.2020",
+          "expiry_date": "25.09.2025"
+        },
+        {
+          "certificate_type": "Greek License COP Basic Oil&Chemical",
+          "issuing_authority": "16382",
+          "certificate_number": "22.10.2020",
+          "date_issued": "22.10.2020",
+          "expiry_date": "25.09.2025"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Songa Topaz",
+          "vessel_type": "Oil Products Tanker",
+          "main_engine": "MAN-B&W 8S35MC",
+          "dwt": "11945",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "06.05.2022",
+          "sign_off_date": "20.07.2022",
+          "employer": "Songa Shipmanagement Ltd/ Romor Poland",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Nicopolis",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN-B&W 6G60ME-C",
+          "dwt": "42993",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "26.07.2021",
+          "sign_off_date": "23.09.2021",
+          "employer": "Andriaki Shipping Co Ltd-Mai/ Golf Marine Odessa",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Antipolis",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN-B&W 6G60ME-C",
+          "dwt": "42983",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "21.11.2020",
+          "sign_off_date": "14.04.2021",
+          "employer": "Andriaki Shipping Co Ltd-Mai",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Nicopolis",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN-B&W 6G60ME-C",
+          "dwt": "42993",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "25.10.2019",
+          "sign_off_date": "18.06.2020",
+          "employer": "Andriaki Shipping Co Ltd-Mai",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "NCC Hijas",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MAN-B&W 6S50MC-C",
+          "dwt": "29575",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "19.02.2019",
+          "sign_off_date": "25.06.2019",
+          "employer": "Mideast Ship Management Ltd/ Danic",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Tradwind adventure",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "Yanmar 6N330-UN",
+          "dwt": "8302",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "14.02.2018",
+          "sign_off_date": "07.09.2018",
+          "employer": "Columbia Shipmanagement-Geu/ Columbia",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "ETO",
+          "rank_applied_for": "ETO"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 28,
+      "documents": 4,
+      "certificates": 16,
+      "sea_service": 6
+    }
+  },
+  {
+    "file": "ETO Lozynskyi CR-RT 05A - SEAMEN'S APPLICATION & INTERVIEW RECORD - Copy.docx",
+    "parsed": {
+      "personal_data": {
+        "position_applied_for": "ETO",
+        "surname": "LOZYNSKYI",
+        "first_name": "MYKYTA",
+        "middle_name": "GENNADII",
+        "date_of_birth": "06.10.1994",
+        "place_of_birth": "UKRAINE",
+        "nationality": "UKRAINIAN",
+        "permanent_address": "THE SAME",
+        "primary_phone": "+380502930166",
+        "father_name": "GENNADII LOZYNSKYI",
+        "mother_name": "VITA LOZYNSKA",
+        "marital_status": "MARRIED",
+        "number_of_children": "1",
+        "beneficiary_full_name": "HANNA LOZYNSKA",
+        "beneficiary_relationship": "WIFE",
+        "passport_number": "FH891220",
+        "passport_issue_date": "14.09.2017",
+        "passport_expiry_date": "14.09.2027",
+        "passport_place_of_issue": "KHERSON",
+        "usa_visa_number": "6692302",
+        "yellow_fever_vaccination": "518",
+        "english_level": "GOOD",
+        "height_m": "1,74",
+        "weight_kg": "90"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's Book"
+        },
+        {
+          "document_type": "Passport",
+          "document_number": "FH891220",
+          "date_of_issue": "14.09.2017",
+          "date_of_expiry": "14.09.2027",
+          "issuing_authority": "KHERSON"
+        },
+        {
+          "document_type": "USA Visa",
+          "document_number": "6692302",
+          "date_of_issue": "16.10.2018",
+          "date_of_expiry": "11.10.2028",
+          "issuing_authority": "KYIV"
+        },
+        {
+          "document_type": "Yellow Fever Vaccination",
+          "document_number": "518",
+          "date_of_issue": "24.06.2015",
+          "date_of_expiry": "KHERSON",
+          "issuing_authority": "KHERSON"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "BASIC SAFETY TRAINING&INSTRUCTION",
+          "issuing_authority": "UAUMI",
+          "certificate_number": "11596",
+          "date_issued": "12.04.2017",
+          "expiry_date": "12.04.2022"
+        },
+        {
+          "certificate_type": "PROFICIENCY IN SURVIVAL  CRAFTS & RESOURCE BOAT",
+          "issuing_authority": "UAUMI",
+          "certificate_number": "7895",
+          "date_issued": "13.04.2017",
+          "expiry_date": "13.04.2022"
+        },
+        {
+          "certificate_type": "ADVANCED FIRE FIGHTING",
+          "issuing_authority": "UAUMI",
+          "certificate_number": "7644",
+          "date_issued": "14.04.2017",
+          "expiry_date": "14.04.2022"
+        },
+        {
+          "certificate_type": "TANKER SAFETY/ V1-1 (GTF)"
+        },
+        {
+          "certificate_type": "TANKER SAFETY/ V1-2"
+        },
+        {
+          "certificate_type": "MEDICAL CARE"
+        },
+        {
+          "certificate_type": "MEDICAL FIRST AID",
+          "issuing_authority": "UAUMI",
+          "certificate_number": "5820",
+          "date_issued": "15.04.2017",
+          "expiry_date": "15.04.2022"
+        },
+        {
+          "certificate_type": "BRM"
+        },
+        {
+          "certificate_type": "ERM"
+        },
+        {
+          "certificate_type": "GMDSS"
+        },
+        {
+          "certificate_type": "ECDIS"
+        },
+        {
+          "certificate_type": "SECURITY AWARENESS (LEVEL A OR B)"
+        },
+        {
+          "certificate_type": "D.  FLAG DOCUMENTS",
+          "issuing_authority": "D.  FLAG DOCUMENTS",
+          "certificate_number": "D.  FLAG DOCUMENTS",
+          "date_issued": "D.  FLAG DOCUMENTS",
+          "expiry_date": "D.  FLAG DOCUMENTS"
+        },
+        {
+          "certificate_type": "FLAG",
+          "issuing_authority": "DOC No",
+          "certificate_number": "DATE OF ISSUANCE",
+          "date_issued": "DATE OF ISSUANCE",
+          "expiry_date": "DATE OF EXPIRY"
+        },
+        {
+          "certificate_type": "LIBERIA",
+          "issuing_authority": "1224386",
+          "certificate_number": "17.07.2015",
+          "date_issued": "17.07.2015",
+          "expiry_date": "26.09.2022"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "CARIBE ANGELA",
+          "vessel_type": "CH TANKER",
+          "main_engine": "MAN BW MC",
+          "dwt": "6522",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "19.12.2019",
+          "sign_off_date": "22.06.2020",
+          "employer": "PARCHEM III TT AS",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "CARIBE ILSE",
+          "vessel_type": "CH TANKER",
+          "main_engine": "MAN BW MC",
+          "dwt": "7687",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "05.05.2019",
+          "sign_off_date": "17.08.2019",
+          "employer": "PARCHEM III TT AS",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "KANPUR",
+          "vessel_type": "CO TANKER",
+          "main_engine": "MAN BW MC",
+          "dwt": "57243",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "08.11.2018",
+          "sign_off_date": "15.03.2019",
+          "employer": "COLUMBIA",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "MIRELLA S",
+          "vessel_type": "CH TANKER",
+          "main_engine": "MAN BW MC",
+          "dwt": "12776",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "11.07.2018",
+          "sign_off_date": "28.07.2018",
+          "employer": "COLUMBIA",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "CAPEWATER",
+          "vessel_type": "CH TANKER",
+          "main_engine": "WARTSILA",
+          "dwt": "3674",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "03.06.2018",
+          "sign_off_date": "10.06.2018",
+          "employer": "CAPEWATER CV",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "OCEAN REEF",
+          "vessel_type": "BULK CARRIER",
+          "main_engine": "MAN BW MC",
+          "dwt": "30057",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "29.12.2017",
+          "sign_off_date": "13.05.2018",
+          "employer": "CONDOR SHIPPING LTD",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "MILAGRO",
+          "vessel_type": "BULK CARRIER",
+          "main_engine": "MAN BW MC",
+          "dwt": "40170",
+          "rank_on_vessel": "ETO",
+          "sign_on_date": "17.06.2017",
+          "sign_off_date": "20.09.2017",
+          "employer": "IFESTOS OWNING CO LTD",
+          "remarks": "EOC"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "ETO",
+          "rank_applied_for": "ETO"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 24,
+      "documents": 4,
+      "certificates": 15,
+      "sea_service": 7
+    }
+  }
+]

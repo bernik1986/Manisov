@@ -1,0 +1,1620 @@
+{
+  "summary": {
+    "folder": "C:\\Users\\berni\\Downloads\\Maririme",
+    "total_files": 52,
+    "parsed_ok": 52,
+    "failed": 0,
+    "parser_breakdown": {
+      "PDFParser": 50,
+      "CrewwellPDFParser": 2
+    },
+    "avg": {
+      "personal_fields": 12.33,
+      "critical_filled": 9.33,
+      "documents": 2,
+      "certificates": 15.92,
+      "sea_service": 12.12,
+      "applications": 0.87
+    },
+    "errors": [],
+    "files_with_unmapped": 45,
+    "low_parse_examples": [
+      {
+        "file": "Fitter__Welder_kolisnychenko_vadym_-_LNG.pdf",
+        "parser": "PDFParser",
+        "personal_fields": 7,
+        "critical_filled": 6,
+        "missing_critical": [
+          "position_applied_for",
+          "rank_applied_for",
+          "date_of_birth",
+          "primary_phone",
+          "english_level"
+        ],
+        "section_counts": {
+          "documents": 2,
+          "certificates": 10,
+          "sea_service": 15,
+          "applications": 0,
+          "flag_documents": 0,
+          "family_contacts": 0
+        },
+        "unmapped": {
+          "personal_data": [],
+          "documents": [],
+          "certificates": [],
+          "sea_service": [],
+          "applications": [],
+          "flag_documents": [],
+          "family_contacts": []
+        }
+      }
+    ]
+  },
+  "files": [
+    {
+      "file": "2nd_Electrical_Engineer_Alexey_Bondarenko_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 7,
+        "sea_service": 8,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "2nd_Engineer_Davit_Vakhtangidze_-_Crude_Oil_Tanker.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 17,
+        "sea_service": 5,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "2nd_Engineer_Koiev_Stanislav_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 9,
+        "sea_service": 7,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "2nd_Engineer_Mykhaylo_Tatarchuk_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 21,
+        "sea_service": 8,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "2nd_Engineer_Oleg_Kyrylenko_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 10,
+      "critical_filled": 8,
+      "missing_critical": [
+        "date_of_birth",
+        "primary_phone",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 6,
+        "sea_service": 5,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "2nd_Engineer_Oleksandr_Ivanko_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 12,
+      "critical_filled": 9,
+      "missing_critical": [
+        "date_of_birth",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 10,
+        "sea_service": 17,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "2nd_Engineer_Ramin_Makharadze_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 23,
+        "sea_service": 10,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "2nd_Officer_Artem_Makarov_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 14,
+      "critical_filled": 11,
+      "missing_critical": [],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 14,
+        "sea_service": 15,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "2nd_Officer_Eduard_Deminskyi_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 10,
+      "critical_filled": 8,
+      "missing_critical": [
+        "date_of_birth",
+        "primary_phone",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 15,
+        "sea_service": 19,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "2nd_Officer_Evgenii_Minich_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 10,
+      "critical_filled": 8,
+      "missing_critical": [
+        "position_applied_for",
+        "rank_applied_for",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 10,
+        "sea_service": 9,
+        "applications": 0,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "2nd_Officer_Pavlo_Bakovetskyi_-_Crude_Oil_Tanker.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 10,
+      "critical_filled": 8,
+      "missing_critical": [
+        "date_of_birth",
+        "primary_phone",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 20,
+        "sea_service": 12,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "2nd_Officer_Polina_Bektemirova_-_Crude_Oil_Tanker.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 14,
+        "sea_service": 6,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "2nd_Officer_Shmalko_Oleksandr_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 10,
+        "sea_service": 12,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "2nd_Officer_Yevhen_Zhekov_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 10,
+      "critical_filled": 8,
+      "missing_critical": [
+        "position_applied_for",
+        "rank_applied_for",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 18,
+        "sea_service": 7,
+        "applications": 0,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "3rd_Engineer_leri_gorgiladze_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 19,
+        "sea_service": 8,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "3rd_Officer_Joni_Gorgiladze_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 10,
+      "critical_filled": 8,
+      "missing_critical": [
+        "position_applied_for",
+        "rank_applied_for",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 21,
+        "sea_service": 5,
+        "applications": 0,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "AB_Seaman_Aleksandr_Soshnikov_-_LNG.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 2,
+        "sea_service": 5,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "AB_Seaman_Igor_Huslyakov_-_LNG.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 13,
+        "sea_service": 15,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "AB_Seaman_Oleksii_Yefanov_-_LNG.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 10,
+      "critical_filled": 8,
+      "missing_critical": [
+        "position_applied_for",
+        "rank_applied_for",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 19,
+        "sea_service": 22,
+        "applications": 0,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "AB_Seaman_Vitalii_Raznovskyi_-_LNG.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 19,
+        "sea_service": 19,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "AB_Seaman_Yevgen_Bogdanov_-_LNG.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 10,
+        "sea_service": 11,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Chief_Engineer_Elnur_Fattayev_-_Crude_Oil_Tanker.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 23,
+        "sea_service": 8,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Chief_Engineer_Igor_Kozorez_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 12,
+      "critical_filled": 9,
+      "missing_critical": [
+        "date_of_birth",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 15,
+        "sea_service": 11,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Chief_Engineer_Mykhailo_Devchioglu_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 16,
+        "sea_service": 15,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Chief_Engineer_Mykhaylo_Sukhoroslov_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 10,
+      "critical_filled": 8,
+      "missing_critical": [
+        "date_of_birth",
+        "primary_phone",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 14,
+        "sea_service": 15,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Chief_Engineer_Oleg_Dombrovskyi_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 12,
+        "sea_service": 9,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Chief_Engineer_Pasiuk_Vladimir_-_Crude_Oil_Tanker.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 10,
+      "critical_filled": 8,
+      "missing_critical": [
+        "date_of_birth",
+        "primary_phone",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 12,
+        "sea_service": 17,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Chief_Engineer_Sergejs_Moskalenko_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 10,
+      "critical_filled": 8,
+      "missing_critical": [
+        "position_applied_for",
+        "rank_applied_for",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 11,
+        "sea_service": 7,
+        "applications": 0,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Chief_Engineer_Vadym_Mykhaylov_-_Crude_Oil_Tanker.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 12,
+      "critical_filled": 9,
+      "missing_critical": [
+        "date_of_birth",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 12,
+        "sea_service": 17,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Chief_Engineer_Yevgen_Kolesnikov_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 15,
+        "sea_service": 25,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Chief_Officer_Gridnyov_Oleksandr_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 20,
+        "sea_service": 15,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Chief_Officer_Oleksandr_Paskal_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 18,
+        "sea_service": 6,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Chief_Officer_Ryepka_Dmytro_-_Crude_Oil_Tanker.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 9,
+      "critical_filled": 7,
+      "missing_critical": [
+        "position_applied_for",
+        "rank_applied_for",
+        "date_of_birth",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 21,
+        "sea_service": 13,
+        "applications": 0,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Chief_Officer_Zamikhovsky_Andriy_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 17,
+        "sea_service": 7,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "CV_Anatoliy_Onyshchenko (3).pdf",
+      "parser": "CrewwellPDFParser",
+      "personal_fields": 18,
+      "critical_filled": 10,
+      "missing_critical": [
+        "primary_phone"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 36,
+        "sea_service": 10,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "CV_Viktor_Artomov.pdf",
+      "parser": "CrewwellPDFParser",
+      "personal_fields": 22,
+      "critical_filled": 10,
+      "missing_critical": [
+        "primary_phone"
+      ],
+      "section_counts": {
+        "documents": 3,
+        "certificates": 16,
+        "sea_service": 14,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "ETO_oleg_zhozhadze_-_Crude_Oil_Tanker.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 18,
+        "sea_service": 4,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "ETO_Serhii_Pavlichenko_-_Crude_Oil_Tanker.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 13,
+        "sea_service": 7,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Fitter__Welder_kolisnychenko_vadym_-_LNG.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 7,
+      "critical_filled": 6,
+      "missing_critical": [
+        "position_applied_for",
+        "rank_applied_for",
+        "date_of_birth",
+        "primary_phone",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 10,
+        "sea_service": 15,
+        "applications": 0,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Fitter__Welder_Oleksandr_Biliy_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 12,
+      "critical_filled": 9,
+      "missing_critical": [
+        "date_of_birth",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 9,
+        "sea_service": 16,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Fitter__Welder_Solod_Mykola_-_LNG.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 16,
+        "sea_service": 27,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Master_ALEXANDER_Ivanov_-_Crude_Oil_Tanker.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 12,
+      "critical_filled": 9,
+      "missing_critical": [
+        "date_of_birth",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 30,
+        "sea_service": 29,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Master_ARTYSHCHENKO_YURIY_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 18,
+        "sea_service": 7,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Master_Kyrylo_Perepravka_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 14,
+        "sea_service": 8,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Master_OLEG_MIKHEYEV_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 12,
+      "critical_filled": 9,
+      "missing_critical": [
+        "date_of_birth",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 1,
+        "certificates": 24,
+        "sea_service": 17,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Master_Oleksiy_Nadtochiy_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 18,
+        "sea_service": 12,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Master_Sergei_Kudin_-_Crude_Oil_Tanker.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 12,
+      "critical_filled": 9,
+      "missing_critical": [
+        "date_of_birth",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 36,
+        "sea_service": 26,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Master_Sinan_karnap_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 10,
+      "critical_filled": 8,
+      "missing_critical": [
+        "date_of_birth",
+        "primary_phone",
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 19,
+        "sea_service": 10,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Master_Volodymyr_Ovcharenko_-_Bulk_Carrier.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 20,
+        "sea_service": 19,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Master_Yaroslav_Kotiukov_-_Crude_Oil_Tanker.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 8,
+        "sea_service": 12,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "Messman_Leonid_Malyshev_-_LNG.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 5,
+        "sea_service": 2,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    },
+    {
+      "file": "OS_(Ordinary_Seaman)_Artem_Bogatyr_-_LNG.pdf",
+      "parser": "PDFParser",
+      "personal_fields": 13,
+      "critical_filled": 10,
+      "missing_critical": [
+        "english_level"
+      ],
+      "section_counts": {
+        "documents": 2,
+        "certificates": 15,
+        "sea_service": 5,
+        "applications": 1,
+        "flag_documents": 0,
+        "family_contacts": 0
+      },
+      "unmapped": {
+        "personal_data": [
+          "last_salary_usd",
+          "position_applied_for",
+          "rank_applied_for"
+        ],
+        "documents": [],
+        "certificates": [],
+        "sea_service": [],
+        "applications": [],
+        "flag_documents": [],
+        "family_contacts": []
+      }
+    }
+  ]
+}

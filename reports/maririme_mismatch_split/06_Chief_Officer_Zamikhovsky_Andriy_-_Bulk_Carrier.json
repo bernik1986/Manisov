@@ -1,0 +1,28 @@
+{
+  "file": "Chief_Officer_Zamikhovsky_Andriy_-_Bulk_Carrier.pdf",
+  "parser": "PDFParser",
+  "expected": {
+    "documents": 2,
+    "certificates": 17,
+    "sea_service": 7,
+    "applications": 1
+  },
+  "saved": {
+    "documents": 2,
+    "certificates": 17,
+    "sea_service": 6,
+    "applications": 1
+  },
+  "sea_service_missing_count": 1,
+  "sea_service_missing_examples": [
+    {
+      "rank_on_vessel": "Chief Officer",
+      "vessel_name": null,
+      "sign_on_date": "2017-11-20",
+      "sign_off_date": "2018-06-20",
+      "dwt": null
+    }
+  ],
+  "sea_service_parsed_count": 7,
+  "sea_service_saved_count": 6
+}

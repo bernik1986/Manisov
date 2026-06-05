@@ -1,0 +1,1475 @@
+[
+  {
+    "file": "CV_Serhiy_Pihan.pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "Serhiy Pihan",
+        "first_name": "Serhiy",
+        "surname": "Pihan",
+        "position_applied_for": "Master",
+        "rank_applied_for": "Master",
+        "date_of_birth": "11.04.1987",
+        "place_of_birth": "Kherson, UKR",
+        "primary_phone": "+380663382949 Citizenship: Ukraine",
+        "citizenship": "Ukraine",
+        "nationality": "Ukraine",
+        "email": "captainpigan@yahoo.com",
+        "english_level": "Fluent"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's book AB",
+          "document_number": "550560",
+          "date_of_issue": "12.05.2020",
+          "date_of_expiry": "09.05.2029",
+          "country_of_issue": "UKR"
+        },
+        {
+          "document_type": "International passport",
+          "document_number": "FY667154",
+          "date_of_issue": "27.02.2020",
+          "date_of_expiry": "27.02.2030",
+          "country_of_issue": "UKR"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "30391",
+          "date_issued": "25.04.2024",
+          "country_of_issue": "UKR",
+          "expiry_date": "25.04.2029"
+        },
+        {
+          "certificate_type": "Medical Care",
+          "certificate_number": "50117",
+          "date_issued": "25.04.2024",
+          "country_of_issue": "UKR",
+          "expiry_date": "25.04.2029"
+        },
+        {
+          "certificate_type": "Ship Security Officer",
+          "certificate_number": "01492",
+          "date_issued": "19.09.2023",
+          "country_of_issue": "UKR",
+          "expiry_date": "18.09.2028"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "certificate_number": "250153",
+          "date_issued": "25.04.2024",
+          "country_of_issue": "UKR",
+          "expiry_date": "25.04.2029"
+        },
+        {
+          "certificate_type": "Bridge Team Management",
+          "certificate_number": "260131",
+          "date_issued": "25.04.2024",
+          "country_of_issue": "UKR",
+          "expiry_date": "25.04.2029"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "40320",
+          "date_issued": "25.04.2024",
+          "country_of_issue": "ukr",
+          "expiry_date": "25.04.2029"
+        },
+        {
+          "certificate_type": "Tanker Familiarization",
+          "certificate_number": "90029",
+          "date_issued": "19.04.2024",
+          "country_of_issue": "ukr",
+          "expiry_date": "19.04.2029"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "Master",
+          "rank_applied_for": "Master"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 12,
+      "documents": 2,
+      "certificates": 7,
+      "sea_service": 0,
+      "applications": 1
+    }
+  },
+  {
+    "file": "CV_VADYM_SHCHIGOL.pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "VADYM SHCHIGOL",
+        "first_name": "VADYM",
+        "surname": "SHCHIGOL",
+        "position_applied_for": "Master",
+        "rank_applied_for": "Master",
+        "date_of_birth": "17.07.1959",
+        "place_of_birth": "UKRAINE",
+        "primary_phone": "+79786722119 Citizenship: Ukraine",
+        "citizenship": "Ukraine",
+        "nationality": "Ukraine",
+        "email": "shchigol1959@gmail.com",
+        "english_level": "Good"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's book AB",
+          "document_number": "631135",
+          "date_of_issue": "09.08.2018",
+          "date_of_expiry": "09.08.2028",
+          "country_of_issue": "UKRAINE"
+        },
+        {
+          "document_type": "International passport",
+          "document_number": "FJ598428",
+          "date_of_issue": "26.10.2017",
+          "date_of_expiry": "26.10.2027",
+          "country_of_issue": "UKRAINE"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "32234224/04/2236/023",
+          "date_issued": "28.12.2023",
+          "country_of_issue": "UKRAINE",
+          "expiry_date": "28.12.2028"
+        },
+        {
+          "certificate_type": "Medical Care",
+          "certificate_number": "30489813/06/0057/023",
+          "date_issued": "26.12.2023",
+          "country_of_issue": "UKRAINE",
+          "expiry_date": "26.12.2028"
+        },
+        {
+          "certificate_type": "GMDSS Operator",
+          "certificate_number": "13685/2024",
+          "date_issued": "07.03.2024",
+          "country_of_issue": "UKRAINE",
+          "expiry_date": "01.03.2029"
+        },
+        {
+          "certificate_type": "GMDSS Endorsement",
+          "certificate_number": "13685/2024",
+          "date_issued": "07.03.2024",
+          "country_of_issue": "UKRAINE",
+          "expiry_date": "01.03.2029"
+        },
+        {
+          "certificate_type": "Ship Security Officer",
+          "certificate_number": "30489813/08/0025/026",
+          "date_issued": "18.03.2026",
+          "country_of_issue": "UKRAINE",
+          "expiry_date": "18.03.2031"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "certificate_number": "32334224/28/0790/023",
+          "date_issued": "28.12.2023",
+          "country_of_issue": "UKRAINE",
+          "expiry_date": "28.12.2028"
+        },
+        {
+          "certificate_type": "Bridge Team Management",
+          "certificate_number": "3233/4224/32/0528/023",
+          "date_issued": "28.12.2023",
+          "country_of_issue": "UKRAINE",
+          "expiry_date": "28.12.2028"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "30489813/05/0148/023",
+          "date_issued": "27.12.2023",
+          "country_of_issue": "UKRAINE",
+          "expiry_date": "27.12.2028"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "Master",
+          "rank_applied_for": "Master"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 12,
+      "documents": 2,
+      "certificates": 8,
+      "sea_service": 0,
+      "applications": 1
+    }
+  },
+  {
+    "file": "CV_Gennadiy_Tolmachov.pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "Gennadiy Tolmachov",
+        "first_name": "Gennadiy",
+        "surname": "Tolmachov",
+        "position_applied_for": "Master",
+        "rank_applied_for": "Master",
+        "date_of_birth": "29.10.1959",
+        "place_of_birth": "Sevastopol",
+        "primary_phone": "Citizenship: Ukraine",
+        "citizenship": "Ukraine",
+        "nationality": "Ukraine",
+        "email": "odessaoleg@ukr.net",
+        "english_level": "Good"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's book",
+          "document_number": "FF917969",
+          "date_of_issue": "21.03.2017",
+          "date_of_expiry": "21.03.2027",
+          "country_of_issue": "Ukraine"
+        },
+        {
+          "document_type": "International passport",
+          "document_number": "AB693809",
+          "date_of_issue": "05.07.2022",
+          "date_of_expiry": "05.07.2027",
+          "country_of_issue": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "00771/2025",
+          "date_issued": "21.02.2025",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "21.02.2030"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "00618/2025",
+          "date_issued": "21.02.2025",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "21.02.2030"
+        },
+        {
+          "certificate_type": "GMDSS Operator",
+          "certificate_number": "13920/2016/07",
+          "date_issued": "28.07.2016",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "21.11.2026"
+        },
+        {
+          "certificate_type": "GMDSS Endorsement",
+          "certificate_number": "13920/2016/07",
+          "date_issued": "22.11.2021",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "22.11.2026"
+        },
+        {
+          "certificate_type": "Ship Security Officer",
+          "certificate_number": "00929/2023",
+          "date_issued": "09.11.2023",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "09.11.2028"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "certificate_number": "00777/2023",
+          "date_issued": "28.11.2023",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "28.11.2028"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "Master",
+          "rank_applied_for": "Master"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 12,
+      "documents": 2,
+      "certificates": 6,
+      "sea_service": 0,
+      "applications": 1
+    }
+  },
+  {
+    "file": "CV_Volodymyr_Ovcharenko.pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "Volodymyr Ovcharenko",
+        "first_name": "Volodymyr",
+        "surname": "Ovcharenko",
+        "position_applied_for": "Master",
+        "rank_applied_for": "Master",
+        "date_of_birth": "03.01.1966",
+        "place_of_birth": "Ukraine",
+        "primary_phone": "00380674829577 Citizenship: Ukraine",
+        "citizenship": "Ukraine",
+        "nationality": "Ukraine",
+        "email": "volodov50@gmail.com",
+        "english_level": "Good"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's book AB",
+          "document_number": "635364",
+          "date_of_issue": "20.05.2019",
+          "date_of_expiry": "20.05.2029",
+          "country_of_issue": "Ukraine"
+        },
+        {
+          "document_type": "International passport",
+          "document_number": "FH663264",
+          "date_of_issue": "29.08.2017",
+          "date_of_expiry": "29.08.2027",
+          "country_of_issue": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "010589",
+          "date_issued": "08.11.2023",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "08.11.2028"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "030378",
+          "date_issued": "08.11.2023",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "08.11.2028"
+        },
+        {
+          "certificate_type": "Medical Care",
+          "certificate_number": "050135",
+          "date_issued": "08.11.2023",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "08.11.2028"
+        },
+        {
+          "certificate_type": "GMDSS Endorsement",
+          "certificate_number": "09734/2023",
+          "date_issued": "09.11.2023",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "26.10.2028"
+        },
+        {
+          "certificate_type": "Ship Security Officer",
+          "certificate_number": "200232",
+          "date_issued": "08.11.2023",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "08.11.2028"
+        },
+        {
+          "certificate_type": "Bridge Team Management",
+          "certificate_number": "260128",
+          "date_issued": "08.11.2023",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "08.11.2028"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "certificate_number": "250172",
+          "date_issued": "08.11.2023",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "08.11.2028"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "Master",
+          "rank_applied_for": "Master"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 12,
+      "documents": 2,
+      "certificates": 7,
+      "sea_service": 0,
+      "applications": 1
+    }
+  },
+  {
+    "file": "CV_Aslan_Khavloshvili.pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "Aslan Khavloshvili",
+        "first_name": "Aslan",
+        "surname": "Khavloshvili",
+        "position_applied_for": "Master",
+        "rank_applied_for": "Master",
+        "date_of_birth": "09.11.1979",
+        "place_of_birth": "Batumi Georgia",
+        "primary_phone": "Citizenship: Georgia",
+        "citizenship": "Georgia",
+        "nationality": "Georgia",
+        "email": "lukaxatiaaleko@mail.ru",
+        "english_level": "Good"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's book",
+          "document_number": "S001479",
+          "date_of_issue": "12.10.2021",
+          "date_of_expiry": "11.10.2031",
+          "country_of_issue": "GEORGIA"
+        },
+        {
+          "document_type": "International passport",
+          "document_number": "18AB65691",
+          "date_of_issue": "03.02.2019",
+          "date_of_expiry": "13.02.2029",
+          "country_of_issue": "GEORGIA"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "ECDIS",
+          "certificate_number": "ECS09-248178",
+          "date_issued": "23.09.2025",
+          "country_of_issue": "Georgia",
+          "expiry_date": "25.07.2030"
+        },
+        {
+          "certificate_type": "Bridge Team Management",
+          "certificate_number": "BTM03-179962",
+          "date_issued": "26.01.2023",
+          "country_of_issue": "Georgia",
+          "expiry_date": "24.12.2027"
+        },
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "BST03-179965",
+          "date_issued": "26.01.2023",
+          "country_of_issue": "Georgia",
+          "expiry_date": "26.01.2028"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "AFT03-179967",
+          "date_issued": "26.01.2023",
+          "country_of_issue": "Georgia",
+          "expiry_date": "12.01.2028"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "BST03-179965",
+          "date_issued": "26.01.2023",
+          "country_of_issue": "Georgia",
+          "expiry_date": "26.01.2028"
+        },
+        {
+          "certificate_type": "GMDSS Endorsement",
+          "certificate_number": "18G09-23-002749",
+          "date_issued": "25.08.2023",
+          "country_of_issue": "Georgia",
+          "expiry_date": "11.05.2028"
+        },
+        {
+          "certificate_type": "GMDSS Operator",
+          "certificate_number": "18G09-23-002749",
+          "date_issued": "26.09.2018",
+          "country_of_issue": "Georgia",
+          "expiry_date": "17.04.2026"
+        },
+        {
+          "certificate_type": "Medical Care",
+          "certificate_number": "490/24",
+          "date_issued": "18.10.2024",
+          "country_of_issue": "Georgia",
+          "expiry_date": "18.10.2029"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "Master",
+          "rank_applied_for": "Master"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 12,
+      "documents": 2,
+      "certificates": 8,
+      "sea_service": 0,
+      "applications": 1
+    }
+  },
+  {
+    "file": "CV_Mohammad_Zein.pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "Mohammad Zein",
+        "first_name": "Mohammad",
+        "surname": "Zein",
+        "position_applied_for": "Master",
+        "rank_applied_for": "Master",
+        "date_of_birth": "12.04.1995",
+        "place_of_birth": "Tartous",
+        "primary_phone": "Citizenship: Syria",
+        "citizenship": "Syria",
+        "nationality": "Syria",
+        "email": "gzein535@gmail.com",
+        "english_level": "Good"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's book",
+          "document_number": "000101470",
+          "date_of_issue": "30.04.2025",
+          "date_of_expiry": "29.04.2031",
+          "country_of_issue": "Syria"
+        }
+      ],
+      "certificates": [],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "Master",
+          "rank_applied_for": "Master"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 12,
+      "documents": 1,
+      "certificates": 0,
+      "sea_service": 0,
+      "applications": 1
+    }
+  },
+  {
+    "file": "CV_Ilya_Ryaposov (1).pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "Ilya Ryaposov",
+        "first_name": "Ilya",
+        "surname": "Ryaposov",
+        "position_applied_for": "Master",
+        "rank_applied_for": "Master",
+        "date_of_birth": "02.08.1978",
+        "place_of_birth": "USSR",
+        "primary_phone": "+79219123819 Citizenship: Russia",
+        "citizenship": "Russia",
+        "nationality": "Russia",
+        "email": "iryaposov@mail.ru",
+        "english_level": "Good"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's book",
+          "document_number": "RUS0537251",
+          "date_of_issue": "13.01.2022",
+          "date_of_expiry": "13.01.2027",
+          "country_of_issue": "Russia"
+        },
+        {
+          "document_type": "International passport",
+          "document_number": "767473297",
+          "date_of_issue": "05.05.2022",
+          "date_of_expiry": "05.05.2032",
+          "country_of_issue": "Russia"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "GMDSS Operator",
+          "certificate_number": "LED209533312",
+          "date_issued": "08.04.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "12.03.2031"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "Master",
+          "rank_applied_for": "Master"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 12,
+      "documents": 2,
+      "certificates": 1,
+      "sea_service": 0,
+      "applications": 1
+    }
+  },
+  {
+    "file": "CV_Mikhail_Pospelov (1).pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "Mikhail Pospelov",
+        "first_name": "Mikhail",
+        "surname": "Pospelov",
+        "position_applied_for": "Master",
+        "rank_applied_for": "Master",
+        "date_of_birth": "28.10.1972",
+        "place_of_birth": "USSA",
+        "primary_phone": "Citizenship: Russia",
+        "citizenship": "Russia",
+        "nationality": "Russia",
+        "email": "pospelovml@mail.ru",
+        "english_level": "Fluent"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's book",
+          "document_number": "RUS0714238",
+          "date_of_issue": "05.03.2025",
+          "date_of_expiry": "05.03.2030",
+          "country_of_issue": "RUSSIA"
+        },
+        {
+          "document_type": "International passport",
+          "document_number": "763435959",
+          "date_of_issue": "17.09.2020",
+          "date_of_expiry": "17.09.2030",
+          "country_of_issue": "RUSSIA"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "82-316/22",
+          "date_issued": "20.09.2022",
+          "country_of_issue": "Russia",
+          "expiry_date": "20.09.2027"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "86-202/22",
+          "date_issued": "24.09.2022",
+          "country_of_issue": "Russia",
+          "expiry_date": "24.09.2027"
+        },
+        {
+          "certificate_type": "Medical Care",
+          "certificate_number": "94-078/22",
+          "date_issued": "07.10.2022",
+          "country_of_issue": "Russia",
+          "expiry_date": "07.10.2027"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "88-205/22",
+          "date_issued": "05.10.2022",
+          "country_of_issue": "Russia",
+          "expiry_date": "05.10.2027"
+        },
+        {
+          "certificate_type": "GMDSS Operator",
+          "certificate_number": "ARH207327048",
+          "date_issued": "16.11.2022",
+          "country_of_issue": "Russia",
+          "expiry_date": "20.09.2027"
+        },
+        {
+          "certificate_type": "Ship Security Officer",
+          "certificate_number": "145-070/22",
+          "date_issued": "14.10.2022",
+          "country_of_issue": "Russia",
+          "expiry_date": "14.10.2027"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "certificate_number": "76-093/22",
+          "date_issued": "29.09.2022",
+          "country_of_issue": "Russia",
+          "expiry_date": "29.09.2027"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "Master",
+          "rank_applied_for": "Master"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 12,
+      "documents": 2,
+      "certificates": 7,
+      "sea_service": 0,
+      "applications": 1
+    }
+  },
+  {
+    "file": "CV_Mikhail_Pospelov.pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "Mikhail Pospelov",
+        "first_name": "Mikhail",
+        "surname": "Pospelov",
+        "position_applied_for": "Master",
+        "rank_applied_for": "Master",
+        "date_of_birth": "28.10.1972",
+        "place_of_birth": "USSA",
+        "primary_phone": "Citizenship: Russia",
+        "citizenship": "Russia",
+        "nationality": "Russia",
+        "email": "pospelovml@mail.ru",
+        "english_level": "Fluent"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's book",
+          "document_number": "RUS0714238",
+          "date_of_issue": "05.03.2025",
+          "date_of_expiry": "05.03.2030",
+          "country_of_issue": "RUSSIA"
+        },
+        {
+          "document_type": "International passport",
+          "document_number": "763435959",
+          "date_of_issue": "17.09.2020",
+          "date_of_expiry": "17.09.2030",
+          "country_of_issue": "RUSSIA"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "82-316/22",
+          "date_issued": "20.09.2022",
+          "country_of_issue": "Russia",
+          "expiry_date": "20.09.2027"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "86-202/22",
+          "date_issued": "24.09.2022",
+          "country_of_issue": "Russia",
+          "expiry_date": "24.09.2027"
+        },
+        {
+          "certificate_type": "Medical Care",
+          "certificate_number": "94-078/22",
+          "date_issued": "07.10.2022",
+          "country_of_issue": "Russia",
+          "expiry_date": "07.10.2027"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "88-205/22",
+          "date_issued": "05.10.2022",
+          "country_of_issue": "Russia",
+          "expiry_date": "05.10.2027"
+        },
+        {
+          "certificate_type": "GMDSS Operator",
+          "certificate_number": "ARH207327048",
+          "date_issued": "16.11.2022",
+          "country_of_issue": "Russia",
+          "expiry_date": "20.09.2027"
+        },
+        {
+          "certificate_type": "Ship Security Officer",
+          "certificate_number": "145-070/22",
+          "date_issued": "14.10.2022",
+          "country_of_issue": "Russia",
+          "expiry_date": "14.10.2027"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "certificate_number": "76-093/22",
+          "date_issued": "29.09.2022",
+          "country_of_issue": "Russia",
+          "expiry_date": "29.09.2027"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "Master",
+          "rank_applied_for": "Master"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 12,
+      "documents": 2,
+      "certificates": 7,
+      "sea_service": 0,
+      "applications": 1
+    }
+  },
+  {
+    "file": "CV_ANDREI_TOKAREV (2).pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "ANDREI TOKAREV",
+        "first_name": "ANDREI",
+        "surname": "TOKAREV",
+        "position_applied_for": "",
+        "rank_applied_for": "",
+        "primary_phone": "+79604966217 Citizenship: Russia",
+        "citizenship": "Russia",
+        "nationality": "Russia",
+        "email": "tokaryev75@gmail.com",
+        "english_level": "Good"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's book №RUS",
+          "document_number": "0715305",
+          "date_of_issue": "07.02.2024",
+          "date_of_expiry": "06.02.2029",
+          "country_of_issue": "Russia"
+        },
+        {
+          "document_type": "International passport №77",
+          "document_number": "2199007",
+          "date_of_issue": "11.01.2024",
+          "date_of_expiry": "11.01.2034",
+          "country_of_issue": "Russia"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "00027087",
+          "date_issued": "13.01.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "12.01.2031"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "00027179",
+          "date_issued": "15.01.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "14.01.2031"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "00027098",
+          "date_issued": "14.01.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "13.01.2031"
+        },
+        {
+          "certificate_type": "Medical Care",
+          "certificate_number": "00027493",
+          "date_issued": "28.01.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "27.01.2031"
+        },
+        {
+          "certificate_type": "GMDSS Operator",
+          "certificate_number": "TAG209409918",
+          "date_issued": "13.02.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "03.02.2031"
+        },
+        {
+          "certificate_type": "Ship Security Officer",
+          "certificate_number": "00027042",
+          "date_issued": "30.12.2025",
+          "country_of_issue": "Russia",
+          "expiry_date": "29.12.2030"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "certificate_number": "00027202",
+          "date_issued": "16.01.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "15.01.2031"
+        },
+        {
+          "certificate_type": "Bridge Team Management",
+          "certificate_number": "00012578",
+          "date_issued": "31.01.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "30.01.2031"
+        },
+        {
+          "certificate_type": "ARPA",
+          "certificate_number": "00027351",
+          "date_issued": "22.01.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "21.01.2031"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "",
+          "rank_applied_for": ""
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 10,
+      "documents": 2,
+      "certificates": 9,
+      "sea_service": 0,
+      "applications": 1
+    }
+  },
+  {
+    "file": "CV_ANDREI_TOKAREV (1).pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "ANDREI TOKAREV",
+        "first_name": "ANDREI",
+        "surname": "TOKAREV",
+        "position_applied_for": "",
+        "rank_applied_for": "",
+        "primary_phone": "+79604966217 Citizenship: Russia",
+        "citizenship": "Russia",
+        "nationality": "Russia",
+        "email": "tokaryev75@gmail.com",
+        "english_level": "Good"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's book №RUS",
+          "document_number": "0715305",
+          "date_of_issue": "07.02.2024",
+          "date_of_expiry": "06.02.2029",
+          "country_of_issue": "Russia"
+        },
+        {
+          "document_type": "International passport №77",
+          "document_number": "2199007",
+          "date_of_issue": "11.01.2024",
+          "date_of_expiry": "11.01.2034",
+          "country_of_issue": "Russia"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "00027087",
+          "date_issued": "13.01.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "12.01.2031"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "00027179",
+          "date_issued": "15.01.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "14.01.2031"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "00027098",
+          "date_issued": "14.01.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "13.01.2031"
+        },
+        {
+          "certificate_type": "Medical Care",
+          "certificate_number": "00027493",
+          "date_issued": "28.01.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "27.01.2031"
+        },
+        {
+          "certificate_type": "GMDSS Operator",
+          "certificate_number": "TAG209409918",
+          "date_issued": "13.02.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "03.02.2031"
+        },
+        {
+          "certificate_type": "Ship Security Officer",
+          "certificate_number": "00027042",
+          "date_issued": "30.12.2025",
+          "country_of_issue": "Russia",
+          "expiry_date": "29.12.2030"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "certificate_number": "00027202",
+          "date_issued": "16.01.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "15.01.2031"
+        },
+        {
+          "certificate_type": "Bridge Team Management",
+          "certificate_number": "00012578",
+          "date_issued": "31.01.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "30.01.2031"
+        },
+        {
+          "certificate_type": "ARPA",
+          "certificate_number": "00027351",
+          "date_issued": "22.01.2026",
+          "country_of_issue": "Russia",
+          "expiry_date": "21.01.2031"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "",
+          "rank_applied_for": ""
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 10,
+      "documents": 2,
+      "certificates": 9,
+      "sea_service": 0,
+      "applications": 1
+    }
+  },
+  {
+    "file": "CV_Anatoliy_Kraynykov.pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "Anatoliy Kraynykov",
+        "first_name": "Anatoliy",
+        "surname": "Kraynykov",
+        "position_applied_for": "Master",
+        "rank_applied_for": "Master",
+        "date_of_birth": "01.06.1967",
+        "place_of_birth": "Ukraine",
+        "primary_phone": "+380632732202 Citizenship: Ukraine",
+        "citizenship": "Ukraine",
+        "nationality": "Ukraine",
+        "email": "anatoliykraynykov@gmail.com",
+        "english_level": "Good"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's book AA",
+          "document_number": "1018090",
+          "date_of_issue": "25.11.2024",
+          "date_of_expiry": "25.11.2029",
+          "country_of_issue": "Poland"
+        },
+        {
+          "document_type": "International passport",
+          "document_number": "FK952294",
+          "date_of_issue": "15.01.2018",
+          "date_of_expiry": "15.01.2028",
+          "country_of_issue": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "215932/2025",
+          "date_issued": "19.11.2025",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "19.11.2030"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "216048/2025",
+          "date_issued": "20.11.2025",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "20.11.2030"
+        },
+        {
+          "certificate_type": "GMDSS Endorsement",
+          "certificate_number": "31302/2025",
+          "date_issued": "11.12.2025",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "09.12.2030"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "certificate_number": "227",
+          "date_issued": "31.01.2025",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "31.01.2030"
+        },
+        {
+          "certificate_type": "Bridge Team Management",
+          "certificate_number": "216049/2025",
+          "date_issued": "20.11.2025",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "20.11.2030"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "Master",
+          "rank_applied_for": "Master"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 12,
+      "documents": 2,
+      "certificates": 5,
+      "sea_service": 0,
+      "applications": 1
+    }
+  },
+  {
+    "file": "CV_ROMAN_PANCHENKO.pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "ROMAN PANCHENKO",
+        "first_name": "ROMAN",
+        "surname": "PANCHENKO",
+        "position_applied_for": "Chief Engineer",
+        "rank_applied_for": "Chief Engineer",
+        "primary_phone": "+79143422242 Citizenship: Russia",
+        "citizenship": "Russia",
+        "nationality": "Russia",
+        "email": "roma.panchenko.1977@mail.ru",
+        "english_level": "Medium"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's book RUS",
+          "document_number": "0748838",
+          "date_of_issue": "16.03.2026",
+          "date_of_expiry": "15.03.2031",
+          "country_of_issue": "RUSSIA"
+        },
+        {
+          "document_type": "International passport",
+          "document_number": "764034558",
+          "date_of_issue": "05.03.2021",
+          "date_of_expiry": "05.03.2031",
+          "country_of_issue": "RUSSIA"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "021630",
+          "date_issued": "12.05.2025",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "11.05.2030"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "021470",
+          "date_issued": "29.04.2025",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "28.04.2030"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "021531",
+          "date_issued": "05.05.2025",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "04.05.2030"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "Chief Engineer",
+          "rank_applied_for": "Chief Engineer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 10,
+      "documents": 2,
+      "certificates": 3,
+      "sea_service": 0,
+      "applications": 1
+    }
+  },
+  {
+    "file": "CV_Heorhii_Kudashov (1).pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "Heorhii Kudashov",
+        "first_name": "Heorhii",
+        "surname": "Kudashov",
+        "position_applied_for": "3rd Officer",
+        "rank_applied_for": "3rd Officer",
+        "primary_phone": "+380984278884 Citizenship: Ukraine",
+        "citizenship": "Ukraine",
+        "nationality": "Ukraine",
+        "email": "redsigeorge@gmail.com",
+        "english_level": "Good"
+      },
+      "documents": [
+        {
+          "document_type": "Seaman's book",
+          "document_number": "AB600115",
+          "date_of_issue": "11.04.2017",
+          "date_of_expiry": "11.04.2027",
+          "country_of_issue": "Ukraine"
+        },
+        {
+          "document_type": "International passport",
+          "document_number": "GM282458",
+          "date_of_issue": "11.08.2025",
+          "date_of_expiry": "11.08.2035",
+          "country_of_issue": "Ukraine"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "32334224/01/1222/026",
+          "date_issued": "19.02.2026",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "19.02.2031"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "32334224/04/0780/026",
+          "date_issued": "25.03.2026",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "25.03.2031"
+        },
+        {
+          "certificate_type": "GMDSS Operator",
+          "certificate_number": "30489813/35/0002/026",
+          "date_issued": "16.02.2026",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "16.02.2031"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "certificate_number": "0025",
+          "date_issued": "05.09.2022",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "05.09.2027"
+        },
+        {
+          "certificate_type": "Bridge Team Management",
+          "certificate_number": "0006",
+          "date_issued": "05.09.2022",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "05.09.2027"
+        },
+        {
+          "certificate_type": "Ship Safety Officer",
+          "certificate_number": "0016",
+          "date_issued": "10.04.2024",
+          "country_of_issue": "Ukraine",
+          "expiry_date": "10.04.2029"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "3rd Officer",
+          "rank_applied_for": "3rd Officer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 10,
+      "documents": 2,
+      "certificates": 6,
+      "sea_service": 0,
+      "applications": 1
+    }
+  },
+  {
+    "file": "CV_DENIS_LEBEDEV (1).pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "DENIS LEBEDEV",
+        "first_name": "DENIS",
+        "surname": "LEBEDEV",
+        "position_applied_for": "",
+        "rank_applied_for": "",
+        "primary_phone": "+79217603633 Citizenship: Russia",
+        "citizenship": "Russia",
+        "nationality": "Russia",
+        "email": "ldenis85@rambler.ru",
+        "english_level": "Good"
+      },
+      "documents": [],
+      "certificates": [
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "BST-05610/23",
+          "date_issued": "04.04.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "04.04.2028"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting AFF-03099/23",
+          "certificate_number": "PD",
+          "date_issued": "14.03.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "14.03.2028"
+        },
+        {
+          "certificate_type": "PSC-03819/23",
+          "certificate_number": "PD",
+          "date_issued": "15.03.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "15.03.2028"
+        },
+        {
+          "certificate_type": "Medical Care",
+          "certificate_number": "913-138/23-09C",
+          "date_issued": "19.05.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "19.05.2028"
+        },
+        {
+          "certificate_type": "Medical First Aid MFA-03092/23",
+          "certificate_number": "PD",
+          "date_issued": "13.03.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "13.03.2028"
+        },
+        {
+          "certificate_type": "GMDSS Operator",
+          "certificate_number": "LED207574337",
+          "date_issued": "14.04.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "22.03.2028"
+        },
+        {
+          "certificate_type": "Ship Security Officer",
+          "certificate_number": "ISPS-SSO-00574/23",
+          "date_issued": "10.03.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "10.03.2028"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "certificate_number": "E-01426/23",
+          "date_issued": "07.03.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "07.03.2028"
+        },
+        {
+          "certificate_type": "PREVENTING BULLYING",
+          "certificate_number": "MH00000034690",
+          "date_issued": "26.02.2026",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "04.04.2028"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "",
+          "rank_applied_for": ""
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 10,
+      "documents": 0,
+      "certificates": 9,
+      "sea_service": 0,
+      "applications": 1
+    }
+  },
+  {
+    "file": "CV_DENIS_LEBEDEV.pdf",
+    "parsed": {
+      "personal_data": {
+        "full_name": "DENIS LEBEDEV",
+        "first_name": "DENIS",
+        "surname": "LEBEDEV",
+        "position_applied_for": "",
+        "rank_applied_for": "",
+        "primary_phone": "+79217603633 Citizenship: Russia",
+        "citizenship": "Russia",
+        "nationality": "Russia",
+        "email": "ldenis85@rambler.ru",
+        "english_level": "Good"
+      },
+      "documents": [],
+      "certificates": [
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "BST-05610/23",
+          "date_issued": "04.04.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "04.04.2028"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting AFF-03099/23",
+          "certificate_number": "PD",
+          "date_issued": "14.03.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "14.03.2028"
+        },
+        {
+          "certificate_type": "PSC-03819/23",
+          "certificate_number": "PD",
+          "date_issued": "15.03.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "15.03.2028"
+        },
+        {
+          "certificate_type": "Medical Care",
+          "certificate_number": "913-138/23-09C",
+          "date_issued": "19.05.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "19.05.2028"
+        },
+        {
+          "certificate_type": "Medical First Aid MFA-03092/23",
+          "certificate_number": "PD",
+          "date_issued": "13.03.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "13.03.2028"
+        },
+        {
+          "certificate_type": "GMDSS Operator",
+          "certificate_number": "LED207574337",
+          "date_issued": "14.04.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "22.03.2028"
+        },
+        {
+          "certificate_type": "Ship Security Officer",
+          "certificate_number": "ISPS-SSO-00574/23",
+          "date_issued": "10.03.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "10.03.2028"
+        },
+        {
+          "certificate_type": "ECDIS",
+          "certificate_number": "E-01426/23",
+          "date_issued": "07.03.2023",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "07.03.2028"
+        },
+        {
+          "certificate_type": "PREVENTING BULLYING",
+          "certificate_number": "MH00000034690",
+          "date_issued": "26.02.2026",
+          "country_of_issue": "RUSSIA",
+          "expiry_date": "04.04.2028"
+        }
+      ],
+      "sea_service": [],
+      "applications": [
+        {
+          "position_applied_for": "",
+          "rank_applied_for": ""
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 10,
+      "documents": 0,
+      "certificates": 9,
+      "sea_service": 0,
+      "applications": 1
+    }
+  }
+]

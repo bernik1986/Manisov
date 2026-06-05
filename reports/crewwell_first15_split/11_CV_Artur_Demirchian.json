@@ -1,0 +1,217 @@
+{
+  "file": "CV_Artur_Demirchian.pdf",
+  "parser": "CrewwellPDFParser",
+  "parsed": {
+    "personal_data": {
+      "full_name": "Artur Demirchian",
+      "first_name": "Artur",
+      "surname": "Demirchian",
+      "position_applied_for": "2nd Officer",
+      "rank_applied_for": "2nd Officer",
+      "date_of_birth": "1992-12-12",
+      "place_of_birth": "Ukraine, +380631500154",
+      "citizenship": "Ukraine",
+      "nationality": "Ukraine",
+      "email": "demir.arch@gmail.com",
+      "english_level": "Good",
+      "usa_visa_expiry_date": "2017-02-07",
+      "visa_status_note": "Schengen visa valid up: No",
+      "gender": "male",
+      "height_cm": "175",
+      "education_notes": "Academy",
+      "next_of_kin_relationship": "mother",
+      "next_of_kin_phone": "+3800487537214",
+      "next_of_kin_full_name": "Demirchian Lubov",
+      "next_of_kin_address": "Odessa.Marselskaya str",
+      "yellow_fever_issue_date": "2012-01-26",
+      "yellow_fever_expiry_date": "2032-01-26"
+    },
+    "documents": [
+      {
+        "document_type": "Seaman's book",
+        "document_number": "AB 648208",
+        "date_of_issue": "2019-01-25",
+        "date_of_expiry": "2028-10-17",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "document_type": "International passport",
+        "document_number": "FJ 419613",
+        "date_of_issue": "2017-10-24",
+        "date_of_expiry": "2027-10-24",
+        "country_of_issue": "Ukraine"
+      }
+    ],
+    "certificates": [
+      {
+        "certificate_type": "Basic Safety Training and 1/AA/9",
+        "certificate_number": "569/0/24",
+        "date_issued": "2024-12-30",
+        "expiry_date": "2029-12-30",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Instructions Advanced Fire Fighting",
+        "certificate_number": "03333/2025",
+        "date_issued": "2025-10-27",
+        "expiry_date": "2030-10-27",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Proficiency in Survival",
+        "certificate_number": "03631/2025",
+        "date_issued": "2025-10-28",
+        "expiry_date": "2030-10-28",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Craft and RB GMDSS Operator",
+        "certificate_number": "00635/2016/03",
+        "date_issued": "2016-09-15",
+        "expiry_date": "2027-05-26",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "GMDSS Endorsement",
+        "certificate_number": "00635/2016/03",
+        "date_issued": "2022-05-30",
+        "expiry_date": "2027-05-26",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Radar Management",
+        "certificate_number": "1452704",
+        "date_issued": "2022-05-19",
+        "expiry_date": "2027-05-19",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "(ARPA+Radar) ECDIS",
+        "certificate_number": "01252/2025",
+        "date_issued": "2025-10-29",
+        "expiry_date": "2030-10-29",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Bridge Team Management",
+        "certificate_number": "1567628",
+        "date_issued": "2023-05-12",
+        "expiry_date": "2028-05-12",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Ship Security Officer",
+        "certificate_number": "1451689",
+        "date_issued": "2022-05-16",
+        "expiry_date": "2027-05-16",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "Medical Care",
+        "certificate_number": "30373431/06/170/21",
+        "date_issued": "2021-11-01",
+        "expiry_date": "2026-11-01",
+        "country_of_issue": "Ukraine"
+      },
+      {
+        "certificate_type": "yellow fever",
+        "date_issued": "2012-01-26",
+        "expiry_date": "2032-01-26",
+        "country_of_issue": "Ukraine"
+      }
+    ],
+    "sea_service": [
+      {
+        "sign_on_date": "2025-11-20",
+        "sign_off_date": "2026-03-26",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "Volcan De Tauce",
+        "dwt": "4226"
+      },
+      {
+        "sign_on_date": "2025-06-17",
+        "sign_off_date": "2025-08-20",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "Volcan De Tauce",
+        "dwt": "4226"
+      },
+      {
+        "sign_on_date": "2024-09-04",
+        "sign_off_date": "2024-12-13",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "Samskip Express",
+        "dwt": "9341"
+      },
+      {
+        "sign_on_date": "2024-03-17",
+        "sign_off_date": "2024-06-20",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "Portugal Ship",
+        "dwt": "9340"
+      },
+      {
+        "sign_on_date": "2023-05-26",
+        "sign_off_date": "2023-09-29",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "MAN",
+        "dwt": "12850"
+      },
+      {
+        "sign_on_date": "2022-09-09",
+        "sign_off_date": "2022-12-26",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "Container Caterpillar",
+        "dwt": "16520"
+      },
+      {
+        "sign_on_date": "2021-11-13",
+        "sign_off_date": "2022-04-14",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "2nd Officer ENDEAVOUR",
+        "vessel_type": "Bulk carrier",
+        "dwt": "9315"
+      },
+      {
+        "sign_on_date": "2021-03-29",
+        "sign_off_date": "2021-07-26",
+        "rank_on_vessel": "2nd Officer",
+        "vessel_name": "2nd Officer MARSHALL B&W",
+        "vessel_type": "Bulk carrier",
+        "dwt": "9480"
+      },
+      {
+        "sign_on_date": "2020-07-28",
+        "sign_off_date": "2020-11-15",
+        "rank_on_vessel": "3rd Officer",
+        "vessel_name": "3rd Officer MARSHALL B&W",
+        "vessel_type": "Bulk carrier",
+        "dwt": "9480"
+      },
+      {
+        "sign_on_date": "2019-06-29",
+        "sign_off_date": "2019-11-28",
+        "rank_on_vessel": "3rd Officer",
+        "vessel_name": "Falcon Trident",
+        "vessel_type": "Bulk carrier",
+        "dwt": "6100"
+      },
+      {
+        "sign_on_date": "2018-08-24",
+        "sign_off_date": "2018-12-24",
+        "rank_on_vessel": "3rd Officer",
+        "vessel_name": "Falcon Trident",
+        "vessel_type": "Bulk carrier",
+        "dwt": "8050"
+      }
+    ],
+    "applications": [
+      {
+        "position_applied_for": "2nd Officer",
+        "rank_applied_for": "2nd Officer"
+      }
+    ],
+    "flag_documents": [],
+    "family_contacts": [],
+    "uploaded_files": []
+  }
+}

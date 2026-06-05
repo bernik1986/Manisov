@@ -1,0 +1,180 @@
+{
+  "file": "CV_Anatolii_Shelkovich.pdf",
+  "parser": "CrewwellPDFParser",
+  "parsed": {
+    "personal_data": {
+      "full_name": "Anatolii Shelkovich",
+      "first_name": "Anatolii",
+      "surname": "Shelkovich",
+      "position_applied_for": "ETO Container carriers",
+      "rank_applied_for": "ETO Container carriers",
+      "date_of_birth": "1985-08-09",
+      "place_of_birth": "-",
+      "primary_phone": "+7 978 857 83 23",
+      "citizenship": "Russia",
+      "nationality": "Russia",
+      "email": "optizet@yandex.ru",
+      "english_level": "Fluent",
+      "usa_visa_expiry_date": "No",
+      "visa_status_note": "Schengen visa valid up: No",
+      "gender": "male",
+      "height_cm": "176",
+      "education_notes": "UNIVERSITY",
+      "next_of_kin_relationship": "Wife",
+      "next_of_kin_phone": "+7 978",
+      "next_of_kin_full_name": "Shelkovich",
+      "next_of_kin_address": "-"
+    },
+    "documents": [
+      {
+        "document_type": "Seaman's book",
+        "document_number": "0736580",
+        "date_of_issue": "2025-10-15",
+        "date_of_expiry": "2030-10-14",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "document_type": "International passport",
+        "document_number": "4779375",
+        "date_of_issue": "2024-09-27",
+        "date_of_expiry": "2034-09-27",
+        "country_of_issue": "RUSSIA"
+      }
+    ],
+    "certificates": [
+      {
+        "certificate_type": "Basic Safety Training and",
+        "certificate_number": "001899",
+        "date_issued": "2025-11-13",
+        "expiry_date": "2030-11-13",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Instructions Security Awareness",
+        "certificate_number": "001471",
+        "date_issued": "2025-11-05",
+        "expiry_date": "2030-11-05",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Training Advanced Fire Fighting",
+        "certificate_number": "000988",
+        "date_issued": "2025-11-07",
+        "expiry_date": "2030-11-07",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Proficiency in Survival",
+        "certificate_number": "001370",
+        "date_issued": "2025-11-11",
+        "expiry_date": "2030-11-11",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Craft and RB Medical First Aid",
+        "certificate_number": "000863",
+        "date_issued": "2025-10-31",
+        "expiry_date": "2030-10-31",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "High Voltage Equipment",
+        "certificate_number": "051451",
+        "date_issued": "2025-01-14",
+        "expiry_date": "2030-01-14",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Harrassment",
+        "certificate_number": "00011843",
+        "date_issued": "2025-12-25",
+        "expiry_date": "2030-12-24",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Oil Tank Specialized",
+        "certificate_number": "000485",
+        "date_issued": "2026-01-16",
+        "expiry_date": "2031-01-16",
+        "country_of_issue": "RUSSIA"
+      },
+      {
+        "certificate_type": "Training Flag Documents and Other Countries Seaman's Books Country Document type No. Date of issue Valid up Cyprus record book",
+        "certificate_number": "CY303380",
+        "date_issued": "2019-05-02",
+        "expiry_date": "2029-05-01"
+      },
+      {
+        "certificate_type": "Liberia record book",
+        "certificate_number": "1784643",
+        "date_issued": "2023-03-09",
+        "expiry_date": "2028-03-09"
+      }
+    ],
+    "sea_service": [
+      {
+        "sign_on_date": "2025-01-22",
+        "sign_off_date": "2025-06-08",
+        "vessel_name": "Container Ship MAN",
+        "dwt": "36693"
+      },
+      {
+        "sign_on_date": "2023-12-24",
+        "sign_off_date": "2024-07-11",
+        "vessel_name": "Container Ship MAN",
+        "dwt": "36693"
+      },
+      {
+        "sign_on_date": "2023-03-08",
+        "sign_off_date": "2023-06-22",
+        "vessel_name": "Container Ship MAN",
+        "dwt": "66462"
+      },
+      {
+        "sign_on_date": "2022-04-12",
+        "sign_off_date": "2022-08-10",
+        "vessel_name": "Container Ship MAN",
+        "dwt": "66462"
+      },
+      {
+        "sign_on_date": "2021-06-03",
+        "sign_off_date": "2021-11-16",
+        "vessel_name": "ETO Sulzer",
+        "dwt": "40040"
+      },
+      {
+        "sign_on_date": "2020-02-05",
+        "sign_off_date": "2020-11-02",
+        "vessel_name": "CSL SANTA MARIA",
+        "dwt": "52683"
+      },
+      {
+        "sign_on_date": "2019-03-23",
+        "sign_off_date": "2019-09-20",
+        "vessel_name": "CSL ATLANTIC",
+        "dwt": "52683"
+      },
+      {
+        "sign_on_date": "2017-08-20",
+        "sign_off_date": "2017-12-26",
+        "vessel_name": "LAKE TAUPO",
+        "dwt": "45780"
+      },
+      {
+        "sign_on_date": "2016-11-14",
+        "sign_off_date": "2017-04-06",
+        "vessel_name": "HYUNDAI LONG Container Ship MAN",
+        "dwt": "46800"
+      }
+    ],
+    "applications": [
+      {
+        "position_applied_for": "ETO Container carriers",
+        "rank_applied_for": "ETO Container carriers"
+      }
+    ],
+    "flag_documents": [],
+    "family_contacts": [],
+    "uploaded_files": []
+  }
+}

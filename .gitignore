@@ -1,0 +1,56 @@
+# Python
+.venv/
+venv/
+__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Node / frontend
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+
+# Playwright E2E
+playwright-report/
+test-results/
+.playwright/
+e2e/.downloads/
+
+# Environment
+.env
+.env.*
+!.env.example
+
+# Local databases
+*.db
+*.sqlite3
+
+# Runtime data
+generated/
+uploads/
+templates/manager_files/
+backups/
+runtime_logs/
+
+# Logs
+*.log
+debug-*.log
+
+# MS Word / temp exports
+~$*.docx
+docs/*.generated.docx
+
+# IDE / OS
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db
+.cursor/
+.deploy_keys/

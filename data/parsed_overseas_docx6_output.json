@@ -1,0 +1,336 @@
+[
+  {
+    "file": "2E Yarkov OSM Application Form Eff. 04 Feb, 2020.docx",
+    "personal_fields": 17,
+    "documents": 2,
+    "certificates": 1,
+    "sea_service": 7,
+    "personal_sample": {
+      "proposed_vessel": "SMS Steinbock",
+      "date_applied": "03.09.2021",
+      "position_applied_for": "Second Engineer",
+      "certificate_of_competency_rank": "Chief engineer",
+      "date_available": "Ready",
+      "surname": "Yarkov",
+      "first_name": "Ivan",
+      "middle_name": "Aleksandr",
+      "age": "Russian / 30",
+      "permanent_address": "32B Komarova street, Kamenka vil., Arkhangelsk, Russia"
+    },
+    "documents_sample": [
+      {
+        "document_type": "Seaman Book",
+        "document_number": "MK 0172135",
+        "date_of_issue": "13.03.2013",
+        "date_of_expiry": "Unlimited"
+      },
+      {
+        "document_type": "Passport",
+        "document_number": "72 6586572",
+        "date_of_issue": "22.10.2013",
+        "date_of_expiry": "22.10.2023"
+      }
+    ],
+    "certificates_sample": [
+      {
+        "certificate_type": "Certificate of Competency",
+        "certificate_number": "ARH203109687",
+        "date_issued": "30.10.2018",
+        "expiry_date": "28.09.2023"
+      }
+    ],
+    "sea_service_sample": [
+      {
+        "vessel_name": "Daxia",
+        "vessel_type": "Bulk Carrier",
+        "flag": "Liberia",
+        "dwt": "56811",
+        "main_engine": "Mitsui MAN B&W 6S50MC-C",
+        "rank_on_vessel": "2E",
+        "sign_on_date": "22.07.2020",
+        "sign_off_date": "04.04.2021",
+        "employer": "Briese Schiffahrts GmbH& Co.",
+        "manning_agency": "Briese Shipping Arkhangelsk",
+        "remarks": "EOC"
+      }
+    ]
+  },
+  {
+    "file": "CE Varnaliy OSM Application Form Eff. 04 Feb, 2020.docx",
+    "personal_fields": 19,
+    "documents": 2,
+    "certificates": 1,
+    "sea_service": 9,
+    "personal_sample": {
+      "proposed_vessel": "Bulk Finland",
+      "date_applied": "26.04.2023",
+      "position_applied_for": "Chief Engineer",
+      "certificate_of_competency_rank": "First – class engineer",
+      "date_available": "May",
+      "surname": "Varnaliy",
+      "first_name": "Sergiy",
+      "middle_name": "Viktor",
+      "age": "Ukrainian/ 46",
+      "permanent_address": "127 Dneprodoroga street, apt. 235, Odesa, Ukarine"
+    },
+    "documents_sample": [
+      {
+        "document_type": "Seaman Book",
+        "document_number": "AB608855",
+        "date_of_issue": "19.09.2017",
+        "date_of_expiry": "19.09.2027"
+      },
+      {
+        "document_type": "Passport",
+        "document_number": "FL457660",
+        "date_of_issue": "02.022018",
+        "date_of_expiry": "02.02.2028"
+      }
+    ],
+    "certificates_sample": [
+      {
+        "certificate_type": "Certificate of Competency",
+        "certificate_number": "13139/2015/07",
+        "date_issued": "06.08.2015",
+        "expiry_date": "07.07.2025"
+      }
+    ],
+    "sea_service_sample": [
+      {
+        "vessel_name": "Kobayashi Maru",
+        "vessel_type": "Bulk Carrier",
+        "flag": "MI",
+        "dwt": "60397",
+        "main_engine": "MAN-B&W 6S50ME-B 9.3",
+        "rank_on_vessel": "CE",
+        "sign_on_date": "01.10.2022",
+        "sign_off_date": "24.01.2023",
+        "employer": "Kassian Maritime Ltd",
+        "manning_agency": "Elvictor",
+        "remarks": "EOC"
+      }
+    ]
+  },
+  {
+    "file": "ETO Krytsky OSM APPLICATION FORM Rev 6.docx",
+    "personal_fields": 19,
+    "documents": 2,
+    "certificates": 1,
+    "sea_service": 9,
+    "personal_sample": {
+      "last_salary_usd": "5000$",
+      "proposed_vessel": "Buk Mustique",
+      "date_applied": "02.03.2020",
+      "position_applied_for": "ETO",
+      "certificate_of_competency_rank": "Second-class electro-technical officer",
+      "date_available": "Ready",
+      "surname": "Krytsky",
+      "first_name": "Sergiy",
+      "middle_name": "Anatoliy",
+      "age": "Ukraine / 41"
+    },
+    "documents_sample": [
+      {
+        "document_type": "Seaman Book",
+        "document_number": "AB 585891",
+        "date_of_issue": "11.01.2017",
+        "date_of_expiry": "11.01.2022"
+      },
+      {
+        "document_type": "Passport",
+        "document_number": "FK 044353",
+        "date_of_issue": "20.11.2017",
+        "date_of_expiry": "20.11.2027"
+      }
+    ],
+    "certificates_sample": [
+      {
+        "certificate_type": "Certificate of Competency",
+        "certificate_number": "01022/2017/01",
+        "date_issued": "27.03.2017",
+        "expiry_date": "17.03.2022"
+      }
+    ],
+    "sea_service_sample": [
+      {
+        "vessel_name": "Emerald Bay",
+        "vessel_type": "General Cargo",
+        "flag": "UK",
+        "dwt": "32311",
+        "main_engine": "Mitsubishi 6UEC52LA",
+        "rank_on_vessel": "ETO",
+        "sign_on_date": "11.03.2019",
+        "sign_off_date": "16.10.2019",
+        "employer": "V. Ships",
+        "manning_agency": "V. Ships",
+        "remarks": "EOC"
+      }
+    ]
+  },
+  {
+    "file": "ETR Treschov OSM APPLICATION FORM Rev 6 (5).docx",
+    "personal_fields": 17,
+    "documents": 2,
+    "certificates": 1,
+    "sea_service": 7,
+    "personal_sample": {
+      "proposed_vessel": "Bulk Antigua",
+      "date_applied": "18.08.2022",
+      "position_applied_for": "ETR",
+      "certificate_of_competency_rank": "Electro technical rating",
+      "date_available": "Ready",
+      "surname": "Treschov",
+      "first_name": "Igor",
+      "middle_name": "Viktor",
+      "age": "Ukrainian /39",
+      "permanent_address": "34 Vostochnaya street, apt. 47, Kherson, Ukraine"
+    },
+    "documents_sample": [
+      {
+        "document_type": "Seaman Book",
+        "document_number": "AB 658991",
+        "date_of_issue": "01.10.2019",
+        "date_of_expiry": "01.10.2024"
+      },
+      {
+        "document_type": "Passport",
+        "document_number": "FH 746157",
+        "date_of_issue": "05.09.2017",
+        "date_of_expiry": "05.09.2027"
+      }
+    ],
+    "certificates_sample": [
+      {
+        "certificate_type": "Certificate of Competency",
+        "certificate_number": "11542/2017/11",
+        "date_issued": "04.08.2017",
+        "expiry_date": "Unlimited"
+      }
+    ],
+    "sea_service_sample": [
+      {
+        "vessel_name": "West Trader",
+        "vessel_type": "Bulk Carrier",
+        "flag": "MI",
+        "dwt": "175879",
+        "main_engine": "MAN-B&W 6S70MC 6",
+        "rank_on_vessel": "Electrician",
+        "sign_on_date": "17.09.2021",
+        "sign_off_date": "13.03.2022",
+        "employer": "Adk Maritime Pte Ltd",
+        "manning_agency": "Overseas/ Yialos Manning Services",
+        "remarks": "EOC"
+      }
+    ]
+  },
+  {
+    "file": "Master Borynsky OSM APPLICATION FORM Rev 6 (5) Master Borynsky Y.docx",
+    "personal_fields": 15,
+    "documents": 2,
+    "certificates": 1,
+    "sea_service": 8,
+    "personal_sample": {
+      "last_salary_usd": "9100",
+      "proposed_vessel": "BULKCARRIERS",
+      "position_applied_for": "MASTER",
+      "certificate_of_competency_rank": "DEEP SEA CAPTAIN",
+      "surname": "BORYNSKY",
+      "first_name": "YURIY",
+      "age": "UKRAINE / 55",
+      "permanent_address": "AKADEMIKA ZABOLOTNOGO STR 43A APP 88  ODESSA UKRAINE",
+      "place_of_birth": "24.04.1962  ODESSA UKRAINE",
+      "email": "borynskyyura@gmail.com"
+    },
+    "documents_sample": [
+      {
+        "document_type": "Seaman Book",
+        "document_number": "AB509183",
+        "date_of_issue": "01.06.2013",
+        "date_of_expiry": "07.09.2022"
+      },
+      {
+        "document_type": "Passport",
+        "document_number": "FN735650",
+        "date_of_issue": "04.09.2017",
+        "date_of_expiry": "04.09.2027"
+      }
+    ],
+    "certificates_sample": [
+      {
+        "certificate_type": "Certificate of Competency",
+        "certificate_number": "15337/2016/07",
+        "date_issued": "16.09.2016",
+        "expiry_date": "16.09.2021"
+      }
+    ],
+    "sea_service_sample": [
+      {
+        "vessel_name": "Sinokor Sunrice",
+        "vessel_type": "Bulk Carrier",
+        "flag": "Mirshal Island",
+        "dwt": "79393",
+        "rank_on_vessel": "MASTER",
+        "sign_on_date": "01.11.2017",
+        "sign_off_date": "17.07.2018",
+        "employer": "ADK Maritime",
+        "manning_agency": "STMA",
+        "remarks": "EOC"
+      }
+    ]
+  },
+  {
+    "file": "MST Shtregarski  OVERSEAS Application Form Eff. 04 Feb, 2020 (11).docx",
+    "personal_fields": 18,
+    "documents": 2,
+    "certificates": 1,
+    "sea_service": 6,
+    "personal_sample": {
+      "proposed_vessel": "Bulk Honduras",
+      "date_applied": "23.05.2023",
+      "position_applied_for": "Master",
+      "certificate_of_competency_rank": "Master on ships of 3000GT or more",
+      "date_available": "End of July",
+      "surname": "Shtregarski",
+      "first_name": "Bonyo",
+      "middle_name": "Mityo",
+      "age": "Bulgaria / 47",
+      "permanent_address": "209 Vl.Varnenchvik street,  apt. 5, Varna, Bulgaria"
+    },
+    "documents_sample": [
+      {
+        "document_type": "Seaman Book",
+        "document_number": "500837299",
+        "date_of_issue": "10.07.2019",
+        "date_of_expiry": "01.07.2024"
+      },
+      {
+        "document_type": "Passport",
+        "document_number": "386961808",
+        "date_of_issue": "25.08.2020",
+        "date_of_expiry": "25.08.2025"
+      }
+    ],
+    "certificates_sample": [
+      {
+        "certificate_type": "Certificate of Competency",
+        "certificate_number": "5702200",
+        "date_issued": "10.12.2014",
+        "expiry_date": "28.08.2024"
+      }
+    ],
+    "sea_service_sample": [
+      {
+        "vessel_name": "Katie K",
+        "vessel_type": "Bulk Carrier",
+        "flag": "Liberia",
+        "dwt": "206839",
+        "rank_on_vessel": "MST",
+        "sign_on_date": "24.10.2022",
+        "sign_off_date": "29.03.2023",
+        "employer": "Starbulk S.A",
+        "manning_agency": "Safwat Bg Ltd",
+        "remarks": "EOC"
+      }
+    ]
+  }
+]

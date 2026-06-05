@@ -1,0 +1,2180 @@
+[
+  {
+    "file": "2E Budurin CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD.docx",
+    "parsed": {
+      "personal_data": {
+        "surname": "Budurin",
+        "first_name": "Andrii",
+        "date_of_birth": "25/MAY/1990",
+        "place_of_birth": "Ukraine",
+        "marital_status": "Single     Married",
+        "nationality": "Ukrainian",
+        "permanent_address": "5 Dobrovolskogo str., Odessa, Ukraine",
+        "mobile_phone": "+380965685694",
+        "email": "andrii.budurin@gmail.com",
+        "next_of_kin_relationship": "Wife",
+        "next_of_kin_surname": "Budurina",
+        "next_of_kin_first_name": "Anastasiya",
+        "next_of_kin_phone": "+380630738684",
+        "number_of_children": "-",
+        "english_level": "Good\t Basic"
+      },
+      "documents": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "13/SEP/2018",
+          "passport_expiry_date": "13/SEP/2028"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "23/MAY/2016",
+          "passport_expiry_date": "23/MAY/2026"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "21/JAN/.2022",
+          "passport_expiry_date": "20/JAN/2027"
+        },
+        {
+          "passport_place_of_issue": "-",
+          "passport_issue_date": "-",
+          "passport_expiry_date": "-"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "30/DEC/2010",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "certificates": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "13/SEP/2018",
+          "passport_expiry_date": "13/SEP/2028"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "23/MAY/2016",
+          "passport_expiry_date": "23/MAY/2026"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "21/JAN/.2022",
+          "passport_expiry_date": "20/JAN/2027"
+        },
+        {
+          "passport_place_of_issue": "-",
+          "passport_issue_date": "-",
+          "passport_expiry_date": "-"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "30/DEC/2010",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Aquasmeralda",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MAN-B&W 6G50ME-C9.6",
+          "dwt": "5569",
+          "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+          "rank_on_vessel": "2/E",
+          "sign_on_date": "25/OCT/25",
+          "sign_off_date": "18/MAR/26",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Amarthea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN B&W 6G60ME-C9.5",
+          "dwt": "16800",
+          "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+          "rank_on_vessel": "2/E",
+          "sign_on_date": "29/MAR/24",
+          "sign_off_date": "26/JUL/24",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aristea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN-B&W  6G60ME-C9.5",
+          "dwt": "16800",
+          "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+          "rank_on_vessel": "2/E",
+          "sign_on_date": "12/MAY/23",
+          "sign_off_date": "21/OCT/23",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aktea",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MAN-B&W 5S70MC",
+          "dwt": "19100",
+          "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+          "rank_on_vessel": "2/E",
+          "sign_on_date": "21/APR/22",
+          "sign_off_date": "30/SEPT/22",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aquasmeralda",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MAN-B&W 6G50ME-C9.6",
+          "dwt": "5569",
+          "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+          "rank_on_vessel": "3/E",
+          "sign_on_date": "23/SEP/21",
+          "sign_off_date": "17/DEC/21",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aristea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN B&W 6G60ME – C9.5",
+          "dwt": "16380",
+          "employer": "Chandris Hellas Inc / Overseas/ Yialos Manning Services Inc.",
+          "rank_on_vessel": "3/E",
+          "sign_on_date": "09/JUL/20",
+          "sign_off_date": "13/DEC/20",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aristea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN B&W 6G60ME – C9.5",
+          "dwt": "16380",
+          "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+          "rank_on_vessel": "3/E",
+          "sign_on_date": "30/SEP/19",
+          "sign_off_date": "23/FEB/20",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Amarthea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN B&W 6G60ME-C9.5",
+          "dwt": "16800",
+          "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+          "rank_on_vessel": "3/E",
+          "sign_on_date": "08/JAN/19",
+          "sign_off_date": "30/APR/19",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aristea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN B&W 6G60ME – C9.5",
+          "dwt": "16380",
+          "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+          "rank_on_vessel": "3/E",
+          "sign_on_date": "10/APR/18",
+          "sign_off_date": "08/SEP/18",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aktea",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MAN-B&W 5S70MC",
+          "dwt": "19100",
+          "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+          "rank_on_vessel": "3/E",
+          "sign_on_date": "17/SEP/17",
+          "sign_off_date": "29/DEC/17",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "SHIPYARD EXPERIENCE (Years):",
+          "vessel_type": "SHIPYARD EXPERIENCE (Years):",
+          "main_engine": "SHIPYARD EXPERIENCE (Years):",
+          "dwt": "-",
+          "employer": "-",
+          "rank_on_vessel": "-",
+          "sign_on_date": "-",
+          "sign_off_date": "-",
+          "remarks": "-"
+        },
+        {
+          "vessel_name": "STS EXPERIENCE (Years):",
+          "vessel_type": "STS EXPERIENCE (Years):",
+          "main_engine": "STS EXPERIENCE (Years):",
+          "dwt": "6 months",
+          "employer": "6 months",
+          "rank_on_vessel": "6 months",
+          "sign_on_date": "6 months",
+          "sign_off_date": "6 months",
+          "remarks": "6 months"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Second Engineer",
+          "rank_applied_for": "Second Engineer"
+        }
+      ]
+    }
+  },
+  {
+    "file": "2E Rabiniuk CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD.docx",
+    "parsed": {
+      "personal_data": {
+        "surname": "Rabiniuk",
+        "first_name": "Oleksandr",
+        "date_of_birth": "27.09.1996",
+        "place_of_birth": "Ukraine",
+        "marital_status": "Single     Married",
+        "nationality": "Ukraine",
+        "permanent_address": "8 Didrihsona street, Odesa, Ukraine",
+        "primary_phone": "-",
+        "mobile_phone": "+380730793003",
+        "email": "av.rabiniuk@gmail.com",
+        "next_of_kin_relationship": "Mother",
+        "next_of_kin_surname": "Rabiniuk",
+        "next_of_kin_first_name": "Svitlana",
+        "next_of_kin_phone": "+380688485324",
+        "english_level": "Good\t Basic"
+      },
+      "documents": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "31.01.2025",
+          "passport_expiry_date": "31.01.2035"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "13.06.2020",
+          "passport_expiry_date": "13.07.2030"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "09.01.2024",
+          "passport_expiry_date": "07.01.2029"
+        },
+        {
+          "passport_place_of_issue": "-",
+          "passport_issue_date": "-",
+          "passport_expiry_date": "-"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "16.01.2021",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "certificates": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "31.01.2025",
+          "passport_expiry_date": "31.01.2035"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "13.06.2020",
+          "passport_expiry_date": "13.07.2030"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "09.01.2024",
+          "passport_expiry_date": "07.01.2029"
+        },
+        {
+          "passport_place_of_issue": "-",
+          "passport_issue_date": "-",
+          "passport_expiry_date": "-"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "16.01.2021",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Aktea",
+          "vessel_type": "Oil/Chemical Tanker",
+          "main_engine": "MAN-B&W 7S50MC-C",
+          "dwt": "51371/15050",
+          "employer": "Chandris (Hellas) Inc. / Overseas / Yialos Manning Services",
+          "rank_on_vessel": "2Е",
+          "sign_on_date": "28.10.2025",
+          "sign_off_date": "03.03.2026",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aktea",
+          "vessel_type": "Oil/Chemical Tanker",
+          "main_engine": "MAN-B&W 7S50MC-C",
+          "dwt": "51371/15050",
+          "employer": "Chandris (Hellas) Inc. / Overseas / Yialos Manning Services",
+          "rank_on_vessel": "3Е",
+          "sign_on_date": "20.03.2025",
+          "sign_off_date": "19.08.2025",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aktea",
+          "vessel_type": "Oil/Chemical Tanker",
+          "main_engine": "MAN-B&W 7S50MC-C",
+          "dwt": "51371/15050",
+          "employer": "Chandris (Hellas) Inc. / Overseas / Yialos Manning Services",
+          "rank_on_vessel": "3Е",
+          "sign_on_date": "26.10.2024",
+          "sign_off_date": "24.01.2025",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Alkea",
+          "vessel_type": "Oil/Chemical Tanker",
+          "main_engine": "MAN-B&W 6L50MC-C7",
+          "dwt": "36207/12889",
+          "employer": "Chandris (Hellas) Inc. / Overseas / Yialos Manning Services",
+          "rank_on_vessel": "4E",
+          "sign_on_date": "27.06.2024",
+          "sign_off_date": "22.09.2024",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aliai",
+          "vessel_type": "Oil/Chemical Tanker",
+          "main_engine": "MAN-B&W 6G50ME-C9.6",
+          "dwt": "50315/9709",
+          "employer": "Chandris (Hellas) Inc. / Overseas / Yialos Manning Services",
+          "rank_on_vessel": "4E",
+          "sign_on_date": "15.03.2024",
+          "sign_off_date": "06.06.2024",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Lydya N",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN-B&W 7S80MC",
+          "dwt": "299986 /31920",
+          "employer": "Hati Shipmanagement Srl /  Zolos Shipping LTD",
+          "rank_on_vessel": "4E",
+          "sign_on_date": "01.08.2023",
+          "sign_off_date": "01.12.2023",
+          "remarks": "The management was changed"
+        },
+        {
+          "vessel_name": "Lydya N",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN-B&W 7S80MC",
+          "dwt": "299986/31920",
+          "employer": "Vons Chartering Corp /  Zolos Shipping LTD",
+          "rank_on_vessel": "4E",
+          "sign_on_date": "03.06.2023",
+          "sign_off_date": "01.08.2023",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Sauger",
+          "vessel_type": "Oil Products Tanker",
+          "main_engine": "MAN-B&W 6L60MC",
+          "dwt": "72652/16679",
+          "employer": "Prime Tanker Management Inc / Univis Crewing Agency",
+          "rank_on_vessel": "4E",
+          "sign_on_date": "11.10.2022",
+          "sign_off_date": "03.04.2023",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Avanti",
+          "vessel_type": "Oil Products Tanker",
+          "main_engine": "MAN-B&W 6S50MC-C",
+          "dwt": "45965/12599",
+          "employer": "Prime Tanker Management Inc/ Univis Crewing Agency",
+          "rank_on_vessel": "Oiler",
+          "sign_on_date": "05.08.2021",
+          "sign_off_date": "21.06.2022",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Starman",
+          "vessel_type": "Oil Products Tanker",
+          "main_engine": "Mitsubishi 6UEC60LA",
+          "dwt": "45997/12600",
+          "employer": "Prime TankerManagement Inc / Univis Crewing Agency",
+          "rank_on_vessel": "Oiler",
+          "sign_on_date": "14.08.2020",
+          "sign_off_date": "15.04.2021",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Elong Elong",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "MAN-B&W 8PC2-5L",
+          "dwt": "5982",
+          "employer": "Marine Repair & Supply Pte Ltd",
+          "rank_on_vessel": "4E",
+          "sign_on_date": "05.05.2019",
+          "sign_off_date": "20.11.2019",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Avonmoor",
+          "vessel_type": "Container Ship",
+          "main_engine": "Wärtsilä 6R46C",
+          "dwt": "8565",
+          "employer": "Tylos Shipping & Marine Servs /  Odessa Maritime Service",
+          "rank_on_vessel": "Oiler",
+          "sign_on_date": "20.08.2018",
+          "sign_off_date": "05.03.2019",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "SHIPYARD EXPERIENCE (Years):",
+          "vessel_type": "SHIPYARD EXPERIENCE (Years):",
+          "main_engine": "SHIPYARD EXPERIENCE (Years):",
+          "dwt": "China - 2023, China - 2020",
+          "employer": "China - 2023, China - 2020",
+          "rank_on_vessel": "China - 2023, China - 2020",
+          "sign_on_date": "China - 2023, China - 2020",
+          "sign_off_date": "China - 2023, China - 2020",
+          "remarks": "China - 2023, China - 2020"
+        },
+        {
+          "vessel_name": "STS EXPERIENCE (Years):",
+          "vessel_type": "STS EXPERIENCE (Years):",
+          "main_engine": "STS EXPERIENCE (Years):",
+          "dwt": "10 months",
+          "employer": "10 months",
+          "rank_on_vessel": "10 months",
+          "sign_on_date": "10 months",
+          "sign_off_date": "10 months",
+          "remarks": "10 months"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Second Engineer",
+          "rank_applied_for": "Second Engineer"
+        }
+      ]
+    }
+  },
+  {
+    "file": "2O Reshetov CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD.docx",
+    "parsed": {
+      "personal_data": {
+        "surname": "Reshetov",
+        "first_name": "Andriy",
+        "date_of_birth": "13.11.1977",
+        "place_of_birth": "Ukraine",
+        "marital_status": "Single     Married",
+        "nationality": "Ukrainian",
+        "permanent_address": "17 Kindiyskoe shosse , apt.43, Kherson",
+        "mobile_phone": "+ 380505447804",
+        "email": "andriyr77@ukr.net",
+        "next_of_kin_relationship": "Wife",
+        "next_of_kin_surname": "Reshetova",
+        "next_of_kin_first_name": "Elena",
+        "next_of_kin_phone": "+380509808783",
+        "english_level": "Good\t Basic"
+      },
+      "documents": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "03.10.2018",
+          "passport_expiry_date": "03.10.2028"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "01.12.2021",
+          "passport_expiry_date": "01.12.2026"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "16.01.2024",
+          "passport_expiry_date": "24.12.2028"
+        },
+        {
+          "passport_place_of_issue": "-",
+          "passport_issue_date": "-",
+          "passport_expiry_date": "-"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "25.07.2007",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "certificates": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "03.10.2018",
+          "passport_expiry_date": "03.10.2028"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "01.12.2021",
+          "passport_expiry_date": "01.12.2026"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "16.01.2024",
+          "passport_expiry_date": "24.12.2028"
+        },
+        {
+          "passport_place_of_issue": "-",
+          "passport_issue_date": "-",
+          "passport_expiry_date": "-"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "25.07.2007",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Aegea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "51371",
+          "employer": "Chandris Hellas Ins/Overseas/Yialos Manning Services",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "28.08.2025",
+          "sign_off_date": "18.01.2026",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Oceanis",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "320780",
+          "employer": "Chandris Hellas Ins/Overseas/Yialos Manning Services",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "07.01.2025",
+          "sign_off_date": "24.05.2025",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Chemtrans Polaris",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "72291",
+          "employer": "Chemikalien Seetransport Gmbh / Eurocrew",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "12.01.2024",
+          "sign_off_date": "22.05.2024",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Chemtrans Leo",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": null,
+          "dwt": "37662",
+          "employer": "Chemikalien Seetransport Gmbh / Eurocrew",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "09.06.2023",
+          "sign_off_date": "11.10.2023",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Chemtrans Uranus",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": null,
+          "dwt": "36713",
+          "employer": "Chemikalien Seetransport Gmbh / Eurocrew",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "09.09.2022",
+          "sign_off_date": "12.03.2023",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Serena M",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": null,
+          "dwt": "39710",
+          "employer": "Medcare Shipping Sa / Eurocrew",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "13.03.2021",
+          "sign_off_date": "04.11.2021",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Libera",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": null,
+          "dwt": "40102",
+          "employer": "Medcare Shipping Sa / Eurocrew",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "18.06.2020",
+          "sign_off_date": "15.12.2020",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Voge Trust",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": null,
+          "dwt": "38341",
+          "employer": "Barber Ship Management Germany / Marlow Navigation Ukraine",
+          "rank_on_vessel": "CO",
+          "sign_on_date": "29.07.2019",
+          "sign_off_date": "16.09.2019",
+          "remarks": "SHIPYARD"
+        },
+        {
+          "vessel_name": "SHIPYARD EXPERIENCE (Years):",
+          "vessel_type": "SHIPYARD EXPERIENCE (Years):",
+          "main_engine": "SHIPYARD EXPERIENCE (Years):",
+          "dwt": "2019 – Tuzla,  2015 - Denmark",
+          "employer": "2019 – Tuzla,  2015 - Denmark",
+          "rank_on_vessel": "2019 – Tuzla,  2015 - Denmark",
+          "sign_on_date": "2019 – Tuzla,  2015 - Denmark",
+          "sign_off_date": "2019 – Tuzla,  2015 - Denmark",
+          "remarks": "2019 – Tuzla,  2015 - Denmark"
+        },
+        {
+          "vessel_name": "STS EXPERIENCE (Years):",
+          "vessel_type": "STS EXPERIENCE (Years):",
+          "main_engine": "STS EXPERIENCE (Years):",
+          "dwt": "7 months",
+          "employer": "7 months",
+          "rank_on_vessel": "7 months",
+          "sign_on_date": "7 months",
+          "sign_off_date": "7 months",
+          "remarks": "7 months"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Second Officer",
+          "rank_applied_for": "Second Officer"
+        }
+      ]
+    }
+  },
+  {
+    "file": "CO Sharov CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD.docx",
+    "parsed": {
+      "personal_data": {
+        "surname": "Sharov",
+        "first_name": "Eduard",
+        "date_of_birth": "22.05.1988",
+        "place_of_birth": "Ukraine",
+        "marital_status": "Single     Married",
+        "nationality": "Ukraine",
+        "permanent_address": "20 Lenina street, apt. 11, Alshansk, Mykolayiv region, Ukraine",
+        "primary_phone": "+380937419602",
+        "mobile_phone": "+380672244881",
+        "email": "eshar2205@gmail.com",
+        "next_of_kin_relationship": "Mother",
+        "next_of_kin_first_name": "Iryna",
+        "next_of_kin_phone": "+380673963522",
+        "english_level": "Good\t Basic"
+      },
+      "documents": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "18.11.2016",
+          "passport_expiry_date": "18.11.2026"
+        },
+        {
+          "passport_place_of_issue": "Poland",
+          "passport_issue_date": "22.04.2024",
+          "passport_expiry_date": "22.04.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "18.10.2023",
+          "passport_expiry_date": "16.10.2028"
+        },
+        {
+          "passport_place_of_issue": "Poland",
+          "passport_issue_date": "17.04.2025",
+          "passport_expiry_date": "Unlimited"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "23.02.2007",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "certificates": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "18.11.2016",
+          "passport_expiry_date": "18.11.2026"
+        },
+        {
+          "passport_place_of_issue": "Poland",
+          "passport_issue_date": "22.04.2024",
+          "passport_expiry_date": "22.04.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "18.10.2023",
+          "passport_expiry_date": "16.10.2028"
+        },
+        {
+          "passport_place_of_issue": "Poland",
+          "passport_issue_date": "17.04.2025",
+          "passport_expiry_date": "Unlimited"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "23.02.2007",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Oceanis",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "320780",
+          "employer": "Chandris Hellas/ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "CO",
+          "sign_on_date": "11.09.2025",
+          "sign_off_date": "19.00.2026",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aretea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "113969",
+          "employer": "Chandris Hellas/ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "CO",
+          "sign_on_date": "04.06.2025",
+          "sign_off_date": "24.08.2025",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Oceanis",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "320780",
+          "employer": "Chandris Hellas/ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "CO",
+          "sign_on_date": "04.06.2024",
+          "sign_off_date": "08.12.2024",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Althea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "115194",
+          "employer": "Chandris Hellas/ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "CO",
+          "sign_on_date": "07.09.2023",
+          "sign_off_date": "17.01.2024",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Sestrea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "158519",
+          "employer": "Chandris Hellas/ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "CO",
+          "sign_on_date": "21.12.2022",
+          "sign_off_date": "01.06.2023",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Athinea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "107160",
+          "employer": "Chandris Hellas/ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "CO",
+          "sign_on_date": "22.12.2021",
+          "sign_off_date": "04.02.2022",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Amarthea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "112794",
+          "employer": "Chandris Hellas/ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "CO",
+          "sign_on_date": "26.08.2020",
+          "sign_off_date": "10.05.2021",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Amarthea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "112794",
+          "employer": "Chandris Hellas/ Overseas STMA",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "31.10.2019",
+          "sign_off_date": "03.03.2020",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Amarthea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "112794",
+          "employer": "Chandris Hellas/ Overseas STMA",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "30.03.2019",
+          "sign_off_date": "25.07.2019",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Amarthea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "112794",
+          "employer": "Chandris Hellas/ Overseas STMA",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "13.08.2018",
+          "sign_off_date": "03.12.2018",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "SHIPYARD EXPERIENCE (Years):",
+          "vessel_type": "SHIPYARD EXPERIENCE (Years):",
+          "main_engine": "SHIPYARD EXPERIENCE (Years):",
+          "dwt": "-",
+          "employer": "-",
+          "rank_on_vessel": "-",
+          "sign_on_date": "-",
+          "sign_off_date": "-",
+          "remarks": "-"
+        },
+        {
+          "vessel_name": "STS EXPERIENCE (Years):",
+          "vessel_type": "STS EXPERIENCE (Years):",
+          "main_engine": "STS EXPERIENCE (Years):",
+          "dwt": "4 months",
+          "employer": "4 months",
+          "rank_on_vessel": "4 months",
+          "sign_on_date": "4 months",
+          "sign_off_date": "4 months",
+          "remarks": "4 months"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Chief Officer",
+          "rank_applied_for": "Chief Officer"
+        }
+      ]
+    }
+  },
+  {
+    "file": "CO tr  Herasym CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD09.07.2025.docx",
+    "parsed": {
+      "personal_data": {
+        "surname": "Herasym",
+        "first_name": "Dmytro",
+        "date_of_birth": "04.02.2000",
+        "place_of_birth": "Ukraine",
+        "marital_status": "Single     Married",
+        "nationality": "Ukraine",
+        "permanent_address": "64A Polevaya St., Rosdilna, Odesa Region",
+        "mobile_phone": "+380663742614 WhatsApp",
+        "email": "dmitriygerasim2017@gmail.com",
+        "next_of_kin_relationship": "Mother",
+        "next_of_kin_surname": "Herasym",
+        "next_of_kin_first_name": "Oksana",
+        "next_of_kin_phone": "+380951817556",
+        "number_of_children": "-",
+        "english_level": "Good\t Basic"
+      },
+      "documents": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "27.10.2017",
+          "passport_expiry_date": "27.10.2027"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "13.10.2017",
+          "passport_expiry_date": "13.10.2027"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "25.06.2025",
+          "passport_expiry_date": "23.06.2030"
+        },
+        {
+          "passport_place_of_issue": "Romania",
+          "passport_issue_date": "20.06.2025",
+          "passport_expiry_date": "20.06.2027"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "22.02.2018",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "certificates": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "27.10.2017",
+          "passport_expiry_date": "27.10.2027"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "13.10.2017",
+          "passport_expiry_date": "13.10.2027"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "25.06.2025",
+          "passport_expiry_date": "23.06.2030"
+        },
+        {
+          "passport_place_of_issue": "Romania",
+          "passport_issue_date": "20.06.2025",
+          "passport_expiry_date": "20.06.2027"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "22.02.2018",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Aquasmeralda",
+          "vessel_type": "Chemical/ Oil Products Tanker",
+          "main_engine": null,
+          "dwt": "50295/7240",
+          "employer": "Chandris Hellas Ins/Overseas/Yialos Manning Services",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "18.07.2025",
+          "sign_off_date": "01.02.2026",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Sea Cirrus",
+          "vessel_type": "Chemical/ Oil Products Tanker",
+          "main_engine": null,
+          "dwt": "39999/ 11665",
+          "employer": "Synergy Denmark A/S / ASP",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "11.02.2025",
+          "sign_off_date": "19.04.2025",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Sea Altus",
+          "vessel_type": "Chemical/ Oil Products Tanker",
+          "main_engine": null,
+          "dwt": "39999/ 11665",
+          "employer": "Synergy Denmark A/S / ASP",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "12.12.2024",
+          "sign_off_date": "02.02.2025",
+          "remarks": "The vessel was sold"
+        },
+        {
+          "vessel_name": "Maersk Katarina",
+          "vessel_type": "Chemical/ Oil Products Tanker",
+          "main_engine": null,
+          "dwt": "39724/ 12889",
+          "employer": "Synergy Denmark A/S / ASP",
+          "rank_on_vessel": "3O",
+          "sign_on_date": "17.03.2024",
+          "sign_off_date": "18.09.2024",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Maersk Mississippi",
+          "vessel_type": "Oil Products Tanker",
+          "main_engine": null,
+          "dwt": "47990/ 12890",
+          "employer": "Synergy Denmark A/S / ASP",
+          "rank_on_vessel": "3O",
+          "sign_on_date": "17.05.2023",
+          "sign_off_date": "24.11.2023",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Bro Nuuk",
+          "vessel_type": "Chemical/ Oil Products Tanker",
+          "main_engine": null,
+          "dwt": "16631/ 8606",
+          "employer": "Synergy Denmark A/S / ASP",
+          "rank_on_vessel": "3O",
+          "sign_on_date": "16.10.2022",
+          "sign_off_date": "15.03.2023",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Bro Nordby",
+          "vessel_type": "Chemical/ Oil Products Tanker",
+          "main_engine": null,
+          "dwt": "16511/ 8606",
+          "employer": "Synergy Denmark A/S / ASP",
+          "rank_on_vessel": "3O",
+          "sign_on_date": "01.02.2022",
+          "sign_off_date": "19.06.2022",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Bro Agnes",
+          "vessel_type": "Chemical/ Oil Products Tanker",
+          "main_engine": null,
+          "dwt": "16791/ 8565",
+          "employer": "Synergy Denmark A/S / ASP",
+          "rank_on_vessel": "3O",
+          "sign_on_date": "01.09.2021",
+          "sign_off_date": "06.12.2021",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "SHIPYARD EXPERIENCE (Years):",
+          "vessel_type": "SHIPYARD EXPERIENCE (Years):",
+          "main_engine": "SHIPYARD EXPERIENCE (Years):",
+          "dwt": "2023 – Latvia",
+          "employer": "2023 – Latvia",
+          "rank_on_vessel": "2023 – Latvia",
+          "sign_on_date": "2023 – Latvia",
+          "sign_off_date": "2023 – Latvia",
+          "remarks": "2023 – Latvia"
+        },
+        {
+          "vessel_name": "STS EXPERIENCE (Years):",
+          "vessel_type": "STS EXPERIENCE (Years):",
+          "main_engine": "STS EXPERIENCE (Years):",
+          "dwt": "7 months",
+          "employer": "7 months",
+          "rank_on_vessel": "7 months",
+          "sign_on_date": "7 months",
+          "sign_off_date": "7 months",
+          "remarks": "7 months"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Chief  Officer trainee",
+          "rank_applied_for": "Chief  Officer trainee"
+        }
+      ]
+    }
+  },
+  {
+    "file": "CO tr. Golubkov CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD.docx",
+    "parsed": {
+      "personal_data": {
+        "surname": "Golubkov",
+        "first_name": "Oleksandr",
+        "date_of_birth": "09.02.1988",
+        "place_of_birth": "Ukraine",
+        "marital_status": "Single     Married",
+        "nationality": "Ukraine",
+        "permanent_address": "58/2 Filatova street, apt. 34, Odessa, Ukraine",
+        "mobile_phone": "+380667524436",
+        "email": "olegolubkovolegol@gmail.com",
+        "next_of_kin_relationship": "Wife",
+        "next_of_kin_surname": "Peresypkina",
+        "next_of_kin_first_name": "Nataliya",
+        "next_of_kin_phone": "+380935712820",
+        "english_level": "Good\t Basic"
+      },
+      "documents": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "07.03.2024",
+          "passport_expiry_date": "07.03.2034"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "06.08.2019",
+          "passport_expiry_date": "05.03.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "06.04.2023",
+          "passport_expiry_date": "05.04.2028"
+        },
+        {
+          "passport_place_of_issue": "-",
+          "passport_issue_date": "-",
+          "passport_expiry_date": "-"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "13.11.2015",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "certificates": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "07.03.2024",
+          "passport_expiry_date": "07.03.2034"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "06.08.2019",
+          "passport_expiry_date": "05.03.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "06.04.2023",
+          "passport_expiry_date": "05.04.2028"
+        },
+        {
+          "passport_place_of_issue": "-",
+          "passport_issue_date": "-",
+          "passport_expiry_date": "-"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "13.11.2015",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Aretea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "113969",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "CO Trainee",
+          "sign_on_date": "27.06.2025",
+          "sign_off_date": "17.12.2025",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Althea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "115194",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "CO Trainee",
+          "sign_on_date": "17.06.2024",
+          "sign_off_date": "26.01.2025",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Oceanis",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "320780",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "18.06.2023",
+          "sign_off_date": "28.11.2023",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Ellinis",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "306431",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "05.09.2022",
+          "sign_off_date": "28.12.2022",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Sestrea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "158519",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "11.04.2021",
+          "sign_off_date": "16.10.2021",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Sestrea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "158519",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "12.07.2020",
+          "sign_off_date": "24.11.2020",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aristea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "112794",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "05.10.2019",
+          "sign_off_date": "22.02.2020",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aristea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": null,
+          "dwt": "112794",
+          "employer": "Chandris Hellas Inc./ Aquamarine",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "05.12.2018",
+          "sign_off_date": "11.06.2019",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aegea",
+          "vessel_type": "Oil/Chemical Tanker",
+          "main_engine": null,
+          "dwt": "51371",
+          "employer": "Chandris Hellas Inc./ Aquamarine",
+          "rank_on_vessel": "2O",
+          "sign_on_date": "16.12.2017",
+          "sign_off_date": "11.05.2018",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "SHIPYARD EXPERIENCE (Years):",
+          "vessel_type": "SHIPYARD EXPERIENCE (Years):",
+          "main_engine": "SHIPYARD EXPERIENCE (Years):",
+          "dwt": "Singapore-2017",
+          "employer": "Singapore-2017",
+          "rank_on_vessel": "Singapore-2017",
+          "sign_on_date": "Singapore-2017",
+          "sign_off_date": "Singapore-2017",
+          "remarks": "Singapore-2017"
+        },
+        {
+          "vessel_name": "STS EXPERIENCE (Years):",
+          "vessel_type": "STS EXPERIENCE (Years):",
+          "main_engine": "STS EXPERIENCE (Years):",
+          "dwt": "1 years",
+          "employer": "1 years",
+          "rank_on_vessel": "1 years",
+          "sign_on_date": "1 years",
+          "sign_off_date": "1 years",
+          "remarks": "1 years"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Chief Officer Trainee",
+          "rank_applied_for": "Chief Officer Trainee"
+        }
+      ]
+    }
+  },
+  {
+    "file": "CO tr. Nos  CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD.docx",
+    "parsed": {
+      "personal_data": {
+        "surname": "Nos",
+        "first_name": "Mykola",
+        "date_of_birth": "01.09.1987",
+        "place_of_birth": "Ukraine",
+        "marital_status": "Single     Married",
+        "nationality": "Ukraine",
+        "permanent_address": "96, Kolhoznaya str., v.Kalininskoe, Kherson reg., Ukraine",
+        "primary_phone": "-",
+        "mobile_phone": "+380502144319",
+        "email": "nosnikolay@ukr.net",
+        "next_of_kin_relationship": "Father",
+        "next_of_kin_surname": "Nos",
+        "next_of_kin_first_name": "Oleksandr",
+        "next_of_kin_phone": "+380688246158",
+        "english_level": "Good\t Basic"
+      },
+      "documents": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "08.02.2024",
+          "passport_expiry_date": "08.02.2034"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "13.09.2021",
+          "passport_expiry_date": "11.09.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "31.01.2024",
+          "passport_expiry_date": "17.01.2029"
+        },
+        {
+          "passport_place_of_issue": "-",
+          "passport_issue_date": "-",
+          "passport_expiry_date": "-"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "12.02.2016",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "certificates": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "08.02.2024",
+          "passport_expiry_date": "08.02.2034"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "13.09.2021",
+          "passport_expiry_date": "11.09.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "31.01.2024",
+          "passport_expiry_date": "17.01.2029"
+        },
+        {
+          "passport_place_of_issue": "-",
+          "passport_issue_date": "-",
+          "passport_expiry_date": "-"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "12.02.2016",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Aristea",
+          "vessel_type": "Crude oil tanker",
+          "main_engine": null,
+          "dwt": "112794",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "C/O trainee",
+          "sign_on_date": "17/DEC/25",
+          "sign_off_date": "22/MAR/26",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aristea",
+          "vessel_type": "Crude oil tanker",
+          "main_engine": null,
+          "dwt": "112794",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "C/O trainee",
+          "sign_on_date": "31/JUL/25",
+          "sign_off_date": "26/OCT/25",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Althea",
+          "vessel_type": "Crude oil tanker",
+          "main_engine": null,
+          "dwt": "115194",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "C/O trainee",
+          "sign_on_date": "26/JAN/25",
+          "sign_off_date": "28/MAY/25",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Sestrea",
+          "vessel_type": "Crude oil tanker",
+          "main_engine": null,
+          "dwt": "158519",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "C/O trainee",
+          "sign_on_date": "26/MAY/24",
+          "sign_off_date": "07/OCT/24",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Sestrea",
+          "vessel_type": "Crude oil tanker",
+          "main_engine": null,
+          "dwt": "158519",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "C/O trainee",
+          "sign_on_date": "04/SEP/23",
+          "sign_off_date": "05/JAN/24",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Serenea",
+          "vessel_type": "Crude oil tanker",
+          "main_engine": null,
+          "dwt": "158583",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "C/O trainee",
+          "sign_on_date": "01/JAN/23",
+          "sign_off_date": "30/MAY/23",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Amarthea",
+          "vessel_type": "Crude oil tanker",
+          "main_engine": null,
+          "dwt": "112794",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "C/O trainee",
+          "sign_on_date": "19/JUNE/22",
+          "sign_off_date": "28/OCT/22",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Oceanis",
+          "vessel_type": "Crude oil tanker",
+          "main_engine": null,
+          "dwt": "320780",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "C/O trainee",
+          "sign_on_date": "26/NOV/21",
+          "sign_off_date": "10/APR/22",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aretea",
+          "vessel_type": "Oil Tanker",
+          "main_engine": null,
+          "dwt": "113969",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "C/O trainee",
+          "sign_on_date": "08/APR/21",
+          "sign_off_date": "20/AUG/21",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Oceanis",
+          "vessel_type": "Crude oil tanker",
+          "main_engine": null,
+          "dwt": "320780",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "2/O",
+          "sign_on_date": "23/JUN/20",
+          "sign_off_date": "02/FEB/21",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aretea",
+          "vessel_type": "Crude oil tanker",
+          "main_engine": null,
+          "dwt": "113969",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "2/O",
+          "sign_on_date": "21/OCT/19",
+          "sign_off_date": "01/MAR/20",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aristea",
+          "vessel_type": "Crude oil tanker",
+          "main_engine": null,
+          "dwt": "112794",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "C/O",
+          "sign_on_date": "18/JUL/19",
+          "sign_off_date": "19/AUG/19",
+          "remarks": "Seafarer’s request"
+        },
+        {
+          "vessel_name": "Amarthea",
+          "vessel_type": "Crude oil tanker",
+          "main_engine": null,
+          "dwt": "112794",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "C/O trainee",
+          "sign_on_date": "03/DEC/18",
+          "sign_off_date": "24/APR/19",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Amarthea",
+          "vessel_type": "Crude oil tanker",
+          "main_engine": null,
+          "dwt": "112794",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "C/O trainee",
+          "sign_on_date": "09/MAR/18",
+          "sign_off_date": "27/AUG/18",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Australis",
+          "vessel_type": "Crude Oil tanker",
+          "main_engine": null,
+          "dwt": "299095",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "C/O trainee",
+          "sign_on_date": "28/AUG/17",
+          "sign_off_date": "12/DEC/17",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "SHIPYARD EXPERIENCE (Years):",
+          "vessel_type": "SHIPYARD EXPERIENCE (Years):",
+          "main_engine": "SHIPYARD EXPERIENCE (Years):",
+          "dwt": "2016 – Bahamas, 2017 - Qatar, 2020 – Singapore, 2024- Dubai",
+          "employer": "2016 – Bahamas, 2017 - Qatar, 2020 – Singapore, 2024- Dubai",
+          "rank_on_vessel": "2016 – Bahamas, 2017 - Qatar, 2020 – Singapore, 2024- Dubai",
+          "sign_on_date": "2016 – Bahamas, 2017 - Qatar, 2020 – Singapore, 2024- Dubai",
+          "sign_off_date": "2016 – Bahamas, 2017 - Qatar, 2020 – Singapore, 2024- Dubai",
+          "remarks": "2016 – Bahamas, 2017 - Qatar, 2020 – Singapore, 2024- Dubai"
+        },
+        {
+          "vessel_name": "STS EXPERIENCE (Years):",
+          "vessel_type": "STS EXPERIENCE (Years):",
+          "main_engine": "STS EXPERIENCE (Years):",
+          "dwt": "10 months",
+          "employer": "10 months",
+          "rank_on_vessel": "10 months",
+          "sign_on_date": "10 months",
+          "sign_off_date": "10 months",
+          "remarks": "10 months"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Chief Officer Trainee",
+          "rank_applied_for": "Chief Officer Trainee"
+        }
+      ]
+    }
+  },
+  {
+    "file": "FTR Malchev CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD18.11.2024-delete.docx",
+    "parsed": {
+      "personal_data": {
+        "surname": "Malchev",
+        "first_name": "Vasyl",
+        "date_of_birth": "13.09.1975",
+        "place_of_birth": "Ukraine",
+        "marital_status": "Single     Married",
+        "nationality": "Ukraine",
+        "permanent_address": "71 I. V. Cel Cumplit  str., Cahul, Moldova",
+        "mobile_phone": "+380983739677",
+        "email": "vasya.malchev13091975@gmail.com",
+        "next_of_kin_relationship": "Wife",
+        "next_of_kin_surname": "Malcheva",
+        "next_of_kin_first_name": "Mari",
+        "next_of_kin_phone": "+380968113836",
+        "number_of_children": "1",
+        "english_level": "Good\t Basic"
+      },
+      "documents": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "20.09.2019",
+          "passport_expiry_date": "20.09.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "02.11.2020",
+          "passport_expiry_date": "18.11.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "05.02.2016",
+          "passport_expiry_date": "Unlimited"
+        },
+        {
+          "passport_place_of_issue": "-",
+          "passport_issue_date": "-",
+          "passport_expiry_date": "-"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "25.04.2016",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "certificates": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "20.09.2019",
+          "passport_expiry_date": "20.09.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "02.11.2020",
+          "passport_expiry_date": "18.11.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "05.02.2016",
+          "passport_expiry_date": "Unlimited"
+        },
+        {
+          "passport_place_of_issue": "-",
+          "passport_issue_date": "-",
+          "passport_expiry_date": "-"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "25.04.2016",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Aliai",
+          "vessel_type": "Chemical/oil Products Tanker",
+          "main_engine": "MAN-B&W 6G50ME-C9",
+          "dwt": "50315/9844",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "01.03.2025",
+          "sign_off_date": "06.10.2025",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aliai",
+          "vessel_type": "Chemical/oil Products Tanker",
+          "main_engine": "MAN-B&W 6G50ME-C9",
+          "dwt": "50315/9844",
+          "employer": "Chandris Hellas Inc./ Overseas / Yialos Manning Services",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "27.11.2024",
+          "sign_off_date": "14.02.2025",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Gaschem Adriatic",
+          "vessel_type": "LPG Tanker",
+          "main_engine": "Wärtsilä 6RT-flex50",
+          "dwt": "18895/13215",
+          "employer": "Harpaingas Gmbh & Co Kg / STMA",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "18.03.2024",
+          "sign_off_date": "23.09.2024",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Maran Gas Spetses",
+          "vessel_type": "LNG Tanker",
+          "main_engine": "MAN-B&W 5G70ME-C9",
+          "dwt": "94945/49489",
+          "employer": "Maran Gas Maritime Inc / Eurocrew",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "04.09.2023",
+          "sign_off_date": "27.11.2023",
+          "remarks": "Riding Team"
+        },
+        {
+          "vessel_name": "Maran Gas Achilles",
+          "vessel_type": "LNG Tanker",
+          "main_engine": "Wärtsilä 12V50DF",
+          "dwt": "92713/53024",
+          "employer": "Maran Gas Maritime Inc / Eurocrew",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "12.12.2022",
+          "sign_off_date": "18.06.2023",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Isle Of Innisfree",
+          "vessel_type": "Passenger/Ro-Ro Ship (vehicles)",
+          "main_engine": "Sulzer/Jugoturbina 8ZAL40S",
+          "dwt": "3832/28710",
+          "employer": "Matrix Ship Management Ltd / Eurocrew",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "12.09.2022",
+          "sign_off_date": "24.09.2022",
+          "remarks": "Dry Dock"
+        },
+        {
+          "vessel_name": "Boris Vilkitsky",
+          "vessel_type": "LNG Tanker",
+          "main_engine": "Wärtsilä 12V50DF",
+          "dwt": "96958/61182",
+          "employer": "Dynagas Ltd / Eurocrew",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "18.10.2021",
+          "sign_off_date": "22.05.2022",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Clean Vision",
+          "vessel_type": "LNG Tanker",
+          "main_engine": "Wärtsilä 12V50DF",
+          "dwt": "89863/39292",
+          "employer": "Dynagas Ltd / Eurocrew",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "11.02.2021",
+          "sign_off_date": "08.08.2021",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "SHIPYARD EXPERIENCE (Years):",
+          "vessel_type": "SHIPYARD EXPERIENCE (Years):",
+          "main_engine": "SHIPYARD EXPERIENCE (Years):",
+          "dwt": "France – 2022, USA – 2024",
+          "employer": "France – 2022, USA – 2024",
+          "rank_on_vessel": "France – 2022, USA – 2024",
+          "sign_on_date": "France – 2022, USA – 2024",
+          "sign_off_date": "France – 2022, USA – 2024",
+          "remarks": "France – 2022, USA – 2024"
+        },
+        {
+          "vessel_name": "STS EXPERIENCE (Years):",
+          "vessel_type": "STS EXPERIENCE (Years):",
+          "main_engine": "STS EXPERIENCE (Years):",
+          "dwt": "-",
+          "employer": "-",
+          "rank_on_vessel": "-",
+          "sign_on_date": "-",
+          "sign_off_date": "-",
+          "remarks": "-"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Fitter",
+          "rank_applied_for": "Fitter"
+        }
+      ]
+    }
+  },
+  {
+    "file": "FTR Opria CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD.docx",
+    "parsed": {
+      "personal_data": {
+        "surname": "Opria",
+        "first_name": "Vadym",
+        "date_of_birth": "11.11.1991",
+        "place_of_birth": "Ukraine",
+        "marital_status": "Single     Married",
+        "nationality": "Ukrainian",
+        "permanent_address": "72 Khotynska street, Izmail, Odesa region, Ukraine",
+        "mobile_phone": "+380672664783",
+        "email": "vadym.opria@ukr.net  vadimopra160@gmail.com",
+        "next_of_kin_relationship": "Wife",
+        "next_of_kin_surname": "Shyndych",
+        "next_of_kin_first_name": "Liudmyla",
+        "next_of_kin_phone": "+380979788722",
+        "number_of_children": "2",
+        "english_level": "Good\t Basic"
+      },
+      "documents": [
+        {
+          "passport_place_of_issue": "Ukriane",
+          "passport_issue_date": "08.08.2017",
+          "passport_expiry_date": "08.08.2027"
+        },
+        {
+          "passport_place_of_issue": "Poland",
+          "passport_issue_date": "14.06.2024",
+          "passport_expiry_date": "14.06.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "28.06.2024",
+          "passport_expiry_date": "23.06.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "14.12.2015",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "certificates": [
+        {
+          "passport_place_of_issue": "Ukriane",
+          "passport_issue_date": "08.08.2017",
+          "passport_expiry_date": "08.08.2027"
+        },
+        {
+          "passport_place_of_issue": "Poland",
+          "passport_issue_date": "14.06.2024",
+          "passport_expiry_date": "14.06.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "28.06.2024",
+          "passport_expiry_date": "23.06.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "14.12.2015",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Aquasmeralda",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MAN-B&W 7S50MC-C",
+          "dwt": "50295/ 15050",
+          "employer": "Chandris Hellas Inc/ Yialos Manning Services",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "29.01.2026",
+          "sign_off_date": "18.03.2026",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aegea",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MAN-B&W 7S50MC-C",
+          "dwt": "51371/ 15050",
+          "employer": "Chandris Hellas Inc/ Yialos Manning Services",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "21.07.2025",
+          "sign_off_date": "20.01.2026",
+          "remarks": "Transfer"
+        },
+        {
+          "vessel_name": "Agia Moni",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "MAN-B&W 6S46MC-C",
+          "dwt": "38271/ 10686",
+          "employer": "Newport S.A. / Overseas / Yialos Manning Services",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "10.12.2024",
+          "sign_off_date": "24.04.2025",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Agia Sofia",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "MAN-B&W 6S42MC-C",
+          "dwt": "28320/ 7953",
+          "employer": "Newport S.A. / Overseas / Yialos Manning Services",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "09.10.2024",
+          "sign_off_date": "07.12.2024",
+          "remarks": "Transfer"
+        },
+        {
+          "vessel_name": "Agia Ekaterini",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "MAN-B&W 6S42MC",
+          "dwt": "29092/ 8360",
+          "employer": "Newport S.A. / Overseas / Yialos Manning Services",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "07.10.2023",
+          "sign_off_date": "22.04.2024",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Star Mistral",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "MAN-B&W 5S60ME",
+          "dwt": "63306/ 12280",
+          "employer": "Primerose Shipping Co Ltd /  Integrated Transport Service ITS",
+          "rank_on_vessel": "Fitter-Oiler",
+          "sign_on_date": "01.10.2021",
+          "sign_off_date": "29.06.2022",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Rcc Prestige",
+          "vessel_type": "Vehicles Carrier",
+          "main_engine": "MAN-B&W 7S50MC-C",
+          "dwt": "11196/ 15800",
+          "employer": "Stamco Ship Management Co Ltd /  Adriatico Brig",
+          "rank_on_vessel": "Fitter",
+          "sign_on_date": "08.04.2021",
+          "sign_off_date": "25.06.2021",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Thor",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "MAN-B&W 5S60MC-C",
+          "dwt": "76838/ 14003",
+          "employer": "Primerose Shipping Co Ltd /  Integrated Transport Service ITS",
+          "rank_on_vessel": "Fitter-Oiler",
+          "sign_on_date": "22.02.2020",
+          "sign_off_date": "16.12.2020",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Centurion",
+          "vessel_type": "Bulk Carrier",
+          "main_engine": "MAN-B&W 5S60MC-C",
+          "dwt": "76838/ 14003",
+          "employer": "Primerose Shipping Co Ltd /  Integrated Transport Service ITS",
+          "rank_on_vessel": "Fitter-Oiler",
+          "sign_on_date": "06.01.2019",
+          "sign_off_date": "26.10.2019",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Juliana",
+          "vessel_type": "General Cargo Ship",
+          "main_engine": "MAN-B&W 6S35MC",
+          "dwt": "16736/ 6036",
+          "employer": "Canakkale Liman Isletmesi / Vmar",
+          "rank_on_vessel": "Fitter-Oiler",
+          "sign_on_date": "07.03.2018",
+          "sign_off_date": "23.11.2018",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "SHIPYARD EXPERIENCE (Years):",
+          "vessel_type": "SHIPYARD EXPERIENCE (Years):",
+          "main_engine": "SHIPYARD EXPERIENCE (Years):",
+          "dwt": "2019 – China, 2020 - China",
+          "employer": "2019 – China, 2020 - China",
+          "rank_on_vessel": "2019 – China, 2020 - China",
+          "sign_on_date": "2019 – China, 2020 - China",
+          "sign_off_date": "2019 – China, 2020 - China",
+          "remarks": "2019 – China, 2020 - China"
+        },
+        {
+          "vessel_name": "STS EXPERIENCE (Years):",
+          "vessel_type": "STS EXPERIENCE (Years):",
+          "main_engine": "STS EXPERIENCE (Years):",
+          "dwt": "3 months",
+          "employer": "3 months",
+          "rank_on_vessel": "3 months",
+          "sign_on_date": "3 months",
+          "sign_off_date": "3 months",
+          "remarks": "3 months"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Fitter",
+          "rank_applied_for": "Fitter"
+        }
+      ]
+    }
+  },
+  {
+    "file": "PMPN Magomedov CR-RT 05A - SEAMEN'S APPLICATION & INTERVIEW RECORD.docx",
+    "parsed": {
+      "personal_data": {
+        "surname": "Magomedov",
+        "first_name": "Sergii",
+        "date_of_birth": "15.09.1966",
+        "place_of_birth": "Ukraine",
+        "marital_status": "Single     Married",
+        "nationality": "Ukrainian",
+        "permanent_address": "3 Segedskaya street, apt. 17, Odessa, Ukraine",
+        "mobile_phone": "+380932338785",
+        "email": "mr.klient@yandex.ru",
+        "next_of_kin_surname": "Magomedova",
+        "next_of_kin_first_name": "Nataliya",
+        "next_of_kin_phone": "+380993054047",
+        "english_level": "Good\t Basic"
+      },
+      "documents": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "15.03.2019",
+          "passport_expiry_date": "15.03.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "04.10.2019",
+          "passport_expiry_date": "27.09.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "12.08.2016",
+          "passport_expiry_date": "Unlimited"
+        },
+        {
+          "passport_place_of_issue": "-",
+          "passport_issue_date": "-",
+          "passport_expiry_date": "-"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "12.08.2008",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "certificates": [
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "15.03.2019",
+          "passport_expiry_date": "15.03.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "04.10.2019",
+          "passport_expiry_date": "27.09.2029"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "12.08.2016",
+          "passport_expiry_date": "Unlimited"
+        },
+        {
+          "passport_place_of_issue": "-",
+          "passport_issue_date": "-",
+          "passport_expiry_date": "-"
+        },
+        {
+          "passport_place_of_issue": "Ukraine",
+          "passport_issue_date": "12.08.2008",
+          "passport_expiry_date": "Unlimited"
+        }
+      ],
+      "sea_service": [
+        {
+          "vessel_name": "Alkea",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MAN-B&W 6S50MC-C",
+          "dwt": "12889",
+          "employer": "Chandris Hellas Inc/ Overseas/ Yialos Manning Services",
+          "rank_on_vessel": "PMPN",
+          "sign_on_date": "25.05.2025",
+          "sign_off_date": "10.03.2026",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Aegea",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MAN-B&W 7S50MC-C",
+          "dwt": "15050",
+          "employer": "Chandris Hellas Inc/ Overseas/ Yialos Manning Services",
+          "rank_on_vessel": "PMPN",
+          "sign_on_date": "04.11.2024",
+          "sign_off_date": "06.04.2025",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Alkea",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MAN-B&W 6S50MC-C",
+          "dwt": "12889",
+          "employer": "Chandris Hellas Inc/ Overseas/ Yialos Manning Services",
+          "rank_on_vessel": "PMPN",
+          "sign_on_date": "27.01.2024",
+          "sign_off_date": "22.09.2024",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Sestrea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN-B&W 6S70MC-C",
+          "dwt": "18660",
+          "employer": "Chandris Hellas Inc/ Overseas/ Yialos Manning Services",
+          "rank_on_vessel": "PMPN",
+          "sign_on_date": "24.03.2023",
+          "sign_off_date": "14.12.2023",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Amarthea",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN-B&W 6G60ME-C9.5",
+          "dwt": "16800",
+          "employer": "Chandris Hellas Inc/ Overseas/ Yialos Manning Services",
+          "rank_on_vessel": "PMPN",
+          "sign_on_date": "01.04.2022",
+          "sign_off_date": "04.02.2023",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Astrea",
+          "vessel_type": "Chemical/Oil Products Tanker",
+          "main_engine": "MAN-B&W 6S50MC",
+          "dwt": "11154",
+          "employer": "Chandris Hellas Inc/ Overseas/ Yialos Manning Services",
+          "rank_on_vessel": "PMPN",
+          "sign_on_date": "24.02.2022",
+          "sign_off_date": "30.03.2022",
+          "remarks": "Vessel sold"
+        },
+        {
+          "vessel_name": "Chemtrans Saturn",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN-B&W 5S60MC-C",
+          "dwt": "15363",
+          "employer": "Diamlemos Shipping Corp /Eurocrew",
+          "rank_on_vessel": "PMPN",
+          "sign_on_date": "24.06.2021",
+          "sign_off_date": "21.12.2021",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Athens Star",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN-B&W 5S60MC-C",
+          "dwt": "15350",
+          "employer": "Chemikalien Seetransport Gmbh /Eurocrew",
+          "rank_on_vessel": "PMPN",
+          "sign_on_date": "16.08.2020",
+          "sign_off_date": "25.04.2021",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Nordtulip",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN-B&W 6S60ME-C8",
+          "dwt": "14079",
+          "employer": "Reederei Nord Bv / Interbroker",
+          "rank_on_vessel": "PMPN",
+          "sign_on_date": "03.11.2019",
+          "sign_off_date": "16.03.2020",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Nordvenus",
+          "vessel_type": "Oil Products Tanker",
+          "main_engine": "MAN-B&W 6S60MC-C",
+          "dwt": "17416",
+          "employer": "Reederei Nord Bv / Interbroker",
+          "rank_on_vessel": "PMPN",
+          "sign_on_date": "08.04.2019",
+          "sign_off_date": "10.09.2019",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Two Million Ways",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN-B&W 6S60MC-C",
+          "dwt": "15912",
+          "employer": "Reederei Nord Bv / Interbroker",
+          "rank_on_vessel": "PMPN",
+          "sign_on_date": "09.07.2018",
+          "sign_off_date": "26.01.2019",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Power D",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "MAN-B&W 6S90MC-C",
+          "dwt": "39890",
+          "employer": "Reederei Nord Bv / Interbroker",
+          "rank_on_vessel": "PMPN",
+          "sign_on_date": "01.12.2017",
+          "sign_off_date": "22.05.2018",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "Nordbay",
+          "vessel_type": "Crude Oil Tanker",
+          "main_engine": "Sulzer 7RTA58T",
+          "dwt": "18200",
+          "employer": "Reederei Nord Bv / Interbroker",
+          "rank_on_vessel": "PMPN",
+          "sign_on_date": "11.05.2017",
+          "sign_off_date": "03.10.2017",
+          "remarks": "EOC"
+        },
+        {
+          "vessel_name": "SHIPYARD EXPERIENCE (Years):",
+          "vessel_type": "SHIPYARD EXPERIENCE (Years):",
+          "main_engine": "SHIPYARD EXPERIENCE (Years):",
+          "dwt": "China – 2021",
+          "employer": "China – 2021",
+          "rank_on_vessel": "China – 2021",
+          "sign_on_date": "China – 2021",
+          "sign_off_date": "China – 2021",
+          "remarks": "China – 2021"
+        },
+        {
+          "vessel_name": "STS EXPERIENCE (Years):",
+          "vessel_type": "STS EXPERIENCE (Years):",
+          "main_engine": "STS EXPERIENCE (Years):",
+          "dwt": "10 months",
+          "employer": "10 months",
+          "rank_on_vessel": "10 months",
+          "sign_on_date": "10 months",
+          "sign_off_date": "10 months",
+          "remarks": "10 months"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "Pumpman",
+          "rank_applied_for": "Pumpman"
+        }
+      ]
+    }
+  }
+]

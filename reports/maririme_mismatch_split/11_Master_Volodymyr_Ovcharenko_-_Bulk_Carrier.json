@@ -1,0 +1,28 @@
+{
+  "file": "Master_Volodymyr_Ovcharenko_-_Bulk_Carrier.pdf",
+  "parser": "PDFParser",
+  "expected": {
+    "documents": 2,
+    "certificates": 20,
+    "sea_service": 19,
+    "applications": 1
+  },
+  "saved": {
+    "documents": 2,
+    "certificates": 20,
+    "sea_service": 18,
+    "applications": 1
+  },
+  "sea_service_missing_count": 1,
+  "sea_service_missing_examples": [
+    {
+      "rank_on_vessel": "Master",
+      "vessel_name": null,
+      "sign_on_date": "2021-09-04",
+      "sign_off_date": "2022-02-22",
+      "dwt": null
+    }
+  ],
+  "sea_service_parsed_count": 19,
+  "sea_service_saved_count": 18
+}

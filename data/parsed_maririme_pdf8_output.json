@@ -1,0 +1,1725 @@
+[
+  {
+    "file": "2nd_Officer_Artem_Makarov_-_Bulk_Carrier.pdf",
+    "parsed": {
+      "personal_data": {
+        "email": "a.makarov0@icloud.com",
+        "full_name": "Artem Makarov",
+        "age": "25",
+        "first_name": "Artem",
+        "surname": "Makarov",
+        "date_of_birth": "02-08-2000",
+        "primary_phone": "+380732229216",
+        "mobile_phone": "+380732229216",
+        "position_applied_for": "2nd Officer",
+        "rank_applied_for": "2nd Officer",
+        "last_salary_usd": "4,000",
+        "citizenship": "Ukraine",
+        "nationality": "Ukraine",
+        "english_level": "good Нахожусь за территорией Украины"
+      },
+      "documents": [
+        {
+          "document_type": "Passport Ukraine",
+          "document_number": "FM 695517",
+          "date_of_issue": "05.04.2018",
+          "date_of_expiry": "05.04.2028"
+        },
+        {
+          "document_type": "Seaman's Book Ukraine",
+          "document_number": "AB 648259",
+          "date_of_issue": "28.01.2019",
+          "date_of_expiry": "26.10.2029"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Certificate of Navigation Officer Ukraine",
+          "certificate_number": "29475/2024",
+          "date_issued": "25.11.2024",
+          "expiry_date": "24.11.2029"
+        },
+        {
+          "certificate_type": "Endorsement Navigation Officer Ukraine",
+          "certificate_number": "29475/2024",
+          "date_issued": "25.11.2024",
+          "expiry_date": "24.11.2029"
+        },
+        {
+          "certificate_type": "Additional Certificate of Radio Officer Ukraine",
+          "certificate_number": "29910/2024",
+          "date_issued": "09.12.2024",
+          "expiry_date": "08.12.2029"
+        },
+        {
+          "certificate_type": "Endorsement Radio Officer Ukraine",
+          "certificate_number": "29910/2024",
+          "date_issued": "09.12.2024",
+          "expiry_date": "08.12.2029"
+        },
+        {
+          "certificate_type": "Additional Certificate of Radio Officer Ukraine",
+          "certificate_number": "29910/2024",
+          "date_issued": "09.12.2024",
+          "expiry_date": "08.12.2029"
+        },
+        {
+          "certificate_type": "Endorsement Radio Officer Ukraine",
+          "certificate_number": "29910/2024",
+          "date_issued": "09.12.2024",
+          "expiry_date": "08.12.2029"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "05316/2024",
+          "date_issued": "05.09.2024",
+          "expiry_date": "05.09.2029"
+        },
+        {
+          "certificate_type": "Proficiency in Survival Craft and Rescue Boats",
+          "certificate_number": "00513/2024",
+          "date_issued": "16.09.2024",
+          "expiry_date": "16.09.2029"
+        },
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "1500702",
+          "date_issued": "27.09.2022",
+          "expiry_date": "27.09.2027"
+        },
+        {
+          "certificate_type": "Security Awareness Training",
+          "certificate_number": "05902",
+          "date_issued": "29.12.2017",
+          "expiry_date": "No expiry"
+        },
+        {
+          "certificate_type": "Dangerous and Hazardous Substances in Packages or",
+          "certificate_number": "-",
+          "date_issued": "13.06.2019",
+          "expiry_date": "No expiry"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "04548/2024",
+          "date_issued": "04.09.2024",
+          "expiry_date": "04.09.2029"
+        },
+        {
+          "certificate_type": "Designated Security Duties",
+          "certificate_number": "02825/2024",
+          "date_issued": "06.09.2024",
+          "expiry_date": "06.09.2029"
+        },
+        {
+          "certificate_type": "RADAR NAVIGATION, RADAR PLOTTING AND USE OF",
+          "certificate_number": "00548/2024",
+          "date_issued": "12.09.2024",
+          "expiry_date": "12.09.2029"
+        }
+      ],
+      "sea_service": [
+        {
+          "rank_on_vessel": "2nd Officer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "01.10.2025",
+          "sign_off_date": "21.01.2026",
+          "vessel_name": "Diamond Sky Malta Mitsubishi RT-FLEX Odria LTD",
+          "dwt": "55304",
+          "engine_power": "8,890",
+          "manning_agency": "IHB Shipping"
+        },
+        {
+          "rank_on_vessel": "2nd Officer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "07.12.2024",
+          "sign_off_date": "05.06.2025",
+          "vessel_name": "Diamond Sky Malta Mitsubishi RT-FLEX Odria LTD",
+          "dwt": "55304",
+          "engine_power": "8,890",
+          "manning_agency": "IHB Shipping"
+        },
+        {
+          "rank_on_vessel": "3rd Officer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "03.02.2024",
+          "sign_off_date": "16.08.2024",
+          "vessel_name": "Aegir Selmer Marshall Islands Selmer Supra III AS",
+          "dwt": "55874",
+          "engine_power": "8,890",
+          "manning_agency": "Nordic Hamburg"
+        },
+        {
+          "rank_on_vessel": "3rd Officer",
+          "vessel_type": "Heavy lift vessel",
+          "sign_on_date": "19.05.2023",
+          "sign_off_date": "16.10.2023",
+          "vessel_name": "Pacific Fortune Liberia Nordic mpp ship owning 1 as",
+          "dwt": "12670",
+          "engine_power": "5,400",
+          "manning_agency": "Nordic Hamburg"
+        },
+        {
+          "rank_on_vessel": "3rd Officer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "06.10.2022",
+          "sign_off_date": "03.04.2023",
+          "vessel_name": "CRUX Liberia B&W STAM SHIPPING SA",
+          "dwt": "32744",
+          "engine_power": "6,700",
+          "manning_agency": "Di Star Marine"
+        },
+        {
+          "rank_on_vessel": "2nd Officer",
+          "vessel_type": "General Cargo",
+          "sign_on_date": "18.06.2022",
+          "sign_off_date": "16.09.2022",
+          "vessel_name": "a.makarov0@icloud.com"
+        },
+        {
+          "rank_on_vessel": "AB Seaman",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "25.11.2021",
+          "sign_off_date": "08.06.2022",
+          "vessel_name": "Good Luck Marshall Islands B&W Nordic Darwin LTD",
+          "dwt": "37384",
+          "engine_power": "6,350",
+          "manning_agency": "Olive Crew Managment"
+        },
+        {
+          "rank_on_vessel": "AB Seaman",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "01.11.2020",
+          "sign_off_date": "11.06.2021",
+          "vessel_name": "HELGA Liberia B&W Bulky Bulk Shipping LTD",
+          "dwt": "28358",
+          "engine_power": "5,850",
+          "manning_agency": "Dr Star Marine"
+        },
+        {
+          "rank_on_vessel": "Deck Cadet",
+          "vessel_type": "General Cargo",
+          "sign_on_date": "02.02.2020",
+          "sign_off_date": "13.03.2020",
+          "vessel_name": "SANTANA Ukraine B&W SANTANA MARINE LTD",
+          "dwt": "10860",
+          "engine_power": "3,310",
+          "manning_agency": "UNISHIP CREWING LTD"
+        },
+        {
+          "rank_on_vessel": "Deck Cadet",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "01.12.2019",
+          "sign_off_date": "01.02.2020",
+          "vessel_name": "SENATA Ukraine B&W SENATA NAVIGATION LTD",
+          "dwt": "12898",
+          "engine_power": "3,310",
+          "manning_agency": "UNISHIP CREWING LTD"
+        },
+        {
+          "rank_on_vessel": "Deck Cadet",
+          "vessel_type": "General Cargo",
+          "sign_on_date": "27.10.2019",
+          "sign_off_date": "30.11.2019",
+          "vessel_name": "Selecta Ukraine B&W SELECTA SHIPPING LTD",
+          "dwt": "14030",
+          "engine_power": "3,824",
+          "manning_agency": "UNISHIP CREWING LTD"
+        },
+        {
+          "rank_on_vessel": "Deck Cadet",
+          "vessel_type": "Passenger vessel",
+          "sign_on_date": "01.09.2019",
+          "sign_off_date": "14.10.2019",
+          "vessel_name": "ХАДЖИБЕЙ Ukraine MAN ДП \"ОМТП\"",
+          "dwt": "63",
+          "engine_power": "840",
+          "manning_agency": "ДП \"ОМТП\""
+        },
+        {
+          "rank_on_vessel": "Deck Cadet",
+          "vessel_type": "Tug boat",
+          "sign_on_date": "18.06.2019",
+          "sign_off_date": "30.08.2019",
+          "vessel_name": "SAPFIR Ukraine MAN SE \"MARINE SEARCH AND"
+        },
+        {
+          "rank_on_vessel": "Deck Cadet",
+          "vessel_type": "Tug boat",
+          "sign_on_date": "23.05.2018",
+          "sign_off_date": "31.08.2018",
+          "vessel_name": "Гранит Ukraine B&W ДП \"Одеський порт\"",
+          "dwt": "245",
+          "engine_power": "3,700",
+          "manning_agency": "ДП \"ОМТП\""
+        },
+        {
+          "rank_on_vessel": "Deck Cadet",
+          "vessel_type": "Tug boat",
+          "sign_on_date": "03.05.2018",
+          "sign_off_date": "22.05.2018",
+          "vessel_name": "Патриот Ukraine B&W ДП \"Одеський порт\"",
+          "dwt": "85",
+          "engine_power": "3,000",
+          "manning_agency": "ДП \"ОМТП\""
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "2nd Officer",
+          "rank_applied_for": "2nd Officer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 14,
+      "documents": 2,
+      "certificates": 14,
+      "sea_service": 15,
+      "applications": 1
+    }
+  },
+  {
+    "file": "2nd_Electrical_Engineer_Alexey_Bondarenko_-_Bulk_Carrier.pdf",
+    "parsed": {
+      "personal_data": {
+        "email": "bondarenkoaa1997@gmail.com",
+        "full_name": "Alexey Bondarenko",
+        "age": "28",
+        "first_name": "Alexey",
+        "surname": "Bondarenko",
+        "date_of_birth": "03-11-1997",
+        "primary_phone": "+79024888623",
+        "mobile_phone": "+79231822323",
+        "position_applied_for": "ETO",
+        "rank_applied_for": "ETO",
+        "last_salary_usd": "6,000",
+        "citizenship": "Russia",
+        "nationality": "Russia"
+      },
+      "documents": [
+        {
+          "document_type": "Passport",
+          "document_number": "Russia 6415374",
+          "date_of_issue": "03.08.2023",
+          "date_of_expiry": "03.08.2028"
+        },
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "Russia 0392962",
+          "date_of_issue": "18.03.2024",
+          "date_of_expiry": "17.03.2029"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Certificate of ETO Russia",
+          "certificate_number": "VVO208157935",
+          "date_issued": "26.03.2024",
+          "expiry_date": "25.03.2029"
+        },
+        {
+          "certificate_type": "Basic Training for Oil and Chemical Tanker Cargo",
+          "certificate_number": "1727061",
+          "date_issued": "28.02.2022",
+          "expiry_date": "28.02.2027"
+        },
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "2173256",
+          "date_issued": "15.03.2024",
+          "expiry_date": "14.03.2029"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "2165193",
+          "date_issued": "07.03.2024",
+          "expiry_date": "06.03.2029"
+        },
+        {
+          "certificate_type": "Designated Security Duties",
+          "certificate_number": "2185412",
+          "date_issued": "22.02.2024",
+          "expiry_date": "21.02.2029"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "2165941",
+          "date_issued": "29.02.2024",
+          "expiry_date": "28.02.2029"
+        },
+        {
+          "certificate_type": "Proficiency in Survival Craft and Rescue Boats",
+          "certificate_number": "2165680",
+          "date_issued": "13.03.2024",
+          "expiry_date": "12.03.2029"
+        }
+      ],
+      "sea_service": [
+        {
+          "rank_on_vessel": "ETO",
+          "vessel_type": "Container Ship",
+          "sign_on_date": "26.10.2025",
+          "sign_off_date": "29.03.2026",
+          "vessel_name": "UAFL Liberty Liberia Hyundai HiMSEN OKEE Shipmanagment GmbH &"
+        },
+        {
+          "rank_on_vessel": "ETO",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "10.03.2025",
+          "sign_off_date": "15.08.2025",
+          "vessel_name": "Eleen Sofia Liberia Hyundai HiMSEN Eleen marine JSC",
+          "dwt": "56000",
+          "engine_power": "8,200",
+          "manning_agency": "Poseidon group"
+        },
+        {
+          "rank_on_vessel": "Electrician",
+          "vessel_type": "Fishing vessel",
+          "sign_on_date": "01.07.2022",
+          "sign_off_date": "15.11.2022",
+          "vessel_name": "Jupiter Russia MAK Antey",
+          "dwt": "1201",
+          "engine_power": "2,206",
+          "manning_agency": "Antey"
+        },
+        {
+          "rank_on_vessel": "Electrician",
+          "vessel_type": "Fishing vessel",
+          "sign_on_date": "28.05.2021",
+          "sign_off_date": "12.12.2021",
+          "vessel_name": "Admiral kolchak Russia Rus Diesel Sofko",
+          "dwt": "1810",
+          "engine_power": "5,152",
+          "manning_agency": "Sigma marine technology"
+        },
+        {
+          "rank_on_vessel": "Electrician",
+          "vessel_type": "Fishing vessel",
+          "sign_on_date": "04.01.2021",
+          "sign_off_date": "24.02.2021",
+          "vessel_name": "Artyk Russia Mitsubishi Aqua-invest",
+          "dwt": "564",
+          "engine_power": "727",
+          "manning_agency": "Aqua-invest"
+        },
+        {
+          "rank_on_vessel": "Electrician",
+          "vessel_type": "Fishing vessel",
+          "sign_on_date": "29.07.2020",
+          "sign_off_date": "16.11.2020",
+          "vessel_name": "bondarenkoaa1997@gmail.com"
+        },
+        {
+          "rank_on_vessel": "Electrician",
+          "vessel_type": "Fishing vessel",
+          "sign_on_date": "20.03.2020",
+          "sign_off_date": "21.07.2020",
+          "vessel_name": "Genyo maru Russia Niigata Atlant",
+          "dwt": "184",
+          "engine_power": "316",
+          "manning_agency": "Atlant"
+        },
+        {
+          "rank_on_vessel": "Electric Cadet",
+          "vessel_type": "Fishing vessel",
+          "sign_on_date": "19.02.2019",
+          "sign_off_date": "12.01.2020",
+          "vessel_name": "Vsevolod sibirtsev Russia Wartsila Yuhgmorrybflot",
+          "dwt": "32096",
+          "engine_power": "6,480",
+          "manning_agency": "Dobroflot"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "ETO",
+          "rank_applied_for": "ETO"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 13,
+      "documents": 2,
+      "certificates": 7,
+      "sea_service": 8,
+      "applications": 1
+    }
+  },
+  {
+    "file": "2nd_Engineer_Davit_Vakhtangidze_-_Crude_Oil_Tanker.pdf",
+    "parsed": {
+      "personal_data": {
+        "email": "Vakhtangidzedavit@gmail.com",
+        "full_name": "Davit Vakhtangidze",
+        "age": "39",
+        "first_name": "Davit",
+        "surname": "Vakhtangidze",
+        "date_of_birth": "20-11-1986",
+        "primary_phone": "+995577418647",
+        "mobile_phone": "+995577418647",
+        "position_applied_for": "2nd Engineer",
+        "rank_applied_for": "2nd Engineer",
+        "last_salary_usd": "11,000",
+        "citizenship": "Georgia",
+        "nationality": "Georgia"
+      },
+      "documents": [
+        {
+          "document_type": "Passport",
+          "document_number": "Georgia 25AA63036",
+          "date_of_issue": "29.01.2026",
+          "date_of_expiry": "29.01.2036"
+        },
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "Georgia S010352",
+          "date_of_issue": "21.12.2023",
+          "date_of_expiry": "21.12.2033"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Certificate of 2nd Engineer Georgia",
+          "certificate_number": "25G04-10-009912",
+          "date_issued": "11.07.2025",
+          "expiry_date": "11.07.2030"
+        },
+        {
+          "certificate_type": "Endorsement 2nd Engineer Marshall Islands",
+          "certificate_number": "3721149",
+          "date_issued": "24.11.2026",
+          "expiry_date": "11.11.2029"
+        },
+        {
+          "certificate_type": "Engine Team and Resource Management",
+          "certificate_number": "ETM09-171326",
+          "date_issued": "03.10.2022",
+          "expiry_date": "11.09.2027"
+        },
+        {
+          "certificate_type": "Ship Security Officer (SSO)",
+          "certificate_number": "SSO04-242610",
+          "date_issued": "07.04.2025",
+          "expiry_date": "06.06.2030"
+        },
+        {
+          "certificate_type": "Leadership and Teamwork",
+          "certificate_number": "LDM04-242611",
+          "date_issued": "07.07.2025",
+          "expiry_date": "25.06.2030"
+        },
+        {
+          "certificate_type": "Advanced Chemical Tanker Operations",
+          "certificate_number": "OCG10-242612",
+          "date_issued": "07.07.2025",
+          "expiry_date": "07.07.2030"
+        },
+        {
+          "certificate_type": "Advanced Oil Tanker Operations",
+          "certificate_number": "OCG10-242612",
+          "date_issued": "04.07.2025",
+          "expiry_date": "04.07.2030"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "AFT04-224268",
+          "date_issued": "10.09.2024",
+          "expiry_date": "31.08.2029"
+        },
+        {
+          "certificate_type": "High Voltage",
+          "certificate_number": "HVC01-174274",
+          "date_issued": "14.11.2022",
+          "expiry_date": "13.11.2027"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "MFC04-224266",
+          "date_issued": "10.09.2024",
+          "expiry_date": "17.08.2029"
+        },
+        {
+          "certificate_type": "Proficiency in Survival Craft and Rescue Boats",
+          "certificate_number": "FRB04-224267",
+          "date_issued": "10.09.2024",
+          "expiry_date": "20.08.2029"
+        },
+        {
+          "certificate_type": "Personal Survival Techniques",
+          "certificate_number": "BST04-224264",
+          "date_issued": "10.09.2024",
+          "expiry_date": "26.08.2029"
+        },
+        {
+          "certificate_type": "Fire Prevention and Fire Fighting",
+          "certificate_number": "BST04-224266",
+          "date_issued": "10.09.2024",
+          "expiry_date": "26.08.2029"
+        },
+        {
+          "certificate_type": "Elementary First Aid",
+          "certificate_number": "BST04-224264",
+          "date_issued": "10.09.2024",
+          "expiry_date": "26.08.2029"
+        },
+        {
+          "certificate_type": "Personal Safety and Social Responsibilities",
+          "certificate_number": "BST04-224264",
+          "date_issued": "10.09.2024",
+          "expiry_date": "26.08.2029"
+        },
+        {
+          "certificate_type": "Inert Gas System",
+          "certificate_number": "IGC04-224269",
+          "date_issued": "10.09.2024",
+          "expiry_date": "02.09.2029"
+        },
+        {
+          "certificate_type": "Crude Oil Washing",
+          "certificate_number": "IGC04-224269",
+          "date_issued": "10.09.2024",
+          "expiry_date": "02.09.2029"
+        }
+      ],
+      "sea_service": [
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Crude Oil Tanker",
+          "sign_on_date": "01.08.2025",
+          "sign_off_date": "01.01.2026",
+          "vessel_name": "Haishen Liberia MAN-B&W Eversial ship services",
+          "dwt": "307898",
+          "engine_power": "27,350",
+          "manning_agency": "Ycrewing"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Crude Oil Tanker",
+          "sign_on_date": "23.11.2024",
+          "sign_off_date": "14.04.2025",
+          "vessel_name": "Aigeorgis Marshall Islands Hyundai HiMSEN COLUMBIA",
+          "dwt": "116750",
+          "engine_power": "11,350",
+          "manning_agency": "Columbia ship managment"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Crude Oil Tanker",
+          "sign_on_date": "21.12.2023",
+          "sign_off_date": "14.03.2024",
+          "vessel_name": "IRBIS Gabon MAN-B&W BVS"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Crude Oil Tanker",
+          "sign_on_date": "22.05.2023",
+          "sign_off_date": "05.08.2023",
+          "vessel_name": "ATTICA Gabon MAN-B&W BVS",
+          "dwt": "105309",
+          "engine_power": "12,350",
+          "manning_agency": "BVS"
+        },
+        {
+          "rank_on_vessel": "4th Engineer",
+          "vessel_type": "Crude Oil Tanker",
+          "sign_on_date": "13.01.2023",
+          "sign_off_date": "21.05.2023",
+          "vessel_name": "ATTICA Gabon MAN-B&W BVS",
+          "dwt": "105309",
+          "engine_power": "12,350",
+          "manning_agency": "BVS"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "2nd Engineer",
+          "rank_applied_for": "2nd Engineer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 13,
+      "documents": 2,
+      "certificates": 17,
+      "sea_service": 5,
+      "applications": 1
+    }
+  },
+  {
+    "file": "2nd_Engineer_Koiev_Stanislav_-_Bulk_Carrier.pdf",
+    "parsed": {
+      "personal_data": {
+        "email": "koievstanislavv@gmail.com",
+        "full_name": "Koiev Stanislav",
+        "age": "58",
+        "first_name": "Koiev",
+        "surname": "Stanislav",
+        "date_of_birth": "24-07-1967",
+        "primary_phone": "+380973308267",
+        "mobile_phone": "+380973308267",
+        "position_applied_for": "2nd Engineer",
+        "rank_applied_for": "2nd Engineer",
+        "last_salary_usd": "8,200",
+        "citizenship": "Ukraine",
+        "nationality": "Ukraine"
+      },
+      "documents": [
+        {
+          "document_type": "Passport",
+          "document_number": "Ukraine GJ139485",
+          "date_of_issue": "08.04.2024",
+          "date_of_expiry": "08.04.2034"
+        },
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "Croatia OO115782",
+          "date_of_issue": "07.03.2024",
+          "date_of_expiry": "07.03.2034"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Certificate of Chief Engineer Ukraine",
+          "certificate_number": "01328/2024",
+          "date_issued": "16.02.2024",
+          "expiry_date": "01.12.5000"
+        },
+        {
+          "certificate_type": "Endorsement Chief Engineer Ukraine",
+          "certificate_number": "01328/2024",
+          "date_issued": "16.02.2024",
+          "expiry_date": "11.01.2028"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "02625/2025",
+          "date_issued": "11.08.2025",
+          "expiry_date": "11.08.2030"
+        },
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "32334224",
+          "date_issued": "01.02.2024",
+          "expiry_date": "01.02.2029"
+        },
+        {
+          "certificate_type": "Dangerous And Hazardous Substances",
+          "certificate_number": "32334224/11/2735",
+          "date_issued": "25.10.2024",
+          "expiry_date": "25.10.2029"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "02311/2025",
+          "date_issued": "08.08.2025",
+          "expiry_date": "No expiry"
+        },
+        {
+          "certificate_type": "Ship Security Officer (SSO)",
+          "certificate_number": "01212/2025",
+          "date_issued": "07.08.2025",
+          "expiry_date": "No expiry"
+        },
+        {
+          "certificate_type": "Chief Engineer (< 3000kW)",
+          "certificate_number": "297895",
+          "date_issued": "16.02.2024",
+          "expiry_date": "No expiry"
+        },
+        {
+          "certificate_type": "Engine Team and Resource Management",
+          "certificate_number": "32334224/34/0181/024",
+          "date_issued": "01.02.2024",
+          "expiry_date": "01.02.2029"
+        }
+      ],
+      "sea_service": [
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "26.07.2025",
+          "sign_off_date": "03.12.2025",
+          "vessel_name": "Cotinga Malta Hyundai HiMSEN Hadley UK",
+          "dwt": "82061",
+          "engine_power": "9,801",
+          "manning_agency": "Anglo-Eastern"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "24.10.2024",
+          "sign_off_date": "09.04.2025",
+          "vessel_name": "Hubertus Oldendorff Madeira Hyundai HiMSEN Oldendorff( Germany)",
+          "dwt": "208994",
+          "engine_power": "15,131",
+          "manning_agency": "Anglo-Eastern"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "11.03.2024",
+          "sign_off_date": "23.08.2024",
+          "vessel_name": "MH Sandefjord Liberia Hyundai HiMSEN NSC",
+          "dwt": "63145",
+          "engine_power": "8,500",
+          "manning_agency": "NSC"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "06.05.2023",
+          "sign_off_date": "01.11.2023",
+          "vessel_name": "MH Sandefjord Liberia Hyundai HiMSEN NSC",
+          "dwt": "63145",
+          "engine_power": "8,500",
+          "manning_agency": "NSC"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "13.09.2022",
+          "sign_off_date": "14.02.2023",
+          "vessel_name": "Rixta Oldendorff Liberia MAN-B&W Oldendorff( Germany)",
+          "dwt": "121624",
+          "engine_power": "13,560",
+          "manning_agency": "Anglo-Eastern"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "07.02.2022",
+          "sign_off_date": "28.06.2022",
+          "vessel_name": "Regina Oldendorff Liberia MAN-B&W Oldendorff( Germany)",
+          "dwt": "121624",
+          "engine_power": "13,560",
+          "manning_agency": "Anglo-Eastern"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "09.05.2021",
+          "sign_off_date": "24.11.2021",
+          "vessel_name": "Rixta Oldendorff Liberia MAN-B&W Oldendorff( Germany)",
+          "dwt": "120000",
+          "engine_power": "13,560",
+          "manning_agency": "Anglo-Eastern"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "2nd Engineer",
+          "rank_applied_for": "2nd Engineer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 13,
+      "documents": 2,
+      "certificates": 9,
+      "sea_service": 7,
+      "applications": 1
+    }
+  },
+  {
+    "file": "2nd_Engineer_Mykhaylo_Tatarchuk_-_Bulk_Carrier.pdf",
+    "parsed": {
+      "personal_data": {
+        "email": "elenaboeva2@gmail.com",
+        "full_name": "Mykhaylo Tatarchuk",
+        "age": "38",
+        "first_name": "Mykhaylo",
+        "surname": "Tatarchuk",
+        "date_of_birth": "03-12-1987",
+        "primary_phone": "+380982887113",
+        "mobile_phone": "+380676874343",
+        "position_applied_for": "2nd Engineer",
+        "rank_applied_for": "2nd Engineer",
+        "last_salary_usd": "7,500",
+        "citizenship": "Ukraine",
+        "nationality": "Ukraine"
+      },
+      "documents": [
+        {
+          "document_type": "Passport",
+          "document_number": "Ukraine FF717206",
+          "date_of_issue": "21.02.2017",
+          "date_of_expiry": "21.02.2027"
+        },
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "Ukraine AC013759",
+          "date_of_issue": "19.02.2024",
+          "date_of_expiry": "19.02.2029"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Certificate of 3rd Engineer Ukraine",
+          "certificate_number": "03319/2024",
+          "date_issued": "14.03.2024",
+          "expiry_date": "01.12.5000"
+        },
+        {
+          "certificate_type": "Endorsement 3rd Engineer Ukraine",
+          "certificate_number": "03319/2024",
+          "date_issued": "14.03.2024",
+          "expiry_date": "04.03.2029"
+        },
+        {
+          "certificate_type": "Additional Certificate of 3rd Engineer Malta",
+          "certificate_number": "2174499",
+          "date_issued": "30.08.2024",
+          "expiry_date": "04.03.2029"
+        },
+        {
+          "certificate_type": "Endorsement 3rd Engineer Malta",
+          "certificate_number": "2174499",
+          "date_issued": "30.08.2024",
+          "expiry_date": "04.03.2029"
+        },
+        {
+          "certificate_type": "Additional Certificate of 3rd Engineer Malta",
+          "certificate_number": "2174499",
+          "date_issued": "30.08.2024",
+          "expiry_date": "04.03.2029"
+        },
+        {
+          "certificate_type": "Endorsement 3rd Engineer Malta",
+          "certificate_number": "2174499",
+          "date_issued": "30.08.2024",
+          "expiry_date": "04.03.2029"
+        },
+        {
+          "certificate_type": "Proficiency in Survival Craft and Rescue Boats",
+          "certificate_number": "27/04319/2024",
+          "date_issued": "15.07.2024",
+          "expiry_date": "15.07.2029"
+        },
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "01590/2024",
+          "date_issued": "08.02.2024",
+          "expiry_date": "08.02.2029"
+        },
+        {
+          "certificate_type": "Medical Care on Board",
+          "certificate_number": "UA229001/307898",
+          "date_issued": "26.04.2021",
+          "expiry_date": "26.04.2026"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "307898",
+          "date_issued": "26.04.2021",
+          "expiry_date": "26.04.2026"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "306653",
+          "date_issued": "23.04.2021",
+          "expiry_date": "23.04.2026"
+        },
+        {
+          "certificate_type": "Basic Training for Oil and Chemical Tanker Cargo",
+          "certificate_number": "310407",
+          "date_issued": "28.04.2021",
+          "expiry_date": "28.04.2026"
+        },
+        {
+          "certificate_type": "Advanced Oil Tanker Operations",
+          "certificate_number": "02513/2021/08",
+          "date_issued": "21.05.2021",
+          "expiry_date": "21.05.2026"
+        },
+        {
+          "certificate_type": "2nd Engineer",
+          "certificate_number": "04132/2025",
+          "date_issued": "05.05.2025",
+          "expiry_date": "05.05.2030"
+        },
+        {
+          "certificate_type": "Engine Team and Resource Management",
+          "certificate_number": "32334224/34/0316/025",
+          "date_issued": "14.04.2025",
+          "expiry_date": "14.04.2030"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "32334224/04/1188/025",
+          "date_issued": "14.04.2025",
+          "expiry_date": "14.04.2030"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "32334224/05/0966/025",
+          "date_issued": "14.04.2025",
+          "expiry_date": "14.04.2030"
+        },
+        {
+          "certificate_type": "IN SHIP SECURITY",
+          "certificate_number": "323334224/09/0611/025",
+          "date_issued": "14.04.2025",
+          "expiry_date": "14.04.2030"
+        },
+        {
+          "certificate_type": "IN FAMILIARIZATION TRANING ON SHIP SECURITY",
+          "certificate_number": "32334221/10/0579/025",
+          "date_issued": "14.04.2025",
+          "expiry_date": "14.04.2030"
+        },
+        {
+          "certificate_type": "ENGINE-ROOM RESOURCE MANAGEMENT",
+          "certificate_number": "32334224/34/0316/025",
+          "date_issued": "14.04.2025",
+          "expiry_date": "14.04.2030"
+        },
+        {
+          "certificate_type": "ENDORSMENT/2E",
+          "certificate_number": "04132/2025",
+          "date_issued": "05.05.2025",
+          "expiry_date": "05.05.2030"
+        }
+      ],
+      "sea_service": [
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Container Ship",
+          "sign_on_date": "29.11.2025",
+          "sign_off_date": "09.04.2026",
+          "vessel_name": "MSC Pegasus 7 Liberia Sulzer Trinacria Ocean way Limited"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Container Ship",
+          "sign_on_date": "21.03.2025",
+          "sign_off_date": "05.10.2025",
+          "vessel_name": "MSC Talia F Portugal MAN-B&W Brunhes Oceanway"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Container Ship",
+          "sign_on_date": "03.08.2024",
+          "sign_off_date": "16.02.2025",
+          "vessel_name": "CMA CGM \"SEATTLE\" Malta MAN B&W CMA CGM SA.AS OWNER"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "20.02.2024",
+          "sign_off_date": "20.06.2024",
+          "vessel_name": "Atoll Slovakia Mitsubishi SC BEST Marine Shipping SRL",
+          "dwt": "20000",
+          "engine_power": "3,200",
+          "manning_agency": "Evrokru"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "19.08.2023",
+          "sign_off_date": "27.12.2023",
+          "vessel_name": "Atoll Slovakia Mitsubishi SC BEST Marine Shipping SRL",
+          "dwt": "20000",
+          "engine_power": "3,200",
+          "manning_agency": "Evrokru"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "14.06.2021",
+          "sign_off_date": "25.01.2022",
+          "vessel_name": "elenaboeva2@gmail.com"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Crude Oil Tanker",
+          "sign_on_date": "03.09.2020",
+          "sign_off_date": "16.03.2021",
+          "vessel_name": "Flag ship Privet Marshall Islands Mitsubishi Privet Shipping LLC",
+          "dwt": "74594",
+          "engine_power": "42,208",
+          "manning_agency": "Univis"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Crude Oil Tanker",
+          "sign_on_date": "18.07.2019",
+          "sign_off_date": "06.07.2020",
+          "vessel_name": "Kapten Carog Marshall Islands General Electric Lavies Lease S.A"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "2nd Engineer",
+          "rank_applied_for": "2nd Engineer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 13,
+      "documents": 2,
+      "certificates": 21,
+      "sea_service": 8,
+      "applications": 1
+    }
+  },
+  {
+    "file": "2nd_Engineer_Oleg_Kyrylenko_-_Bulk_Carrier.pdf",
+    "parsed": {
+      "personal_data": {
+        "email": "kirilenkooleg67@gmail.com",
+        "full_name": "Oleg Kyrylenko",
+        "age": "59",
+        "first_name": "Oleg",
+        "surname": "Kyrylenko",
+        "position_applied_for": "2nd Engineer",
+        "rank_applied_for": "2nd Engineer",
+        "last_salary_usd": "7,500",
+        "citizenship": "Ukraine",
+        "nationality": "Ukraine"
+      },
+      "documents": [],
+      "certificates": [
+        {
+          "certificate_type": "Certificate of 2nd Engineer Ukraine",
+          "certificate_number": "14853/2016/08",
+          "date_issued": "04.10.2024",
+          "expiry_date": "01.12.5000"
+        },
+        {
+          "certificate_type": "2nd Engineer (<3000kW)",
+          "certificate_number": "14853",
+          "date_issued": "04.11.2016",
+          "expiry_date": "26.08.2026"
+        },
+        {
+          "certificate_type": "Security-Related Training & Instruction For all Seafarers",
+          "certificate_number": "42523993",
+          "date_issued": "02.09.2021",
+          "expiry_date": "02.09.2026"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "3228",
+          "date_issued": "04.03.2020",
+          "expiry_date": "04.03.2025"
+        },
+        {
+          "certificate_type": "Proficiency in Survival Craft and Rescue Boats",
+          "certificate_number": "3541",
+          "date_issued": "04.03.2020",
+          "expiry_date": "04.03.2025"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "3157",
+          "date_issued": "12.03.2020",
+          "expiry_date": "12.03.2025"
+        }
+      ],
+      "sea_service": [
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "27.10.2023",
+          "sign_off_date": "08.03.2024",
+          "vessel_name": "Occitan SKY Madeira MAN-B&W Listrac Ltd.",
+          "dwt": "26000",
+          "engine_power": "6,555",
+          "manning_agency": "Olivecrew"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "11.12.2022",
+          "sign_off_date": "22.07.2023",
+          "vessel_name": "m/v Stellar Baltic Antigua and Barbuda Matsui Stellar Baltic company limited"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "15.10.2021",
+          "sign_off_date": "20.02.2022",
+          "vessel_name": "m/v Sfera Marshall Islands B&W OCM Maritime adventure LLC",
+          "dwt": "40042",
+          "engine_power": "8,310",
+          "manning_agency": "Teh marine"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "11.11.2020",
+          "sign_off_date": "07.05.2021",
+          "vessel_name": "m/v Kohl 1 Panama B&W Marine corp. Platform support"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "08.02.2020",
+          "sign_off_date": "10.08.2020",
+          "vessel_name": "m/v Gazibey Panama B&W United Marine LTD.",
+          "dwt": "17980",
+          "engine_power": "8,230",
+          "manning_agency": "Teh marine"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "2nd Engineer",
+          "rank_applied_for": "2nd Engineer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 10,
+      "documents": 0,
+      "certificates": 6,
+      "sea_service": 5,
+      "applications": 1
+    }
+  },
+  {
+    "file": "2nd_Engineer_Oleksandr_Ivanko_-_Bulk_Carrier.pdf",
+    "parsed": {
+      "personal_data": {
+        "email": "oleksandr.eng1985@gmail.com",
+        "full_name": "Oleksandr Ivanko",
+        "age": "40",
+        "first_name": "Oleksandr",
+        "surname": "Ivanko",
+        "primary_phone": "+380967250123",
+        "mobile_phone": "+380967250123",
+        "position_applied_for": "2nd Engineer",
+        "rank_applied_for": "2nd Engineer",
+        "last_salary_usd": "7,800",
+        "citizenship": "Ukraine",
+        "nationality": "Ukraine"
+      },
+      "documents": [
+        {
+          "document_type": "Passport",
+          "document_number": "Ukraine FJ351521",
+          "date_of_issue": "24.10.2017",
+          "date_of_expiry": "24.10.2027"
+        },
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "Poland AA1008620",
+          "date_of_issue": "22.04.2025",
+          "date_of_expiry": "22.04.2030"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Certificate of 2nd Engineer Ukraine",
+          "certificate_number": "01628/2023",
+          "date_issued": "16.10.2023",
+          "expiry_date": "11.10.2028"
+        },
+        {
+          "certificate_type": "Basic Safety Training",
+          "certificate_number": "02326/2023",
+          "date_issued": "28.09.2023",
+          "expiry_date": "28.09.2028"
+        },
+        {
+          "certificate_type": "Proficiency in Survival Craft and Rescue Boats",
+          "certificate_number": "01736/2023",
+          "date_issued": "28.09.2023",
+          "expiry_date": "28.09.2028"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "01450/2023",
+          "date_issued": "28.09.2023",
+          "expiry_date": "28.09.2028"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "01087/2023",
+          "date_issued": "28.09.2023",
+          "expiry_date": "28.09.2028"
+        },
+        {
+          "certificate_type": "Engine Team and Resource Management",
+          "certificate_number": "00265/2023",
+          "date_issued": "28.09.2023",
+          "expiry_date": "28.09.2028"
+        },
+        {
+          "certificate_type": "Ship Security Officer (SSO)",
+          "certificate_number": "00672/2023",
+          "date_issued": "28.09.2023",
+          "expiry_date": "28.09.2028"
+        },
+        {
+          "certificate_type": "On basic trainingon liquified gas tankers",
+          "certificate_number": "11/00624/2024",
+          "date_issued": "25.03.2024",
+          "expiry_date": "25.03.2029"
+        },
+        {
+          "certificate_type": "On advanced training on liquified gas tankers",
+          "certificate_number": "14/00625/2024",
+          "date_issued": "25.03.2024",
+          "expiry_date": "25.03.2029"
+        },
+        {
+          "certificate_type": "On basic training on liquified gas tankers",
+          "certificate_number": "21589/2024",
+          "date_issued": "15.04.2024",
+          "expiry_date": "11.04.2029"
+        }
+      ],
+      "sea_service": [
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Container Ship",
+          "sign_on_date": "20.11.2025",
+          "sign_off_date": "23.02.2026",
+          "vessel_name": "Diana B Portugal MAK Boluda Lines SA",
+          "dwt": "10986",
+          "engine_power": "8,400",
+          "manning_agency": "Wilhelmsen"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "General Cargo",
+          "sign_on_date": "23.07.2025",
+          "sign_off_date": "27.10.2025",
+          "vessel_name": "Augusta Luna Portugal Wartsila MS \"Lolland\"",
+          "dwt": "17370",
+          "engine_power": "8,730",
+          "manning_agency": "Lubeca"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Container Ship",
+          "sign_on_date": "16.05.2025",
+          "sign_off_date": "13.07.2025",
+          "vessel_name": "Marsa Ivy Panama B&W Marsa Ivy Inc.",
+          "dwt": "15334",
+          "engine_power": "11,200",
+          "manning_agency": "Helios Nautical Crew"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "03.11.2024",
+          "sign_off_date": "18.01.2025",
+          "vessel_name": "Nordic BC Kiel Liberia RT-Flex (WinGD) Nordic Hamburg",
+          "dwt": "55947",
+          "engine_power": "8,890",
+          "manning_agency": "Nordic Hamburg"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "07.07.2024",
+          "sign_off_date": "14.08.2024",
+          "vessel_name": "Zina Belize B&W Kirgan Holding",
+          "dwt": "33861",
+          "engine_power": "6,480",
+          "manning_agency": "Transship"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "12.04.2022",
+          "sign_off_date": "28.10.2022",
+          "vessel_name": "oleksandr.eng1985@gmail.com"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "03.08.2021",
+          "sign_off_date": "17.02.2022",
+          "vessel_name": "Amoy Dream Hong Kong Hyundai HiMSEN Amoy Sailing Maritime",
+          "dwt": "57000",
+          "engine_power": "8,532",
+          "manning_agency": "Di-Shipping"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "25.07.2020",
+          "sign_off_date": "29.03.2021",
+          "vessel_name": "Amoy Dream Hong Kong Hyundai HiMSEN Amoysailing Maritime",
+          "dwt": "57000",
+          "engine_power": "8,532",
+          "manning_agency": "Di-Shipping"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "11.05.2019",
+          "sign_off_date": "14.10.2019",
+          "vessel_name": "Port Kyushu Liberia Hyundai HiMSEN Portline Bulk International",
+          "dwt": "35207",
+          "engine_power": "7,220",
+          "manning_agency": "Danica"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "26.12.2018",
+          "sign_off_date": "01.03.2019",
+          "vessel_name": "Mineral Noble Belgium B&W Bocimar International",
+          "dwt": "180000",
+          "engine_power": "16,860",
+          "manning_agency": "ITS"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "23.03.2018",
+          "sign_off_date": "16.10.2018",
+          "vessel_name": "Mineral Noble Belgium B&W Bocimar International",
+          "dwt": "180000",
+          "engine_power": "16,860",
+          "manning_agency": "ITS"
+        },
+        {
+          "rank_on_vessel": "4th Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "15.03.2017",
+          "sign_off_date": "26.08.2017",
+          "vessel_name": "Mineral Dalian Belgium B&W Bocimar International",
+          "dwt": "180000",
+          "engine_power": "18,660",
+          "manning_agency": "ITS"
+        },
+        {
+          "rank_on_vessel": "4th Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "16.02.2016",
+          "sign_off_date": "07.10.2016",
+          "vessel_name": "Mineral Energy Liberia MAN-B&W Bocimar Hong Kong",
+          "dwt": "180000",
+          "engine_power": "18,630",
+          "manning_agency": "ITS"
+        },
+        {
+          "rank_on_vessel": "4th Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "17.11.2014",
+          "sign_off_date": "05.08.2015",
+          "vessel_name": "Mineral China Belgium MAN-B&W Bocimar International",
+          "dwt": "180000",
+          "engine_power": "16,860",
+          "manning_agency": "ITS"
+        },
+        {
+          "rank_on_vessel": "Engine Cadet",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "03.04.2013",
+          "sign_off_date": "14.10.2013",
+          "vessel_name": "Mineral Tianjin Belgium MAN-B&W Bocimar Belgium NV",
+          "dwt": "180000",
+          "engine_power": "16,860",
+          "manning_agency": "ITS"
+        },
+        {
+          "rank_on_vessel": "Engine Cadet",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "26.04.2012",
+          "sign_off_date": "03.12.2012",
+          "vessel_name": "Lake Dolphin Belgium B&W Green Dolphin Shipping LTD",
+          "dwt": "180000",
+          "engine_power": "18,660",
+          "manning_agency": "ITS"
+        },
+        {
+          "rank_on_vessel": "Electrician",
+          "vessel_type": "Fishing vessel",
+          "sign_on_date": "24.06.2010",
+          "sign_off_date": "27.02.2011",
+          "vessel_name": "Boris Derevyanko Belize SKL Vega Fisheries",
+          "dwt": "6785",
+          "engine_power": "2,648",
+          "manning_agency": "Capitan"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "2nd Engineer",
+          "rank_applied_for": "2nd Engineer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 12,
+      "documents": 2,
+      "certificates": 10,
+      "sea_service": 17,
+      "applications": 1
+    }
+  },
+  {
+    "file": "2nd_Engineer_Ramin_Makharadze_-_Bulk_Carrier.pdf",
+    "parsed": {
+      "personal_data": {
+        "email": "Ramini.makharadzee@mail.ru",
+        "full_name": "Ramin Makharadze",
+        "age": "34",
+        "first_name": "Ramin",
+        "surname": "Makharadze",
+        "date_of_birth": "04-02-1992",
+        "primary_phone": "+995557666969",
+        "mobile_phone": "+995555981754",
+        "position_applied_for": "2nd Engineer",
+        "rank_applied_for": "2nd Engineer",
+        "last_salary_usd": "9,000",
+        "citizenship": "Georgia",
+        "nationality": "Georgia"
+      },
+      "documents": [
+        {
+          "document_type": "Passport",
+          "document_number": "Georgia 20AB10134",
+          "date_of_issue": "15.09.2021",
+          "date_of_expiry": "15.09.2031"
+        },
+        {
+          "document_type": "Seaman's Book",
+          "document_number": "Georgia GE019137",
+          "date_of_issue": "09.09.2024",
+          "date_of_expiry": "09.09.2029"
+        }
+      ],
+      "certificates": [
+        {
+          "certificate_type": "Certificate of 2nd Engineer Georgia",
+          "certificate_number": "15-01-008259",
+          "date_issued": "28.09.2021",
+          "expiry_date": "28.09.2026"
+        },
+        {
+          "certificate_type": "Endorsement 2nd Engineer Georgia",
+          "certificate_number": "15-01-008259",
+          "date_issued": "08.09.2021",
+          "expiry_date": "28.09.2026"
+        },
+        {
+          "certificate_type": "Additional Certificate of 2nd Engineer Georgia",
+          "certificate_number": "15-01-008259",
+          "date_issued": "28.09.2021",
+          "expiry_date": "28.09.2026"
+        },
+        {
+          "certificate_type": "Endorsement 2nd Engineer Georgia",
+          "certificate_number": "15-01-008259",
+          "date_issued": "08.09.2021",
+          "expiry_date": "28.09.2026"
+        },
+        {
+          "certificate_type": "Additional Certificate of 2nd Engineer Georgia",
+          "certificate_number": "15-01-008259",
+          "date_issued": "28.09.2021",
+          "expiry_date": "28.09.2026"
+        },
+        {
+          "certificate_type": "Endorsement 2nd Engineer Georgia",
+          "certificate_number": "15-01-008259",
+          "date_issued": "08.09.2021",
+          "expiry_date": "28.09.2026"
+        },
+        {
+          "certificate_type": "Basic Training for Liquefied Gas Tanker Cargo",
+          "certificate_number": "LPG01-151131",
+          "date_issued": "30.11.2021",
+          "expiry_date": "28.10.2026"
+        },
+        {
+          "certificate_type": "Medical First Aid",
+          "certificate_number": "MFC01-147147",
+          "date_issued": "17.09.2021",
+          "expiry_date": "05.09.2026"
+        },
+        {
+          "certificate_type": "Advanced Fire Fighting",
+          "certificate_number": "AFT01-147148",
+          "date_issued": "17.09.2021",
+          "expiry_date": "31.08.2026"
+        },
+        {
+          "certificate_type": "Security Awareness Training",
+          "certificate_number": "SEC09-217800",
+          "date_issued": "10.06.2024",
+          "expiry_date": "04.05.2029"
+        },
+        {
+          "certificate_type": "Crude Oil Washing",
+          "certificate_number": "İGC09-217803",
+          "date_issued": "10.06.2024",
+          "expiry_date": "24.04.2029"
+        },
+        {
+          "certificate_type": "Inert Gas System",
+          "certificate_number": "İGC09-217803",
+          "date_issued": "10.06.2024",
+          "expiry_date": "24.04.2029"
+        },
+        {
+          "certificate_type": "Personal Survival Techniques",
+          "certificate_number": "BST09-217799",
+          "date_issued": "10.06.2024",
+          "expiry_date": "28.04.2029"
+        },
+        {
+          "certificate_type": "Fire Prevention and Fire Fighting",
+          "certificate_number": "BST09-217799",
+          "date_issued": "10.06.2024",
+          "expiry_date": "28.04.2029"
+        },
+        {
+          "certificate_type": "Elementary First Aid",
+          "certificate_number": "BST09-217799",
+          "date_issued": "10.06.2024",
+          "expiry_date": "28.04.2029"
+        },
+        {
+          "certificate_type": "Personal Safety and Social Responsibilities",
+          "certificate_number": "BST09-217799",
+          "date_issued": "10.06.2024",
+          "expiry_date": "28.04.2029"
+        },
+        {
+          "certificate_type": "engine resource managmant",
+          "certificate_number": "ETM01-147150",
+          "date_issued": "17.09.2021",
+          "expiry_date": "20.08.2026"
+        },
+        {
+          "certificate_type": "Leadership and Managerial Skills",
+          "certificate_number": "LDM01-147149",
+          "date_issued": "17.09.2021",
+          "expiry_date": "25.08.2026"
+        },
+        {
+          "certificate_type": "Proficiency in Survival Craft and Rescue Boats other",
+          "certificate_number": "FRB01-147146",
+          "date_issued": "17.09.2021",
+          "expiry_date": "15.09.2026"
+        },
+        {
+          "certificate_type": "Basic training for oil and chemical Tanker",
+          "certificate_number": "OCG09-217802",
+          "date_issued": "10.06.2024",
+          "expiry_date": "21.04.2029"
+        },
+        {
+          "certificate_type": "Fire Prevention And Firefighting",
+          "certificate_number": "BST09-217799",
+          "date_issued": "10.06.2024",
+          "expiry_date": "28.04.2029"
+        },
+        {
+          "certificate_type": "Training for seafarers designated security duties",
+          "certificate_number": "SEC09-217800",
+          "date_issued": "10.06.2024",
+          "expiry_date": "04.05.2029"
+        },
+        {
+          "certificate_type": "Advanced Training For Oil Tanker Cargo Operations",
+          "certificate_number": "OCG09-217801",
+          "date_issued": "10.06.2024",
+          "expiry_date": "21.05.2029"
+        }
+      ],
+      "sea_service": [
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Crude Oil Tanker",
+          "sign_on_date": "11.09.2026",
+          "sign_off_date": "26.02.2027",
+          "vessel_name": "M/T VEMAHARMONY Malta Hyundai HiMSEN Queensway"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Crude Oil Tanker",
+          "sign_on_date": "21.09.2024",
+          "sign_off_date": "01.03.2025",
+          "vessel_name": "M/T VEMAGRACE Panama Hyundai HiMSEN Quuensway navigation Co.LTD"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Crude Oil Tanker",
+          "sign_on_date": "09.10.2023",
+          "sign_off_date": "15.01.2024",
+          "vessel_name": "FTM25 Marshall Islands Wartsila NEMBE CRUDE OIL EXPORT"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Crude Oil Tanker",
+          "sign_on_date": "08.04.2023",
+          "sign_off_date": "30.09.2023",
+          "vessel_name": "FTM23 Marshall Islands Wartsila NAVIAS SHIPPING"
+        },
+        {
+          "rank_on_vessel": "2nd Engineer",
+          "vessel_type": "Dry Cargo",
+          "sign_on_date": "04.01.2022",
+          "sign_off_date": "08.07.2022",
+          "vessel_name": "maximus-1 Panama Daihatsu seahourse shipping",
+          "dwt": "11000",
+          "engine_power": "2,250",
+          "manning_agency": "muratbey"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "LPG",
+          "sign_on_date": "13.10.2020",
+          "sign_off_date": "01.05.2021"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "07.09.2019",
+          "sign_off_date": "10.07.2020",
+          "vessel_name": "esra c Panama Mitsubishi ec shipping"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Bulk Carrier",
+          "sign_on_date": "14.06.2018",
+          "sign_off_date": "11.03.2019",
+          "vessel_name": "esra c Panama Mitsubishi ec shipping",
+          "dwt": "32000",
+          "engine_power": "6,840",
+          "manning_agency": "ec shipping"
+        },
+        {
+          "rank_on_vessel": "3rd Engineer",
+          "vessel_type": "Dry Cargo",
+          "sign_on_date": "15.12.2017",
+          "sign_off_date": "27.01.2018",
+          "vessel_name": "M/V ARUCAS Malta MAK TRİM SHİPPİNG"
+        },
+        {
+          "rank_on_vessel": "Engine Cadet",
+          "vessel_type": "RO-RO",
+          "sign_on_date": "29.06.2016",
+          "sign_off_date": "18.02.2017",
+          "vessel_name": "MY ROSE Panama MAK KALIONCU",
+          "dwt": "7500",
+          "engine_power": "3,600",
+          "manning_agency": "Kalioncu"
+        }
+      ],
+      "applications": [
+        {
+          "position_applied_for": "2nd Engineer",
+          "rank_applied_for": "2nd Engineer"
+        }
+      ]
+    },
+    "quality": {
+      "personal_fields": 13,
+      "documents": 2,
+      "certificates": 23,
+      "sea_service": 10,
+      "applications": 1
+    }
+  }
+]

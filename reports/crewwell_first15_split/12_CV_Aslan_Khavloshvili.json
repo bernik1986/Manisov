@@ -1,0 +1,253 @@
+{
+  "file": "CV_Aslan_Khavloshvili.pdf",
+  "parser": "CrewwellPDFParser",
+  "parsed": {
+    "personal_data": {
+      "full_name": "Aslan Khavloshvili",
+      "first_name": "Aslan",
+      "surname": "Khavloshvili",
+      "position_applied_for": "Master",
+      "rank_applied_for": "Master",
+      "date_of_birth": "1979-11-09",
+      "place_of_birth": "Batumi Georgia, +995595204704",
+      "citizenship": "Georgia",
+      "nationality": "Georgia",
+      "email": "lukaxatiaaleko@mail.ru",
+      "english_level": "Good",
+      "usa_visa_expiry_date": "2022-03-04",
+      "visa_status_note": "Schengen visa valid up: No",
+      "gender": "male",
+      "height_cm": "175",
+      "education_notes": "Academy",
+      "next_of_kin_relationship": "wife",
+      "next_of_kin_phone": "+995 595 204",
+      "next_of_kin_full_name": "Mziuri Ananidze"
+    },
+    "documents": [
+      {
+        "document_type": "Seaman's book",
+        "document_number": "S001479",
+        "date_of_issue": "2021-10-12",
+        "date_of_expiry": "2031-10-11",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "document_type": "International passport",
+        "document_number": "18AB65691",
+        "date_of_issue": "2019-02-03",
+        "date_of_expiry": "2029-02-13",
+        "country_of_issue": "GEORGIA"
+      }
+    ],
+    "certificates": [
+      {
+        "certificate_type": "Radar Management",
+        "certificate_number": "RBS03-179964",
+        "date_issued": "2023-01-26",
+        "expiry_date": "2027-12-20",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "certificate_type": "(ARPA+Radar) ECDIS",
+        "certificate_number": "ECS09-248178",
+        "date_issued": "2025-09-23",
+        "expiry_date": "2030-07-25",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "certificate_type": "Bridge Team Management",
+        "certificate_number": "BTM03-179962",
+        "date_issued": "2023-01-26",
+        "expiry_date": "2027-12-24",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "certificate_type": "Ship Security Officer",
+        "certificate_number": "sso01-196266",
+        "date_issued": "2023-08-25",
+        "expiry_date": "2028-01-29",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "certificate_type": "Basic Safety Training",
+        "certificate_number": "BST03-179965",
+        "date_issued": "2023-01-26",
+        "expiry_date": "2028-01-26",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "certificate_type": "Advanced Fire Fighting",
+        "certificate_number": "AFT03-179967",
+        "date_issued": "2023-01-26",
+        "expiry_date": "2028-01-12",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "certificate_type": "Proficiency in Survival",
+        "certificate_number": "FRB03-179966",
+        "date_issued": "2023-01-26",
+        "expiry_date": "2028-01-10",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "certificate_type": "Craft and RB Medical First Aid",
+        "certificate_number": "BST03-179965",
+        "date_issued": "2023-01-26",
+        "expiry_date": "2028-01-26",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "certificate_type": "GMDSS Endorsement",
+        "certificate_number": "18G09-23-002749",
+        "date_issued": "2023-08-25",
+        "expiry_date": "2028-05-11",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "certificate_type": "GMDSS Operator",
+        "certificate_number": "18G09-23-002749",
+        "date_issued": "2018-09-26",
+        "expiry_date": "2026-04-17",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "certificate_type": "Medical Care",
+        "certificate_number": "490/24",
+        "date_issued": "2024-10-18",
+        "expiry_date": "2029-10-18",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "certificate_type": "Ship Carrying",
+        "certificate_number": "c720/24",
+        "date_issued": "2024-10-16",
+        "expiry_date": "2029-10-16",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "certificate_type": "Dangr/hazard Cargo Designated Security",
+        "certificate_number": "SEC09-248177",
+        "date_issued": "2025-09-23",
+        "expiry_date": "2030-07-27",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "certificate_type": "Duties Security Awareness",
+        "certificate_number": "SEC03-179968",
+        "date_issued": "2026-01-26",
+        "expiry_date": "2028-01-13",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "certificate_type": "Training Ship Handling",
+        "certificate_number": "SHC09-248176",
+        "date_issued": "2025-09-23",
+        "expiry_date": "2030-08-04",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "certificate_type": "Arrangements Flag Documents and Other Countries Seaman's Books Country Document type No. Date of issue Valid up Liberia Seaman’s Book",
+        "certificate_number": "1581092",
+        "date_issued": "2021-02-23",
+        "expiry_date": "2021-05-19"
+      },
+      {
+        "certificate_type": "Cyprus Seaman’s Book",
+        "certificate_number": "CY238277",
+        "date_issued": "2015-04-24",
+        "expiry_date": "2025-04-23"
+      }
+    ],
+    "sea_service": [
+      {
+        "sign_on_date": "2025-10-08",
+        "sign_off_date": "2026-01-10",
+        "rank_on_vessel": "Master",
+        "vessel_name": "M",
+        "vessel_type": "Bulk carrier",
+        "dwt": "174142"
+      },
+      {
+        "sign_on_date": "2023-09-06",
+        "sign_off_date": "2024-06-10",
+        "rank_on_vessel": "Master",
+        "vessel_name": "M",
+        "vessel_type": "Bulk carrier",
+        "dwt": "18660"
+      },
+      {
+        "sign_on_date": "2023-02-18",
+        "sign_off_date": "2023-04-25",
+        "rank_on_vessel": "Master",
+        "vessel_name": "M",
+        "vessel_type": "Bulk carrier",
+        "dwt": "174142"
+      },
+      {
+        "sign_on_date": "2021-11-25",
+        "sign_off_date": "2022-09-21",
+        "rank_on_vessel": "Master",
+        "vessel_name": "M",
+        "vessel_type": "Bulk carrier",
+        "dwt": "9480"
+      },
+      {
+        "sign_on_date": "2021-02-08",
+        "sign_off_date": "2021-07-07",
+        "rank_on_vessel": "Master",
+        "vessel_name": "M",
+        "vessel_type": "Bulk carrier",
+        "dwt": "9480"
+      },
+      {
+        "sign_on_date": "2020-03-14",
+        "sign_off_date": "2020-09-01",
+        "rank_on_vessel": "Master",
+        "vessel_name": "M",
+        "vessel_type": "Bulk carrier",
+        "dwt": "38000"
+      },
+      {
+        "sign_on_date": "2019-02-28",
+        "sign_off_date": "2019-09-03",
+        "rank_on_vessel": "Master",
+        "vessel_name": "S A.",
+        "vessel_type": "Bulk carrier",
+        "dwt": "359588"
+      },
+      {
+        "sign_on_date": "2018-10-18",
+        "sign_off_date": "2018-12-26",
+        "rank_on_vessel": "Master",
+        "vessel_name": "S A.",
+        "vessel_type": "Bulk carrier",
+        "dwt": "359588"
+      },
+      {
+        "sign_on_date": "2018-01-30",
+        "sign_off_date": "2018-06-06",
+        "rank_on_vessel": "Master",
+        "vessel_name": "S A.",
+        "vessel_type": "Bulk carrier",
+        "dwt": "359588"
+      },
+      {
+        "sign_on_date": "2017-07-15",
+        "sign_off_date": "2017-10-23",
+        "rank_on_vessel": "Master",
+        "vessel_name": "S A.",
+        "vessel_type": "Bulk carrier",
+        "dwt": "359588"
+      }
+    ],
+    "applications": [
+      {
+        "position_applied_for": "Master",
+        "rank_applied_for": "Master"
+      }
+    ],
+    "flag_documents": [],
+    "family_contacts": [],
+    "uploaded_files": []
+  }
+}

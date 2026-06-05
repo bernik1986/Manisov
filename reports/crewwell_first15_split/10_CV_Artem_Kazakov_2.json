@@ -1,0 +1,166 @@
+{
+  "file": "CV_Artem_Kazakov (2).pdf",
+  "parser": "CrewwellPDFParser",
+  "parsed": {
+    "personal_data": {
+      "full_name": "Artem Kazakov",
+      "first_name": "Artem",
+      "surname": "Kazakov",
+      "position_applied_for": "2nd Engineer",
+      "rank_applied_for": "2nd Engineer",
+      "date_of_birth": "1992-07-19",
+      "place_of_birth": "Ukraine",
+      "primary_phone": "+79788215528",
+      "citizenship": "Russia",
+      "nationality": "Russia",
+      "email": "kazakov.eng@gmail.com",
+      "english_level": "Good",
+      "usa_visa_expiry_date": "2028-01-16",
+      "visa_status_note": "Schengen visa valid up: 27.12.2027",
+      "gender": "male",
+      "height_cm": "185",
+      "school_name": "SevNTU Additional skills:"
+    },
+    "documents": [
+      {
+        "document_type": "Seaman's book",
+        "document_number": "RUS0734849",
+        "date_of_issue": "2025-08-14",
+        "date_of_expiry": "2030-08-13",
+        "country_of_issue": "Russia"
+      },
+      {
+        "document_type": "International passport",
+        "document_number": "FK 526595",
+        "date_of_issue": "2017-12-27",
+        "date_of_expiry": "2027-12-27",
+        "country_of_issue": "Ukraine"
+      }
+    ],
+    "certificates": [
+      {
+        "certificate_type": "Basic Safety Training",
+        "certificate_number": "6052273316",
+        "date_issued": "2025-06-17",
+        "expiry_date": "2030-06-17",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Designated Security",
+        "certificate_number": "6052273924",
+        "date_issued": "2025-06-21",
+        "expiry_date": "2030-06-21",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Duties Advanced Fire Fighting",
+        "certificate_number": "7052275466",
+        "date_issued": "2025-07-12",
+        "expiry_date": "2030-07-12",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Proficiency in Survival",
+        "certificate_number": "7052275465",
+        "date_issued": "2025-07-12",
+        "expiry_date": "2030-07-12",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Craft and RB Medical First Aid",
+        "certificate_number": "7052275464",
+        "date_issued": "2025-07-12",
+        "expiry_date": "2030-07-12",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "IGF basic",
+        "certificate_number": "NVS209423083",
+        "date_issued": "2026-02-19",
+        "expiry_date": "2031-02-10",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "High Voltage",
+        "certificate_number": "038514",
+        "date_issued": "2025-11-28",
+        "expiry_date": "2030-11-28",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Engine room resource",
+        "certificate_number": "8052280480",
+        "date_issued": "2025-08-28",
+        "expiry_date": "2030-08-28",
+        "country_of_issue": "Russia"
+      }
+    ],
+    "sea_service": [
+      {
+        "sign_on_date": "2025-02-01",
+        "sign_off_date": "2025-04-28",
+        "rank_on_vessel": "2nd Engineer",
+        "vessel_name": "Siem Curie",
+        "dwt": "15154"
+      },
+      {
+        "sign_on_date": "2024-10-07",
+        "sign_off_date": "2025-01-31",
+        "rank_on_vessel": "2nd Engineer",
+        "vessel_name": "PCC (Pure Car Mitsubishi",
+        "dwt": "15154"
+      },
+      {
+        "sign_on_date": "2023-02-04",
+        "sign_off_date": "2023-06-10",
+        "rank_on_vessel": "3rd Engineer",
+        "vessel_name": "Polaris Highway",
+        "dwt": "15154"
+      },
+      {
+        "sign_on_date": "2022-04-21",
+        "sign_off_date": "2022-09-27",
+        "rank_on_vessel": "3rd Engineer",
+        "vessel_name": "Orion Highway",
+        "dwt": "20494"
+      },
+      {
+        "sign_on_date": "2021-06-21",
+        "sign_off_date": "2021-11-05",
+        "rank_on_vessel": "3rd Engineer",
+        "vessel_name": "Polaris Highway",
+        "dwt": "20494"
+      },
+      {
+        "sign_on_date": "2020-07-04",
+        "sign_off_date": "2020-11-27",
+        "rank_on_vessel": "3rd Engineer",
+        "vessel_name": "Bosporus Highway",
+        "dwt": "20532"
+      },
+      {
+        "sign_on_date": "2019-07-11",
+        "sign_off_date": "2019-11-05",
+        "rank_on_vessel": "3rd Engineer",
+        "vessel_name": "Global Highway",
+        "dwt": "20494"
+      },
+      {
+        "sign_on_date": "2018-09-26",
+        "sign_off_date": "2019-03-06",
+        "rank_on_vessel": "3rd Engineer",
+        "vessel_name": "Continental Highway",
+        "dwt": "18792"
+      }
+    ],
+    "applications": [
+      {
+        "position_applied_for": "2nd Engineer",
+        "rank_applied_for": "2nd Engineer"
+      }
+    ],
+    "flag_documents": [],
+    "family_contacts": [],
+    "uploaded_files": []
+  }
+}

@@ -1,0 +1,364 @@
+{
+  "file": "CV_DATO_GOGRATCHADZE.pdf",
+  "parser": "CrewwellPDFParser",
+  "parsed": {
+    "personal_data": {
+      "full_name": "DATO GOGRATCHADZE",
+      "first_name": "DATO",
+      "surname": "GOGRATCHADZE",
+      "position_applied_for": "3rd Engineer Tankers",
+      "rank_applied_for": "3rd Engineer Tankers",
+      "date_of_birth": "1991-12-11",
+      "place_of_birth": "SHUAKHEVI, GEORGIA",
+      "citizenship": "Georgia",
+      "nationality": "Georgia",
+      "email": "aphaafa5@gmail.com",
+      "english_level": "Good",
+      "usa_visa_expiry_date": "No",
+      "visa_status_note": "Schengen visa valid up: No",
+      "gender": "male",
+      "height_cm": "181",
+      "education_notes": "University",
+      "next_of_kin_relationship": "Nazi Sharashidze",
+      "next_of_kin_phone": "+995 568 69 89 69",
+      "next_of_kin_full_name": "Sharashidze",
+      "yellow_fever_issue_date": "2010-05-27",
+      "yellow_fever_expiry_date": "2030-05-27"
+    },
+    "documents": [
+      {
+        "document_type": "Seaman's book",
+        "document_number": "S005131",
+        "date_of_issue": "2022-10-19",
+        "date_of_expiry": "2032-10-19",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "document_type": "International passport",
+        "document_number": "16AB99297",
+        "date_of_issue": "2017-10-20",
+        "date_of_expiry": "2027-10-20",
+        "country_of_issue": "Georgia"
+      },
+      {
+        "document_type": "National passport",
+        "document_number": "16AB99297",
+        "date_of_issue": "2017-01-20",
+        "date_of_expiry": "2027-10-20",
+        "country_of_issue": "Georgia"
+      }
+    ],
+    "certificates": [
+      {
+        "certificate_type": "Medical First Aid",
+        "certificate_number": "MFC01-191055",
+        "date_issued": "2023-06-13",
+        "expiry_date": "2028-05-28",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "Advanced Fire Fighting",
+        "certificate_number": "AFT01-208091",
+        "date_issued": "2024-01-30",
+        "expiry_date": "2029-01-29",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "Designated Security",
+        "certificate_number": "SEC01-191054",
+        "date_issued": "2023-06-13",
+        "expiry_date": "2028-05-24",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "Duties Fast Rescue Boats course",
+        "certificate_number": "FRB01-208090",
+        "date_issued": "2024-01-30",
+        "expiry_date": "2029-01-15",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "Basic Safety Training",
+        "certificate_number": "BST01-208092",
+        "date_issued": "2024-01-30",
+        "expiry_date": "2029-01-23",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "Engine Resource Management including",
+        "certificate_number": "ETM01-191056",
+        "date_issued": "2023-06-13",
+        "expiry_date": "2028-06-02",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "leadership and teamworking skills Leadership and Teamwork",
+        "certificate_number": "LTD01-191058",
+        "date_issued": "2023-06-13",
+        "expiry_date": "2028-06-05",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "Security Awareness",
+        "certificate_number": "SEC01-191054",
+        "date_issued": "2023-06-13",
+        "expiry_date": "2028-05-24",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "Training High Voltage",
+        "certificate_number": "HVC01-191052",
+        "date_issued": "2023-06-13",
+        "expiry_date": "2028-06-12",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "Proficiency in Survival",
+        "certificate_number": "FRB01-208090",
+        "date_issued": "2024-01-30",
+        "expiry_date": "2029-01-15",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "Craft and RB Use of Crude Oil Washing",
+        "certificate_number": "IGC01-172427",
+        "date_issued": "2022-10-19",
+        "expiry_date": "2027-10-11",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "System Use Of Inert Gas System",
+        "certificate_number": "IGC01-172427",
+        "date_issued": "2022-10-19",
+        "expiry_date": "2027-10-11",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "Basic Training For Oil And Chemical Tanker Cargo",
+        "certificate_number": "014/24",
+        "date_issued": "2024-01-27",
+        "expiry_date": "2029-01-27",
+        "country_of_issue": "UKRAINE"
+      },
+      {
+        "certificate_type": "Operations SID",
+        "certificate_number": "GE005179",
+        "date_issued": "2022-10-19",
+        "expiry_date": "2027-10-19",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "Advanced Training for Oil",
+        "certificate_number": "OCG10-173393",
+        "date_issued": "2022-11-01",
+        "expiry_date": "2027-11-01",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "Tanker Cargo Operations Advanced Training for Chemical Tanker Cargo",
+        "certificate_number": "OCG01-191128",
+        "date_issued": "2023-06-14",
+        "expiry_date": "2027-11-05",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "Yellow Fever B-3H161V",
+        "date_issued": "2010-05-27",
+        "expiry_date": "2030-05-27",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "ILO MEDICAL",
+        "date_issued": "2024-05-28",
+        "expiry_date": "2026-05-28",
+        "certificate_number": "096653",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "COVID ID PFIZER",
+        "date_issued": "2022-11-17",
+        "expiry_date": "2032-11-17",
+        "country_of_issue": "GEORGIA"
+      },
+      {
+        "certificate_type": "Sea service (last 5 years) Vessel type / Position Vessel Name / Flag ME Type / kW From - Till Shipowner / Country DWT Crude oil Nordic Hawk / MAN/B&W /",
+        "date_issued": "2025-11-22",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "3rd Engineer tanker / Liberia",
+        "date_issued": "2026-04-01",
+        "certificate_number": "14532",
+        "country_of_issue": "HOLDINGS"
+      },
+      {
+        "certificate_type": "158594 Crude oil Nordic Sprinter / MAN/B&W /",
+        "date_issued": "2024-12-05",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "3rd Engineer tanker / Cayman",
+        "date_issued": "2025-06-10",
+        "certificate_number": "18660",
+        "country_of_issue": "HOLDINGS"
+      },
+      {
+        "certificate_type": "159089 GULF FANATIR / Oil/chemical MAN/B&W /",
+        "date_issued": "2024-06-01",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "3rd Engineer PANAMA tanker / 45920",
+        "date_issued": "2024-09-27",
+        "certificate_number": "9480",
+        "country_of_issue": "SHIPMANAGEMENT"
+      },
+      {
+        "certificate_type": "Crude oil ARSAN / SAUDI MAN/B&W /",
+        "date_issued": "2023-07-07",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "4th Engineer tanker / ARABIA",
+        "date_issued": "2023-12-03",
+        "certificate_number": "29260",
+        "country_of_issue": "MANAGEMENT"
+      },
+      {
+        "certificate_type": "320041 Crude oil GHAZAL / SAUDI",
+        "date_issued": "2022-11-25",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "4th Engineer tanker / Sulzer / 33600 ARABIA",
+        "date_issued": "2023-05-07",
+        "country_of_issue": "MANAGEMENT"
+      },
+      {
+        "certificate_type": "317388 PYXIS KARTERIA / Oil/chemical MAN/B&W /",
+        "date_issued": "2022-04-03",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "4th Engineer V.SHIPS Marshall Islands tanker / 46652",
+        "date_issued": "2022-10-01",
+        "certificate_number": "8600"
+      },
+      {
+        "certificate_type": "Crude oil FRONT BRAGE / MAN/B&W /",
+        "date_issued": "2021-05-01",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "4th Engineer tanker / V.SHIPS Marshall Islands",
+        "date_issued": "2021-12-14",
+        "certificate_number": "18645"
+      },
+      {
+        "certificate_type": "156196 Crude oil MELODIA / Marshall MAN/B&W /",
+        "date_issued": "2020-08-09",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "4th Engineer tanker / V.SHIPS Islands",
+        "date_issued": "2021-02-19",
+        "certificate_number": "10385"
+      },
+      {
+        "certificate_type": "158671 AGRA / Marshall VLCC / MAN/B&W /",
+        "date_issued": "2019-02-09",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "Islands 299999",
+        "date_issued": "2019-05-03",
+        "certificate_number": "25485"
+      },
+      {
+        "certificate_type": "4th Engineer V.SHIPS SOLD THE VESSEL SCRUB VLCC /",
+        "date_issued": "2018-04-18",
+        "country_of_issue": "-"
+      },
+      {
+        "certificate_type": "ATAKA / PANAMA Sulzer / 27561",
+        "date_issued": "2018-09-23",
+        "certificate_number": "299999"
+      }
+    ],
+    "sea_service": [
+      {
+        "sign_on_date": "2025-11-22",
+        "sign_off_date": "2026-04-01",
+        "rank_on_vessel": "3rd Engineer",
+        "vessel_name": "Nordic Hawk",
+        "dwt": "14532"
+      },
+      {
+        "sign_on_date": "2024-12-05",
+        "sign_off_date": "2025-06-10",
+        "rank_on_vessel": "3rd Engineer",
+        "vessel_name": "Nordic Sprinter",
+        "dwt": "14532"
+      },
+      {
+        "sign_on_date": "2024-06-01",
+        "sign_off_date": "2024-09-27",
+        "rank_on_vessel": "3rd Engineer",
+        "vessel_name": "GULF FANATIR",
+        "dwt": "18660"
+      },
+      {
+        "sign_on_date": "2023-07-07",
+        "sign_off_date": "2023-12-03",
+        "rank_on_vessel": "3rd Engineer",
+        "vessel_name": "ARSAN",
+        "dwt": "45920"
+      },
+      {
+        "sign_on_date": "2022-11-25",
+        "sign_off_date": "2023-05-07",
+        "vessel_name": "GHAZAL",
+        "dwt": "29260"
+      },
+      {
+        "sign_on_date": "2022-04-03",
+        "sign_off_date": "2022-10-01",
+        "vessel_name": "PYXIS KARTERIA",
+        "dwt": "33600"
+      },
+      {
+        "sign_on_date": "2021-05-01",
+        "sign_off_date": "2021-12-14",
+        "vessel_name": "FRONT BRAGE",
+        "dwt": "46652"
+      },
+      {
+        "sign_on_date": "2020-08-09",
+        "sign_off_date": "2021-02-19",
+        "vessel_name": "MELODIA",
+        "dwt": "18645"
+      },
+      {
+        "sign_on_date": "2019-02-09",
+        "sign_off_date": "2019-05-03",
+        "vessel_name": "AGRA",
+        "dwt": "10385"
+      },
+      {
+        "sign_on_date": "2018-04-18",
+        "sign_off_date": "2018-09-23",
+        "vessel_name": "VLCC",
+        "dwt": "299999"
+      }
+    ],
+    "applications": [
+      {
+        "position_applied_for": "3rd Engineer Tankers",
+        "rank_applied_for": "3rd Engineer Tankers"
+      }
+    ],
+    "flag_documents": [],
+    "family_contacts": [],
+    "uploaded_files": []
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "file": "Fitter__Welder_kolisnychenko_vadym_-_LNG.pdf",
+  "parser": "PDFParser",
+  "expected": {
+    "documents": 2,
+    "certificates": 10,
+    "sea_service": 15,
+    "applications": 0
+  },
+  "saved": {
+    "documents": 2,
+    "certificates": 10,
+    "sea_service": 14,
+    "applications": 0
+  },
+  "sea_service_missing_count": 1,
+  "sea_service_missing_examples": [
+    {
+      "rank_on_vessel": "Motorman",
+      "vessel_name": null,
+      "sign_on_date": "2016-04-22",
+      "sign_off_date": "2016-10-03",
+      "dwt": null
+    }
+  ],
+  "sea_service_parsed_count": 15,
+  "sea_service_saved_count": 14
+}

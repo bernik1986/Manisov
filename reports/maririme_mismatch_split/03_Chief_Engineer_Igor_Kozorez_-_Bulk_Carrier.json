@@ -1,0 +1,28 @@
+{
+  "file": "Chief_Engineer_Igor_Kozorez_-_Bulk_Carrier.pdf",
+  "parser": "PDFParser",
+  "expected": {
+    "documents": 2,
+    "certificates": 15,
+    "sea_service": 11,
+    "applications": 1
+  },
+  "saved": {
+    "documents": 2,
+    "certificates": 15,
+    "sea_service": 10,
+    "applications": 1
+  },
+  "sea_service_missing_count": 1,
+  "sea_service_missing_examples": [
+    {
+      "rank_on_vessel": "Chief Engineer",
+      "vessel_name": null,
+      "sign_on_date": "2021-12-15",
+      "sign_off_date": "2022-08-09",
+      "dwt": null
+    }
+  ],
+  "sea_service_parsed_count": 11,
+  "sea_service_saved_count": 10
+}

@@ -1,0 +1,28 @@
+{
+  "file": "2nd_Officer_Eduard_Deminskyi_-_Bulk_Carrier.pdf",
+  "parser": "PDFParser",
+  "expected": {
+    "documents": 2,
+    "certificates": 15,
+    "sea_service": 19,
+    "applications": 1
+  },
+  "saved": {
+    "documents": 2,
+    "certificates": 15,
+    "sea_service": 18,
+    "applications": 1
+  },
+  "sea_service_missing_count": 1,
+  "sea_service_missing_examples": [
+    {
+      "rank_on_vessel": "3rd Officer",
+      "vessel_name": null,
+      "sign_on_date": "2022-08-16",
+      "sign_off_date": "2023-03-07",
+      "dwt": null
+    }
+  ],
+  "sea_service_parsed_count": 19,
+  "sea_service_saved_count": 18
+}

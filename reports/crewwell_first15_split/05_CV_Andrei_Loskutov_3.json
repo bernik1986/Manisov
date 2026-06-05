@@ -1,0 +1,197 @@
+{
+  "file": "CV_Andrei_Loskutov (3).pdf",
+  "parser": "CrewwellPDFParser",
+  "parsed": {
+    "personal_data": {
+      "full_name": "Andrei Loskutov",
+      "first_name": "Andrei",
+      "surname": "Loskutov",
+      "position_applied_for": "3rd Officer",
+      "rank_applied_for": "3rd Officer",
+      "date_of_birth": "1987-01-02",
+      "place_of_birth": "Russia",
+      "primary_phone": "+79089883322",
+      "citizenship": "Russia",
+      "nationality": "Russia",
+      "email": "3rdnavigator2015@mail.ru",
+      "english_level": "Good",
+      "usa_visa_expiry_date": "No",
+      "visa_status_note": "Schengen visa valid up: No",
+      "gender": "male",
+      "height_cm": "173",
+      "education_notes": "named after G.I. Nevelskoy",
+      "next_of_kin_relationship": "Brother",
+      "next_of_kin_phone": "+79089920132",
+      "next_of_kin_full_name": "Viktor Loskutov",
+      "next_of_kin_address": "Russia, Vladivostok city"
+    },
+    "documents": [
+      {
+        "document_type": "Seaman's book",
+        "document_number": "RUS0561204",
+        "date_of_issue": "2021-11-09",
+        "date_of_expiry": "2026-11-08",
+        "country_of_issue": "Russia"
+      },
+      {
+        "document_type": "International passport",
+        "document_number": "76 3736224",
+        "date_of_issue": "2020-12-18",
+        "date_of_expiry": "2030-12-18",
+        "country_of_issue": "Russia"
+      }
+    ],
+    "certificates": [
+      {
+        "certificate_type": "Basic Safety Training",
+        "certificate_number": "2075629",
+        "date_issued": "2023-11-30",
+        "expiry_date": "2028-11-29",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Security Awareness",
+        "certificate_number": "2108285",
+        "date_issued": "2023-11-28",
+        "expiry_date": "2028-11-27",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Training Designated Security",
+        "certificate_number": "20108285",
+        "date_issued": "2023-11-28",
+        "expiry_date": "2028-11-27",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Duties Advanced Fire Fighting",
+        "certificate_number": "2106459",
+        "date_issued": "2023-12-02",
+        "expiry_date": "2028-12-01",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Proficiency in Survival",
+        "certificate_number": "1986830",
+        "date_issued": "2023-12-05",
+        "expiry_date": "2028-12-04",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Craft and RB Medical First Aid",
+        "certificate_number": "2107158",
+        "date_issued": "2023-12-08",
+        "expiry_date": "2028-12-07",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "GMDSS Operator",
+        "certificate_number": "VVO208047363",
+        "date_issued": "2024-01-26",
+        "expiry_date": "2028-12-19",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Ship Security Officer",
+        "certificate_number": "000187",
+        "date_issued": "2025-11-13",
+        "expiry_date": "2030-11-13",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Tanker Familiarization",
+        "certificate_number": "004862",
+        "date_issued": "2023-08-18",
+        "expiry_date": "2028-08-17",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Oil Tank Specialized",
+        "certificate_number": "000234",
+        "date_issued": "2025-11-10",
+        "expiry_date": "2030-11-10",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Training Radar Management",
+        "certificate_number": "2109188",
+        "date_issued": "2023-12-12",
+        "expiry_date": "2028-12-11",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "(ARPA+Radar) ECDIS",
+        "certificate_number": "2109591",
+        "date_issued": "2023-12-16",
+        "expiry_date": "2028-12-15",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Bridge Team Management",
+        "certificate_number": "CS-010/2022",
+        "date_issued": "2022-07-01",
+        "expiry_date": "2027-06-30",
+        "country_of_issue": "Russia"
+      },
+      {
+        "certificate_type": "Flag Documents and Other Countries Seaman's Books Country Document type No. Date of issue Valid up SEAFARER'S Marshall Islands IDENTIFICATION AND MH",
+        "certificate_number": "1042543",
+        "date_issued": "2024-05-31",
+        "expiry_date": "2029-05-30"
+      }
+    ],
+    "sea_service": [
+      {
+        "sign_on_date": "2025-04-07",
+        "sign_off_date": "2025-09-12",
+        "rank_on_vessel": "3rd Officer",
+        "vessel_name": "STI ROSE",
+        "dwt": "11200"
+      },
+      {
+        "sign_on_date": "2024-07-01",
+        "sign_off_date": "2024-10-11",
+        "rank_on_vessel": "3rd Officer",
+        "vessel_name": "3rd Officer ISLANDS TANKERS",
+        "dwt": "11760"
+      },
+      {
+        "sign_on_date": "2023-10-11",
+        "sign_off_date": "2023-11-11",
+        "rank_on_vessel": "3rd Officer",
+        "vessel_name": "3rd Officer ISLANDS TANKERS",
+        "dwt": "11200"
+      },
+      {
+        "sign_on_date": "2022-12-21",
+        "sign_off_date": "2023-05-21",
+        "rank_on_vessel": "3rd Officer",
+        "vessel_name": "3rd Officer ISLANDS TANKERS",
+        "dwt": "11200"
+      },
+      {
+        "sign_on_date": "2022-01-29",
+        "sign_off_date": "2022-06-07",
+        "rank_on_vessel": "3rd Officer",
+        "vessel_name": "3rd Officer ISLANDS TANKERS",
+        "dwt": "11200"
+      },
+      {
+        "sign_on_date": "2021-01-24",
+        "sign_off_date": "2021-07-15",
+        "rank_on_vessel": "3rd Officer",
+        "vessel_name": "3rd Officer ISLANDS TANKERS",
+        "dwt": "11200"
+      }
+    ],
+    "applications": [
+      {
+        "position_applied_for": "3rd Officer",
+        "rank_applied_for": "3rd Officer"
+      }
+    ],
+    "flag_documents": [],
+    "family_contacts": [],
+    "uploaded_files": []
+  }
+}

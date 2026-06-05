@@ -1,0 +1,20 @@
+[
+  {
+    "file": "CV_Anatoliy_Onyshchenko (3).pdf",
+    "ok": true,
+    "personal_fields": 12,
+    "documents": 2,
+    "certificates": 9,
+    "sea_service": 0,
+    "applications": 1
+  },
+  {
+    "file": "CV_Viktor_Artomov.pdf",
+    "ok": true,
+    "personal_fields": 10,
+    "documents": 2,
+    "certificates": 9,
+    "sea_service": 0,
+    "applications": 1
+  }
+]

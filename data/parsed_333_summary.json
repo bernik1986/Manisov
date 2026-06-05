@@ -1,0 +1,287 @@
+[
+  {
+    "file": "2E Budurin CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD.docx",
+    "personal_data": {
+      "surname": "Budurin",
+      "first_name": "Andrii",
+      "date_of_birth": "25/MAY/1990",
+      "place_of_birth": "Ukraine",
+      "marital_status": "Single     Married",
+      "nationality": "Ukrainian",
+      "permanent_address": "5 Dobrovolskogo str., Odessa, Ukraine",
+      "mobile_phone": "+380965685694",
+      "email": "andrii.budurin@gmail.com",
+      "next_of_kin_relationship": "Wife",
+      "next_of_kin_surname": "Budurina",
+      "next_of_kin_first_name": "Anastasiya",
+      "next_of_kin_phone": "+380630738684",
+      "number_of_children": "-",
+      "english_level": "Good\t Basic"
+    },
+    "documents_count": 5,
+    "certificates_count": 5,
+    "sea_service_count": 12,
+    "applications": [
+      {
+        "position_applied_for": "Second Engineer",
+        "rank_applied_for": "Second Engineer"
+      }
+    ]
+  },
+  {
+    "file": "2E Rabiniuk CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD.docx",
+    "personal_data": {
+      "surname": "Rabiniuk",
+      "first_name": "Oleksandr",
+      "date_of_birth": "27.09.1996",
+      "place_of_birth": "Ukraine",
+      "marital_status": "Single     Married",
+      "nationality": "Ukraine",
+      "permanent_address": "8 Didrihsona street, Odesa, Ukraine",
+      "primary_phone": "-",
+      "mobile_phone": "+380730793003",
+      "email": "av.rabiniuk@gmail.com",
+      "next_of_kin_relationship": "Mother",
+      "next_of_kin_surname": "Rabiniuk",
+      "next_of_kin_first_name": "Svitlana",
+      "next_of_kin_phone": "+380688485324",
+      "english_level": "Good\t Basic"
+    },
+    "documents_count": 5,
+    "certificates_count": 5,
+    "sea_service_count": 14,
+    "applications": [
+      {
+        "position_applied_for": "Second Engineer",
+        "rank_applied_for": "Second Engineer"
+      }
+    ]
+  },
+  {
+    "file": "2O Reshetov CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD.docx",
+    "personal_data": {
+      "surname": "Reshetov",
+      "first_name": "Andriy",
+      "date_of_birth": "13.11.1977",
+      "place_of_birth": "Ukraine",
+      "marital_status": "Single     Married",
+      "nationality": "Ukrainian",
+      "permanent_address": "17 Kindiyskoe shosse , apt.43, Kherson",
+      "mobile_phone": "+ 380505447804",
+      "email": "andriyr77@ukr.net",
+      "next_of_kin_relationship": "Wife",
+      "next_of_kin_surname": "Reshetova",
+      "next_of_kin_first_name": "Elena",
+      "next_of_kin_phone": "+380509808783",
+      "english_level": "Good\t Basic"
+    },
+    "documents_count": 5,
+    "certificates_count": 5,
+    "sea_service_count": 10,
+    "applications": [
+      {
+        "position_applied_for": "Second Officer",
+        "rank_applied_for": "Second Officer"
+      }
+    ]
+  },
+  {
+    "file": "CO Sharov CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD.docx",
+    "personal_data": {
+      "surname": "Sharov",
+      "first_name": "Eduard",
+      "date_of_birth": "22.05.1988",
+      "place_of_birth": "Ukraine",
+      "marital_status": "Single     Married",
+      "nationality": "Ukraine",
+      "permanent_address": "20 Lenina street, apt. 11, Alshansk, Mykolayiv region, Ukraine",
+      "primary_phone": "+380937419602",
+      "mobile_phone": "+380672244881",
+      "email": "eshar2205@gmail.com",
+      "next_of_kin_relationship": "Mother",
+      "next_of_kin_first_name": "Iryna",
+      "next_of_kin_phone": "+380673963522",
+      "english_level": "Good\t Basic"
+    },
+    "documents_count": 5,
+    "certificates_count": 5,
+    "sea_service_count": 12,
+    "applications": [
+      {
+        "position_applied_for": "Chief Officer",
+        "rank_applied_for": "Chief Officer"
+      }
+    ]
+  },
+  {
+    "file": "CO tr  Herasym CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD09.07.2025.docx",
+    "personal_data": {
+      "surname": "Herasym",
+      "first_name": "Dmytro",
+      "date_of_birth": "04.02.2000",
+      "place_of_birth": "Ukraine",
+      "marital_status": "Single     Married",
+      "nationality": "Ukraine",
+      "permanent_address": "64A Polevaya St., Rosdilna, Odesa Region",
+      "mobile_phone": "+380663742614 WhatsApp",
+      "email": "dmitriygerasim2017@gmail.com",
+      "next_of_kin_relationship": "Mother",
+      "next_of_kin_surname": "Herasym",
+      "next_of_kin_first_name": "Oksana",
+      "next_of_kin_phone": "+380951817556",
+      "number_of_children": "-",
+      "english_level": "Good\t Basic"
+    },
+    "documents_count": 5,
+    "certificates_count": 5,
+    "sea_service_count": 10,
+    "applications": [
+      {
+        "position_applied_for": "Chief  Officer trainee",
+        "rank_applied_for": "Chief  Officer trainee"
+      }
+    ]
+  },
+  {
+    "file": "CO tr. Golubkov CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD.docx",
+    "personal_data": {
+      "surname": "Golubkov",
+      "first_name": "Oleksandr",
+      "date_of_birth": "09.02.1988",
+      "place_of_birth": "Ukraine",
+      "marital_status": "Single     Married",
+      "nationality": "Ukraine",
+      "permanent_address": "58/2 Filatova street, apt. 34, Odessa, Ukraine",
+      "mobile_phone": "+380667524436",
+      "email": "olegolubkovolegol@gmail.com",
+      "next_of_kin_relationship": "Wife",
+      "next_of_kin_surname": "Peresypkina",
+      "next_of_kin_first_name": "Nataliya",
+      "next_of_kin_phone": "+380935712820",
+      "english_level": "Good\t Basic"
+    },
+    "documents_count": 5,
+    "certificates_count": 5,
+    "sea_service_count": 11,
+    "applications": [
+      {
+        "position_applied_for": "Chief Officer Trainee",
+        "rank_applied_for": "Chief Officer Trainee"
+      }
+    ]
+  },
+  {
+    "file": "CO tr. Nos  CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD.docx",
+    "personal_data": {
+      "surname": "Nos",
+      "first_name": "Mykola",
+      "date_of_birth": "01.09.1987",
+      "place_of_birth": "Ukraine",
+      "marital_status": "Single     Married",
+      "nationality": "Ukraine",
+      "permanent_address": "96, Kolhoznaya str., v.Kalininskoe, Kherson reg., Ukraine",
+      "primary_phone": "-",
+      "mobile_phone": "+380502144319",
+      "email": "nosnikolay@ukr.net",
+      "next_of_kin_relationship": "Father",
+      "next_of_kin_surname": "Nos",
+      "next_of_kin_first_name": "Oleksandr",
+      "next_of_kin_phone": "+380688246158",
+      "english_level": "Good\t Basic"
+    },
+    "documents_count": 5,
+    "certificates_count": 5,
+    "sea_service_count": 17,
+    "applications": [
+      {
+        "position_applied_for": "Chief Officer Trainee",
+        "rank_applied_for": "Chief Officer Trainee"
+      }
+    ]
+  },
+  {
+    "file": "FTR Malchev CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD18.11.2024-delete.docx",
+    "personal_data": {
+      "surname": "Malchev",
+      "first_name": "Vasyl",
+      "date_of_birth": "13.09.1975",
+      "place_of_birth": "Ukraine",
+      "marital_status": "Single     Married",
+      "nationality": "Ukraine",
+      "permanent_address": "71 I. V. Cel Cumplit  str., Cahul, Moldova",
+      "mobile_phone": "+380983739677",
+      "email": "vasya.malchev13091975@gmail.com",
+      "next_of_kin_relationship": "Wife",
+      "next_of_kin_surname": "Malcheva",
+      "next_of_kin_first_name": "Mari",
+      "next_of_kin_phone": "+380968113836",
+      "number_of_children": "1",
+      "english_level": "Good\t Basic"
+    },
+    "documents_count": 5,
+    "certificates_count": 5,
+    "sea_service_count": 10,
+    "applications": [
+      {
+        "position_applied_for": "Fitter",
+        "rank_applied_for": "Fitter"
+      }
+    ]
+  },
+  {
+    "file": "FTR Opria CR-RT 05A _ SEAMEN'S APPLICATION _ INTERVIEW RECORD.docx",
+    "personal_data": {
+      "surname": "Opria",
+      "first_name": "Vadym",
+      "date_of_birth": "11.11.1991",
+      "place_of_birth": "Ukraine",
+      "marital_status": "Single     Married",
+      "nationality": "Ukrainian",
+      "permanent_address": "72 Khotynska street, Izmail, Odesa region, Ukraine",
+      "mobile_phone": "+380672664783",
+      "email": "vadym.opria@ukr.net  vadimopra160@gmail.com",
+      "next_of_kin_relationship": "Wife",
+      "next_of_kin_surname": "Shyndych",
+      "next_of_kin_first_name": "Liudmyla",
+      "next_of_kin_phone": "+380979788722",
+      "number_of_children": "2",
+      "english_level": "Good\t Basic"
+    },
+    "documents_count": 4,
+    "certificates_count": 4,
+    "sea_service_count": 12,
+    "applications": [
+      {
+        "position_applied_for": "Fitter",
+        "rank_applied_for": "Fitter"
+      }
+    ]
+  },
+  {
+    "file": "PMPN Magomedov CR-RT 05A - SEAMEN'S APPLICATION & INTERVIEW RECORD.docx",
+    "personal_data": {
+      "surname": "Magomedov",
+      "first_name": "Sergii",
+      "date_of_birth": "15.09.1966",
+      "place_of_birth": "Ukraine",
+      "marital_status": "Single     Married",
+      "nationality": "Ukrainian",
+      "permanent_address": "3 Segedskaya street, apt. 17, Odessa, Ukraine",
+      "mobile_phone": "+380932338785",
+      "email": "mr.klient@yandex.ru",
+      "next_of_kin_surname": "Magomedova",
+      "next_of_kin_first_name": "Nataliya",
+      "next_of_kin_phone": "+380993054047",
+      "english_level": "Good\t Basic"
+    },
+    "documents_count": 5,
+    "certificates_count": 5,
+    "sea_service_count": 15,
+    "applications": [
+      {
+        "position_applied_for": "Pumpman",
+        "rank_applied_for": "Pumpman"
+      }
+    ]
+  }
+]

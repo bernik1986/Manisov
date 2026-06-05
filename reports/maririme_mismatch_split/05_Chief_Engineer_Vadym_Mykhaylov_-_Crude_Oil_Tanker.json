@@ -1,0 +1,28 @@
+{
+  "file": "Chief_Engineer_Vadym_Mykhaylov_-_Crude_Oil_Tanker.pdf",
+  "parser": "PDFParser",
+  "expected": {
+    "documents": 2,
+    "certificates": 12,
+    "sea_service": 17,
+    "applications": 1
+  },
+  "saved": {
+    "documents": 2,
+    "certificates": 12,
+    "sea_service": 16,
+    "applications": 1
+  },
+  "sea_service_missing_count": 1,
+  "sea_service_missing_examples": [
+    {
+      "rank_on_vessel": "2nd Engineer",
+      "vessel_name": null,
+      "sign_on_date": "2014-09-20",
+      "sign_off_date": "2015-02-13",
+      "dwt": null
+    }
+  ],
+  "sea_service_parsed_count": 17,
+  "sea_service_saved_count": 16
+}

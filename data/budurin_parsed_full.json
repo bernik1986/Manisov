@@ -1,0 +1,311 @@
+{
+  "personal_data": {
+    "surname": "Budurin",
+    "first_name": "Andrii",
+    "date_of_birth": "25/MAY/1990",
+    "place_of_birth": "Ukraine",
+    "marital_status": "Single     Married",
+    "nationality": "Ukrainian",
+    "home_address": "5 Dobrovolskogo str., Odessa, Ukraine",
+    "mobile_phone": "+380965685694",
+    "email": "andrii.budurin@gmail.com",
+    "next_of_kin_relationship": "Wife",
+    "next_of_kin_surname": "Budurina",
+    "next_of_kin_first_name": "Anastasiya",
+    "next_of_kin_phone": "+380630738684",
+    "sons_count": "-",
+    "daughters_count": "-",
+    "native_language": "Ukraine",
+    "english_level": "Good\t Basic"
+  },
+  "documents": [
+    {
+      "document_type": "Passport",
+      "document_number": "FS 541795",
+      "issuing_authority": "Ukraine",
+      "date_of_issue": "13/SEP/2018",
+      "date_of_expiry": "13/SEP/2028"
+    },
+    {
+      "document_type": "Seaman’s book",
+      "document_number": "AB 579784",
+      "issuing_authority": "Ukraine",
+      "date_of_issue": "23/MAY/2016",
+      "date_of_expiry": "23/MAY/2026"
+    },
+    {
+      "document_type": "S T C W Endorsement/ COC",
+      "document_number": "00346/2022/08",
+      "issuing_authority": "Ukraine",
+      "date_of_issue": "21/JAN/.2022",
+      "date_of_expiry": "20/JAN/2027"
+    },
+    {
+      "document_type": "Medical Fitness Certificate",
+      "document_number": "-",
+      "issuing_authority": "-",
+      "date_of_issue": null,
+      "date_of_expiry": null
+    },
+    {
+      "document_type": "Yellow Fever Vaccination",
+      "document_number": "N/A",
+      "issuing_authority": "Ukraine",
+      "date_of_issue": "30/DEC/2010",
+      "date_of_expiry": null
+    }
+  ],
+  "certificates": [
+    {
+      "certificate_type": "National License (C.O.C)",
+      "issuing_authority": "Ukraine",
+      "date_issued": "2022-01-21",
+      "expiry_date": "2027-01-20"
+    },
+    {
+      "certificate_type": "National License (C.O.P)"
+    },
+    {
+      "certificate_type": "Flag Endorsement"
+    },
+    {
+      "certificate_type": "Navigation watchkeeping A-II/1"
+    },
+    {
+      "certificate_type": "Navigation watchkeeping A-II/2"
+    },
+    {
+      "certificate_type": "Part of Navigation Watch A-II/4"
+    },
+    {
+      "certificate_type": "E/R watchkeeping A-III/1"
+    },
+    {
+      "certificate_type": "E/R watchkeeping A-III/2"
+    },
+    {
+      "certificate_type": "Basic Training for Oil & Chemical Tankers A-V/1-1-1",
+      "issuing_authority": "Ukraine",
+      "date_issued": "2021-09-20",
+      "expiry_date": "2026-09-20"
+    },
+    {
+      "certificate_type": "Advanced Training for Oil Tankers A-V/1-1-2",
+      "issuing_authority": "Ukraine",
+      "date_issued": "2022-01-20",
+      "expiry_date": "2027-01-20"
+    },
+    {
+      "certificate_type": "Advanced Training for Chemical Tankers A-V/1-1-3",
+      "issuing_authority": "Ukraine",
+      "date_issued": "2022-01-21",
+      "expiry_date": "2027-01-20"
+    },
+    {
+      "certificate_type": "ECDIS (generic)"
+    },
+    {
+      "certificate_type": "ECDIS (type specific)"
+    },
+    {
+      "certificate_type": "GMDSS Operator A-IV/2"
+    },
+    {
+      "certificate_type": "Basic training A-VI/1-1 to 1-4",
+      "issuing_authority": "Ukraine",
+      "date_issued": "2023-12-05",
+      "expiry_date": "2028-12-05"
+    },
+    {
+      "certificate_type": "Proficiency in survival craft and rescue boats (no fast rescue boats) A-VI/2-1",
+      "issuing_authority": "Ukraine",
+      "date_issued": "2023-12-26",
+      "expiry_date": "2028-12-26"
+    },
+    {
+      "certificate_type": "Proficiency in fast rescue boats A-VI/2-2",
+      "issuing_authority": "Ukraine",
+      "date_issued": "2023-04-07",
+      "expiry_date": "2028-04-06"
+    },
+    {
+      "certificate_type": "Advanced firefighting A-VI/3-1®",
+      "issuing_authority": "Ukraine",
+      "date_issued": "2023-12-05",
+      "expiry_date": "2028-12-05"
+    },
+    {
+      "certificate_type": "Medical First Aid A-VI/4-1",
+      "issuing_authority": "Ukraine",
+      "date_issued": "2023-12-05",
+      "expiry_date": "2028-12-05"
+    },
+    {
+      "certificate_type": "Medical care A-VI/4-2"
+    },
+    {
+      "certificate_type": "Ship Security Officer (SSO) A-VI/5",
+      "issuing_authority": "Ukraine",
+      "date_issued": "2021-07-09",
+      "expiry_date": "2026-07-09"
+    },
+    {
+      "certificate_type": "Security Awareness No Designated Duties A-VI/6-1"
+    },
+    {
+      "certificate_type": "Security Awareness / Designated Duties A-VI/6-2"
+    },
+    {
+      "certificate_type": "Bridge Resource/Team Management (BRM/BTM)"
+    },
+    {
+      "certificate_type": "Engine Resource Management (ERM)",
+      "issuing_authority": "Ukraine",
+      "date_issued": "2021-09-20",
+      "expiry_date": "2026-09-20"
+    },
+    {
+      "certificate_type": "Risk Assessment",
+      "issuing_authority": "Ukraine",
+      "date_issued": "2022-04-19",
+      "expiry_date": "2027-04-19"
+    },
+    {
+      "certificate_type": "Incident Investigation",
+      "issuing_authority": "Ukraine",
+      "date_issued": "2022-04-19",
+      "expiry_date": "2027-04-19"
+    },
+    {
+      "certificate_type": "OTHER CERTIFICATES",
+      "issuing_authority": "ISSUING AUTHORITY",
+      "date_issued": "Date Issued",
+      "expiry_date": "Expiry Date"
+    },
+    {
+      "certificate_type": "Training needs:",
+      "issuing_authority": "Training needs:"
+    }
+  ],
+  "sea_service": [
+    {
+      "vessel_name": "Aquasmeralda",
+      "vessel_type": "Chemical/Oil Products Tanker",
+      "main_engine": "MAN-B&W 6G50ME-C9.6",
+      "dwt": "5569",
+      "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+      "rank_on_vessel": "2/E",
+      "sign_on_date": "25/OCT/25",
+      "sign_off_date": "18/MAR/26",
+      "remarks": "EOC"
+    },
+    {
+      "vessel_name": "Amarthea",
+      "vessel_type": "Crude Oil Tanker",
+      "main_engine": "MAN B&W 6G60ME-C9.5",
+      "dwt": "16800",
+      "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+      "rank_on_vessel": "2/E",
+      "sign_on_date": "29/MAR/24",
+      "sign_off_date": "26/JUL/24",
+      "remarks": "EOC"
+    },
+    {
+      "vessel_name": "Aristea",
+      "vessel_type": "Crude Oil Tanker",
+      "main_engine": "MAN-B&W  6G60ME-C9.5",
+      "dwt": "16800",
+      "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+      "rank_on_vessel": "2/E",
+      "sign_on_date": "12/MAY/23",
+      "sign_off_date": "21/OCT/23",
+      "remarks": "EOC"
+    },
+    {
+      "vessel_name": "Aktea",
+      "vessel_type": "Chemical/Oil Products Tanker",
+      "main_engine": "MAN-B&W 5S70MC",
+      "dwt": "19100",
+      "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+      "rank_on_vessel": "2/E",
+      "sign_on_date": "21/APR/22",
+      "sign_off_date": "30/SEPT/22",
+      "remarks": "EOC"
+    },
+    {
+      "vessel_name": "Aquasmeralda",
+      "vessel_type": "Chemical/Oil Products Tanker",
+      "main_engine": "MAN-B&W 6G50ME-C9.6",
+      "dwt": "5569",
+      "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+      "rank_on_vessel": "3/E",
+      "sign_on_date": "23/SEP/21",
+      "sign_off_date": "17/DEC/21",
+      "remarks": "EOC"
+    },
+    {
+      "vessel_name": "Aristea",
+      "vessel_type": "Crude Oil Tanker",
+      "main_engine": "MAN B&W 6G60ME – C9.5",
+      "dwt": "16380",
+      "employer": "Chandris Hellas Inc / Overseas/ Yialos Manning Services Inc.",
+      "rank_on_vessel": "3/E",
+      "sign_on_date": "09/JUL/20",
+      "sign_off_date": "13/DEC/20",
+      "remarks": "EOC"
+    },
+    {
+      "vessel_name": "Aristea",
+      "vessel_type": "Crude Oil Tanker",
+      "main_engine": "MAN B&W 6G60ME – C9.5",
+      "dwt": "16380",
+      "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+      "rank_on_vessel": "3/E",
+      "sign_on_date": "30/SEP/19",
+      "sign_off_date": "23/FEB/20",
+      "remarks": "EOC"
+    },
+    {
+      "vessel_name": "Amarthea",
+      "vessel_type": "Crude Oil Tanker",
+      "main_engine": "MAN B&W 6G60ME-C9.5",
+      "dwt": "16800",
+      "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+      "rank_on_vessel": "3/E",
+      "sign_on_date": "08/JAN/19",
+      "sign_off_date": "30/APR/19",
+      "remarks": "EOC"
+    },
+    {
+      "vessel_name": "Aristea",
+      "vessel_type": "Crude Oil Tanker",
+      "main_engine": "MAN B&W 6G60ME – C9.5",
+      "dwt": "16380",
+      "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+      "rank_on_vessel": "3/E",
+      "sign_on_date": "10/APR/18",
+      "sign_off_date": "08/SEP/18",
+      "remarks": "EOC"
+    },
+    {
+      "vessel_name": "Aktea",
+      "vessel_type": "Chemical/Oil Products Tanker",
+      "main_engine": "MAN-B&W 5S70MC",
+      "dwt": "19100",
+      "employer": "Chandris Hellas Inc / Overseas/Yialos Manning Services Inc.",
+      "rank_on_vessel": "3/E",
+      "sign_on_date": "17/SEP/17",
+      "sign_off_date": "29/DEC/17",
+      "remarks": "EOC"
+    }
+  ],
+  "applications": [
+    {
+      "position_applied_for": "Second Engineer",
+      "rank_applied_for": "Second Engineer"
+    }
+  ],
+  "flag_documents": [],
+  "family_contacts": [],
+  "uploaded_files": []
+}
