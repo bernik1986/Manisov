@@ -164,6 +164,8 @@ _CANONICAL_TO_SYNONYMS: dict[str, list[str]] = {
     "source_file_name": ["Source File Name", "Original File Name"],
     "cv_imported": ["CV Imported", "Imported from CV"],
     "ukr_contract_json": ["Ukrainian contract JSON", "UKR contract fields"],
+    "salary_calculation_json": ["Salary calculation JSON", "Salary calculator fields"],
+    "contract_json": ["Contract JSON", "Sea contract fields"],
     "latin_full_name": ["Latin Full Name", "Name in Latin"],
     "native_full_name": ["Native Full Name", "Name in Native Language"],
     "country_of_birth": ["Country of Birth"],

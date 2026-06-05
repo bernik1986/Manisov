@@ -3,15 +3,15 @@ services:
     image: postgres:16-alpine
     container_name: maritime-db
     environment:
-      POSTGRES_DB: maritime
-      POSTGRES_USER: maritime
-      POSTGRES_PASSWORD: maritime
+      POSTGRES_DB: ${POSTGRES_DB:?POSTGRES_DB is required}
+      POSTGRES_USER: ${POSTGRES_USER:?POSTGRES_USER is required}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
     ports:
       - "5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U maritime -d maritime"]
+      test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
       interval: 5s
       timeout: 5s
       retries: 10
@@ -25,8 +25,11 @@ services:
       db:
         condition: service_healthy
     environment:
-      DATABASE_URL: postgresql+psycopg2://maritime:maritime@db:5432/maritime
-      JWT_SECRET_KEY: change-me-in-docker
+      DATABASE_URL: ${DATABASE_URL:?DATABASE_URL is required}
+      JWT_SECRET_KEY: ${JWT_SECRET_KEY:?JWT_SECRET_KEY is required}
+      DEFAULT_ADMIN_USERNAME: ${DEFAULT_ADMIN_USERNAME:?DEFAULT_ADMIN_USERNAME is required}
+      DEFAULT_ADMIN_PASSWORD: ${DEFAULT_ADMIN_PASSWORD:?DEFAULT_ADMIN_PASSWORD is required}
+      DEFAULT_ADMIN_FULL_NAME: ${DEFAULT_ADMIN_FULL_NAME:-Production Admin}
     ports:
       - "8000:8000"
     volumes:
@@ -41,7 +44,7 @@ services:
       - ./alembic.ini:/app/alembic.ini
     command: >
       sh -c "alembic upgrade head &&
-      uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload --reload-dir app --reload-dir parser"
+      uvicorn app.main:app --host 0.0.0.0 --port 8000"
 
   frontend:
     build:

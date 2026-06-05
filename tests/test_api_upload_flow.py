@@ -10,6 +10,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
 from app.main import app, get_db_session, pwd_context
+from app.canonical_documents import CANONICAL_DOCUMENT_SPECS
 from models.db import Base
 from models.schema import Candidate, Document, Notification, Role, User
 from tests.canonical_test_helpers import count_certificate_rows, find_certificate, find_document
@@ -139,7 +140,7 @@ def test_upload_then_get_candidate_in_memory_db(tmp_path: Path) -> None:
         assert candidate["first_name"] == "Ivan"
         assert candidate["email"] == "ivan.petrov@example.com"
 
-        assert len(payload["documents"]) >= 12
+        assert len(payload["documents"]) >= len(CANONICAL_DOCUMENT_SPECS)
         passport = find_document(
             payload["documents"],
             lambda row: (row.get("document_number") or "") == "AB123456",

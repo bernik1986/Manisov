@@ -30,6 +30,22 @@ If the project lives in a different location, update the path in:
 - `.github/workflows/deploy.yml`
 - `deploy.sh`
 
+## Required server env file
+
+Create `/var/www/Manisov/.env` from `.env.example` before starting the stack.
+The real `.env` must stay on the server and must not be committed.
+
+Required values:
+
+- `POSTGRES_DB`
+- `POSTGRES_USER`
+- `POSTGRES_PASSWORD`
+- `DATABASE_URL`
+- `JWT_SECRET_KEY`
+- `DEFAULT_ADMIN_USERNAME`
+- `DEFAULT_ADMIN_PASSWORD`
+- `DEFAULT_ADMIN_FULL_NAME`
+
 ## Runtime stack
 
 `docker-compose.yml` expects these services:
