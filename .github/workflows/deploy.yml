@@ -1,4 +1,4 @@
-name: Deploy to VPS
+name: Optional VPS Deploy
 
 on:
   push:
@@ -15,7 +15,22 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Check SSH deploy secrets
+        id: deploy_secrets
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+        run: |
+          if [ -n "$VPS_HOST" ] && [ -n "$VPS_USER" ] && [ -n "$VPS_SSH_KEY" ]; then
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=Deployment skipped::VPS_* secrets are not configured. Production is deployed by the server-side manisov-deploy.timer."
+          fi
+
       - name: Run deploy script on server
+        if: steps.deploy_secrets.outputs.configured == 'true'
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.VPS_HOST }}
@@ -28,3 +43,11 @@ jobs:
             git reset --hard origin/main
             chmod +x ./deploy.sh
             SKIP_GIT_SYNC=1 bash ./deploy.sh
+
+      - name: Use server-side timer deploy
+        if: steps.deploy_secrets.outputs.configured != 'true'
+        run: |
+          echo "SSH deploy secrets are not configured in GitHub."
+          echo "Production deploy is handled by systemd timer on the VPS:"
+          echo "  manisov-deploy.timer -> /usr/local/bin/manisov-auto-deploy.sh"
+          echo "The timer pulls origin/main and runs deploy.sh automatically."
