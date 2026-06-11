@@ -174,6 +174,9 @@ def render_docx_template(template_path: Path, context: dict[str, Any], output_pa
     doc.render(render_context)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     doc.save(str(output_path))
+    from app.docx_template_jinja import strip_email_hyperlinks_from_docx
+
+    strip_email_hyperlinks_from_docx(output_path)
 
 
 def build_submission_zip(

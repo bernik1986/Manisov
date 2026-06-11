@@ -97,7 +97,7 @@ class BaseParser(ABC):
             return value
         if raw.lower() in {"-", "--", "n/a", "na", "none", "unlimited", "no expiry", "without expiry"}:
             return None
-        for fmt in ("%Y-%m-%d", "%d.%m.%Y", "%d/%m/%Y"):
+        for fmt in ("%Y-%m-%d", "%d.%m.%Y", "%d/%m/%Y", "%d-%m-%Y"):
             try:
                 return datetime.strptime(raw, fmt).date().isoformat()
             except ValueError:

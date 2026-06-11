@@ -4323,6 +4323,9 @@ def generate_document_from_template(
             )
             output_path = GENERATED_DIR / output_name
             doc.save(output_path)
+            from app.docx_template_jinja import strip_email_hyperlinks_from_docx
+
+            strip_email_hyperlinks_from_docx(output_path)
         except Exception as exc:
             logger.exception("Template generation failed: %s", exc)
             raise HTTPException(status_code=500, detail="Failed to generate document from template") from exc
@@ -4395,6 +4398,9 @@ def generate_document_from_template(
         )
         output_path = GENERATED_DIR / output_name
         doc.save(output_path)
+        from app.docx_template_jinja import strip_email_hyperlinks_from_docx
+
+        strip_email_hyperlinks_from_docx(output_path)
     except Exception as exc:
         logger.exception("Template generation failed: %s", exc)
         raise HTTPException(status_code=500, detail="Failed to generate document from template") from exc

@@ -4,6 +4,7 @@ from __future__ import annotations
 
 from pathlib import Path
 from typing import Any
+import re
 
 _LABEL_KEYS = (
     "certificate_type",
@@ -66,6 +67,19 @@ _USER_VALUE_KEYS = (
     "remarks",
 )
 
+_EMAIL_RE = re.compile(r"[A-Za-z0-9._%+\-]+@[A-Za-z0-9.\-]+\.[A-Za-z]{2,}")
+
+
+def clean_email_field(value: Any) -> str:
+    """Return a single plain email address without mailto/hyperlink text."""
+    text = str(value or "").strip()
+    if not text:
+        return ""
+    match = _EMAIL_RE.search(text)
+    if match:
+        return match.group(0)
+    return re.sub(r"mailto:\s*", "", text, flags=re.IGNORECASE).strip()
+
 
 def record_has_filled_template_data(record: dict[str, Any]) -> bool:
     """True when the seafarer card has real data for this row (not an empty canonical slot)."""
@@ -106,8 +120,27 @@ def prepare_docx_template_context(context: dict[str, Any], template_path: Path) 
     except Exception:
         pass
     ctx = dict(context)
+    sanitize_email_values_for_template_render(ctx)
     sanitize_records_for_template_render(ctx)
     return ctx
+
+
+def sanitize_email_values_for_template_render(context: dict[str, Any]) -> None:
+    """Normalize email-like fields recursively to plain text values."""
+
+    def _walk(value: Any, key: str | None = None) -> Any:
+        key_norm = (key or "").lower().replace("-", "_")
+        if isinstance(value, dict):
+            for child_key, child_value in list(value.items()):
+                value[child_key] = _walk(child_value, str(child_key))
+            return value
+        if isinstance(value, list):
+            return [_walk(item, key) for item in value]
+        if "email" in key_norm or "e_mail" in key_norm:
+            return clean_email_field(value)
+        return value
+
+    _walk(context)
 
 
 def sanitize_records_for_template_render(context: dict[str, Any]) -> None:

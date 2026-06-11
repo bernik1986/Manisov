@@ -54,6 +54,8 @@ _MARIRIME_MAIN_ENGINE_RE = re.compile(
     re.IGNORECASE,
 )
 
+_MARIRIME_BUILD_HEADER_RE = re.compile(r"^Build Year DWT ME Power, kW(?: Agency)?$", re.IGNORECASE)
+
 
 def _split_maririme_vessel_detail_line(line: str) -> dict[str, str | None]:
     """Split Maririme CV experience line: vessel | flag | ME type | owner."""
@@ -91,6 +93,73 @@ def _split_maririme_vessel_detail_line(line: str) -> dict[str, str | None]:
         result["main_engine"] = main_engine
     if employer:
         result["employer"] = employer
+    return result
+
+
+def _parse_maririme_build_detail_line(line: str, next_line: str | None = None) -> dict[str, str]:
+    """Split Maririme build details into year, DWT, engine power and agency."""
+    text = " ".join((line or "").strip().split())
+    if not text:
+        return {}
+
+    agency_from_next_line = False
+    if re.search(r"\sAgency$", text, re.IGNORECASE):
+        text = re.sub(r"\sAgency$", "", text, flags=re.IGNORECASE).strip()
+        agency_from_next_line = True
+
+    parts = text.split()
+    if not parts:
+        return {}
+
+    result: dict[str, str] = {}
+    idx = 0
+    first = parts[0].replace(",", "")
+    if re.fullmatch(r"\d{4}", first):
+        year = int(first)
+        if 1900 <= year <= 2100:
+            result["year_built"] = str(year)
+            idx = 1
+
+    numeric_parts: list[str] = []
+    while idx < len(parts) and re.fullmatch(r"[\d,]+", parts[idx]):
+        numeric_parts.append(parts[idx])
+        idx += 1
+
+    agency = " ".join(parts[idx:]).strip()
+    if agency.lower() == "agency":
+        agency = ""
+        agency_from_next_line = True
+
+    if result.get("year_built"):
+        if len(numeric_parts) >= 2:
+            result["dwt"] = numeric_parts[0]
+            result["engine_power"] = numeric_parts[1]
+        elif len(numeric_parts) == 1:
+            if "," in numeric_parts[0]:
+                result["engine_power"] = numeric_parts[0]
+            else:
+                result["dwt"] = numeric_parts[0]
+    else:
+        if numeric_parts:
+            result["dwt"] = numeric_parts[0]
+        if len(numeric_parts) >= 2:
+            result["engine_power"] = numeric_parts[1]
+
+    if agency_from_next_line and not agency:
+        candidate_agency = " ".join((next_line or "").strip().split())
+        if (
+            candidate_agency
+            and not _MARIRIME_BUILD_HEADER_RE.match(candidate_agency)
+            and "@" not in candidate_agency
+            and not re.match(r"^[A-Za-z'`\- ]+,\s*\d{1,2}$", candidate_agency)
+            and not re.search(r"\b\d{2}-\d{2}-\d{4}\b", candidate_agency)
+            and not re.match(r"^\+\d", candidate_agency)
+            and not re.match(r"^.+?\s-\s.+?\s\d{2}\.\d{2}\.\d{4}\s-\s\d{2}\.\d{2}\.\d{4}", candidate_agency)
+        ):
+            agency = candidate_agency
+    if agency:
+        result["manning_agency"] = agency
+
     return result
 
 
@@ -182,8 +251,12 @@ class PDFParser(BaseParser):
                 break
 
         for line in lines:
-            if re.match(r"^\d{2}-\d{2}-\d{4}$", line):
-                personal["date_of_birth"] = line
+            dob_match = re.search(r"\b(\d{2}-\d{2}-\d{4})\b", line)
+            if dob_match:
+                personal["date_of_birth"] = dob_match.group(1)
+                remainder = line[dob_match.end() :].strip()
+                if remainder and not remainder.startswith("+") and not re.fullmatch(r"[\d\s+()-]+", remainder):
+                    personal["place_of_birth"] = remainder
                 break
 
         phones: list[str] = []
@@ -222,6 +295,15 @@ class PDFParser(BaseParser):
                 personal["english_level"] = line.split(":", 1)[1].strip()
                 break
 
+        for idx, line in enumerate(lines):
+            if "Height, cm" not in line or "Weight, kg" not in line or idx + 1 >= len(lines):
+                continue
+            values = lines[idx + 1].split()
+            if len(values) >= 2 and re.fullmatch(r"\d+(?:\.\d+)?", values[0]) and re.fullmatch(r"\d+(?:\.\d+)?", values[1]):
+                personal["height_cm"] = values[0]
+                personal["weight_kg"] = values[1]
+                break
+
     def _parse_maririme_experience(self, lines: list[str], result: dict[str, Any]) -> None:
         sea_service = result["sea_service"]
         exp_re = re.compile(r"^(.*?)\s-\s(.*?)\s(\d{2}\.\d{2}\.\d{4})\s-\s(\d{2}\.\d{2}\.\d{4})")
@@ -246,18 +328,50 @@ class PDFParser(BaseParser):
                     for key, value in _split_maririme_vessel_detail_line(lines[j + 1].strip()).items():
                         if value:
                             item[key] = value
-                if j + 2 < len(lines) and lines[j + 2] == "Build Year DWT ME Power, kW Agency" and j + 3 < len(lines):
-                    build_line = lines[j + 3]
-                    bm = re.match(r"^(\d{4})\s+(\d+)(?:\s+([\d,]+))?\s+(.+)$", build_line)
-                    if bm:
-                        item["dwt"] = bm.group(2).strip()
-                        if bm.group(3):
-                            item["engine_power"] = bm.group(3).strip()
-                        item["manning_agency"] = bm.group(4).strip()
+                build_header_idx = self._find_maririme_build_header_index(lines, j + 2)
+                if build_header_idx is not None:
+                    build_idx = self._find_maririme_build_data_index(lines, build_header_idx + 1)
+                    if build_idx is not None:
+                        next_line = lines[build_idx + 1] if build_idx + 1 < len(lines) else None
+                        item.update(_parse_maririme_build_detail_line(lines[build_idx], next_line))
                 break
 
             sea_service.append(item)
             i += 1
+
+    @staticmethod
+    def _find_maririme_build_header_index(lines: list[str], start: int) -> int | None:
+        for idx in range(start, min(start + 6, len(lines))):
+            line = lines[idx]
+            if _MARIRIME_BUILD_HEADER_RE.match(line):
+                return idx
+            if re.match(r"^.+?\s-\s.+?\s\d{2}\.\d{2}\.\d{4}\s-\s\d{2}\.\d{2}\.\d{4}", line):
+                break
+        return None
+
+    @staticmethod
+    def _find_maririme_build_data_index(lines: list[str], start: int) -> int | None:
+        for idx in range(start, min(start + 8, len(lines))):
+            line = lines[idx]
+            if _MARIRIME_BUILD_HEADER_RE.match(line):
+                continue
+            if "@" in line:
+                continue
+            if re.match(r"^[A-Za-z'`\- ]+,\s*\d{1,2}$", line):
+                continue
+            if re.search(r"\b\d{2}-\d{2}-\d{4}\b", line):
+                continue
+            if re.match(r"^\+\d", line):
+                continue
+            if re.match(r"^\d{4,}\b", line):
+                return idx
+            if re.match(r"^\d{4}\s", line):
+                return idx
+            if not line:
+                continue
+            if not re.match(r"^\d", line):
+                break
+        return None
 
     def _parse_maririme_documents(self, lines: list[str], result: dict[str, Any]) -> None:
         documents = result["documents"]

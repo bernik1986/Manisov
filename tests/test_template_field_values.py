@@ -1,8 +1,17 @@
 from __future__ import annotations
 
+from zipfile import ZipFile
+
+from docx import Document
+from docx.oxml import OxmlElement
+from docx.oxml.ns import qn
+from docx.opc.constants import RELATIONSHIP_TYPE as RT
+
+from app.docx_template_jinja import strip_email_hyperlinks_from_docx
 from app.main import _assign_doc_fields
 from app.template_field_values import (
     clean_document_number_field,
+    sanitize_email_values_for_template_render,
     record_has_filled_template_data,
     sanitize_records_for_template_render,
 )
@@ -58,3 +67,42 @@ def test_sanitize_filters_empty_rows_from_template_lists() -> None:
     sanitize_records_for_template_render(context)
     assert len(context["certificates"]) == 1
     assert context["certificates"][0]["certificate_number"] == "01176/2024"
+
+
+def test_sanitize_email_values_keeps_single_plain_email() -> None:
+    context = {
+        "email": "mailto:bernik1986@gmail.com",
+        "family_contacts": [{"email": "mailto:second@example.com second@example.com"}],
+    }
+
+    sanitize_email_values_for_template_render(context)
+
+    assert context["email"] == "bernik1986@gmail.com"
+    assert context["family_contacts"][0]["email"] == "second@example.com"
+
+
+def test_strip_email_hyperlinks_from_docx_keeps_plain_text(tmp_path) -> None:
+    path = tmp_path / "email_link.docx"
+    doc = Document()
+    paragraph = doc.add_paragraph("Email: ")
+    rid = doc.part.relate_to("mailto:bernik1986@gmail.com", RT.HYPERLINK, is_external=True)
+    hyperlink = OxmlElement("w:hyperlink")
+    hyperlink.set(qn("r:id"), rid)
+    run = OxmlElement("w:r")
+    text = OxmlElement("w:t")
+    text.text = "mailto:bernik1986@gmail.com"
+    run.append(text)
+    hyperlink.append(run)
+    paragraph._p.append(hyperlink)
+    doc.save(path)
+
+    strip_email_hyperlinks_from_docx(path)
+
+    with ZipFile(path) as zf:
+        document_xml = zf.read("word/document.xml").decode("utf-8")
+        rels_xml = zf.read("word/_rels/document.xml.rels").decode("utf-8")
+
+    assert "bernik1986@gmail.com" in document_xml
+    assert "mailto:" not in document_xml
+    assert "<w:hyperlink" not in document_xml
+    assert "mailto:" not in rels_xml
