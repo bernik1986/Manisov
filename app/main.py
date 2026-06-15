@@ -53,6 +53,7 @@ from parser.base import BaseParser
 from parser.crewwell_pdf_parser import CrewwellPDFParser
 from parser.docx_parser import DocxParser
 from parser.excel_parser import ExcelParser
+from parser.man09_excel_parser import Man09ExcelParser, looks_like_man09_excel
 from parser.pdf_parser import PDFParser
 
 from app.canonical_documents import (
@@ -861,6 +862,8 @@ def _get_parser(file_path: Path) -> BaseParser:
     if extension in {".docx", ".doc"}:
         return DocxParser()
     if extension in {".xlsx", ".xls"}:
+        if looks_like_man09_excel(file_path):
+            return Man09ExcelParser()
         return ExcelParser()
     if extension == ".pdf":
         looks_crewwell = _looks_like_crewwell_pdf(file_path)
@@ -1033,6 +1036,42 @@ def _coerce_model_payload(
     return payload
 
 
+def _normalize_company_lookup(value: Any) -> str:
+    return re.sub(r"\s+", " ", str(value or "").strip().lower())
+
+
+def _resolve_candidate_company_id(session: Session, personal: dict[str, Any]) -> int | None:
+    raw_company_id = personal.get("company_id")
+    if raw_company_id not in (None, ""):
+        company_id = _coerce_to_int(raw_company_id)
+        if company_id and session.get(Company, company_id):
+            return company_id
+
+    candidates = [
+        personal.get("company_name"),
+        personal.get("source_company_name"),
+    ]
+    aliases = {
+        "delta tankers ltd": "delta_tankers",
+        "delta tankers": "delta_tankers",
+        "marmaras navigation ltd": "marmaras",
+        "marmaras navigation": "marmaras",
+        "marmaras": "marmaras",
+    }
+    for value in candidates:
+        normalized = _normalize_company_lookup(value)
+        if not normalized:
+            continue
+        slug = aliases.get(normalized)
+        query = session.query(Company)
+        company = query.filter(Company.slug == slug).one_or_none() if slug else None
+        if company is None:
+            company = query.filter(func.lower(Company.name) == normalized).one_or_none()
+        if company is not None:
+            return company.company_id
+    return None
+
+
 def _has_meaningful_value(value: Any) -> bool:
     if value is None:
         return False
@@ -1174,6 +1213,9 @@ def _save_related_records_for_candidate(
 def _merge_parsed_data_into_candidate(session: Session, candidate: Candidate, parsed_data: dict[str, Any]) -> Candidate:
     personal = parsed_data.get("personal_data", {}) or {}
     candidate_payload = _coerce_model_payload(Candidate, personal, exclude={"candidate_id", "created_at", "updated_at"})
+    company_id = _resolve_candidate_company_id(session, personal)
+    if company_id is not None:
+        candidate_payload["company_id"] = company_id
     for key, value in candidate_payload.items():
         if _has_meaningful_value(value):
             setattr(candidate, key, value)
@@ -1212,6 +1254,9 @@ def _save_parsed_data(parsed_data: dict[str, Any], parser: BaseParser, session: 
 
         personal = parsed_data.get("personal_data", {}) or {}
         candidate_payload = _coerce_model_payload(Candidate, personal, exclude={"candidate_id", "created_at", "updated_at"})
+        company_id = _resolve_candidate_company_id(session, personal)
+        if company_id is not None:
+            candidate_payload["company_id"] = company_id
         candidate = Candidate(**candidate_payload)
         session.add(candidate)
         session.flush()
@@ -3753,6 +3798,8 @@ async def upload(
 
         parser = _get_parser(temp_path)
         parsed_data = parser.parse(temp_path)
+        if file.filename:
+            parsed_data.setdefault("personal_data", {}).setdefault("source_file_name", file.filename)
         duplicate_candidate = _find_duplicate_candidate(db_session, parsed_data)
         if duplicate_candidate:
             if not confirm_duplicate_update:
