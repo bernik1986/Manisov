@@ -4,6 +4,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
 import {
   createApplication,
+  createCandidateComment,
   createCertificate,
   createDocument,
   createFamilyContact,
@@ -142,6 +143,7 @@ const candidateFieldGroups = [
     title: "Профиль кандидата / основная карточка",
     fields: [
       ["candidate_id", "Candidate ID"],
+      ["company_id", "Company"],
       ["application_id", "Application ID"],
       ["erp_no", "ERP No"],
       ["e_registration_no", "E-registration No"],
@@ -610,6 +612,12 @@ function displayValue(value) {
   return String(value);
 }
 
+function formatCommentDate(value) {
+  if (!value) return "";
+  const parsed = dayjs(value);
+  return parsed.isValid() ? parsed.format("DD.MM.YYYY HH:mm") : String(value);
+}
+
 const CERTIFICATE_EDIT_SECTIONS = new Set([
   "certificates",
   "diplomas",
@@ -625,6 +633,7 @@ const SECTION = {
   RECRUITMENT: "recruitment",
   SALARY_CALCULATOR: "salary_calculator",
   CONTRACT: "contract",
+  COMMENTS: "comments",
   DOCUMENTS: "documents",
   VISAS: "visas",
   DIPLOMAS: "diplomas",
@@ -648,6 +657,7 @@ const CANDIDATE_SECTION_NAV_ITEMS = [
   { id: SECTION.RECRUITMENT, label: "Заявка / recruitment" },
   { id: SECTION.SALARY_CALCULATOR, label: "Калькулятор зарплаты" },
   { id: SECTION.CONTRACT, label: "Контракт" },
+  { id: SECTION.COMMENTS, label: "Комментарии" },
   { id: SECTION.DOCUMENTS, label: "Documents" },
   { id: SECTION.VISAS, label: "Визы" },
   { id: SECTION.DIPLOMAS, label: "Diplomas" },
@@ -716,6 +726,9 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
   const [medicalDocuments, setMedicalDocuments] = useState([]);
   const [seaService, setSeaService] = useState([]);
   const [attachments, setAttachments] = useState([]);
+  const [comments, setComments] = useState([]);
+  const [commentDraft, setCommentDraft] = useState("");
+  const [commentSaving, setCommentSaving] = useState(false);
   const [attachmentBusy, setAttachmentBusy] = useState({});
   const [attachmentErrors, setAttachmentErrors] = useState({});
   const [loading, setLoading] = useState(true);
@@ -1127,6 +1140,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
       setMedicalDocuments((payload.medical_documents || []).map((item) => mapDateFields(item, "ui")));
       setSeaService(sortSeaServiceRows((payload.sea_service || payload.seaService || []).map((item) => mapDateFields(item, "ui"))));
       setAttachments(payload.attachments || []);
+      setComments(payload.comments || []);
       if (focusTarget?.startsWith("document:")) {
         const docId = focusTarget.split(":")[1];
         const inVisaSection = (payload.visas || []).some(
@@ -1183,6 +1197,29 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
       setError("Не удалось сохранить персональные данные");
     } finally {
       setSavingProfile(false);
+    }
+  }
+
+  async function onAddComment() {
+    const text = commentDraft.trim();
+    if (!text) {
+      return;
+    }
+    setCommentSaving(true);
+    setError("");
+    try {
+      const response = await createCandidateComment(candidateId, text);
+      if (response?.comment) {
+        setComments((prev) => [response.comment, ...prev]);
+      } else {
+        await loadCandidate({ showLoader: false });
+      }
+      setCommentDraft("");
+    } catch (requestError) {
+      const detail = requestError?.response?.data?.detail;
+      setError(detail || "Не удалось сохранить комментарий");
+    } finally {
+      setCommentSaving(false);
     }
   }
 
@@ -2588,7 +2625,24 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
               {group.fields.map(([field, label]) => (
                 <label key={field}>
                   {label}
-                  {isDateLikeField(field) ? (
+                  {field === "company_id" ? (
+                    <select
+                      value={candidate.company_id ?? ""}
+                      onChange={(event) =>
+                        setCandidate((prev) => ({
+                          ...prev,
+                          company_id: event.target.value ? Number(event.target.value) : null,
+                        }))
+                      }
+                    >
+                      <option value="">—</option>
+                      {companiesList.map((company) => (
+                        <option key={company.company_id} value={company.company_id}>
+                          {company.name}
+                        </option>
+                      ))}
+                    </select>
+                  ) : isDateLikeField(field) ? (
                     <DateDdMmYyyyInput
                       value={candidate[field] ?? ""}
                       onChange={(next) =>
@@ -2721,6 +2775,39 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
           candidate={candidate}
           onSaved={() => loadCandidate({ showLoader: false })}
         />
+      </CollapsibleDetailBlock>
+
+      <CollapsibleDetailBlock
+        sectionId={SECTION.COMMENTS}
+        title="Комментарии"
+        expanded={expandedSections.has(SECTION.COMMENTS)}
+        panelOnly
+      >
+        {canEditRelations ? (
+          <div className="candidate-comments-form">
+            <textarea
+              value={commentDraft}
+              onChange={(event) => setCommentDraft(event.target.value)}
+              placeholder="Новый комментарий"
+              rows={4}
+            />
+            <button type="button" onClick={onAddComment} disabled={commentSaving || !commentDraft.trim()}>
+              {commentSaving ? "Сохранение..." : "Добавить комментарий"}
+            </button>
+          </div>
+        ) : null}
+        <div className="candidate-comments-list">
+          {comments.length === 0 ? (
+            <p className="empty-row">Комментариев пока нет</p>
+          ) : (
+            comments.map((comment) => (
+              <article key={comment.comment_id} className="candidate-comment-item">
+                <time dateTime={comment.created_at || ""}>{formatCommentDate(comment.created_at)}</time>
+                <p>{comment.comment_text}</p>
+              </article>
+            ))
+          )}
+        </div>
       </CollapsibleDetailBlock>
 
       <CollapsibleDetailBlock

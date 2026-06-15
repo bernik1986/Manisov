@@ -137,6 +137,8 @@ def init_db() -> None:
                 alters.append("ALTER TABLE candidates ADD COLUMN salary_calculation_json TEXT")
             if "contract_json" not in col_names:
                 alters.append("ALTER TABLE candidates ADD COLUMN contract_json TEXT")
+            if "company_id" not in col_names:
+                alters.append("ALTER TABLE candidates ADD COLUMN company_id INTEGER")
             for col_def in (
                 "home_airport TEXT",
                 "desirable_salary_usd REAL",

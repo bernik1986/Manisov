@@ -32,6 +32,7 @@ from models.schema import (
     Application,
     Attachment,
     Candidate,
+    CandidateComment,
     Certificate,
     Company,
     CompanyFolder,
@@ -258,6 +259,7 @@ def on_startup() -> None:
     session = SessionLocal()
     try:
         _ensure_default_auth_data(session)
+        _ensure_initial_candidate_companies(session)
         try:
             ensure_podacha_builtin_templates(
                 session,
@@ -285,6 +287,8 @@ class CandidateListItem(BaseModel):
     first_name: str | None = None
     position: str | None = None
     fleet: str | None = None
+    company_id: int | None = None
+    company_name: str | None = None
     application_date: date | None = None
     created_at: datetime | None = None
 
@@ -376,6 +380,8 @@ def _candidate_row_to_list_item_dict(row: Candidate) -> dict[str, Any]:
         first_name=row.first_name,
         position=position,
         fleet=fleet,
+        company_id=row.company_id,
+        company_name=row.company.name if row.company else None,
         application_date=application_date,
         created_at=row.created_at,
     ).model_dump()
@@ -453,6 +459,10 @@ def _position_filter_clauses_for_list_display(terms: list[str]) -> Any:
 class CandidateUpdate(BaseModel):
     # Accept any candidate profile fields from frontend and validate keys in handler.
     model_config = ConfigDict(extra="allow")
+
+
+class CandidateCommentCreate(BaseModel):
+    comment_text: str
 
 
 class SubmissionPackRequest(BaseModel):
@@ -878,6 +888,10 @@ def _looks_like_crewwell_pdf(file_path: Path) -> bool:
 
 def _model_to_dict(obj: Any) -> dict[str, Any]:
     return {column.name: getattr(obj, column.name) for column in obj.__table__.columns}
+
+
+def _serialize_candidate_comment(comment: CandidateComment) -> dict[str, Any]:
+    return _model_to_dict(comment)
 
 
 def _with_expiry_flags(items: list[dict[str, Any]], expiry_key: str) -> list[dict[str, Any]]:
@@ -1841,6 +1855,19 @@ def _get_or_create_companies_root(db_session: Session) -> CompanyFolder:
     db_session.commit()
     db_session.refresh(root)
     return root
+
+
+def _ensure_initial_candidate_companies(db_session: Session) -> None:
+    root = _get_or_create_companies_root(db_session)
+    defaults = (("Marmaras", "marmaras"), ("Delta Tankers", "delta_tankers"))
+    changed = False
+    for name, slug in defaults:
+        if db_session.query(Company).filter(Company.slug == slug).one_or_none():
+            continue
+        db_session.add(Company(folder_id=root.folder_id, name=name, slug=slug))
+        changed = True
+    if changed:
+        db_session.commit()
 
 
 def _serialize_company_folder(folder: CompanyFolder) -> dict[str, Any]:
@@ -2973,12 +3000,14 @@ def list_companies_manager(
 ) -> dict[str, Any]:
     try:
         root = _get_or_create_companies_root(db_session)
+        _ensure_initial_candidate_companies(db_session)
     except Exception as exc:
         if "company_folders" in str(exc) or "no such table" in str(exc).lower():
             from models.db import _ensure_company_vessel_tables
 
             _ensure_company_vessel_tables()
             root = _get_or_create_companies_root(db_session)
+            _ensure_initial_candidate_companies(db_session)
         else:
             raise
     folders = (
@@ -3867,7 +3896,7 @@ def list_candidates(
 ) -> dict[str, Any]:
     rows = (
         db_session.query(Candidate)
-        .options(selectinload(Candidate.applications), selectinload(Candidate.sea_service))
+        .options(selectinload(Candidate.applications), selectinload(Candidate.sea_service), selectinload(Candidate.company))
         .order_by(Candidate.created_at.desc(), Candidate.candidate_id.desc())
         .all()
     )
@@ -3881,6 +3910,7 @@ def list_candidates_paged(
     q: str | None = None,
     position: str | None = None,
     fleet: str | None = None,
+    company_id: int | None = None,
     db_session: Session = Depends(get_db_session),
     _current_user: User = Depends(require_crm_user),
 ) -> dict[str, Any]:
@@ -3913,6 +3943,9 @@ def list_candidates_paged(
         if fleet_clause is not None:
             query = query.filter(fleet_clause)
 
+    if company_id is not None:
+        query = query.filter(Candidate.company_id == company_id)
+
     total = int(query.count() or 0)
     if total == 0:
         return {
@@ -3927,7 +3960,11 @@ def list_candidates_paged(
     effective_page = min(max(1, page), total_pages)
 
     rows = (
-        query.options(selectinload(Candidate.applications), selectinload(Candidate.sea_service))
+        query.options(
+            selectinload(Candidate.applications),
+            selectinload(Candidate.sea_service),
+            selectinload(Candidate.company),
+        )
         .order_by(Candidate.created_at.desc(), Candidate.candidate_id.desc())
         .offset((effective_page - 1) * page_size)
         .limit(page_size)
@@ -4211,6 +4248,12 @@ def get_candidate(
         candidate_id=id,
     )
     bwts_certificates = _with_expiry_flags(bwts_certificates, "expiry_date")
+    comments = (
+        db_session.query(CandidateComment)
+        .filter(CandidateComment.candidate_id == id)
+        .order_by(CandidateComment.created_at.desc(), CandidateComment.comment_id.desc())
+        .all()
+    )
     return {
         "candidate": _model_to_dict(candidate),
         "applications": [_model_to_dict(item) for item in candidate.applications],
@@ -4228,7 +4271,38 @@ def get_candidate(
         "sea_service": [normalize_sea_service_dict(_model_to_dict(item)) for item in sea_service_items],
         "family_contacts": [_model_to_dict(item) for item in candidate.family_contacts],
         "attachments": [_model_to_dict(item) for item in candidate.attachments],
+        "comments": [_serialize_candidate_comment(item) for item in comments],
     }
+
+
+@app.post("/candidates/{id}/comments")
+def add_candidate_comment(
+    id: int,
+    payload: CandidateCommentCreate,
+    db_session: Session = Depends(get_db_session),
+    _current_user: User = Depends(require_roles("admin", "recruiter")),
+) -> dict[str, Any]:
+    _ensure_candidate(db_session, id)
+    text = (payload.comment_text or "").strip()
+    if not text:
+        raise HTTPException(status_code=400, detail="Comment text is required")
+    comment = CandidateComment(
+        candidate_id=id,
+        comment_text=text,
+        created_at=datetime.utcnow(),
+    )
+    db_session.add(comment)
+    db_session.commit()
+    db_session.refresh(comment)
+    _write_audit_log(
+        db_session,
+        _current_user,
+        action="candidate.comment.create",
+        entity_type="candidate",
+        entity_id=id,
+        details=f"comment_id={comment.comment_id}",
+    )
+    return {"comment": _serialize_candidate_comment(comment)}
 
 
 @app.delete("/candidates/{id}")
@@ -4492,6 +4566,19 @@ def update_candidate(
     invalid_fields = [key for key in updates.keys() if key not in allowed_fields]
     if invalid_fields:
         raise HTTPException(status_code=400, detail=f"Unsupported candidate fields: {', '.join(invalid_fields)}")
+
+    if "company_id" in updates:
+        raw_company_id = updates["company_id"]
+        if raw_company_id in ("", None):
+            updates["company_id"] = None
+        else:
+            try:
+                company_id = int(raw_company_id)
+            except (TypeError, ValueError) as exc:
+                raise HTTPException(status_code=400, detail="company_id must be an integer") from exc
+            if not db_session.get(Company, company_id):
+                raise HTTPException(status_code=404, detail=f"Company {company_id} not found")
+            updates["company_id"] = company_id
 
     for key, value in updates.items():
         setattr(candidate, key, value)

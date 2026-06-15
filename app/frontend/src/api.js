@@ -206,12 +206,14 @@ export async function fetchCandidates() {
  * @param {string} [params.q]
  * @param {string} [params.position]
  * @param {string} [params.fleet]
+ * @param {string|number} [params.companyId]
  */
-export async function fetchCandidatesPaged({ page = 1, pageSize = 20, q, position, fleet } = {}) {
+export async function fetchCandidatesPaged({ page = 1, pageSize = 20, q, position, fleet, companyId } = {}) {
   const params = { page, page_size: pageSize };
   if (q && String(q).trim()) params.q = String(q).trim();
   if (position && String(position).trim()) params.position = String(position).trim();
   if (fleet && String(fleet).trim()) params.fleet = String(fleet).trim();
+  if (companyId && String(companyId).trim()) params.company_id = String(companyId).trim();
   const response = await apiClient.get("/candidates/paged", { params });
   return response.data;
 }
@@ -228,6 +230,13 @@ export async function fetchCandidateById(candidateId) {
 
 export async function updateCandidate(candidateId, payload) {
   const response = await apiClient.put(`/candidates/${candidateId}`, payload);
+  return response.data;
+}
+
+export async function createCandidateComment(candidateId, commentText) {
+  const response = await apiClient.post(`/candidates/${candidateId}/comments`, {
+    comment_text: commentText,
+  });
   return response.data;
 }
 

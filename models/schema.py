@@ -38,6 +38,7 @@ class Candidate(Base):
 
     # A. Candidate profile / identification
     candidate_id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    company_id: Mapped[int | None] = mapped_column(ForeignKey("companies.company_id", ondelete="SET NULL"), index=True)
     application_id: Mapped[int | None] = mapped_column(Integer, index=True)
     erp_no: Mapped[str | None] = mapped_column(String(100), index=True)
     e_registration_no: Mapped[str | None] = mapped_column(String(100), index=True)
@@ -195,6 +196,8 @@ class Candidate(Base):
     family_contacts: Mapped[list["FamilyContact"]] = relationship(back_populates="candidate", cascade="all, delete-orphan")
     attachments: Mapped[list["Attachment"]] = relationship(back_populates="candidate", cascade="all, delete-orphan")
     notifications: Mapped[list["Notification"]] = relationship(back_populates="candidate", cascade="all, delete-orphan")
+    comments: Mapped[list["CandidateComment"]] = relationship(back_populates="candidate", cascade="all, delete-orphan")
+    company: Mapped["Company | None"] = relationship(back_populates="candidates")
 
 
 class Application(Base):
@@ -368,6 +371,17 @@ class Attachment(Base):
     candidate: Mapped["Candidate"] = relationship(back_populates="attachments")
 
 
+class CandidateComment(Base):
+    __tablename__ = "candidate_comments"
+
+    comment_id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
+    candidate_id: Mapped[int] = mapped_column(ForeignKey("candidates.candidate_id"), nullable=False, index=True)
+    comment_text: Mapped[str] = mapped_column(Text, nullable=False)
+    created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False, index=True)
+
+    candidate: Mapped["Candidate"] = relationship(back_populates="comments")
+
+
 class CompanyFolder(Base):
     __tablename__ = "company_folders"
 
@@ -407,6 +421,7 @@ class Company(Base):
         back_populates="company",
         cascade="all, delete-orphan",
     )
+    candidates: Mapped[list["Candidate"]] = relationship(back_populates="company", passive_deletes=True)
 
 
 class SalaryComponentTemplate(Base):

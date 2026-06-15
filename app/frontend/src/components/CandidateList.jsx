@@ -1,7 +1,7 @@
 import React from "react";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { fetchCandidatesPaged } from "../api";
+import { fetchCandidatesPaged, fetchCompaniesManager } from "../api";
 
 const PAGE_SIZE = 20;
 const Q_DEBOUNCE_MS = 400;
@@ -78,6 +78,7 @@ export default function CandidateList({ refreshKey = 0 }) {
   const urlQ = searchParams.get("q") || "";
   const urlPosition = searchParams.get("position") || "";
   const urlFleet = searchParams.get("fleet") || "";
+  const urlCompanyId = searchParams.get("company_id") || "";
   const page = parsePage(searchParams.get("page"));
 
   const [qInput, setQInput] = useState(urlQ);
@@ -115,7 +116,26 @@ export default function CandidateList({ refreshKey = 0 }) {
   });
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
+  const [companies, setCompanies] = useState([]);
   const requestSeqRef = useRef(0);
+
+  useEffect(() => {
+    let active = true;
+    fetchCompaniesManager()
+      .then((data) => {
+        if (active) {
+          setCompanies(Array.isArray(data.companies) ? data.companies : []);
+        }
+      })
+      .catch(() => {
+        if (active) {
+          setCompanies([]);
+        }
+      });
+    return () => {
+      active = false;
+    };
+  }, []);
 
   const runFetch = useCallback(async () => {
     requestSeqRef.current += 1;
@@ -129,6 +149,7 @@ export default function CandidateList({ refreshKey = 0 }) {
         q: urlQ,
         position: urlPosition,
         fleet: urlFleet,
+        companyId: urlCompanyId,
       });
       if (requestId !== requestSeqRef.current) {
         return;
@@ -161,7 +182,7 @@ export default function CandidateList({ refreshKey = 0 }) {
         setLoading(false);
       }
     }
-  }, [page, urlQ, urlPosition, urlFleet, refreshKey]);
+  }, [page, urlQ, urlPosition, urlFleet, urlCompanyId, refreshKey]);
 
   useEffect(() => {
     void runFetch();
@@ -217,6 +238,8 @@ export default function CandidateList({ refreshKey = 0 }) {
   const hasLegacyPosition =
     Boolean(urlPosition) && !POSITION_OPTIONS.includes(urlPosition);
   const hasLegacyFleet = Boolean(urlFleet) && !FLEET_OPTIONS.includes(urlFleet);
+  const hasLegacyCompany =
+    Boolean(urlCompanyId) && !companies.some((company) => String(company.company_id) === String(urlCompanyId));
 
   if (error) {
     return <p className="error">{error}</p>;
@@ -269,6 +292,24 @@ export default function CandidateList({ refreshKey = 0 }) {
               </option>
             ))}
           </select>
+          <select
+            className="candidate-filters__company"
+            value={urlCompanyId}
+            onChange={(e) => setFilter("company_id", e.target.value)}
+            aria-label="Фильтр по компании"
+          >
+            <option value="">Все компании</option>
+            {hasLegacyCompany ? (
+              <option value={urlCompanyId}>
+                Company #{urlCompanyId} (текущий фильтр)
+              </option>
+            ) : null}
+            {companies.map((company) => (
+              <option key={company.company_id} value={company.company_id}>
+                {company.name}
+              </option>
+            ))}
+          </select>
         </div>
       </div>
 
@@ -282,6 +323,7 @@ export default function CandidateList({ refreshKey = 0 }) {
               <th>Имя</th>
               <th>Должность</th>
               <th>Флот</th>
+              <th>Company</th>
               <th>Действие</th>
             </tr>
           </thead>
@@ -292,6 +334,7 @@ export default function CandidateList({ refreshKey = 0 }) {
                 <td>{candidate.first_name || "-"}</td>
                 <td>{candidate.position || "-"}</td>
                 <td>{candidate.fleet || "-"}</td>
+                <td>{candidate.company_name || "-"}</td>
                 <td>
                   <button
                     type="button"
@@ -308,7 +351,7 @@ export default function CandidateList({ refreshKey = 0 }) {
             ))}
             {data.length === 0 ? (
               <tr>
-                <td colSpan={5} className="empty-row">
+                <td colSpan={6} className="empty-row">
                   Кандидаты не найдены
                 </td>
               </tr>

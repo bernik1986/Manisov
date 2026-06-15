@@ -481,6 +481,11 @@ button:hover {
   max-width: min(400px, 100%);
 }
 
+.candidate-filters__company {
+  flex: 1 1 min(220px, 100%);
+  max-width: min(320px, 100%);
+}
+
 .candidate-list-footer {
   display: flex;
   flex-wrap: wrap;
@@ -825,6 +830,53 @@ button:hover {
   flex-direction: column;
   gap: 4px;
   min-width: 0;
+}
+
+.candidate-comments-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.candidate-comments-form textarea {
+  width: 100%;
+  min-height: 110px;
+  resize: vertical;
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font: inherit;
+  color: #0f172a;
+  background: #fff;
+}
+
+.candidate-comments-form button {
+  align-self: flex-start;
+}
+
+.candidate-comments-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.candidate-comment-item {
+  padding: 10px 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.candidate-comment-item time {
+  display: block;
+  margin-bottom: 4px;
+  color: #64748b;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.candidate-comment-item p {
+  margin: 0;
+  white-space: pre-wrap;
 }
 
 .inline-form {
