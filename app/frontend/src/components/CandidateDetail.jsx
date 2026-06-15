@@ -360,6 +360,7 @@ const editableSeaServiceFields = new Set([
   "grt",
   "main_engine",
   "engine_power",
+  "ecdis_dg_maker",
   "rank_on_vessel",
   "sign_on_date",
   "sign_off_date",
@@ -812,6 +813,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
     seaService: {
       vessel_name: "",
       rank_on_vessel: "",
+      ecdis_dg_maker: "",
       sign_on_date: "",
       sign_off_date: "",
       remarks: SEA_SERVICE_DEFAULT_REMARKS,
@@ -1703,12 +1705,13 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
       setNewRows((prev) => ({
         ...prev,
         seaService: {
-      vessel_name: "",
-      rank_on_vessel: "",
-      sign_on_date: "",
-      sign_off_date: "",
-      remarks: SEA_SERVICE_DEFAULT_REMARKS,
-    },
+          vessel_name: "",
+          rank_on_vessel: "",
+          ecdis_dg_maker: "",
+          sign_on_date: "",
+          sign_off_date: "",
+          remarks: SEA_SERVICE_DEFAULT_REMARKS,
+        },
       }));
       await loadCandidate();
     } catch (requestError) {

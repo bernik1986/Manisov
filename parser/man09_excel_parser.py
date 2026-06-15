@@ -410,6 +410,8 @@ class Man09ExcelParser(BaseParser):
             return "vessel_type"
         if "engine" in normalized and "type" in normalized:
             return "main_engine"
+        if "ecdis" in normalized and ("dg" in normalized or "maker" in normalized):
+            return "ecdis_dg_maker"
         if "sign" in normalized and "on" in normalized:
             return "sign_on_date"
         if "sign" in normalized and "off" in normalized:

@@ -308,6 +308,7 @@ class SeaService(Base):
     grt: Mapped[float | None] = mapped_column(Float)
     main_engine: Mapped[str | None] = mapped_column(String(150))
     engine_power: Mapped[str | None] = mapped_column(String(100))
+    ecdis_dg_maker: Mapped[str | None] = mapped_column(String(150))
     rank_on_vessel: Mapped[str | None] = mapped_column(String(100))
     sign_on_date: Mapped[date | None] = mapped_column(Date)
     sign_off_date: Mapped[date | None] = mapped_column(Date)

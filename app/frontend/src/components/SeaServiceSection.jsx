@@ -99,6 +99,7 @@ export default function SeaServiceSection({
               <th>Type of Vessel</th>
               <th>DWT</th>
               <th>Engine type/model</th>
+              <th>ECDIS/DG Maker</th>
               <th>B.H.P / kW</th>
               <th>Name of Principal</th>
               <th>Manning Agent</th>
@@ -170,6 +171,15 @@ export default function SeaServiceSection({
                       value={draft.main_engine}
                       onChange={(event) =>
                         setEditDrafts((prev) => ({ ...prev, seaService: { ...prev.seaService, main_engine: event.target.value } }))
+                      }
+                    />
+                  </td>
+                  <td>
+                    <SeaCell
+                      isEditing={isEditing}
+                      value={draft.ecdis_dg_maker}
+                      onChange={(event) =>
+                        setEditDrafts((prev) => ({ ...prev, seaService: { ...prev.seaService, ecdis_dg_maker: event.target.value } }))
                       }
                     />
                   </td>

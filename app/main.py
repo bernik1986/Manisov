@@ -600,6 +600,7 @@ class SeaServiceCreate(BaseModel):
     grt: float | None = None
     main_engine: str | None = None
     engine_power: str | None = None
+    ecdis_dg_maker: str | None = None
     rank_on_vessel: str | None = None
     sign_on_date: date | None = None
     sign_off_date: date | None = None
@@ -630,6 +631,7 @@ class SeaServiceUpdate(BaseModel):
     grt: float | None = None
     main_engine: str | None = None
     engine_power: str | None = None
+    ecdis_dg_maker: str | None = None
     rank_on_vessel: str | None = None
     sign_on_date: date | None = None
     sign_off_date: date | None = None
@@ -1432,6 +1434,8 @@ def _parse_manual_text_to_payload(raw_text: str) -> dict[str, Any]:
                     item["vessel_type"] = v
                 elif kl in {"rank", "rank_on_vessel"}:
                     item["rank_on_vessel"] = v
+                elif kl in {"ecdis", "ecdis_dg", "ecdis_dg_maker", "ecdis/dg maker"}:
+                    item["ecdis_dg_maker"] = v
                 elif kl in {"dates"}:
                     # support "A – B" or "A - B"
                     vv = v.replace("–", "-")

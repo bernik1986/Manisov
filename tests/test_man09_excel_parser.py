@@ -183,6 +183,7 @@ def test_man09_excel_parser_extracts_personal_documents_and_service(tmp_path: Pa
     assert sea["year_built"] == 2005
     assert sea["dwt"] == "73897"
     assert sea["rank_on_vessel"] == "2/E"
+    assert sea["ecdis_dg_maker"] == "Yanmar"
     assert sea["sign_on_date"] == "2025-03-26"
     assert sea["remarks"] == "EOC"
 
@@ -254,7 +255,9 @@ def test_upload_man09_excel_assigns_company(tmp_path: Path) -> None:
 
         candidate_response = client.get(f"/candidates/{candidate_id}", headers=headers)
         assert candidate_response.status_code == 200
-        candidate = candidate_response.json()["candidate"]
+        candidate_payload = candidate_response.json()
+        candidate = candidate_payload["candidate"]
         assert candidate["company_id"] == delta["company_id"]
+        assert candidate_payload["sea_service"][0]["ecdis_dg_maker"] == "Yanmar"
     finally:
         app.dependency_overrides.clear()

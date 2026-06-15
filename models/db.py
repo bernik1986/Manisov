@@ -187,6 +187,11 @@ def init_db() -> None:
             if "competency_rank" not in cert_cols:
                 with engine.begin() as conn:
                     conn.execute(text("ALTER TABLE certificates ADD COLUMN competency_rank VARCHAR(150)"))
+        if "sea_services" in inspector.get_table_names():
+            sea_service_cols = {c["name"] for c in inspector.get_columns("sea_services")}
+            if "ecdis_dg_maker" not in sea_service_cols:
+                with engine.begin() as conn:
+                    conn.execute(text("ALTER TABLE sea_services ADD COLUMN ecdis_dg_maker VARCHAR(150)"))
 
     _run_alembic_upgrade_at_startup()
 
