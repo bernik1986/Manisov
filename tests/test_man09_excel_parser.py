@@ -182,7 +182,9 @@ def test_man09_excel_parser_extracts_personal_documents_and_service(tmp_path: Pa
     assert sea["vessel_name"] == "Chemtrans Baltic"
     assert sea["year_built"] == 2005
     assert sea["dwt"] == "73897"
+    assert sea["rank_on_vessel"] == "2/E"
     assert sea["sign_on_date"] == "2025-03-26"
+    assert sea["remarks"] == "EOC"
 
     coc = result["certificates"][0]
     assert coc["certificate_number"] == "13884/2024"

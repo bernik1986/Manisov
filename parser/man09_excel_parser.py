@@ -270,11 +270,6 @@ class Man09ExcelParser(BaseParser):
         if row.get("dwt"):
             row["dwt"] = _number_text(row["dwt"])
 
-        ecdis = _cell_at(ws, row_idx, 10)
-        reason = row.get("remarks")
-        if ecdis:
-            row["remarks"] = _join_labeled_values(("ECDIS/DG", ecdis), ("Reason", reason))
-
         return row
 
     def _parse_certificates(
@@ -394,6 +389,7 @@ class Man09ExcelParser(BaseParser):
 
     def _service_header_to_field(self, header: str | None) -> str | None:
         normalized = self.normalize_field_label(header or "")
+        normalized = normalized.replace("*", "").strip()
         if not normalized:
             return None
         if "ship" in normalized and "name" in normalized:
