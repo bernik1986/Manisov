@@ -155,6 +155,35 @@ def test_templates_manager_upload_accepts_docx_with_long_content_type(
     assert len(payload["file_type"] or "") <= 50
 
 
+def test_templates_manager_upload_accepts_xlsx_template(
+    client: TestClient,
+    auth_seed,
+    db_session,
+) -> None:
+    root = TemplateFolder(name="Templates", parent_id=None)
+    db_session.add(root)
+    db_session.commit()
+    db_session.refresh(root)
+
+    headers = _auth_header(client, "admin_test", "admin123")
+    upload_response = client.post(
+        "/templates-manager/files",
+        data={"folder_id": str(root.folder_id)},
+        files={
+            "file": (
+                "application_form.xlsx",
+                b"dummy-xlsx",
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+            )
+        },
+        headers=headers,
+    )
+
+    assert upload_response.status_code == 200
+    payload = upload_response.json()["file"]
+    assert payload["file_name"] == "application_form.xlsx"
+
+
 def test_templates_manager_upload_normalizes_path_like_filename(
     client: TestClient,
     auth_seed,

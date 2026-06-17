@@ -11,7 +11,7 @@ import {
   uploadTemplateFile,
 } from "../api";
 
-const ALLOWED_TEMPLATE_EXT = /\.(doc|docx|pdf)$/i;
+const ALLOWED_TEMPLATE_EXT = /\.(doc|docx|pdf|xlsx|xlsm)$/i;
 
 function isAllowedTemplateFilename(name) {
   return ALLOWED_TEMPLATE_EXT.test(String(name || ""));
@@ -39,6 +39,7 @@ function fileTypeTagKind(ext) {
   if (e === "pdf") return "pdf";
   if (e === "docx") return "docx";
   if (e === "doc") return "doc";
+  if (e === "xlsx" || e === "xlsm") return "excel";
   return "other";
 }
 
@@ -618,13 +619,13 @@ export default function TemplatesPage() {
               onDragLeave={() => setIsDragOver(false)}
               onDrop={onDropFiles}
             >
-              <p>Перетащите файлы сюда (Drag & Drop) или загрузите через Browse. Разрешены только DOC, DOCX, PDF.</p>
+              <p>Перетащите файлы сюда (Drag & Drop) или загрузите через Browse. Разрешены DOC, DOCX, PDF, XLSX, XLSM.</p>
               <label className="secondary-btn templates-browse-btn">
                 Browse
                 <input
                   type="file"
                   multiple
-                  accept=".doc,.docx,.pdf,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf"
+                  accept=".doc,.docx,.pdf,.xlsx,.xlsm,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf,application/vnd.openxmlformats-officedocument.spreadsheetml.sheet,application/vnd.ms-excel.sheet.macroEnabled.12"
                   className="hidden-file-input"
                   onChange={onBrowseFiles}
                   disabled={!selectedFolderId}

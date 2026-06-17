@@ -2,6 +2,7 @@
 
 /** Candidate profile fields available in docxtpl (from CRM card, not contract_json). */
 export const CANDIDATE_PERSONAL_PLACEHOLDER_DEFS = [
+  { key: "current_date", label: "Current date" },
   { key: "surname", label: "Фамилия" },
   { key: "first_name", label: "Имя" },
   { key: "middle_name", label: "Отчество" },

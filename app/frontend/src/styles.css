@@ -1632,6 +1632,11 @@ button:hover {
   color: #0e7490;
 }
 
+.file-type-tag--excel {
+  background: #dcfce7;
+  color: #166534;
+}
+
 .file-type-tag--other {
   background: #e2e8f0;
   color: #475569;

@@ -470,7 +470,7 @@ export async function downloadTemplateFile(fileId) {
   const utf8Match = disposition.match(/filename\*=utf-8''([^;]+)/i);
   const plainMatch = disposition.match(/filename=\"?([^\";]+)\"?/i);
   const decodedUtf8 = utf8Match?.[1] ? decodeURIComponent(utf8Match[1]) : null;
-  const fileName = decodedUtf8 || plainMatch?.[1] || `template_${fileId}.docx`;
+  const fileName = decodedUtf8 || plainMatch?.[1] || `template_${fileId}`;
   return { blob: response.data, fileName };
 }
 
@@ -604,7 +604,7 @@ export async function importSalaryScaleFromXlsx(file, companySlug = null) {
 /** Path segments with `/` (%2F) often break routers — backend resolves managed files by ?template_file_id. */
 export function templatePathSegmentForGenerateApi(templateName, templateFileId) {
   if (templateFileId != null && templateFileId !== undefined && !Number.isNaN(Number(templateFileId))) {
-    return "managed-template.docx";
+    return "managed-template";
   }
   const raw = String(templateName || "");
   const basename = raw.split(/[/\\]/).pop() || raw;

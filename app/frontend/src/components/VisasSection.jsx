@@ -128,7 +128,7 @@ export default function VisasSection({
       )}
 
       <details className="ukr-placeholders-details" style={{ marginBottom: "0.75rem" }}>
-        <summary>Плейсхолдеры виз для Word (docxtpl)</summary>
+        <summary>Плейсхолдеры виз для Word/Excel</summary>
         <pre className="ukr-placeholders-pre">{canonicalVisaPlaceholderLines().join("\n")}</pre>
       </details>
 

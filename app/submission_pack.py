@@ -10,11 +10,15 @@ from pathlib import Path
 from typing import Any, Callable
 from uuid import uuid4
 
-from docxtpl import DocxTemplate
 from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
 from app.attachment_naming import attachment_download_filename, safe_file_part, safe_scan_part
+from app.template_renderer import (
+    SUPPORTED_RENDER_TEMPLATE_SUFFIXES,
+    build_generated_template_name,
+    render_template_to_file,
+)
 from models.schema import Attachment, Candidate, TemplateFile, TemplateFolder
 
 PODACHA_BUILTIN_TEMPLATE_NAMES = (
@@ -135,8 +139,8 @@ def resolve_template_path(
                 f"(expected under templates manager, relative_path={managed.relative_path})"
             ),
         )
-    if resolved.suffix.lower() != ".docx":
-        raise HTTPException(status_code=400, detail="Only DOCX templates can be included in submission pack.")
+    if resolved.suffix.lower() not in SUPPORTED_RENDER_TEMPLATE_SUFFIXES:
+        raise HTTPException(status_code=400, detail="Only DOCX/XLSX/XLSM templates can be included in submission pack.")
     return resolved, managed.file_name
 
 
@@ -150,33 +154,11 @@ def resolve_builtin_template_path(templates_dir: Path, file_name: str) -> Path:
 
 
 def build_output_docx_name(candidate: Candidate, template_stem: str) -> str:
-    applications = candidate.applications or []
-    first_application = applications[0] if applications else None
-    raw_position = (
-        (first_application.position_applied_for if first_application else None)
-        or candidate.current_rank
-        or "position"
-    )
-    return (
-        f"{safe_file_part(raw_position)}_"
-        f"{safe_file_part(candidate.surname or 'surname')}_"
-        f"{safe_file_part(candidate.first_name or 'name')}_"
-        f"{safe_file_part(template_stem)}_"
-        f"{uuid4().hex[:8]}.docx"
-    )
+    return build_generated_template_name(candidate, template_stem, ".docx")
 
 
 def render_docx_template(template_path: Path, context: dict[str, Any], output_path: Path) -> None:
-    from app.template_field_values import prepare_docx_template_context
-
-    render_context = prepare_docx_template_context(context, template_path)
-    doc = DocxTemplate(str(template_path))
-    doc.render(render_context)
-    output_path.parent.mkdir(parents=True, exist_ok=True)
-    doc.save(str(output_path))
-    from app.docx_template_jinja import strip_email_hyperlinks_from_docx
-
-    strip_email_hyperlinks_from_docx(output_path)
+    render_template_to_file(template_path, context, output_path)
 
 
 def build_submission_zip(
@@ -223,9 +205,9 @@ def build_submission_zip(
                 templates_manager_dir=templates_manager_dir,
                 template_file_id=template_file_id,
             )
-            output_name = build_output_docx_name(candidate, Path(template_file_name).stem)
+            output_name = build_generated_template_name(candidate, Path(template_file_name).stem, template_path.suffix)
             output_path = generated_dir / output_name
-            render_docx_template(template_path, base_context, output_path)
+            render_template_to_file(template_path, base_context, output_path)
             zf.write(output_path, arcname=unique_zip_name(output_name))
 
         if attachment_ids:

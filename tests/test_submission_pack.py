@@ -9,6 +9,7 @@ from uuid import uuid4
 import pytest
 from docx import Document as DocxDocument
 from fastapi.testclient import TestClient
+from openpyxl import Workbook, load_workbook
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
@@ -176,6 +177,59 @@ def test_submission_pack_returns_zip_with_generated_docx(client: TestClient, db_
         names = zf.namelist()
         assert len(names) == 1
         assert names[0].lower().endswith(".docx")
+
+    db_session.close()
+
+
+def test_submission_pack_can_include_generated_xlsx(client: TestClient, db_setup):
+    db_session = db_setup()
+    candidate = Candidate(surname="Excelpack", first_name="User", current_rank="Master")
+    db_session.add(candidate)
+    db_session.flush()
+
+    stored = f"{uuid4().hex}.xlsx"
+    target = main_module.TEMPLATES_MANAGER_DIR / stored
+    workbook = Workbook()
+    sheet = workbook.active
+    sheet["A1"] = "{{ surname }}"
+    sheet["B1"] = "{{ rank }}"
+    workbook.save(target)
+
+    root = TemplateFolder(name="Templates", parent_id=None)
+    db_session.add(root)
+    db_session.flush()
+    folder = TemplateFolder(name="Podacha", parent_id=root.folder_id)
+    db_session.add(folder)
+    db_session.flush()
+    tpl = TemplateFile(
+        folder_id=folder.folder_id,
+        file_name="info_list.xlsx",
+        file_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        stored_name=stored,
+        relative_path=stored,
+        file_size_bytes=target.stat().st_size,
+    )
+    db_session.add(tpl)
+    db_session.commit()
+    db_session.refresh(candidate)
+    db_session.refresh(tpl)
+
+    headers = _login(client, "viewer_sub", "viewer123")
+    response = client.post(
+        f"/candidates/{candidate.candidate_id}/submission-pack",
+        json={"template_file_ids": [tpl.template_file_id], "attachment_ids": []},
+        headers=headers,
+    )
+
+    assert response.status_code == 200
+    with zipfile.ZipFile(io.BytesIO(response.content)) as zf:
+        names = zf.namelist()
+        assert len(names) == 1
+        assert names[0].lower().endswith(".xlsx")
+        rendered = load_workbook(io.BytesIO(zf.read(names[0])), data_only=False)
+        sheet = rendered.active
+        assert sheet["A1"].value == "Excelpack"
+        assert sheet["B1"].value == "Master"
 
     db_session.close()
 

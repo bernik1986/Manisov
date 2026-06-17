@@ -1,12 +1,14 @@
 from __future__ import annotations
 
 from datetime import date, timedelta
+from io import BytesIO
 from pathlib import Path
 from uuid import uuid4
 
 import pytest
 from docx import Document as DocxDocument
 from fastapi.testclient import TestClient
+from openpyxl import Workbook, load_workbook
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
@@ -336,3 +338,66 @@ def test_generate_document_by_template_file_id_uses_exact_managed_file(client: T
     )
     assert response.status_code == 200
     assert len(response.content) > 0
+
+
+def test_generate_xlsx_template_by_template_file_id(client: TestClient, db_session, users_fixture):
+    stored = f"{uuid4().hex}.xlsx"
+    target_path = main_module.TEMPLATES_MANAGER_DIR / stored
+    workbook = Workbook()
+    sheet = workbook.active
+    sheet.title = "Application"
+    sheet["A1"] = "{{ surname }}"
+    sheet["B1"] = "{{ first_name }}"
+    sheet["C1"] = "{{ application.proposed_vessel }}"
+    sheet["D1"] = "{{ current_date }}"
+    sheet["E1"] = "{{ coc_national_issue_date }}"
+    workbook.save(target_path)
+
+    root = TemplateFolder(name="Templates", parent_id=None)
+    db_session.add(root)
+    db_session.flush()
+    row = TemplateFile(
+        folder_id=root.folder_id,
+        file_name="application.xlsx",
+        file_type="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+        stored_name=stored,
+        relative_path=stored,
+        file_size_bytes=target_path.stat().st_size,
+    )
+    candidate = Candidate(surname="Excel", first_name="Template", current_rank="CO")
+    db_session.add_all([row, candidate])
+    db_session.flush()
+    db_session.add(
+        Application(
+            candidate_id=candidate.candidate_id,
+            position_applied_for="CO",
+            proposed_vessel="MV Rendered",
+        )
+    )
+    db_session.add(
+        Certificate(
+            candidate_id=candidate.candidate_id,
+            certificate_type="COC",
+            certificate_name_raw="Certificate of Competency",
+            date_issued=date(2024, 5, 6),
+        )
+    )
+    db_session.commit()
+    db_session.refresh(row)
+    db_session.refresh(candidate)
+
+    viewer_header = _login_header(client, "viewer_test", "viewer123")
+    response = client.post(
+        f"/candidates/{candidate.candidate_id}/generate/application.xlsx?template_file_id={row.template_file_id}",
+        headers=viewer_header,
+    )
+
+    assert response.status_code == 200
+    assert response.headers.get("content-type") == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+    generated = load_workbook(BytesIO(response.content), data_only=False)
+    sheet = generated["Application"]
+    assert sheet["A1"].value == "Excel"
+    assert sheet["B1"].value == "Template"
+    assert sheet["C1"].value == "MV Rendered"
+    assert sheet["D1"].value == date.today().strftime("%d-%m-%Y")
+    assert sheet["E1"].value == "06-05-2024"

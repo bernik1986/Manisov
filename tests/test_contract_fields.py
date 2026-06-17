@@ -180,6 +180,7 @@ def test_contracts_folder_endpoint_empty(client: TestClient, db_session, users_f
 
 def test_candidate_personal_placeholder_lines():
     lines = candidate_personal_placeholder_lines()
+    assert "{{ current_date }}" in lines
     assert "{{ surname }}" in lines
     assert "{{ age }}" in lines
     assert len(lines) == len(CANDIDATE_PERSONAL_PLACEHOLDER_FIELDS)

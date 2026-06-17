@@ -952,6 +952,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
   }
 
   const templateOptions = useMemo(() => {
+    const renderableTemplateExt = /\.(docx|xlsx|xlsm)$/i;
     function buildFolderPath(folderId) {
       const parts = [];
       let currentId = folderId;
@@ -967,7 +968,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
     }
     return templateFiles
       .slice()
-      .filter((item) => String(item.file_name || "").toLowerCase().endsWith(".docx"))
+      .filter((item) => renderableTemplateExt.test(String(item.file_name || "")))
       .sort((a, b) => String(a.file_name || "").localeCompare(String(b.file_name || ""), "en"))
       .map((item) => ({
         id: item.template_file_id,
@@ -2324,7 +2325,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
               </button>
             </div>
             <p className="muted" style={{ marginBottom: "1rem" }}>
-              Поля зберігаються в картці кандидата. Для шаблону Word (docxtpl) використовуйте плейсхолдери зі списку нижче — наприклад{" "}
+              Поля зберігаються в картці кандидата. Для шаблонів Word/Excel використовуйте плейсхолдери зі списку нижче — наприклад{" "}
               <code>{"{{ ukr_surname }}"}</code>.
             </p>
             <div className="detail-grid ukr-contract-grid">
@@ -2436,7 +2437,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
               {podachaLoading ? (
                 <p className="muted-text">Загрузка шаблонов…</p>
               ) : podachaTemplateOptions.length === 0 ? (
-                <p className="empty-row">Нет .docx шаблонов в менеджере</p>
+                <p className="empty-row">Нет DOCX/XLSX шаблонов в менеджере</p>
               ) : (
                 <div className="templates-select-list">
                   {podachaTemplateOptions.map((item) => (
@@ -2576,7 +2577,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
                 </div>
                 <div className="templates-explorer-files">
                   {selectedFolderFiles.length === 0 ? (
-                    <p className="empty-row">В выбранной папке нет .docx шаблонов</p>
+                    <p className="empty-row">В выбранной папке нет DOCX/XLSX шаблонов</p>
                   ) : (
                     <div className="templates-select-list">
                       {selectedFolderFiles.map((item) => (
@@ -2880,7 +2881,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
           <p className="muted-text">Добавление и редактирование строк — для ролей admin и recruiter.</p>
         )}
         <details className="ukr-placeholders-details" style={{ marginBottom: "0.75rem" }}>
-          <summary>Плейсхолдеры документов для Word (docxtpl)</summary>
+          <summary>Плейсхолдеры документов для Word/Excel</summary>
           <pre className="ukr-placeholders-pre">{canonicalDocumentPlaceholderLines().join("\n")}</pre>
         </details>
         <div className="table-wrap">
@@ -3089,7 +3090,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
         panelOnly
       >
         <details className="ukr-placeholders-details" style={{ marginBottom: "0.75rem" }}>
-          <summary>Плейсхолдеры дипломов для Word (docxtpl)</summary>
+          <summary>Плейсхолдеры дипломов для Word/Excel</summary>
           <pre className="ukr-placeholders-pre">{canonicalDiplomaPlaceholderLines().join("\n")}</pre>
         </details>
         {canEditRelations ? (
@@ -3175,7 +3176,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
         panelOnly
       >
         <details className="ukr-placeholders-details" style={{ marginBottom: "0.75rem" }}>
-          <summary>Плейсхолдеры мед. документов для Word (docxtpl)</summary>
+          <summary>Плейсхолдеры мед. документов для Word/Excel</summary>
           <pre className="ukr-placeholders-pre">{canonicalMedicalPlaceholderLines().join("\n")}</pre>
         </details>
         {canEditRelations ? (
@@ -3225,7 +3226,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
         panelOnly
       >
         <details className="ukr-placeholders-details" style={{ marginBottom: "0.75rem" }}>
-          <summary>Плейсхолдеры сертификатов для Word (docxtpl)</summary>
+          <summary>Плейсхолдеры сертификатов для Word/Excel</summary>
           <pre className="ukr-placeholders-pre">{canonicalCertificatePlaceholderLines().join("\n")}</pre>
         </details>
         {canEditRelations ? (

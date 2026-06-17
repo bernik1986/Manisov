@@ -19,7 +19,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
 from jose import JWTError, jwt
-from docxtpl import DocxTemplate
 from parser.base import BaseParser
 from passlib.context import CryptContext
 import pdfplumber
@@ -123,6 +122,13 @@ from app.salary_calculator import (
     salary_placeholders_from_saved,
 )
 from app.submission_pack import build_submission_zip, ensure_podacha_builtin_templates
+from app.template_renderer import (
+    SUPPORTED_RENDER_TEMPLATE_SUFFIXES,
+    build_generated_template_name,
+    is_renderable_template_path,
+    render_template_to_file,
+    template_media_type,
+)
 
 app = FastAPI()
 # Сохранённые файлы только как пользовательские данные; приложение их не выполняет (см. отдачу через FileResponse API).
@@ -144,7 +150,7 @@ SELF_ACTIVE_ADMIN_ROLE_CHANGE_ERROR = (
     "Нельзя изменить роль для собственного активного аккаунта администратора."
 )
 ALLOWED_ATTACHMENT_SUFFIXES = {".jpeg", ".jpg", ".png", ".pdf"}
-ALLOWED_TEMPLATE_MANAGER_SUFFIXES = frozenset({".doc", ".docx", ".pdf"})
+ALLOWED_TEMPLATE_MANAGER_SUFFIXES = frozenset({".doc", ".docx", ".pdf", ".xlsx", ".xlsm"})
 INVALID_TEMPLATE_FILE_TYPE_MESSAGE = "Недопустимый формат файла"
 
 
@@ -196,7 +202,7 @@ def _ascii_filename_fallback(name: str, *, default: str) -> str:
     HTTP headers are commonly encoded as latin-1; avoid raw non-ASCII in filename="...".
     Keep a conservative ASCII fallback and rely on filename*=UTF-8''... for the real name.
     """
-    cleaned = re.sub(r"\.(docx|doc|pdf|zip|xlsx|xls|txt|csv)$", "", str(name or "").strip(), flags=re.IGNORECASE)
+    cleaned = re.sub(r"\.(docx|doc|pdf|zip|xlsx|xlsm|xls|txt|csv)$", "", str(name or "").strip(), flags=re.IGNORECASE)
     cleaned = re.sub(r'[\x00-\x1f<>:"/\\|?*]+', "", cleaned).strip()
     cleaned = re.sub(r"\s+", "_", cleaned).strip("._")
     ascii_only = cleaned.encode("ascii", "ignore").decode("ascii")
@@ -207,7 +213,7 @@ def _ascii_filename_fallback(name: str, *, default: str) -> str:
 def _attachment_content_disposition(download_name: str) -> str:
     safe_utf8 = str(download_name or "download").replace('"', "")
     suffix = Path(safe_utf8).suffix.lower()
-    if suffix not in {".docx", ".doc", ".pdf", ".zip", ".xlsx", ".xls", ".txt", ".csv"}:
+    if suffix not in {".docx", ".doc", ".pdf", ".zip", ".xlsx", ".xlsm", ".xls", ".txt", ".csv"}:
         suffix = ""
     fallback = _ascii_filename_fallback(safe_utf8, default="download") + suffix
     return f"attachment; filename=\"{fallback}\"; filename*=UTF-8''{quote(safe_utf8)}"
@@ -1655,6 +1661,8 @@ def _assign_doc_fields(
 
 
 def _augment_template_context(context: dict[str, Any]) -> None:
+    context.setdefault("current_date", date.today())
+
     # Aliases used by legacy external templates.
     context.setdefault("total_sea_service_years", context.get("total_years_of_sea_service") or "")
     context.setdefault("bulk_years_in_vessel_type", context.get("bulk_carrier_years_in_vessel_type") or "")
@@ -1708,7 +1716,14 @@ def _augment_template_context(context: dict[str, Any]) -> None:
     context.setdefault("shipyard_experience_years", context.get("years_in_this_type_of_vessel") or 0)
 
     applications = context.get("applications") or []
-    first_application = applications[0] if applications else {}
+    first_application = applications[0] if applications else {
+        "position_applied_for": "",
+        "rank_applied_for": "",
+        "proposed_vessel": "",
+        "date_applied": "",
+        "date_available": "",
+    }
+    context.setdefault("application", first_application)
     context.setdefault("position_applied", first_application.get("position_applied_for") or "")
     context.setdefault("rank", context.get("current_rank") or first_application.get("rank_applied_for") or "")
     context.setdefault("candidate_for_vessel", first_application.get("proposed_vessel") or "")
@@ -1766,6 +1781,7 @@ def _augment_template_context(context: dict[str, Any]) -> None:
     )
     if not context.get("coc_certificate_number"):
         context["coc_certificate_number"] = context.get("certificate_of_competency_number") or ""
+    context.setdefault("coc_national_issue_date", context.get("coc_issue_date") or "")
 
     apply_canonical_diploma_placeholders(context)
     apply_canonical_medical_placeholders(context)
@@ -3773,11 +3789,39 @@ def list_contracts_templates(
         .order_by(TemplateFile.file_name.asc())
         .all()
     )
-    docx_files = [item for item in files if item.file_name.lower().endswith(".docx")]
+    renderable_files = [
+        item for item in files if Path(item.file_name or "").suffix.lower() in SUPPORTED_RENDER_TEMPLATE_SUFFIXES
+    ]
     return {
         "folder": _serialize_template_folder(folder),
-        "files": [_serialize_template_file(item) for item in docx_files],
+        "files": [_serialize_template_file(item) for item in renderable_files],
     }
+
+
+def _render_candidate_template_response(
+    *,
+    candidate: Candidate,
+    template_path: Path,
+    template_display_name: str,
+    db_session: Session,
+) -> FileResponse:
+    if not is_renderable_template_path(template_path):
+        supported = ", ".join(sorted(SUPPORTED_RENDER_TEMPLATE_SUFFIXES))
+        raise HTTPException(
+            status_code=400,
+            detail=f"Only {supported} templates can be used for candidate document generation.",
+        )
+    context = _serialize_candidate_context(candidate, db_session=db_session)
+    output_name = build_generated_template_name(candidate, Path(template_display_name).stem, template_path.suffix)
+    output_path = GENERATED_DIR / output_name
+    render_template_to_file(template_path, context, output_path)
+    content_disposition = _attachment_content_disposition(output_name)
+    return FileResponse(
+        path=output_path,
+        media_type=template_media_type(output_path),
+        filename=output_name,
+        headers=_nosniff_headers({"Content-Disposition": content_disposition}),
+    )
 
 
 @app.post("/upload")
@@ -4409,63 +4453,28 @@ def generate_document_from_template(
         resolved = TEMPLATES_MANAGER_DIR / managed.relative_path
         if not resolved.exists():
             raise HTTPException(status_code=404, detail=f"Template file not found on disk: {managed.file_name}")
-        if resolved.suffix.lower() != ".docx":
+        if not is_renderable_template_path(resolved):
             raise HTTPException(
                 status_code=400,
-                detail="Only DOCX templates can be used for candidate document generation.",
+                detail="Only DOCX/XLSX/XLSM templates can be used for candidate document generation.",
             )
         safe_template_name = managed.file_name
         template_path = resolved
         try:
-            doc = DocxTemplate(str(template_path))
-            context = _prepare_docx_template_context(
-                _serialize_candidate_context(candidate, db_session=db_session),
-                template_path,
+            return _render_candidate_template_response(
+                candidate=candidate,
+                template_path=template_path,
+                template_display_name=safe_template_name,
+                db_session=db_session,
             )
-            doc.render(context)
-
-            applications = candidate.applications or []
-            first_application = applications[0] if applications else None
-            raw_position = (
-                (first_application.position_applied_for if first_application else None)
-                or candidate.current_rank
-                or "position"
-            )
-            raw_surname = candidate.surname or "surname"
-            raw_first_name = candidate.first_name or "name"
-
-            def _safe_file_part(value: str) -> str:
-                cleaned = re.sub(r'[\x00-\x1f<>:"/\\|?*]', "", str(value or "").strip())
-                cleaned = re.sub(r"\s+", "_", cleaned).strip("._")
-                return cleaned or "unknown"
-
-            output_name = (
-                f"{_safe_file_part(raw_position)}_"
-                f"{_safe_file_part(raw_surname)}_"
-                f"{_safe_file_part(raw_first_name)}_"
-                f"{_safe_file_part(Path(safe_template_name).stem)}_"
-                f"{uuid4().hex[:8]}.docx"
-            )
-            output_path = GENERATED_DIR / output_name
-            doc.save(output_path)
-            from app.docx_template_jinja import strip_email_hyperlinks_from_docx
-
-            strip_email_hyperlinks_from_docx(output_path)
+        except HTTPException:
+            raise
         except Exception as exc:
             logger.exception("Template generation failed: %s", exc)
             raise HTTPException(status_code=500, detail="Failed to generate document from template") from exc
 
-        safe_header_name = output_name.replace('"', "")
-        content_disposition = _attachment_content_disposition(output_name)
-        return FileResponse(
-            path=output_path,
-            media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-            filename=output_name,
-            headers=_nosniff_headers({"Content-Disposition": content_disposition}),
-        )
-
     template_file = Path(template_name)
-    if template_file.suffix.lower() != ".docx":
+    if not template_file.suffix:
         template_file = template_file.with_suffix(".docx")
     safe_template_name = template_file.name
     template_path = TEMPLATES_DIR / safe_template_name
@@ -4492,51 +4501,17 @@ def generate_document_from_template(
         raise HTTPException(status_code=404, detail=f"Template not found: {safe_template_name}")
 
     try:
-        doc = DocxTemplate(str(template_path))
-        context = _prepare_docx_template_context(
-            _serialize_candidate_context(candidate, db_session=db_session),
-            template_path,
+        return _render_candidate_template_response(
+            candidate=candidate,
+            template_path=template_path,
+            template_display_name=safe_template_name,
+            db_session=db_session,
         )
-        doc.render(context)
-
-        applications = candidate.applications or []
-        first_application = applications[0] if applications else None
-        raw_position = (
-            (first_application.position_applied_for if first_application else None)
-            or candidate.current_rank
-            or "position"
-        )
-        raw_surname = candidate.surname or "surname"
-        raw_first_name = candidate.first_name or "name"
-
-        def _safe_file_part(value: str) -> str:
-            cleaned = re.sub(r'[\x00-\x1f<>:"/\\|?*]', "", str(value or "").strip())
-            cleaned = re.sub(r"\s+", "_", cleaned).strip("._")
-            return cleaned or "unknown"
-
-        output_name = (
-            f"{_safe_file_part(raw_position)}_"
-            f"{_safe_file_part(raw_surname)}_"
-            f"{_safe_file_part(raw_first_name)}_"
-            f"{_safe_file_part(Path(safe_template_name).stem)}_"
-            f"{uuid4().hex[:8]}.docx"
-        )
-        output_path = GENERATED_DIR / output_name
-        doc.save(output_path)
-        from app.docx_template_jinja import strip_email_hyperlinks_from_docx
-
-        strip_email_hyperlinks_from_docx(output_path)
+    except HTTPException:
+        raise
     except Exception as exc:
         logger.exception("Template generation failed: %s", exc)
         raise HTTPException(status_code=500, detail="Failed to generate document from template") from exc
-
-    content_disposition = _attachment_content_disposition(output_name)
-    return FileResponse(
-        path=output_path,
-        media_type="application/vnd.openxmlformats-officedocument.wordprocessingml.document",
-        filename=output_name,
-        headers=_nosniff_headers({"Content-Disposition": content_disposition}),
-    )
 
 
 def _load_candidate_for_templates(db_session: Session, candidate_id: int) -> Candidate:

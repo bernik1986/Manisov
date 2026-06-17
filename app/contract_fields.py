@@ -41,6 +41,7 @@ CONTRACT_SELECTION_KEYS = ("company_id", "company_name", "vessel_id", "vessel_na
 
 # Candidate profile fields in docxtpl context (CRM card, not contract_json).
 CANDIDATE_PERSONAL_PLACEHOLDER_FIELDS: tuple[tuple[str, str], ...] = (
+    ("current_date", "Current date"),
     ("surname", "Фамилия"),
     ("first_name", "Имя"),
     ("middle_name", "Отчество"),

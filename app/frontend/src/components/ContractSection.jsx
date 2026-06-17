@@ -360,12 +360,12 @@ export default function ContractSection({
       </div>
 
       <details className="ukr-placeholders-details" style={{ marginBottom: "0.75rem" }}>
-        <summary>Плейсхолдеры — персональные данные кандидата (docxtpl)</summary>
+        <summary>Плейсхолдеры — персональные данные кандидата (Word/Excel)</summary>
         <pre className="ukr-placeholders-pre">{CANDIDATE_PERSONAL_PLACEHOLDER_LINES.join("\n")}</pre>
       </details>
 
       <details className="ukr-placeholders-details" style={{ marginBottom: "0.75rem" }}>
-        <summary>Плейсхолдеры контракта для Word (docxtpl)</summary>
+        <summary>Плейсхолдеры контракта для Word/Excel</summary>
         <pre className="ukr-placeholders-pre">{CONTRACT_PLACEHOLDER_LINES.join("\n")}</pre>
       </details>
 
@@ -412,7 +412,7 @@ export default function ContractSection({
             {templatesLoading ? <p>Загрузка…</p> : null}
             {templatesMessage ? <p className="contract-warning">{templatesMessage}</p> : null}
             {!templatesLoading && contractTemplates.length === 0 ? (
-              <p className="empty-row">Нет DOCX-шаблонов в папке «Контракты»</p>
+              <p className="empty-row">Нет DOCX/XLSX шаблонов в папке «Контракты»</p>
             ) : (
               <ul className="contract-template-list">
                 {contractTemplates.map((tpl) => (

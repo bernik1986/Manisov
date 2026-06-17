@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import io
+from datetime import date
 
 import pandas as pd
 import pytest
@@ -281,3 +282,16 @@ def test_company_placeholders_in_candidate_context(client: TestClient, db_sessio
     tpl.save(out_path)
     rendered_doc = DocxDocument(str(out_path))
     assert "7654321" in rendered_doc.paragraphs[0].text
+
+
+def test_current_date_placeholder_uses_local_today(db_session):
+    from models.schema import Candidate
+
+    candidate = Candidate(surname="Date", first_name="Today")
+    db_session.add(candidate)
+    db_session.commit()
+    db_session.refresh(candidate)
+
+    context = main_module._serialize_candidate_context(candidate, db_session=db_session)
+
+    assert context["current_date"] == date.today().strftime("%d-%m-%Y")
