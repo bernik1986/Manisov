@@ -41,7 +41,7 @@ def test_find_duplicate_when_file_omits_middle_name() -> None:
         }
         hit = _find_duplicate_candidate(session, parsed)
         assert hit is not None
-        assert hit.surname == "Ivanov"
+        assert hit.surname == "IVANOV"
 
 
 def test_find_duplicate_rejects_different_middle_when_both_present() -> None:
@@ -104,4 +104,4 @@ def test_find_duplicate_parses_may_style_date_of_birth() -> None:
         }
         hit = _find_duplicate_candidate(session, parsed)
         assert hit is not None
-        assert hit.surname == "Budurin"
+        assert hit.surname == "BUDURIN"

@@ -136,8 +136,8 @@ def test_upload_then_get_candidate_in_memory_db(tmp_path: Path) -> None:
         payload = candidate_response.json()
 
         candidate = payload["candidate"]
-        assert candidate["surname"] == "Petrov"
-        assert candidate["first_name"] == "Ivan"
+        assert candidate["surname"] == "PETROV"
+        assert candidate["first_name"] == "IVAN"
         assert candidate["email"] == "ivan.petrov@example.com"
 
         assert len(payload["documents"]) >= len(CANONICAL_DOCUMENT_SPECS)

@@ -25,6 +25,7 @@ from models.schema import (
     Document,
     FlagDocument,
     FamilyContact,
+    Notification,
     Role,
     TemplateFolder,
     User,
@@ -122,7 +123,10 @@ def test_upload_endpoint_accepts_file_for_authorized_user(
     assert upload_response.status_code == 200
     payload = upload_response.json()
     assert payload["candidate_id"] == 42
-    assert payload["result"] == {"status": "ok"}
+    assert payload["result"] == {
+        "status": "ok",
+        "personal_data": {"source_file_name": "candidate.pdf"},
+    }
 
 
 def test_templates_manager_upload_accepts_docx_with_long_content_type(
@@ -314,7 +318,7 @@ def test_get_candidate_returns_expiry_flags(db_session, client: TestClient, auth
     response = client.get(f"/candidates/{candidate.candidate_id}", headers=headers)
     assert response.status_code == 200
     payload = response.json()
-    assert payload["candidate"]["surname"] == "Flagged"
+    assert payload["candidate"]["surname"] == "FLAGGED"
     passport = find_document(payload["documents"], lambda row: row.get("warning") is True)
     assert passport is not None
     assert passport["warning"] is True
@@ -356,6 +360,8 @@ def test_notifications_are_human_readable_and_include_focus_ids(
     items = response.json()["items"]
     candidate_items = [item for item in items if item.get("candidate_id") == candidate.candidate_id]
     assert candidate_items, "Expected active notifications for candidate"
+    assert len(candidate_items) == 2
+    assert all("скан" not in item.get("message", "").lower() for item in candidate_items)
 
     doc_expired = next((item for item in candidate_items if item.get("message", "").startswith("Документ просрочен:")), None)
     cert_expired = next(
@@ -373,6 +379,95 @@ def test_notifications_are_human_readable_and_include_focus_ids(
     assert "(id=" not in cert_expired["message"]
     assert cert_expired.get("certificate_id") == cert.certificate_id
     assert cert_expired.get("document_id") is None
+
+
+def test_notifications_with_limit_are_synced_and_legacy_non_expiry_rows_are_removed(
+    db_session, client: TestClient, auth_seed
+) -> None:
+    candidate = Candidate(surname="Limit", first_name="Sync")
+    db_session.add(candidate)
+    db_session.flush()
+    document = Document(
+        candidate_id=candidate.candidate_id,
+        document_type="Passport",
+        date_of_expiry=date.today() + timedelta(days=10),
+    )
+    db_session.add(document)
+    db_session.flush()
+    db_session.add_all(
+        [
+            Notification(
+                candidate_id=candidate.candidate_id,
+                document_id=document.document_id,
+                message="Нет скана документа: Passport.",
+                sent=False,
+            ),
+            Notification(
+                candidate_id=candidate.candidate_id,
+                message="Старое уведомление другого типа.",
+                sent=True,
+            ),
+        ]
+    )
+    db_session.commit()
+
+    headers = _auth_header(client, "admin_test", "admin123")
+    response = client.get(
+        "/notifications",
+        params={"sent": False, "limit": 1},
+        headers=headers,
+    )
+
+    assert response.status_code == 200
+    items = response.json()["items"]
+    assert len(items) == 1
+    assert items[0]["document_id"] == document.document_id
+    assert "скоро истечёт" in items[0]["message"]
+
+    db_session.expire_all()
+    stored = db_session.query(Notification).filter(Notification.candidate_id == candidate.candidate_id).all()
+    assert len(stored) == 1
+    assert "скан" not in stored[0].message.lower()
+
+
+def test_expiry_notification_is_closed_after_expiry_date_moves_beyond_warning_window(
+    db_session, client: TestClient, auth_seed
+) -> None:
+    candidate = Candidate(surname="Resolved", first_name="Expiry")
+    db_session.add(candidate)
+    db_session.flush()
+    document = Document(
+        candidate_id=candidate.candidate_id,
+        document_type="Passport",
+        date_of_expiry=date.today() + timedelta(days=30),
+    )
+    db_session.add(document)
+    db_session.commit()
+    db_session.refresh(document)
+
+    headers = _auth_header(client, "admin_test", "admin123")
+    initial = client.get(
+        "/notifications",
+        params={"sent": False, "candidate_id": candidate.candidate_id},
+        headers=headers,
+    )
+    assert initial.status_code == 200
+    assert len(initial.json()["items"]) == 1
+
+    document.date_of_expiry = date.today() + timedelta(days=365)
+    db_session.commit()
+
+    resolved = client.get(
+        "/notifications",
+        params={"sent": False, "candidate_id": candidate.candidate_id},
+        headers=headers,
+    )
+    assert resolved.status_code == 200
+    assert resolved.json()["items"] == []
+
+    db_session.expire_all()
+    archived = db_session.query(Notification).filter(Notification.candidate_id == candidate.candidate_id).one()
+    assert archived.sent is True
 
 
 def test_search_endpoint_filters_by_position_and_expiry(
@@ -409,17 +504,17 @@ def test_search_endpoint_filters_by_position_and_expiry(
     headers = _auth_header(client, "admin_test", "admin123")
     by_position = client.get("/candidates/search", params={"position": "chief"}, headers=headers)
     assert by_position.status_code == 200
-    assert any(item["surname"] == "Petrov" for item in by_position.json()["items"])
+    assert any(item["surname"] == "PETROV" for item in by_position.json()["items"])
 
     by_warning = client.get("/candidates/search", params={"expiry_status": "warning"}, headers=headers)
     assert by_warning.status_code == 200
     warning_items = by_warning.json()["items"]
-    assert any(item["surname"] == "Petrov" and item["expiry_warning"] is True for item in warning_items)
+    assert any(item["surname"] == "PETROV" and item["expiry_warning"] is True for item in warning_items)
 
     by_expired = client.get("/candidates/search", params={"expiry_status": "expired"}, headers=headers)
     assert by_expired.status_code == 200
     expired_items = by_expired.json()["items"]
-    assert any(item["surname"] == "Sidorov" and item["expiry_expired"] is True for item in expired_items)
+    assert any(item["surname"] == "SIDOROV" and item["expiry_expired"] is True for item in expired_items)
 
 
 def test_family_contact_put_explicit_null_clears_optional_fields(

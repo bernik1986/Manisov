@@ -76,7 +76,7 @@ export default function MainMenuPage() {
         </li>
         <li className="menu-item">
           <h3>Notifications</h3>
-          <p>Истекающие документы/сертификаты, отсутствующие сканы и другие события</p>
+          <p>Просроченные и скоро истекающие документы и сертификаты</p>
           {notifications.length > 0 ? (
             <ul className="notification-preview-list">
               {notifications.map((item) => (

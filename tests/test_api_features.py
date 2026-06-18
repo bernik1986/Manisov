@@ -130,7 +130,7 @@ def test_save_candidate_creates_candidate_and_related_rows(db_session):
     assert candidate.candidate_id is not None
     stored = db_session.get(Candidate, candidate.candidate_id)
     assert stored is not None
-    assert stored.surname == "Ivanov"
+    assert stored.surname == "IVANOV"
     assert len(stored.documents) == 1
     assert len(stored.certificates) == 1
     assert len(stored.sea_service) == 1
@@ -160,15 +160,15 @@ def test_search_and_filtering(client: TestClient, db_session, users_fixture):
     auth_header = _login_header(client, "viewer_test", "viewer123")
     by_name = client.get("/candidates/search", params={"surname": "pet"}, headers=auth_header)
     assert by_name.status_code == 200
-    assert any(item["surname"] == "Petrov" for item in by_name.json()["items"])
+    assert any(item["surname"] == "PETROV" for item in by_name.json()["items"])
 
     by_rank = client.get("/candidates/search", params={"rank": "captain"}, headers=auth_header)
     assert by_rank.status_code == 200
-    assert any(item["surname"] == "Sidorov" for item in by_rank.json()["items"])
+    assert any(item["surname"] == "SIDOROV" for item in by_rank.json()["items"])
 
     by_warning = client.get("/candidates/search", params={"expiry_warning": True}, headers=auth_header)
     assert by_warning.status_code == 200
-    assert any(item["surname"] == "Petrov" for item in by_warning.json()["items"])
+    assert any(item["surname"] == "PETROV" for item in by_warning.json()["items"])
 
 
 def test_auth_with_different_roles(client: TestClient, db_session, users_fixture):
@@ -396,8 +396,8 @@ def test_generate_xlsx_template_by_template_file_id(client: TestClient, db_sessi
     assert response.headers.get("content-type") == "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
     generated = load_workbook(BytesIO(response.content), data_only=False)
     sheet = generated["Application"]
-    assert sheet["A1"].value == "Excel"
-    assert sheet["B1"].value == "Template"
+    assert sheet["A1"].value == "EXCEL"
+    assert sheet["B1"].value == "TEMPLATE"
     assert sheet["C1"].value == "MV Rendered"
     assert sheet["D1"].value == date.today().strftime("%d-%m-%Y")
     assert sheet["E1"].value == "06-05-2024"

@@ -208,7 +208,7 @@ def test_submission_pack_can_contain_candidate_photo_only(client: TestClient, db
     assert response.status_code == 200
     with zipfile.ZipFile(io.BytesIO(response.content)) as archive:
         names = archive.namelist()
-        assert names == ["PHOTO_Portrait_Pack.jpg"]
+        assert names == ["PHOTO_PORTRAIT_PACK.jpg"]
         assert archive.read(names[0]).startswith(b"\xff\xd8")
     db_session.close()
 
@@ -360,7 +360,7 @@ def test_submission_pack_can_include_generated_xlsx(client: TestClient, db_setup
         assert names[0].lower().endswith(".xlsx")
         rendered = load_workbook(io.BytesIO(zf.read(names[0])), data_only=False)
         sheet = rendered.active
-        assert sheet["A1"].value == "Excelpack"
+        assert sheet["A1"].value == "EXCELPACK"
         assert sheet["B1"].value == "Master"
 
     db_session.close()

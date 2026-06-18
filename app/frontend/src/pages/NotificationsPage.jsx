@@ -12,17 +12,14 @@ function getFocusTarget(item) {
   return null;
 }
 
-function getNotificationCategory(item) {
+function isExpiryNotification(item) {
   const message = String(item?.message || "").toLowerCase();
-  if (message.includes("нет скана") || message.includes("отсутствует скан")) return "missing_scan";
-  if (
+  return (
     message.includes("просрочен") ||
     message.includes("истечёт") ||
     message.includes("истекает") ||
     message.includes("скоро истеч")
-  )
-    return "expiry";
-  return "other";
+  );
 }
 
 export default function NotificationsPage() {
@@ -38,7 +35,7 @@ export default function NotificationsPage() {
     setError("");
     try {
       const payload = await fetchNotifications(false, 2500);
-      setItems(payload.items || []);
+      setItems((payload.items || []).filter(isExpiryNotification));
       const candidatesPayload = await fetchCandidates();
       const candidates = Array.isArray(candidatesPayload) ? candidatesPayload : candidatesPayload.items || [];
       const previewMap = candidates.reduce((acc, candidate) => {
@@ -74,13 +71,9 @@ export default function NotificationsPage() {
     const candidateId = item?.candidate_id;
     if (!candidateId) return acc;
     if (!acc[candidateId]) {
-      acc[candidateId] = { all: [], missingScan: [], expiry: [], other: [] };
+      acc[candidateId] = { all: [] };
     }
     acc[candidateId].all.push(item);
-    const category = getNotificationCategory(item);
-    if (category === "missing_scan") acc[candidateId].missingScan.push(item);
-    else if (category === "expiry") acc[candidateId].expiry.push(item);
-    else acc[candidateId].other.push(item);
     return acc;
   }, {});
 
@@ -135,7 +128,7 @@ export default function NotificationsPage() {
   return (
     <CrmLayout
       title="Уведомления"
-      subtitle="По каждому кандидату: что просрочено, истекает и каких сканов не хватает."
+      subtitle="Просроченные и скоро истекающие документы и сертификаты по каждому кандидату."
     >
       <div className="card candidates-card" data-testid="notifications-content">
 
@@ -157,11 +150,7 @@ export default function NotificationsPage() {
                     </button>
                   </div>
                   {expanded ? (
-                    <>
-                      {renderSection("Нет скана", group.missingScan)}
-                      {renderSection("Просрочено и скоро истечёт", group.expiry)}
-                      {renderSection("Прочее", group.other)}
-                    </>
+                    renderSection("Срок действия документов", group.all)
                   ) : null}
                 </div>
               );

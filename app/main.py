@@ -27,6 +27,7 @@ from sqlalchemy import and_, exists, func, not_, or_, select
 from sqlalchemy.orm import Session, selectinload
 
 from models.db import Base, SessionLocal, engine, init_db
+from models.candidate_names import normalize_candidate_name_mapping, uppercase_candidate_name
 from models.schema import (
     Application,
     Attachment,
@@ -390,8 +391,8 @@ def _candidate_row_to_list_item_dict(row: Candidate) -> dict[str, Any]:
         application_date = row.applications[0].date_applied
     return CandidateListItem(
         id=row.candidate_id,
-        surname=row.surname,
-        first_name=row.first_name,
+        surname=uppercase_candidate_name(row.surname),
+        first_name=uppercase_candidate_name(row.first_name),
         position=position,
         fleet=fleet,
         company_id=row.company_id,
@@ -528,17 +529,13 @@ def _normalize_application_rank_fields(data: dict[str, Any]) -> dict[str, Any]:
 
 
 def _compose_display_full_name(surname: str | None, first_name: str | None) -> str | None:
-    parts = [(surname or "").strip(), (first_name or "").strip()]
+    parts = [uppercase_candidate_name(surname or ""), uppercase_candidate_name(first_name or "")]
     parts = [part for part in parts if part]
     return " ".join(parts) if parts else None
 
 
 def _apply_composed_full_names(candidate_dict: dict[str, Any]) -> dict[str, Any]:
-    composed = _compose_display_full_name(candidate_dict.get("surname"), candidate_dict.get("first_name"))
-    if composed:
-        candidate_dict["full_name"] = composed
-        candidate_dict["latin_full_name"] = composed
-    return candidate_dict
+    return normalize_candidate_name_mapping(candidate_dict, compose_full_names=True)
 
 
 def _normalize_rank_field_value(raw: str | None) -> str | None:
@@ -1098,6 +1095,8 @@ def _coerce_model_payload(
             payload[key] = _coerce_to_bool(value)
         else:
             payload[key] = value
+    if model_cls is Candidate:
+        return normalize_candidate_name_mapping(payload)
     return payload
 
 
@@ -1575,7 +1574,7 @@ def _serialize_user(user: User) -> dict[str, Any]:
 
 
 def _serialize_candidate_context(candidate: Candidate, db_session: Session | None = None) -> dict[str, Any]:
-    context = _model_to_dict(candidate)
+    context = normalize_candidate_name_mapping(_model_to_dict(candidate), compose_full_names=True)
     raw_ukr = context.pop("ukr_contract_json", None)
     if raw_ukr and isinstance(raw_ukr, str) and raw_ukr.strip():
         try:
@@ -2246,7 +2245,6 @@ def _notification_exists(
     query = db_session.query(Notification).filter(
         Notification.candidate_id == candidate_id,
         Notification.message == message,
-        Notification.sent.is_(False),
     )
     if document_id is not None:
         query = query.filter(Notification.document_id == document_id, Notification.certificate_id.is_(None))
@@ -2292,11 +2290,6 @@ def _collect_active_notification_keys_for_candidate(
     db_session: Session,
 ) -> set[tuple[int, int | None, int | None, str]]:
     active_notification_keys: set[tuple[int, int | None, int | None, str]] = set()
-    attachment_descriptions = {
-        item.description
-        for item in candidate.attachments
-        if isinstance(item.description, str) and item.description
-    }
 
     for document in candidate.documents:
         doc_l = _document_label_for_notification(document)
@@ -2325,17 +2318,6 @@ def _collect_active_notification_keys_for_candidate(
                     document_id=document.document_id,
                 )
 
-        expected_scan = f"document:{document.document_id}"
-        if expected_scan not in attachment_descriptions:
-            message = f"Нет скана документа: {doc_l}."
-            active_notification_keys.add((candidate.candidate_id, document.document_id, None, message))
-            _create_notification_if_missing(
-                db_session,
-                candidate_id=candidate.candidate_id,
-                message=message,
-                document_id=document.document_id,
-            )
-
     for certificate in candidate.certificates:
         cert_l = _certificate_label_for_notification(certificate)
         if certificate.expiry_date:
@@ -2363,20 +2345,17 @@ def _collect_active_notification_keys_for_candidate(
                     certificate_id=certificate.certificate_id,
                 )
 
-        expected_scan = f"certificate:{certificate.certificate_id}"
-        if expected_scan not in attachment_descriptions:
-            message = f"Нет скана сертификата: {cert_l}."
-            active_notification_keys.add(
-                (candidate.candidate_id, None, certificate.certificate_id, message)
-            )
-            _create_notification_if_missing(
-                db_session,
-                candidate_id=candidate.candidate_id,
-                message=message,
-                certificate_id=certificate.certificate_id,
-            )
-
     return active_notification_keys
+
+
+def _is_expiry_notification_message(message: str | None) -> bool:
+    normalized = str(message or "").strip().lower()
+    if not normalized:
+        return False
+    return (
+        (normalized.startswith("документ ") or normalized.startswith("сертификат "))
+        and ("просрочен" in normalized or "истеч" in normalized)
+    )
 
 
 def _sync_notifications(db_session: Session, *, only_candidate_id: int | None = None) -> None:
@@ -2390,7 +2369,6 @@ def _sync_notifications(db_session: Session, *, only_candidate_id: int | None = 
             .options(
                 selectinload(Candidate.documents),
                 selectinload(Candidate.certificates),
-                selectinload(Candidate.attachments),
             )
             .filter(Candidate.candidate_id == only_candidate_id)
             .first()
@@ -2409,10 +2387,15 @@ def _sync_notifications(db_session: Session, *, only_candidate_id: int | None = 
             )
         )
 
-    pending_query = db_session.query(Notification).filter(Notification.sent.is_(False))
+    notification_query = db_session.query(Notification)
     if only_candidate_id is not None:
-        pending_query = pending_query.filter(Notification.candidate_id == only_candidate_id)
-    for notification in pending_query.all():
+        notification_query = notification_query.filter(Notification.candidate_id == only_candidate_id)
+    for notification in notification_query.all():
+        if not _is_expiry_notification_message(notification.message):
+            db_session.delete(notification)
+            continue
+        if notification.sent:
+            continue
         cid = getattr(notification, "certificate_id", None)
         key = (notification.candidate_id, notification.document_id, cid, notification.message)
         if key not in active_notification_keys:
@@ -2837,7 +2820,7 @@ def list_notifications(
 ) -> dict[str, Any]:
     if candidate_id is not None:
         _sync_notifications(db_session, only_candidate_id=candidate_id)
-    elif limit is None:
+    else:
         _sync_notifications(db_session)
     query = db_session.query(Notification).order_by(Notification.created_at.desc())
     if candidate_id is not None:

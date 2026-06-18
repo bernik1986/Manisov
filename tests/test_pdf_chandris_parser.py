@@ -124,7 +124,7 @@ def test_upload_pdf_persists_related_sections_for_chandris_forms() -> None:
         assert candidate_response.status_code == 200
         candidate_payload = candidate_response.json()
 
-        assert candidate_payload["candidate"]["surname"] == "Dorchynets"
+        assert candidate_payload["candidate"]["surname"] == "DORCHYNETS"
         assert len(candidate_payload["documents"]) >= 3
         assert count_certificate_rows(candidate_payload) >= 2
         assert len(candidate_payload["flag_documents"]) >= 2

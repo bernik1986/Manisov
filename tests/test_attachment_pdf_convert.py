@@ -132,7 +132,7 @@ def test_upload_png_stored_as_pdf_on_disk(upload_client):
     )
     assert response.status_code == 200
     payload = response.json()["attachment"]
-    assert payload["file_name"] == "AB Koval Passport.pdf"
+    assert payload["file_name"] == "AB KOVAL Passport.pdf"
     assert payload["file_type"] == "application/pdf"
 
     stored_path = __import__("pathlib").Path(payload["file_path"])

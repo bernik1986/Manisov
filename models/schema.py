@@ -2,10 +2,11 @@ from __future__ import annotations
 
 from datetime import date, datetime
 
-from sqlalchemy import Boolean, Date, DateTime, Float, ForeignKey, Integer, String, Text, UniqueConstraint
+from sqlalchemy import Boolean, Date, DateTime, Float, ForeignKey, Integer, String, Text, UniqueConstraint, event
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .db import Base
+from .candidate_names import normalize_candidate_name_instance
 
 
 class Role(Base):
@@ -198,6 +199,12 @@ class Candidate(Base):
     notifications: Mapped[list["Notification"]] = relationship(back_populates="candidate", cascade="all, delete-orphan")
     comments: Mapped[list["CandidateComment"]] = relationship(back_populates="candidate", cascade="all, delete-orphan")
     company: Mapped["Company | None"] = relationship(back_populates="candidates")
+
+
+@event.listens_for(Candidate, "before_insert")
+@event.listens_for(Candidate, "before_update")
+def _uppercase_candidate_names_before_save(_mapper, _connection, candidate: Candidate) -> None:
+    normalize_candidate_name_instance(candidate)
 
 
 class Application(Base):

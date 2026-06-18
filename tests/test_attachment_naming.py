@@ -69,7 +69,7 @@ def test_resolve_type_from_document_relation_uses_document_code(db_setup):
         description=f"document:{doc.document_id}",
     )
     name = attachment_download_filename(db_session, candidate, attachment)
-    assert name == "MST Chernov TP.pdf"
+    assert name == "MST CHERNOV TP.pdf"
     db_session.close()
 
 
@@ -93,7 +93,7 @@ def test_resolve_certificate_uses_display_code(db_setup):
         description=f"certificate:{cert.certificate_id}",
     )
     name = attachment_download_filename(db_session, candidate, attachment)
-    assert name == "CO Chernov AFF.pdf"
+    assert name == "CO CHERNOV AFF.pdf"
     db_session.close()
 
 
@@ -182,7 +182,7 @@ def test_upload_attachment_sets_display_filename(client: TestClient, db_setup, t
         data={"attachment_type": "document", "relation_id": str(did)},
     )
     assert response.status_code == 200
-    assert response.json()["attachment"]["file_name"] == "MST Chernov SB.pdf"
+    assert response.json()["attachment"]["file_name"] == "MST CHERNOV SB.pdf"
 
 
 def test_submission_zip_uses_scan_display_name(client: TestClient, db_setup, tmp_path, monkeypatch):
@@ -260,4 +260,4 @@ def test_submission_zip_uses_scan_display_name(client: TestClient, db_setup, tmp
     assert response.status_code == 200
     with zipfile.ZipFile(io.BytesIO(response.content)) as zf:
         names = zf.namelist()
-        assert "2O Chernov ECDIS.pdf" in names
+        assert "2O CHERNOV ECDIS.pdf" in names

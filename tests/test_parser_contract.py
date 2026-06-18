@@ -25,7 +25,9 @@ def test_base_parser_empty_result_contains_required_array_sections() -> None:
 
 
 def test_synonyms_cover_all_candidate_columns_except_system_fields() -> None:
-    system_fields = {"candidate_id", "created_at", "updated_at"}
+    # company_id is an internal foreign key resolved from parsed company names,
+    # not a field that external application forms should provide directly.
+    system_fields = {"candidate_id", "company_id", "created_at", "updated_at"}
     candidate_columns = {column.name for column in Candidate.__table__.columns}
     mapped_columns = set(_CANONICAL_TO_SYNONYMS.keys())
 

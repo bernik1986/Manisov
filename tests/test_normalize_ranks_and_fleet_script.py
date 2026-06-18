@@ -131,7 +131,7 @@ def test_unmapped_rank_left_unchanged(norm_session) -> None:
     _seed_candidate(norm_session)
     run_normalization(norm_session, apply=True)
     norm_session.expire_all()
-    unknown = norm_session.query(Candidate).filter(Candidate.surname == "Unknownov").one()
+    unknown = norm_session.query(Candidate).filter(Candidate.surname == "UNKNOWNOV").one()
     assert unknown.current_rank == "XYZ unknown rank"
 
 

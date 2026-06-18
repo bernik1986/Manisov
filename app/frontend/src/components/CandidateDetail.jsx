@@ -97,6 +97,18 @@ import SeaServiceSection from "./SeaServiceSection";
 import { toIsoDateString, toUiDateString, validateUiDateStringForSubmit } from "../utils/dateInputSupport";
 
 const readOnlyCandidateKeys = new Set(["candidate_id", "created_at", "updated_at"]);
+const uppercaseCandidateNameFields = new Set([
+  "surname",
+  "first_name",
+  "middle_name",
+  "full_name",
+  "latin_full_name",
+  "native_full_name",
+]);
+
+function _uppercaseCandidateName(value) {
+  return String(value ?? "").toUpperCase();
+}
 
 function _ageFromBirthDateUi(birthDateUi) {
   const iso = toIsoDateString(birthDateUi);
@@ -117,17 +129,21 @@ function _composeUkrFullNameUa({ ukr_surname, ukr_first_name, ukr_patronymic }) 
 }
 
 function _composeFullNameFromParts(surname, firstName) {
-  const parts = [surname, firstName].map((value) => String(value ?? "").trim()).filter(Boolean);
+  const parts = [surname, firstName].map((value) => _uppercaseCandidateName(value).trim()).filter(Boolean);
   return parts.join(" ");
 }
 
 function _withComposedFullNames(record) {
-  const composed = _composeFullNameFromParts(record?.surname, record?.first_name);
+  const normalized = { ...record };
+  uppercaseCandidateNameFields.forEach((field) => {
+    if (field in normalized) normalized[field] = _uppercaseCandidateName(normalized[field]);
+  });
+  const composed = _composeFullNameFromParts(normalized?.surname, normalized?.first_name);
   if (!composed) {
-    return record;
+    return normalized;
   }
   return {
-    ...record,
+    ...normalized,
     full_name: composed,
     latin_full_name: composed,
   };
@@ -2847,7 +2863,9 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
                       onChange={(event) =>
                         setCandidate((prev) => ({
                           ...prev,
-                          [field]: event.target.value,
+                          [field]: uppercaseCandidateNameFields.has(field)
+                            ? _uppercaseCandidateName(event.target.value)
+                            : event.target.value,
                         }))
                       }
                     />

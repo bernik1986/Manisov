@@ -307,11 +307,35 @@ label {
 }
 
 input,
+select,
 button {
   border-radius: 10px;
   border: 1px solid #cbd5e1;
   padding: 10px 12px;
   font-size: 15px;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="file"]),
+select {
+  min-height: 42px;
+  font-family: inherit;
+  line-height: 1.2;
+  color: #0f172a;
+  background-color: #fff;
+}
+
+input:not([type="checkbox"]):not([type="radio"]):not([type="file"]):focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid rgba(37, 99, 235, 0.22);
+  outline-offset: 1px;
+  border-color: #2563eb;
+}
+
+select:disabled {
+  color: #64748b;
+  background-color: #f1f5f9;
+  cursor: not-allowed;
 }
 
 button {
