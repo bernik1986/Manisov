@@ -163,6 +163,8 @@ def test_man09_excel_parser_extracts_personal_documents_and_service(tmp_path: Pa
     assert personal["company_name"] == "Delta Tankers"
     assert personal["surname"] == "Buryk"
     assert personal["first_name"] == "Andrii"
+    assert personal["full_name"] == "Buryk Andrii"
+    assert personal["latin_full_name"] == "Buryk Andrii"
     assert personal["date_of_birth"] == "1988-07-31"
     assert personal["place_of_birth"] == "Czech Republic"
     assert personal["citizenship"] == "UKRAINIAN"

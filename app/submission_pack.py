@@ -4,8 +4,6 @@ from __future__ import annotations
 
 import re
 import shutil
-import zipfile
-from io import BytesIO
 from pathlib import Path
 from typing import Any, Callable
 from uuid import uuid4
@@ -14,6 +12,12 @@ from fastapi import HTTPException
 from sqlalchemy.orm import Session
 
 from app.attachment_naming import attachment_download_filename, safe_file_part, safe_scan_part
+from app.candidate_photo import find_candidate_photo
+from app.submission_compression import (
+    MAX_SUBMISSION_ZIP_BYTES,
+    SubmissionZipTooLargeError,
+    build_size_limited_submission_zip,
+)
 from app.template_renderer import (
     SUPPORTED_RENDER_TEMPLATE_SUFFIXES,
     build_generated_template_name,
@@ -172,14 +176,15 @@ def build_submission_zip(
     modal_fields: dict[str, Any],
     template_file_ids: list[int],
     attachment_ids: list[int],
+    include_candidate_photo: bool = False,
 ) -> tuple[bytes, str]:
-    if not template_file_ids and not attachment_ids:
+    if not template_file_ids and not attachment_ids and not include_candidate_photo:
         raise HTTPException(status_code=400, detail="Select at least one template or attachment for the pack.")
 
     base_context = serialize_context(candidate)
     augment_submission_pack_context(base_context, modal_fields)
 
-    zip_buffer = BytesIO()
+    entries: list[tuple[str, bytes]] = []
     used_names: set[str] = set()
 
     def unique_zip_name(name: str) -> str:
@@ -197,46 +202,68 @@ def build_submission_zip(
                 return alt
             idx += 1
 
-    with zipfile.ZipFile(zip_buffer, mode="w", compression=zipfile.ZIP_DEFLATED) as zf:
-        for template_file_id in template_file_ids:
-            template_path, template_file_name = resolve_template_path(
-                db_session,
-                templates_dir=templates_dir,
-                templates_manager_dir=templates_manager_dir,
-                template_file_id=template_file_id,
-            )
-            output_name = build_generated_template_name(candidate, Path(template_file_name).stem, template_path.suffix)
-            output_path = generated_dir / output_name
-            render_template_to_file(template_path, base_context, output_path)
-            zf.write(output_path, arcname=unique_zip_name(output_name))
+    for template_file_id in template_file_ids:
+        template_path, template_file_name = resolve_template_path(
+            db_session,
+            templates_dir=templates_dir,
+            templates_manager_dir=templates_manager_dir,
+            template_file_id=template_file_id,
+        )
+        output_name = build_generated_template_name(candidate, Path(template_file_name).stem, template_path.suffix)
+        output_path = generated_dir / output_name
+        render_template_to_file(template_path, base_context, output_path)
+        entries.append((unique_zip_name(output_name), output_path.read_bytes()))
 
-        if attachment_ids:
-            rows = (
-                db_session.query(Attachment)
-                .filter(
-                    Attachment.candidate_id == candidate.candidate_id,
-                    Attachment.attachment_id.in_(attachment_ids),
-                )
-                .all()
+    if attachment_ids:
+        rows = (
+            db_session.query(Attachment)
+            .filter(
+                Attachment.candidate_id == candidate.candidate_id,
+                Attachment.attachment_id.in_(attachment_ids),
             )
-            found_ids = {row.attachment_id for row in rows}
-            missing = [aid for aid in attachment_ids if aid not in found_ids]
-            if missing:
-                raise HTTPException(
-                    status_code=400,
-                    detail=f"Attachments not found for this candidate: {missing}",
-                )
-            for row in rows:
-                file_path = Path(row.file_path)
-                if not file_path.exists():
-                    raise HTTPException(status_code=404, detail=f"Attachment file missing: {row.file_name}")
-                display_name = attachment_download_filename(db_session, candidate, row)
-                arcname = unique_zip_name(display_name)
-                zf.write(file_path, arcname=arcname)
+            .all()
+        )
+        found_ids = {row.attachment_id for row in rows}
+        missing = [aid for aid in attachment_ids if aid not in found_ids]
+        if missing:
+            raise HTTPException(
+                status_code=400,
+                detail=f"Attachments not found for this candidate: {missing}",
+            )
+        for row in rows:
+            file_path = Path(row.file_path)
+            if not file_path.exists():
+                raise HTTPException(status_code=404, detail=f"Attachment file missing: {row.file_name}")
+            display_name = attachment_download_filename(db_session, candidate, row)
+            entries.append((unique_zip_name(display_name), file_path.read_bytes()))
+
+    if include_candidate_photo:
+        photo = find_candidate_photo(candidate.attachments)
+        if not photo:
+            raise HTTPException(status_code=400, detail="Candidate photo is not uploaded")
+        photo_path = Path(photo.file_path)
+        if not photo_path.is_file():
+            raise HTTPException(status_code=404, detail="Candidate photo file is missing")
+        raw_name_parts = ["PHOTO", candidate.surname or "candidate", candidate.first_name or ""]
+        photo_name = "_".join(safe_file_part(part) for part in raw_name_parts if str(part).strip())
+        entries.append((unique_zip_name(f"{photo_name}.jpg"), photo_path.read_bytes()))
+
+    try:
+        zip_bytes = build_size_limited_submission_zip(entries, max_bytes=MAX_SUBMISSION_ZIP_BYTES)
+    except SubmissionZipTooLargeError as exc:
+        actual_mb = exc.actual_bytes / (1024 * 1024)
+        limit_mb = MAX_SUBMISSION_ZIP_BYTES / 1_000_000
+        raise HTTPException(
+            status_code=413,
+            detail=(
+                f"Не удалось сжать выбранные файлы до {limit_mb:g} МБ без критической потери качества. "
+                f"Минимальный размер: {actual_mb:.1f} МБ. Уберите часть файлов из подачи."
+            ),
+        ) from exc
 
     surname = safe_file_part(candidate.surname or "candidate")
     zip_name = f"PODACHA_{surname}_{candidate.candidate_id}_{uuid4().hex[:8]}.zip"
-    return zip_buffer.getvalue(), zip_name
+    return zip_bytes, zip_name
 
 
 def ensure_podacha_builtin_templates(

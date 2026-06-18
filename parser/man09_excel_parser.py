@@ -167,7 +167,7 @@ class Man09ExcelParser(BaseParser):
         )
         self._put(personal, "distinctive_marks", marks)
 
-        full_name = _join_values(personal.get("surname"), personal.get("first_name"))
+        full_name = _join_name_parts(personal.get("surname"), personal.get("first_name"))
         self._put(personal, "full_name", full_name)
         self._put(personal, "latin_full_name", full_name)
 
@@ -487,6 +487,15 @@ def _join_values(*values: Any) -> str | None:
         if text:
             parts.append(text)
     return ", ".join(parts) if parts else None
+
+
+def _join_name_parts(*values: Any) -> str | None:
+    parts = []
+    for value in values:
+        text = _clean_text(value)
+        if text:
+            parts.append(text)
+    return " ".join(parts) if parts else None
 
 
 def _join_labeled_values(*items: tuple[str, Any]) -> str | None:

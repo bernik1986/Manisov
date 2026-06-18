@@ -101,6 +101,13 @@ from app.sea_service_duration import (
 from app.rank_normalization import canonical_rank_for_storage, display_position_label, position_search_terms
 from app.attachment_convert import prepare_attachment_bytes
 from app.attachment_naming import attachment_download_filename
+from app.candidate_photo import (
+    CANDIDATE_PHOTO_MEDIA_TYPE,
+    CANDIDATE_PHOTO_SOURCE,
+    CANDIDATE_PHOTO_SUFFIXES,
+    find_candidate_photo,
+    prepare_candidate_photo_bytes,
+)
 from app.vessel_specs import (
     VESSEL_FIELD_SPECS,
     VESSEL_OPTIONAL_STRING_FIELDS,
@@ -477,6 +484,7 @@ class SubmissionPackRequest(BaseModel):
     previous_vessel: str | None = None
     template_file_ids: list[int] = []
     attachment_ids: list[int] = []
+    include_candidate_photo: bool = False
 
 
 ISSUE_EXPIRY_ORDER_ERROR_MSG = "Дата окончания не может быть раньше даты выдачи"
@@ -517,6 +525,55 @@ def _normalize_application_rank_fields(data: dict[str, Any]) -> dict[str, Any]:
         if canon:
             out[key] = canon
     return out
+
+
+def _compose_display_full_name(surname: str | None, first_name: str | None) -> str | None:
+    parts = [(surname or "").strip(), (first_name or "").strip()]
+    parts = [part for part in parts if part]
+    return " ".join(parts) if parts else None
+
+
+def _apply_composed_full_names(candidate_dict: dict[str, Any]) -> dict[str, Any]:
+    composed = _compose_display_full_name(candidate_dict.get("surname"), candidate_dict.get("first_name"))
+    if composed:
+        candidate_dict["full_name"] = composed
+        candidate_dict["latin_full_name"] = composed
+    return candidate_dict
+
+
+def _normalize_rank_field_value(raw: str | None) -> str | None:
+    """Canonical rank label for UI (Seamens Data filter / Current Rank)."""
+    text = (raw or "").strip()
+    if not text:
+        return None
+    return display_position_label(text) or text
+
+
+def _display_current_rank_for_candidate(row: Candidate) -> str | None:
+    """Same source and normalization as Seamens Data position column."""
+    list_pos = _raw_list_position_from_row(row)
+    if list_pos:
+        return _normalize_rank_field_value(list_pos)
+    return _normalize_rank_field_value(row.current_rank)
+
+
+def _sync_candidate_current_rank_from_application(db_session: Session, candidate_id: int, app: Application) -> None:
+    candidate = db_session.get(Candidate, candidate_id)
+    if not candidate:
+        return
+    position = app.position_applied_for or app.rank_applied_for
+    normalized = _normalize_rank_field_value(position)
+    if normalized:
+        candidate.current_rank = normalized
+
+
+def _sync_application_position_from_current_rank(candidate: Candidate, current_rank: str | None) -> None:
+    normalized = _normalize_rank_field_value(current_rank)
+    if not normalized:
+        return
+    app = _first_application(candidate)
+    if app is not None:
+        app.position_applied_for = normalized
 
 
 class ApplicationUpdate(BaseModel):
@@ -1469,6 +1526,30 @@ def _ensure_candidate(session: Any, candidate_id: int) -> Candidate:
     return candidate
 
 
+def _candidate_photo_for_id(db_session: Session, candidate_id: int) -> Attachment | None:
+    return (
+        db_session.query(Attachment)
+        .filter(
+            Attachment.candidate_id == candidate_id,
+            Attachment.source == CANDIDATE_PHOTO_SOURCE,
+        )
+        .order_by(Attachment.uploaded_at.desc(), Attachment.attachment_id.desc())
+        .first()
+    )
+
+
+def _serialize_candidate_photo(photo: Attachment | None) -> dict[str, Any] | None:
+    if not photo:
+        return None
+    return {
+        "attachment_id": photo.attachment_id,
+        "file_name": photo.file_name,
+        "file_type": photo.file_type,
+        "file_size_bytes": photo.file_size_bytes,
+        "uploaded_at": photo.uploaded_at,
+    }
+
+
 def _verify_password(plain_password: str, password_hash: str) -> bool:
     return pwd_context.verify(plain_password, password_hash)
 
@@ -1522,7 +1603,14 @@ def _serialize_candidate_context(candidate: Candidate, db_session: Session | Non
     context["flag_documents"] = [_model_to_dict(item) for item in candidate.flag_documents]
     context["sea_service"] = [_model_to_dict(item) for item in candidate.sea_service]
     context["family_contacts"] = [_model_to_dict(item) for item in candidate.family_contacts]
-    context["attachments"] = [_model_to_dict(item) for item in candidate.attachments]
+    candidate_photo = find_candidate_photo(candidate.attachments)
+    context["attachments"] = [
+        _model_to_dict(item)
+        for item in candidate.attachments
+        if (item.source or "").strip() != CANDIDATE_PHOTO_SOURCE
+    ]
+    context["candidate_photo_path"] = candidate_photo.file_path if candidate_photo else ""
+    context["has_candidate_photo"] = bool(candidate_photo and Path(candidate_photo.file_path).is_file())
     if db_session is not None:
         cid = candidate.candidate_id
         ensure_canonical_documents(db_session, cid)
@@ -4349,8 +4437,12 @@ def get_candidate(
         .order_by(CandidateComment.created_at.desc(), CandidateComment.comment_id.desc())
         .all()
     )
+    candidate_photo = find_candidate_photo(candidate.attachments)
+    candidate_dict = _model_to_dict(candidate)
+    candidate_dict["current_rank"] = _display_current_rank_for_candidate(candidate)
+    candidate_dict = _apply_composed_full_names(candidate_dict)
     return {
-        "candidate": _model_to_dict(candidate),
+        "candidate": candidate_dict,
         "applications": [_model_to_dict(item) for item in candidate.applications],
         "documents": documents,
         "visas": visas,
@@ -4365,7 +4457,12 @@ def get_candidate(
         "flag_documents": [_model_to_dict(item) for item in candidate.flag_documents],
         "sea_service": [normalize_sea_service_dict(_model_to_dict(item)) for item in sea_service_items],
         "family_contacts": [_model_to_dict(item) for item in candidate.family_contacts],
-        "attachments": [_model_to_dict(item) for item in candidate.attachments],
+        "attachments": [
+            _model_to_dict(item)
+            for item in candidate.attachments
+            if (item.source or "").strip() != CANDIDATE_PHOTO_SOURCE
+        ],
+        "photo": _serialize_candidate_photo(candidate_photo),
         "comments": [_serialize_candidate_comment(item) for item in comments],
     }
 
@@ -4409,8 +4506,11 @@ def delete_candidate(
     candidate = db_session.get(Candidate, id)
     if not candidate:
         raise HTTPException(status_code=404, detail=f"Candidate {id} not found")
+    attachment_paths = [Path(item.file_path) for item in candidate.attachments]
     db_session.delete(candidate)
     db_session.commit()
+    for attachment_path in attachment_paths:
+        attachment_path.unlink(missing_ok=True)
     _write_audit_log(
         db_session,
         _current_user,
@@ -4555,6 +4655,7 @@ def build_candidate_submission_pack(
         },
         template_file_ids=payload.template_file_ids,
         attachment_ids=payload.attachment_ids,
+        include_candidate_photo=payload.include_candidate_photo,
     )
     temp_path = GENERATED_DIR / zip_name
     temp_path.write_bytes(zip_bytes)
@@ -4567,6 +4668,7 @@ def build_candidate_submission_pack(
         entity_id=id,
         details=(
             f"templates={payload.template_file_ids};attachments={payload.attachment_ids};"
+            f"photo={payload.include_candidate_photo};"
             f"opening_vessel={payload.opening_vessel or ''}"
         ),
     )
@@ -4606,8 +4708,28 @@ def update_candidate(
                 raise HTTPException(status_code=404, detail=f"Company {company_id} not found")
             updates["company_id"] = company_id
 
+    if "current_rank" in updates:
+        raw_rank = updates["current_rank"]
+        if raw_rank in ("", None):
+            updates["current_rank"] = None
+        elif isinstance(raw_rank, str):
+            updates["current_rank"] = _normalize_rank_field_value(raw_rank)
+
+    if "surname" in updates or "first_name" in updates:
+        composed = _compose_display_full_name(
+            updates.get("surname", candidate.surname),
+            updates.get("first_name", candidate.first_name),
+        )
+        if composed:
+            updates["full_name"] = composed
+            updates["latin_full_name"] = composed
+
     for key, value in updates.items():
         setattr(candidate, key, value)
+
+    if "current_rank" in updates:
+        _sync_application_position_from_current_rank(candidate, updates["current_rank"])
+
     db_session.commit()
     db_session.refresh(candidate)
     _write_audit_log(
@@ -4637,6 +4759,8 @@ def add_application(
     data = _normalize_application_rank_fields(payload.model_dump(exclude_none=True))
     row = Application(candidate_id=id, **data)
     db_session.add(row)
+    db_session.flush()
+    _sync_candidate_current_rank_from_application(db_session, id, row)
     db_session.commit()
     db_session.refresh(row)
     _write_audit_log(
@@ -4665,6 +4789,8 @@ def update_application(
     updates = _normalize_application_rank_fields(payload.model_dump(exclude_unset=True))
     for key, value in updates.items():
         setattr(row, key, value)
+    if any(key in updates for key in ("position_applied_for", "rank_applied_for")):
+        _sync_candidate_current_rank_from_application(db_session, id, row)
     db_session.commit()
     db_session.refresh(row)
     _write_audit_log(
@@ -5145,6 +5271,120 @@ def delete_flag_document(
         details=f"candidate_id={id}",
     )
     return {"status": "ok", "deleted_flag_document_id": flag_document_id}
+
+
+@app.post("/candidates/{id}/photo")
+async def upload_candidate_photo(
+    id: int,
+    file: UploadFile = File(...),
+    db_session: Session = Depends(get_db_session),
+    _current_user: User = Depends(require_roles("admin", "recruiter")),
+) -> dict[str, Any]:
+    candidate = _ensure_candidate(db_session, id)
+    suffix = Path(file.filename or "").suffix.lower()
+    if suffix not in CANDIDATE_PHOTO_SUFFIXES:
+        raise HTTPException(status_code=400, detail="Only JPG, JPEG or PNG photos are supported")
+    content = await _read_upload_limited(file, MAX_ATTACHMENT_UPLOAD_BYTES)
+    if not content:
+        raise HTTPException(status_code=400, detail="Uploaded photo is empty")
+    try:
+        stored_bytes = prepare_candidate_photo_bytes(content)
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+    UPLOADS_DIR.mkdir(parents=True, exist_ok=True)
+    target_path = UPLOADS_DIR / f"{uuid4().hex}.jpg"
+    target_path.write_bytes(stored_bytes)
+    old_photos = (
+        db_session.query(Attachment)
+        .filter(Attachment.candidate_id == id, Attachment.source == CANDIDATE_PHOTO_SOURCE)
+        .all()
+    )
+    old_paths = [Path(item.file_path) for item in old_photos]
+    try:
+        for old_photo in old_photos:
+            db_session.delete(old_photo)
+        photo = Attachment(
+            candidate_id=id,
+            file_name=f"{candidate.surname or 'candidate'}_photo.jpg",
+            file_type=CANDIDATE_PHOTO_MEDIA_TYPE,
+            file_path=str(target_path),
+            file_size_bytes=len(stored_bytes),
+            source=CANDIDATE_PHOTO_SOURCE,
+            description="Candidate profile photo",
+        )
+        db_session.add(photo)
+        db_session.commit()
+        db_session.refresh(photo)
+    except Exception:
+        db_session.rollback()
+        target_path.unlink(missing_ok=True)
+        raise
+    for old_path in old_paths:
+        if old_path != target_path:
+            old_path.unlink(missing_ok=True)
+    _write_audit_log(
+        db_session,
+        _current_user,
+        action="candidate.photo.upload",
+        entity_type="candidate",
+        entity_id=id,
+        details=f"attachment_id={photo.attachment_id}",
+    )
+    return {"photo": _serialize_candidate_photo(photo)}
+
+
+@app.get("/candidates/{id}/photo")
+def get_candidate_photo(
+    id: int,
+    db_session: Session = Depends(get_db_session),
+    _current_user: User = Depends(require_crm_user),
+) -> FileResponse:
+    _ensure_candidate(db_session, id)
+    photo = _candidate_photo_for_id(db_session, id)
+    if not photo:
+        raise HTTPException(status_code=404, detail="Candidate photo not found")
+    file_path = Path(photo.file_path)
+    if not file_path.is_file():
+        raise HTTPException(status_code=404, detail="Candidate photo file does not exist")
+    download_name = f"candidate_{id}_photo.jpg"
+    disposition = f"inline; filename=\"{download_name}\""
+    return FileResponse(
+        path=file_path,
+        media_type=photo.file_type or CANDIDATE_PHOTO_MEDIA_TYPE,
+        headers=_nosniff_headers({"Content-Disposition": disposition, "Cache-Control": "private, no-cache"}),
+    )
+
+
+@app.delete("/candidates/{id}/photo")
+def delete_candidate_photo(
+    id: int,
+    db_session: Session = Depends(get_db_session),
+    _current_user: User = Depends(require_roles("admin", "recruiter")),
+) -> dict[str, Any]:
+    _ensure_candidate(db_session, id)
+    photos = (
+        db_session.query(Attachment)
+        .filter(Attachment.candidate_id == id, Attachment.source == CANDIDATE_PHOTO_SOURCE)
+        .all()
+    )
+    if not photos:
+        raise HTTPException(status_code=404, detail="Candidate photo not found")
+    paths = [Path(item.file_path) for item in photos]
+    for photo in photos:
+        db_session.delete(photo)
+    db_session.commit()
+    for path in paths:
+        path.unlink(missing_ok=True)
+    _write_audit_log(
+        db_session,
+        _current_user,
+        action="candidate.photo.delete",
+        entity_type="candidate",
+        entity_id=id,
+        details=None,
+    )
+    return {"status": "ok", "candidate_id": id}
 
 
 @app.post("/candidates/{id}/attachments")

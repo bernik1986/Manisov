@@ -125,19 +125,4 @@ test.describe("Date fields (DD-MM-YYYY) — all candidate sections", () => {
     await leaveCandidateList(page);
   });
 
-  test("Ukrainian contract modal: invalid passport issue date hint", async ({ page }) => {
-    await loginAsAdmin(page);
-    const detail = await startEmptyCandidateDetail(page);
-    await detail.getByTestId("btn-ukr-contract").click();
-    const modal = page.getByTestId("ukr-contract-modal");
-    await expect(modal).toBeVisible();
-    const field = modal.getByLabel("Дата видачі паспорта");
-    await field.fill("32-01-2021");
-    await expect(modal.getByText("Некорректная дата")).toBeVisible();
-    await field.fill("01-06-2015");
-    await expect(modal.getByText("Некорректная дата")).toBeHidden();
-    await modal.getByRole("button", { name: "Скасувати" }).click();
-    await expect(modal).toBeHidden();
-    await leaveCandidateList(page);
-  });
 });

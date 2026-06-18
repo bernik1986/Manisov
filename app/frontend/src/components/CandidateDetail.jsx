@@ -12,6 +12,7 @@ import {
   createSeaService,
   deleteAttachment,
   deleteCandidate,
+  deleteCandidatePhoto,
   deleteCertificate,
   deleteDocument,
   deleteFamilyContact,
@@ -22,7 +23,9 @@ import {
   fetchTemplatesManager,
   buildSubmissionPack,
   generateCandidateDocument,
+  downloadCandidatePhoto,
   uploadAttachment,
+  uploadCandidatePhoto,
   updateApplication,
   updateCandidate,
   updateCertificate,
@@ -39,6 +42,7 @@ import {
   orderDocumentsForDisplay,
 } from "../canonicalDocuments";
 import { findCanonicalVisaSpecForRow, orderVisasForDisplay } from "../canonicalVisas";
+import { CANONICAL_POSITION_OPTIONS } from "../canonicalPositions";
 import VisasSection, { validateVisaSavePayload, VISA_EDIT_FIELDS } from "./VisasSection";
 import {
   buildDiplomaDisplayList,
@@ -110,6 +114,23 @@ function _composeUkrFullNameUa({ ukr_surname, ukr_first_name, ukr_patronymic }) 
     .map((v) => String(v ?? "").trim())
     .filter(Boolean);
   return parts.join(" ");
+}
+
+function _composeFullNameFromParts(surname, firstName) {
+  const parts = [surname, firstName].map((value) => String(value ?? "").trim()).filter(Boolean);
+  return parts.join(" ");
+}
+
+function _withComposedFullNames(record) {
+  const composed = _composeFullNameFromParts(record?.surname, record?.first_name);
+  if (!composed) {
+    return record;
+  }
+  return {
+    ...record,
+    full_name: composed,
+    latin_full_name: composed,
+  };
 }
 
 function sortSeaServiceRows(rows) {
@@ -703,6 +724,10 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
   const canEditRelations = user?.role === "admin" || user?.role === "recruiter";
   const [deleteBusy, setDeleteBusy] = useState(false);
   const [candidate, setCandidate] = useState({});
+  const [candidatePhoto, setCandidatePhoto] = useState(null);
+  const [candidatePhotoUrl, setCandidatePhotoUrl] = useState("");
+  const [candidatePhotoBusy, setCandidatePhotoBusy] = useState(false);
+  const [candidatePhotoError, setCandidatePhotoError] = useState("");
   const [applications, setApplications] = useState([]);
   const [recruitmentDraft, setRecruitmentDraft] = useState({});
   const [recruitmentSaving, setRecruitmentSaving] = useState(false);
@@ -753,6 +778,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
   const [previousVessel, setPreviousVessel] = useState("");
   const [selectedPodachaTemplateIds, setSelectedPodachaTemplateIds] = useState([]);
   const [selectedPodachaAttachmentIds, setSelectedPodachaAttachmentIds] = useState([]);
+  const [includeCandidatePhotoInPodacha, setIncludeCandidatePhotoInPodacha] = useState(false);
   const [ukrContractModalOpen, setUkrContractModalOpen] = useState(false);
   const [ukrContractForm, setUkrContractForm] = useState(() => createEmptyUkrContractForm());
   const [ukrContractSaving, setUkrContractSaving] = useState(false);
@@ -1035,6 +1061,28 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
 
   useEffect(() => {
     let active = true;
+    let objectUrl = "";
+    if (!candidatePhoto?.attachment_id) {
+      setCandidatePhotoUrl("");
+      return () => {};
+    }
+    downloadCandidatePhoto(candidateId)
+      .then((blob) => {
+        if (!active) return;
+        objectUrl = window.URL.createObjectURL(blob);
+        setCandidatePhotoUrl(objectUrl);
+      })
+      .catch(() => {
+        if (active) setCandidatePhotoUrl("");
+      });
+    return () => {
+      active = false;
+      if (objectUrl) window.URL.revokeObjectURL(objectUrl);
+    };
+  }, [candidateId, candidatePhoto?.attachment_id]);
+
+  useEffect(() => {
+    let active = true;
     fetchCompaniesManager()
       .then((data) => {
         if (active) {
@@ -1116,17 +1164,29 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
     }
   }, [ukrContractForm?.ukr_surname, ukrContractForm?.ukr_first_name, ukrContractForm?.ukr_patronymic]); // eslint-disable-line react-hooks/exhaustive-deps
 
+  useEffect(() => {
+    const nextFull = _composeFullNameFromParts(candidate?.surname, candidate?.first_name);
+    if (!nextFull) {
+      return;
+    }
+    if ((candidate?.full_name ?? "") !== nextFull || (candidate?.latin_full_name ?? "") !== nextFull) {
+      setCandidate((prev) => _withComposedFullNames(prev));
+    }
+  }, [candidate?.surname, candidate?.first_name]); // eslint-disable-line react-hooks/exhaustive-deps
+
   async function loadCandidate(options = { showLoader: false }) {
     const showLoader = options?.showLoader ?? false;
     if (showLoader) {
       setLoading(true);
+      setCandidatePhoto(null);
       setSeaServiceModalOpen(false);
       setExpandedSections(new Set([CANDIDATE_SECTION_NAV_ITEMS[0].id]));
     }
     setError("");
     try {
       const payload = await fetchCandidateById(candidateId);
-      setCandidate(mapDateFields(payload.candidate || payload, "ui"));
+      setCandidate(_withComposedFullNames(mapDateFields(payload.candidate || payload, "ui")));
+      setCandidatePhoto(payload.photo || null);
       setUkrContractForm(parseUkrContractJson(payload.candidate?.ukr_contract_json));
       setApplications((payload.applications || []).map((item) => mapDateFields(item, "ui")));
       setFamilyContacts((payload.family_contacts || []).map((item) => mapDateFields(item, "ui")));
@@ -1200,6 +1260,33 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
       setError("Не удалось сохранить персональные данные");
     } finally {
       setSavingProfile(false);
+    }
+  }
+
+  async function onUploadCandidatePhoto(file) {
+    setCandidatePhotoBusy(true);
+    setCandidatePhotoError("");
+    try {
+      const payload = await uploadCandidatePhoto(candidateId, file);
+      setCandidatePhoto(payload.photo || null);
+    } catch (requestError) {
+      setCandidatePhotoError(requestError?.response?.data?.detail || "Не удалось загрузить фото");
+    } finally {
+      setCandidatePhotoBusy(false);
+    }
+  }
+
+  async function onDeleteCandidatePhoto() {
+    setCandidatePhotoBusy(true);
+    setCandidatePhotoError("");
+    try {
+      await deleteCandidatePhoto(candidateId);
+      setCandidatePhoto(null);
+      setIncludeCandidatePhotoInPodacha(false);
+    } catch (requestError) {
+      setCandidatePhotoError(requestError?.response?.data?.detail || "Не удалось удалить фото");
+    } finally {
+      setCandidatePhotoBusy(false);
     }
   }
 
@@ -2080,6 +2167,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
     setPreviousVessel("");
     setSelectedPodachaTemplateIds([]);
     setSelectedPodachaAttachmentIds([]);
+    setIncludeCandidatePhotoInPodacha(false);
     try {
       const payload = await fetchTemplatesManager();
       setTemplateFolders(payload.folders || []);
@@ -2105,7 +2193,11 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
   }
 
   async function onBuildSubmissionPack() {
-    if (selectedPodachaTemplateIds.length === 0 && selectedPodachaAttachmentIds.length === 0) {
+    if (
+      selectedPodachaTemplateIds.length === 0 &&
+      selectedPodachaAttachmentIds.length === 0 &&
+      !includeCandidatePhotoInPodacha
+    ) {
       setPodachaError("Выберите хотя бы один шаблон или скан");
       return;
     }
@@ -2117,6 +2209,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
         previous_vessel: previousVessel.trim() || null,
         template_file_ids: selectedPodachaTemplateIds,
         attachment_ids: selectedPodachaAttachmentIds,
+        include_candidate_photo: includeCandidatePhotoInPodacha,
       });
       const objectUrl = window.URL.createObjectURL(blob);
       const link = document.createElement("a");
@@ -2243,15 +2336,47 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
         </div>
       ) : null}
 
+      <div className="candidate-photo-panel" data-testid="candidate-photo-panel">
+        <div className="candidate-photo-preview">
+          {candidatePhotoUrl ? (
+            <img src={candidatePhotoUrl} alt="Фото кандидата" />
+          ) : (
+            <span aria-hidden="true">
+              {`${candidate.first_name?.[0] || ""}${candidate.surname?.[0] || ""}`.toUpperCase() || "?"}
+            </span>
+          )}
+        </div>
+        <div className="candidate-photo-info">
+          <strong>{candidate.full_name || [candidate.first_name, candidate.surname].filter(Boolean).join(" ") || "Кандидат"}</strong>
+          <span className="muted-text">Фото кандидата</span>
+          {candidatePhotoError ? <span className="error">{candidatePhotoError}</span> : null}
+        </div>
+        {canEditRelations ? (
+          <div className="candidate-photo-actions">
+            <FileDropzone
+              compact
+              accept="image/jpeg,image/png,.jpg,.jpeg,.png"
+              testId="candidate-photo-upload"
+              disabled={candidatePhotoBusy}
+              label={candidatePhoto ? "Заменить фото" : "Загрузить фото"}
+              browseLabel={candidatePhotoBusy ? "Загрузка…" : candidatePhoto ? "Заменить" : "Загрузить"}
+              onFile={onUploadCandidatePhoto}
+            />
+            {candidatePhoto ? (
+              <button type="button" className="secondary-btn" disabled={candidatePhotoBusy} onClick={onDeleteCandidatePhoto}>
+                Удалить
+              </button>
+            ) : null}
+          </div>
+        ) : null}
+      </div>
+
       <div className="candidate-admin-toolbar">
         <button type="button" className="secondary-btn" data-testid="btn-podacha" onClick={openPodachaModal}>
           ПОДАЧА
         </button>
         <button type="button" className="secondary-btn" data-testid="btn-generate-documents" onClick={openTemplatesModal}>
           Сгенерировать документы
-        </button>
-        <button type="button" className="secondary-btn" data-testid="btn-ukr-contract" onClick={() => setUkrContractModalOpen(true)}>
-          Украинский контракт
         </button>
         {isAdmin ? (
           <button type="button" className="danger-btn" onClick={onDeleteCandidate} disabled={deleteBusy}>
@@ -2456,6 +2581,23 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
               )}
             </section>
             <section className="podacha-section">
+              <h3>Дополнительные файлы</h3>
+              <div className="templates-select-list">
+                <label className="templates-select-item">
+                  <input
+                    type="checkbox"
+                    checked={includeCandidatePhotoInPodacha}
+                    onChange={(event) => setIncludeCandidatePhotoInPodacha(event.target.checked)}
+                    disabled={podachaBuilding || !candidatePhoto}
+                  />
+                  <span className="templates-select-name">Фото кандидата</span>
+                  <span className="templates-select-path">
+                    {candidatePhoto ? candidatePhoto.file_name : "фото не загружено"}
+                  </span>
+                </label>
+              </div>
+            </section>
+            <section className="podacha-section">
               <h3>Сканы документов</h3>
               {displayDocuments.length === 0 ? (
                 <p className="empty-row">Нет документов</p>
@@ -2510,7 +2652,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
                 onClick={onBuildSubmissionPack}
                 disabled={podachaBuilding || podachaLoading}
               >
-                {podachaBuilding ? "Сборка…" : "Собрать ZIP"}
+                {podachaBuilding ? "Сборка…" : "Собрать ZIP (до 5 МБ)"}
               </button>
               <button type="button" className="secondary-btn" onClick={closePodachaModal} disabled={podachaBuilding}>
                 Отмена
@@ -2646,6 +2788,48 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
                         </option>
                       ))}
                     </select>
+                  ) : field === "current_rank" ? (
+                    <select
+                      value={candidate.current_rank ?? ""}
+                      onChange={(event) =>
+                        setCandidate((prev) => ({
+                          ...prev,
+                          current_rank: event.target.value,
+                        }))
+                      }
+                    >
+                      <option value="">—</option>
+                      {candidate.current_rank &&
+                      !CANONICAL_POSITION_OPTIONS.includes(candidate.current_rank) ? (
+                        <option value={candidate.current_rank}>
+                          {candidate.current_rank} (текущее)
+                        </option>
+                      ) : null}
+                      {CANONICAL_POSITION_OPTIONS.map((label) => (
+                        <option key={label} value={label}>
+                          {label}
+                        </option>
+                      ))}
+                    </select>
+                  ) : field === "surname" || field === "first_name" ? (
+                    <input
+                      type="text"
+                      value={candidate[field] ?? ""}
+                      onChange={(event) =>
+                        setCandidate((prev) =>
+                          _withComposedFullNames({
+                            ...prev,
+                            [field]: event.target.value,
+                          })
+                        )
+                      }
+                    />
+                  ) : field === "full_name" || field === "latin_full_name" ? (
+                    <input
+                      type="text"
+                      value={candidate[field] ?? ""}
+                      readOnly
+                    />
                   ) : isDateLikeField(field) ? (
                     <DateDdMmYyyyInput
                       value={candidate[field] ?? ""}

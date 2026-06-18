@@ -102,6 +102,31 @@ test.describe("Seamens list: filters and table", () => {
 });
 
 test.describe("Candidate card: create, generate modal, focus param, delete", () => {
+  test("candidate photo preview is available in Podacha", async ({ page }) => {
+    await loginAsAdmin(page);
+    const detail = await startEmptyCandidateDetail(page);
+    const png = Buffer.from(
+      "iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAFElEQVR4nGP4z8DAwMDAxMDAwMDAAAANHQEDasKb6QAAAABJRU5ErkJggg==",
+      "base64"
+    );
+
+    await detail
+      .getByTestId("candidate-photo-upload")
+      .locator('input[type="file"]')
+      .setInputFiles({ name: "candidate.png", mimeType: "image/png", buffer: png });
+    await expect(detail.getByAltText("Фото кандидата")).toBeVisible({ timeout: 15_000 });
+
+    await detail.getByTestId("btn-podacha").click();
+    const modal = page.getByTestId("podacha-modal");
+    const photoItem = modal.locator(".templates-select-item", { hasText: "Фото кандидата" });
+    await expect(photoItem).toBeVisible();
+    await expect(photoItem.locator('input[type="checkbox"]')).toBeEnabled();
+    await photoItem.locator('input[type="checkbox"]').check();
+    await modal.getByRole("button", { name: "Закрыть" }).click();
+
+    await deleteCurrentCandidate(page);
+  });
+
   test("new empty card → detail → generate modal → close → delete", async ({ page }) => {
     await loginAsAdmin(page);
     await page.goto("/candidates");

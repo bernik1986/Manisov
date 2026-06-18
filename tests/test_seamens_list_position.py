@@ -254,3 +254,48 @@ def test_position_filter_synonyms_respect_application_source(
         assert cand_id in ids
     else:
         assert cand_id not in ids
+
+
+def test_get_candidate_current_rank_matches_seamens_list_position(seamens_client) -> None:
+    client, Session = seamens_client
+    db = Session()
+    _seed_admin(db)
+    cand = Candidate(surname="Rank", first_name="Display", current_rank="2ND ENGINEER")
+    db.add(cand)
+    db.flush()
+    db.add(Application(candidate_id=cand.candidate_id, position_applied_for="Second Engineer"))
+    db.commit()
+    cand_id = cand.candidate_id
+    db.close()
+
+    headers = _auth_headers(client)
+    resp = client.get(f"/candidates/{cand_id}", headers=headers)
+    assert resp.status_code == 200
+    assert resp.json()["candidate"]["current_rank"] == "Second Engineer"
+
+
+def test_update_application_syncs_candidate_current_rank(seamens_client) -> None:
+    client, Session = seamens_client
+    db = Session()
+    _seed_admin(db)
+    cand = Candidate(surname="Sync", first_name="Rank", current_rank="Master")
+    db.add(cand)
+    db.flush()
+    app_row = Application(candidate_id=cand.candidate_id, position_applied_for="Chief Officer")
+    db.add(app_row)
+    db.commit()
+    cand_id = cand.candidate_id
+    app_id = app_row.application_id
+    db.close()
+
+    headers = _auth_headers(client)
+    put = client.put(
+        f"/candidates/{cand_id}/applications/{app_id}",
+        json={"position_applied_for": "2/O"},
+        headers=headers,
+    )
+    assert put.status_code == 200
+
+    got = client.get(f"/candidates/{cand_id}", headers=headers)
+    assert got.status_code == 200
+    assert got.json()["candidate"]["current_rank"] == "Second Officer"

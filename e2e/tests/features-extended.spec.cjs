@@ -123,26 +123,4 @@ test.describe("PODACHA, downloads, scan preview, Ukrainian contract", () => {
     await deleteCurrentCandidate(page);
   });
 
-  test("Ukrainian contract: save field and persist after reopen", async ({ page }) => {
-    await loginAsAdmin(page);
-    const detail = await startEmptyCandidateDetail(page);
-    const marker = `E2E-Ukr-${Date.now()}`;
-    await page.getByTestId("btn-ukr-contract").click();
-    const modal = page.getByTestId("ukr-contract-modal");
-    await expect(modal).toBeVisible();
-    await modal.locator(".ukr-contract-grid label").first().locator("input").fill(marker);
-    await modal.getByRole("button", { name: "Зберегти" }).click();
-    await expect(modal.getByRole("button", { name: "Збереження…" })).toBeHidden({ timeout: 15_000 });
-    await expect(modal).toBeHidden({ timeout: 10_000 });
-
-    await page.getByTestId("btn-ukr-contract").click();
-    await expect(modal).toBeVisible();
-    await expect(modal.locator(".ukr-contract-grid label").first().locator("input")).toHaveValue(marker, {
-      timeout: 15_000,
-    });
-    await modal.getByRole("button", { name: "Закрити" }).click();
-    await expect(modal).toBeHidden();
-
-    await deleteCurrentCandidate(page);
-  });
 });

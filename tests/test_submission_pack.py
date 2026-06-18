@@ -4,19 +4,22 @@ from __future__ import annotations
 
 import io
 import zipfile
+from pathlib import Path
 from uuid import uuid4
 
 import pytest
 from docx import Document as DocxDocument
 from fastapi.testclient import TestClient
 from openpyxl import Workbook, load_workbook
+from PIL import Image
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
 
 from app import main as main_module
+from app import submission_pack as submission_pack_module
 from app.main import app, get_db_session
 from models.db import Base
-from models.schema import Candidate, Role, TemplateFile, TemplateFolder, User
+from models.schema import Attachment, Candidate, Role, TemplateFile, TemplateFolder, User
 from passlib.context import CryptContext
 
 pwd_context = CryptContext(schemes=["pbkdf2_sha256"], deprecated="auto")
@@ -119,6 +122,135 @@ def _login(client: TestClient, username: str, password: str) -> dict[str, str]:
     assert response.status_code == 200
     token = response.json()["access_token"]
     return {"Authorization": f"Bearer {token}"}
+
+
+def _photo_bytes(color: str = "navy") -> bytes:
+    output = io.BytesIO()
+    Image.new("RGB", (240, 320), color).save(output, format="PNG")
+    return output.getvalue()
+
+
+def _large_scan_pdf() -> bytes:
+    image = Image.effect_noise((1400, 1800), 90).convert("RGB")
+    output = io.BytesIO()
+    image.save(output, format="PDF", quality=95, resolution=150)
+    image.close()
+    return output.getvalue()
+
+
+def test_candidate_photo_upload_preview_replace_and_delete(client: TestClient, db_setup):
+    db_session = db_setup()
+    candidate = Candidate(surname="Portrait", first_name="User")
+    db_session.add(candidate)
+    db_session.commit()
+    db_session.refresh(candidate)
+    candidate_id = candidate.candidate_id
+    headers = _login(client, "admin_sub", "admin123")
+
+    first = client.post(
+        f"/candidates/{candidate_id}/photo",
+        files={"file": ("portrait.png", _photo_bytes(), "image/png")},
+        headers=headers,
+    )
+    assert first.status_code == 200
+    first_id = first.json()["photo"]["attachment_id"]
+    stored = db_session.get(Attachment, first_id)
+    first_path = Path(stored.file_path)
+    assert first_path.is_file()
+    assert stored.file_type == "image/jpeg"
+
+    detail = client.get(f"/candidates/{candidate_id}", headers=headers)
+    assert detail.status_code == 200
+    assert detail.json()["photo"]["attachment_id"] == first_id
+    assert all(item.get("source") != "candidate_photo" for item in detail.json()["attachments"])
+
+    preview = client.get(f"/candidates/{candidate_id}/photo", headers=headers)
+    assert preview.status_code == 200
+    assert preview.headers["content-type"] == "image/jpeg"
+    assert preview.content.startswith(b"\xff\xd8")
+
+    second = client.post(
+        f"/candidates/{candidate_id}/photo",
+        files={"file": ("replacement.jpg", _photo_bytes("green"), "image/jpeg")},
+        headers=headers,
+    )
+    assert second.status_code == 200
+    db_session.expire_all()
+    assert db_session.query(Attachment).filter(Attachment.source == "candidate_photo").count() == 1
+    assert not first_path.exists()
+
+    deleted = client.delete(f"/candidates/{candidate_id}/photo", headers=headers)
+    assert deleted.status_code == 200
+    assert client.get(f"/candidates/{candidate_id}/photo", headers=headers).status_code == 404
+    db_session.close()
+
+
+def test_submission_pack_can_contain_candidate_photo_only(client: TestClient, db_setup):
+    db_session = db_setup()
+    candidate = Candidate(surname="Portrait", first_name="Pack")
+    db_session.add(candidate)
+    db_session.commit()
+    db_session.refresh(candidate)
+    candidate_id = candidate.candidate_id
+    headers = _login(client, "admin_sub", "admin123")
+
+    uploaded = client.post(
+        f"/candidates/{candidate_id}/photo",
+        files={"file": ("portrait.png", _photo_bytes(), "image/png")},
+        headers=headers,
+    )
+    assert uploaded.status_code == 200
+    response = client.post(
+        f"/candidates/{candidate_id}/submission-pack",
+        json={"template_file_ids": [], "attachment_ids": [], "include_candidate_photo": True},
+        headers=headers,
+    )
+    assert response.status_code == 200
+    with zipfile.ZipFile(io.BytesIO(response.content)) as archive:
+        names = archive.namelist()
+        assert names == ["PHOTO_Portrait_Pack.jpg"]
+        assert archive.read(names[0]).startswith(b"\xff\xd8")
+    db_session.close()
+
+
+def test_submission_pack_endpoint_enforces_archive_limit(client: TestClient, db_setup, monkeypatch):
+    monkeypatch.setattr(submission_pack_module, "MAX_SUBMISSION_ZIP_BYTES", 450_000)
+    db_session = db_setup()
+    candidate = Candidate(surname="Limited", first_name="Archive", current_rank="Master")
+    db_session.add(candidate)
+    db_session.flush()
+    scan_bytes = _large_scan_pdf()
+    attachments = []
+    for index in range(2):
+        path = main_module.UPLOADS_DIR / f"large-scan-{index}.pdf"
+        path.write_bytes(scan_bytes)
+        attachment = Attachment(
+            candidate_id=candidate.candidate_id,
+            file_name=f"large-scan-{index}.pdf",
+            file_type="application/pdf",
+            file_path=str(path),
+            file_size_bytes=len(scan_bytes),
+            source=f"scan_{index}",
+        )
+        db_session.add(attachment)
+        attachments.append(attachment)
+    db_session.commit()
+    candidate_id = candidate.candidate_id
+    attachment_ids = [item.attachment_id for item in attachments]
+
+    headers = _login(client, "admin_sub", "admin123")
+    response = client.post(
+        f"/candidates/{candidate_id}/submission-pack",
+        json={"template_file_ids": [], "attachment_ids": attachment_ids},
+        headers=headers,
+    )
+
+    assert response.status_code == 200
+    assert len(response.content) <= 450_000
+    with zipfile.ZipFile(io.BytesIO(response.content)) as archive:
+        assert len(archive.namelist()) == 2
+        assert all(archive.read(name).startswith(b"%PDF") for name in archive.namelist())
+    db_session.close()
 
 
 def test_submission_pack_returns_zip_with_generated_docx(client: TestClient, db_setup):

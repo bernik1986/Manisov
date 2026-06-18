@@ -235,6 +235,30 @@ export async function updateCandidate(candidateId, payload) {
   return response.data;
 }
 
+export async function uploadCandidatePhoto(candidateId, file) {
+  const formData = new FormData();
+  formData.append("file", file);
+  const response = await apiClient.post(`/candidates/${candidateId}/photo`, formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+  return response.data;
+}
+
+export async function downloadCandidatePhoto(candidateId) {
+  const response = await apiClient.get(`/candidates/${candidateId}/photo`, {
+    responseType: "blob",
+  });
+  const contentType = String(response.headers?.["content-type"] || "image/jpeg");
+  return response.data instanceof Blob && response.data.type
+    ? response.data
+    : new Blob([response.data], { type: contentType });
+}
+
+export async function deleteCandidatePhoto(candidateId) {
+  const response = await apiClient.delete(`/candidates/${candidateId}/photo`);
+  return response.data;
+}
+
 export async function createCandidateComment(candidateId, commentText) {
   const response = await apiClient.post(`/candidates/${candidateId}/comments`, {
     comment_text: commentText,
@@ -671,6 +695,7 @@ export async function buildSubmissionPack(candidateId, payload) {
   try {
     const response = await apiClient.post(`/candidates/${candidateId}/submission-pack`, payload, {
       responseType: "blob",
+      timeout: DOCUMENT_GENERATION_TIMEOUT_MS,
     });
     const disposition = String(response.headers?.["content-disposition"] || "");
     const utf8Match = disposition.match(/filename\*=utf-8''([^;]+)/i);

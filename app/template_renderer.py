@@ -5,9 +5,11 @@ from pathlib import Path
 from typing import Any
 from uuid import uuid4
 
-from docxtpl import DocxTemplate
+from docx.shared import Mm
+from docxtpl import DocxTemplate, InlineImage
 from jinja2 import Environment, StrictUndefined
 from openpyxl import load_workbook
+from openpyxl.drawing.image import Image as ExcelImage
 
 from app.attachment_naming import safe_file_part
 
@@ -56,6 +58,13 @@ def render_docx_template(template_path: Path, context: dict[str, Any], output_pa
 
     render_context = prepare_docx_template_context(context, template_path)
     doc = DocxTemplate(str(template_path))
+    raw_photo_path = render_context.pop("candidate_photo_path", "")
+    photo_path = Path(str(raw_photo_path)) if raw_photo_path else None
+    photo_value: Any = ""
+    if photo_path and photo_path.is_file():
+        photo_value = InlineImage(doc, str(photo_path), width=Mm(35))
+    render_context["candidate_photo"] = photo_value
+    render_context["photo"] = photo_value
     doc.render(render_context)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     doc.save(str(output_path))
@@ -75,6 +84,8 @@ def render_excel_template(template_path: Path, context: dict[str, Any], output_p
     from app.template_field_values import sanitize_email_values_for_template_render, sanitize_records_for_template_render
 
     render_context = deepcopy(context)
+    raw_photo_path = render_context.pop("candidate_photo_path", "")
+    photo_path = Path(str(raw_photo_path)) if raw_photo_path else None
     sanitize_email_values_for_template_render(render_context)
     sanitize_records_for_template_render(render_context)
     keep_vba = template_path.suffix.lower() == ".xlsm"
@@ -83,6 +94,15 @@ def render_excel_template(template_path: Path, context: dict[str, Any], output_p
         for row in worksheet.iter_rows():
             for cell in row:
                 if isinstance(cell.value, str):
+                    if cell.value.strip() in {"{{ candidate_photo }}", "{{candidate_photo}}", "{{ photo }}", "{{photo}}"}:
+                        cell.value = ""
+                        if photo_path and photo_path.is_file():
+                            image = ExcelImage(str(photo_path))
+                            scale = min(132 / image.width, 170 / image.height, 1)
+                            image.width = int(image.width * scale)
+                            image.height = int(image.height * scale)
+                            worksheet.add_image(image, cell.coordinate)
+                        continue
                     cell.value = _render_excel_text(cell.value, render_context)
     output_path.parent.mkdir(parents=True, exist_ok=True)
     workbook.save(str(output_path))

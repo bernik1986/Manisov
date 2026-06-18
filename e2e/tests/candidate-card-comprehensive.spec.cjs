@@ -294,13 +294,10 @@ test.describe("Candidate card — comprehensive", () => {
     await deleteCurrentCandidate(page);
   });
 
-  test("Ukrainian contract modal: open and cancel", async ({ page }) => {
+  test("Ukrainian contract entry is hidden from candidate card", async ({ page }) => {
     await loginAsAdmin(page);
-    const detail = await startEmptyCandidateDetail(page);
-    await page.getByTestId("btn-ukr-contract").click();
-    await expect(page.getByTestId("ukr-contract-modal")).toBeVisible();
-    await page.getByTestId("ukr-contract-modal").getByRole("button", { name: "Скасувати" }).click();
-    await expect(page.getByTestId("ukr-contract-modal")).toBeHidden();
+    await startEmptyCandidateDetail(page);
+    await expect(page.getByTestId("btn-ukr-contract")).toHaveCount(0);
     await deleteCurrentCandidate(page);
   });
 
