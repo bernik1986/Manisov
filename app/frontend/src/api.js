@@ -22,6 +22,8 @@ export const apiClient = axios.create({
   timeout: 10000,
 });
 
+const DOCUMENT_GENERATION_TIMEOUT_MS = 120000;
+
 const TOKEN_REFRESH_THRESHOLD_SECONDS = 5 * 60;
 let refreshPromise = null;
 
@@ -633,6 +635,7 @@ export async function generateCandidateDocument(
       null,
       {
         responseType: "blob",
+        timeout: DOCUMENT_GENERATION_TIMEOUT_MS,
       }
     );
     const disposition = String(response.headers?.["content-disposition"] || "");
