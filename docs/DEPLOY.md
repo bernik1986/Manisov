@@ -52,7 +52,17 @@ Required values:
 
 - `db` — PostgreSQL
 - `backend` — FastAPI + Alembic migrations on container start
-- `frontend` — Vite frontend
+- `frontend` — production nginx serving the built Vite frontend
+
+## Production networking
+
+Production exposes only:
+
+- `frontend` on host port `80`
+- `db` on `127.0.0.1:5432` for local server maintenance
+
+The `frontend` container is nginx: it serves the built Vite frontend and proxies `/api/*` to `backend:8000` inside the Docker network.
+`backend:8000` is not published directly on the public VPS. Do not expose the Vite dev server on production.
 
 ## Important note
 
