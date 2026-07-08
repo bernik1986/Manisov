@@ -2,6 +2,7 @@ services:
   db:
     image: postgres:16-alpine
     container_name: maritime-db
+    restart: unless-stopped
     environment:
       POSTGRES_DB: ${POSTGRES_DB:?POSTGRES_DB is required}
       POSTGRES_USER: ${POSTGRES_USER:?POSTGRES_USER is required}
@@ -21,6 +22,7 @@ services:
       context: .
       dockerfile: Dockerfile
     container_name: maritime-backend
+    restart: unless-stopped
     depends_on:
       db:
         condition: service_healthy
@@ -51,6 +53,7 @@ services:
       context: ./app/frontend
       dockerfile: Dockerfile
     container_name: maritime-frontend
+    restart: unless-stopped
     depends_on:
       - backend
     ports:
