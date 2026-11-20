@@ -20,4 +20,5 @@ for _ in {1..60}; do
 done
 if [[ "$ready" != 1 ]]; then docker logs "$name"; exit 1; fi
 docker exec "$name" python -c 'import os; from pathlib import Path; assert os.getuid()==10001; assert not os.access("/app/app/main.py", os.W_OK); [Path("/app", p, "check").touch() for p in ("uploads", "generated", "templates")]'
+docker exec "$name" python -c 'from alembic.config import Config; from alembic.script import ScriptDirectory; scripts=ScriptDirectory.from_config(Config("/app/alembic.ini")); assert len(scripts.get_heads())==1; assert {"a4b5c6d7e8f9", "b5c6d7e8f9a0", "f1c4e92381ad", "21b8a06c7d42"}.issubset({revision.revision for revision in scripts.walk_revisions()})'
 docker exec "$name" python -m pip check

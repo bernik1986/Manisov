@@ -24,7 +24,10 @@ COPY models ./models
 COPY migrations ./migrations
 COPY synonyms.py alembic.ini ./
 COPY scripts/deployment_data.py ./scripts/deployment_data.py
-RUN mkdir -p uploads generated templates/manager_files \
+RUN find app parser models migrations scripts -type d -exec chmod 0755 {} + \
+    && find app parser models migrations scripts -type f -exec chmod 0644 {} + \
+    && chmod 0644 synonyms.py alembic.ini \
+    && mkdir -p uploads generated templates/manager_files \
     && chown -R 10001:10001 uploads generated templates
 ENV HOME=/tmp
 USER 10001:10001

@@ -78,7 +78,9 @@ jobs:
           npx playwright test --config app/frontend/tests/auth-session.config.cjs
       - name: Build and check production image
         run: |
-          docker build -t manisov-ci:${{ github.sha }} .
+          context=$(mktemp -d)
+          git archive HEAD | (umask 077; tar --no-same-permissions -x -C "$context")
+          docker build -t manisov-ci:${{ github.sha }} "$context"
           bash scripts/check_release_container.sh manisov-ci:${{ github.sha }}
           git archive HEAD:app/frontend | docker build -t manisov-frontend-ci:${{ github.sha }} -
 
