@@ -1,7 +1,9 @@
 import React from "react";
 import { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import useDocumentUploadInbox from "../utils/useDocumentUploadInbox.js";
+import CommentReminderAlerts from "./CommentReminderAlerts";
 
 const navItems = [
   { to: "/menu", label: "Dashboard" },
@@ -18,6 +20,7 @@ export default function CrmLayout({
   subtitle,
   actions,
   children,
+  renderUploadInbox,
   collapsibleSidebar = false,
   defaultSidebarHidden = false,
 }) {
@@ -25,11 +28,14 @@ export default function CrmLayout({
   const { user, logout } = useAuth();
   const isAdmin = user?.role === "admin";
   const [sidebarHidden, setSidebarHidden] = useState(defaultSidebarHidden);
+  const uploadInbox = useDocumentUploadInbox(isAdmin || user?.role === "recruiter");
+  const newUploads = uploadInbox.items.filter((item) => item.status === "received").length;
 
   const visibleNav = navItems.filter((item) => !item.adminOnly || isAdmin);
 
   return (
     <main className="crm-layout-page" data-testid="crm-layout">
+      <CommentReminderAlerts />
       <div className={`crm-shell ${collapsibleSidebar && sidebarHidden ? "crm-shell--sidebar-hidden" : ""}`}>
         <aside className="crm-sidebar" data-testid="crm-sidebar">
           <div className="crm-brand">
@@ -63,6 +69,9 @@ export default function CrmLayout({
                   className={({ isActive }) => `crm-nav-link${isActive ? " active" : ""}`}
                 >
                   {item.label}
+                  {item.to === "/notifications" && newUploads > 0 && (
+                    <span className="crm-upload-notice-count" aria-label={`Новые загрузки: ${newUploads}`}>{newUploads}</span>
+                  )}
                 </NavLink>
               );
             })}
@@ -86,6 +95,11 @@ export default function CrmLayout({
               {subtitle ? <p>{subtitle}</p> : null}
             </div>
             <div className="crm-topbar-actions">
+              {collapsibleSidebar && sidebarHidden && newUploads > 0 && (
+                <Link className="crm-upload-notice-link" to="/notifications">
+                  Новые документы <span className="crm-upload-notice-count">{newUploads}</span>
+                </Link>
+              )}
               {collapsibleSidebar ? (
                 <button type="button" className="secondary-btn" onClick={() => setSidebarHidden((prev) => !prev)}>
                   {sidebarHidden ? "→ Меню" : "← Скрыть"}
@@ -98,7 +112,10 @@ export default function CrmLayout({
             </div>
           </header>
 
-          <div className="crm-content-body">{children}</div>
+          <div className="crm-content-body">
+            {renderUploadInbox?.(uploadInbox)}
+            {children}
+          </div>
         </section>
       </div>
     </main>

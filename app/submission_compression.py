@@ -7,6 +7,7 @@ from pathlib import Path
 
 import pypdfium2 as pdfium
 from PIL import Image, ImageOps
+from parser.pdfium_runtime import PDFIUM_LOCK
 
 MAX_SUBMISSION_ZIP_BYTES = 5_000_000
 
@@ -78,12 +79,27 @@ def _compress_image(data: bytes, suffix: str, profile: CompressionProfile) -> by
 
 
 def _compress_pdf(data: bytes, profile: CompressionProfile) -> bytes:
+    # PDFium is not thread-safe; native work from concurrent pack requests must serialize.
+    with PDFIUM_LOCK:
+        return _compress_pdf_locked(data, profile)
+
+
+def _compress_pdf_locked(data: bytes, profile: CompressionProfile) -> bytes:
     images: list[Image.Image] = []
     document = None
     try:
         document = pdfium.PdfDocument(data)
+        if not 0 < len(document) <= 100:
+            return data
+        pixels = 0
         for index in range(len(document)):
             page = document[index]
+            width, height = page.get_size()
+            page_pixels = max(1, width * profile.pdf_scale) * max(1, height * profile.pdf_scale)
+            pixels += page_pixels
+            if page_pixels > 25_000_000 or pixels > 100_000_000:
+                page.close()
+                return data
             bitmap = page.render(scale=profile.pdf_scale)
             image = _rgb_image(bitmap.to_pil())
             bitmap.close()

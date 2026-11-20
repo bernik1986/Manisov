@@ -1,16 +1,2 @@
-fastapi
-uvicorn
-sqlalchemy
-alembic
-python-jose[cryptography]
-passlib[bcrypt]
-python-multipart
-docxtpl
-python-docx
-pandas
-openpyxl
-Pillow
-pdfplumber
-pypdfium2
-pyresparser
-psycopg2-binary
+# Reproduce the audited Linux/Python 3.11 dependency graph, not today's resolver.
+-r requirements-lock.txt

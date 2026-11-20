@@ -1,6 +1,16 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 const { defineConfig, devices } = require("@playwright/test");
 const path = require("path");
+const { randomUUID } = require("node:crypto");
+const API_PORT = process.env.PW_API_PORT || "18080";
+const WEB_PORT = process.env.PW_WEB_PORT || "15173";
+if (![API_PORT, WEB_PORT].every((port) => /^\d{1,5}$/.test(port) && Number(port) > 0 && Number(port) <= 65535)) {
+  throw new Error("Invalid Playwright port");
+}
+const API_URL = `http://127.0.0.1:${API_PORT}`;
+const WEB_URL = `http://127.0.0.1:${WEB_PORT}`;
+process.env.PW_API_BASE = API_URL;
+const storage = path.join(__dirname, ".playwright", "intake-regression", randomUUID());
 
 module.exports = defineConfig({
   testDir: path.join(__dirname, "e2e", "tests"),
@@ -13,7 +23,7 @@ module.exports = defineConfig({
   workers: 1,
   reporter: [["list"], ["html", { open: "never", outputFolder: "playwright-report" }]],
   use: {
-    baseURL: "http://127.0.0.1:5173",
+    baseURL: WEB_URL,
     trace: "on-first-retry",
     screenshot: "only-on-failure",
     video: "retain-on-failure",
@@ -21,19 +31,27 @@ module.exports = defineConfig({
   projects: [{ name: "chromium", use: { ...devices["Desktop Chrome"] } }],
   webServer: [
     {
-      command: "python -m uvicorn app.main:app --host 127.0.0.1 --port 8000",
-      url: "http://127.0.0.1:8000/docs",
+      command: "python e2e/serve_isolated_backend.py",
+      url: `${API_URL}/docs`,
       cwd: __dirname,
       timeout: 120_000,
-      /* Prefer reusing listeners on 8000/5173 so local runs do not fail when another dev server is up. CI can set PW_NO_REUSE_SERVER=1 to force a clean bind. */
-      reuseExistingServer: process.env.PW_NO_REUSE_SERVER !== "1",
+      reuseExistingServer: false,
+      env: {
+        PW_API_PORT: API_PORT,
+        PW_STORAGE_DIR: storage,
+        ENABLE_TEST_ENDPOINTS: "1",
+        DEFAULT_ADMIN_USERNAME: "admin",
+        DEFAULT_ADMIN_PASSWORD: "admin12345",
+        JWT_SECRET_KEY: randomUUID(),
+      },
     },
     {
-      command: "npm run dev -- --host 127.0.0.1 --port 5173",
-      url: "http://127.0.0.1:5173",
+      command: `npm run dev -- --host 127.0.0.1 --port ${WEB_PORT} --strictPort`,
+      url: WEB_URL,
       cwd: path.join(__dirname, "app", "frontend"),
       timeout: 120_000,
-      reuseExistingServer: process.env.PW_NO_REUSE_SERVER !== "1",
+      reuseExistingServer: false,
+      env: { VITE_PROXY_TARGET: API_URL, VITE_API_BASE_URL: "/api" },
     },
   ],
 });

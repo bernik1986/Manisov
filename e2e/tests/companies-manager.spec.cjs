@@ -28,10 +28,10 @@ test.describe("Companies manager", () => {
     await page.getByRole("button", { name: "+ Судно" }).click();
     await expect(page.getByTestId("vessel-form-modal")).toBeVisible();
     await page.getByLabel("Название").fill(vesselName);
-    await page.getByLabel("IMO").fill("9876543");
+    await page.getByLabel("ИМО", { exact: true }).fill("9876543");
     await page.getByLabel("Флаг").fill("Malta");
     await page.getByLabel("Тип судна").selectOption("Container Vessel");
-    await page.getByRole("button", { name: "Добавить" }).click();
+    await page.getByTestId("vessel-form-modal").getByRole("button", { name: "Добавить", exact: true }).click();
 
     await page.getByRole("cell", { name: vesselName }).click();
     await expect(page.getByTestId("vessel-detail")).toBeVisible();

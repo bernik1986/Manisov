@@ -16,7 +16,7 @@ export default function CandidateCardPage() {
       defaultSidebarHidden
     >
       <div className="card candidate-card">
-        <CandidateDetail candidateId={id} focusTarget={focusTarget} />
+        <CandidateDetail key={id} candidateId={id} focusTarget={focusTarget} />
       </div>
     </CrmLayout>
   );

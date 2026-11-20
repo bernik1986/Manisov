@@ -1,10 +1,13 @@
 from __future__ import annotations
 
-from datetime import date, datetime, timedelta
+from datetime import date, datetime, timedelta, timezone
+import asyncio
+import hmac
 import json
 import logging
 import os
 import re
+import secrets
 import threading
 import time
 from urllib.parse import quote
@@ -18,12 +21,16 @@ from fastapi.exceptions import RequestValidationError
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse, JSONResponse
 from fastapi.security import HTTPAuthorizationCredentials, HTTPBearer
+from starlette.concurrency import run_in_threadpool
 from jose import JWTError, jwt
 from parser.base import BaseParser
 from passlib.context import CryptContext
 import pdfplumber
-from pydantic import BaseModel, ConfigDict
-from sqlalchemy import and_, exists, func, not_, or_, select
+from app.document_intake import intake_router
+from app.generated_files import GeneratedWorkspace, cleanup_expired
+from app.application_runtime import ApplicationParserBusy, parse_application_bounded
+from pydantic import BaseModel, ConfigDict, Field
+from sqlalchemy import and_, exists, func, not_, or_, select, text
 from sqlalchemy.orm import Session, selectinload
 
 from models.db import Base, SessionLocal, engine, init_db
@@ -147,9 +154,30 @@ TEMPLATES_MANAGER_DIR = TEMPLATES_DIR / "manager_files"
 logger = logging.getLogger(__name__)
 pwd_context = CryptContext(schemes=["pbkdf2_sha256", "bcrypt"], deprecated="auto")
 bearer_scheme = HTTPBearer(auto_error=False)
-JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY", "change-me-in-production")
+JWT_SECRET_KEY = os.getenv("JWT_SECRET_KEY") or secrets.token_urlsafe(48)
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRE_MINUTES = 60 * 2
+
+
+def _production_mode() -> bool:
+    return os.getenv("MANISOV_ENV", "").strip().lower() == "production"
+
+
+def _validated_password(password: str) -> str:
+    if len(password.strip()) < 8 or len(password) > 1024:
+        raise HTTPException(status_code=400, detail="Password must contain 8 to 1024 characters")
+    return password
+
+
+def _validate_production_auth() -> None:
+    if not _production_mode():
+        return
+    if not os.getenv("JWT_SECRET_KEY") or len(JWT_SECRET_KEY) < 32 or JWT_SECRET_KEY == "change-me-in-production":
+        raise RuntimeError("Production requires a random JWT_SECRET_KEY of at least 32 characters")
+    password = os.getenv("DEFAULT_ADMIN_PASSWORD", "")
+    if not os.getenv("DEFAULT_ADMIN_USERNAME", "").strip() or password in {"", "admin123", "admin12345", "change-me-in-production"}:
+        raise RuntimeError("Production requires explicit non-default administrator credentials")
+    _validated_password(password)
 LAST_ACTIVE_ADMIN_ERROR = (
     "Нельзя снять права администратора с последнего активного администратора. "
     "Сначала назначьте другого администратора."
@@ -253,8 +281,8 @@ def _ensure_nltk_resource(resource_path: str, download_name: str) -> bool:
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
+    allow_origins=[origin.strip() for origin in os.getenv("CORS_ALLOWED_ORIGINS", "http://localhost:5173,http://127.0.0.1:5173" if not _production_mode() else "").split(",") if origin.strip() and origin.strip() != "*"],
+    allow_credentials=False,
     allow_methods=["*"],
     allow_headers=["*"],
     expose_headers=["Content-Disposition"],
@@ -263,6 +291,7 @@ app.add_middleware(
 
 @app.on_event("startup")
 def on_startup() -> None:
+    _validate_production_auth()
     if _env_truthy("RESET_DB_ON_START"):
         logger.warning("RESET_DB_ON_START is enabled: dropping all DB tables before init")
         Base.metadata.drop_all(bind=engine)
@@ -294,6 +323,38 @@ def get_db_session() -> Session:
         yield session
     finally:
         session.close()
+
+
+@app.get("/healthz", include_in_schema=False)
+def healthz(db_session: Session = Depends(get_db_session)) -> dict[str, str]:
+    db_session.execute(text("SELECT 1"))
+    return {"status": "ok"}
+
+
+@app.on_event("startup")
+async def start_generated_cleanup() -> None:
+    await run_in_threadpool(cleanup_expired, GENERATED_DIR)
+
+    async def sweep():
+        while True:
+            await asyncio.sleep(300)
+            try:
+                await run_in_threadpool(cleanup_expired, GENERATED_DIR)
+            except OSError:
+                logger.exception("Temporary document cleanup failed")
+
+    app.state.generated_cleanup_task = asyncio.create_task(sweep())
+
+
+@app.on_event("shutdown")
+async def stop_generated_cleanup() -> None:
+    task = getattr(app.state, "generated_cleanup_task", None)
+    if task is not None:
+        task.cancel()
+        try:
+            await task
+        except asyncio.CancelledError:
+            pass
 
 
 class CandidateListItem(BaseModel):
@@ -478,13 +539,14 @@ class CandidateUpdate(BaseModel):
 
 class CandidateCommentCreate(BaseModel):
     comment_text: str
+    reminder_at: datetime | None = None
 
 
 class SubmissionPackRequest(BaseModel):
     opening_vessel: str | None = None
     previous_vessel: str | None = None
-    template_file_ids: list[int] = []
-    attachment_ids: list[int] = []
+    template_file_ids: list[int] = Field(default_factory=list, max_length=20)
+    attachment_ids: list[int] = Field(default_factory=list, max_length=40)
     include_candidate_photo: bool = False
 
 
@@ -756,8 +818,8 @@ class FlagDocumentUpdate(BaseModel):
 
 
 class LoginRequest(BaseModel):
-    username: str
-    password: str
+    username: str = Field(max_length=100)
+    password: str = Field(max_length=1024)
 
 
 class LoginResponse(BaseModel):
@@ -770,8 +832,8 @@ LoginResponse.model_rebuild()
 
 
 class RegisterRequest(BaseModel):
-    username: str
-    password: str
+    username: str = Field(max_length=100)
+    password: str = Field(max_length=1024)
     full_name: str | None = None
     role: str = "viewer"
     is_active: bool = True
@@ -791,6 +853,10 @@ class UpdateUserActiveRequest(BaseModel):
 
 class NotificationSentUpdate(BaseModel):
     sent: bool
+
+
+class CommentReminderDismissUpdate(BaseModel):
+    dismissed: bool = True
 
 
 class TemplateFolderCreate(BaseModel):
@@ -956,7 +1022,20 @@ def _model_to_dict(obj: Any) -> dict[str, Any]:
 
 
 def _serialize_candidate_comment(comment: CandidateComment) -> dict[str, Any]:
-    return _model_to_dict(comment)
+    payload = _model_to_dict(comment)
+    reminder_at = payload.get("reminder_at")
+    if isinstance(reminder_at, datetime) and reminder_at.tzinfo is None:
+        payload["reminder_at"] = reminder_at.replace(tzinfo=timezone.utc)
+    dismissed_at = payload.get("reminder_dismissed_at")
+    if isinstance(dismissed_at, datetime) and dismissed_at.tzinfo is None:
+        payload["reminder_dismissed_at"] = dismissed_at.replace(tzinfo=timezone.utc)
+    return payload
+
+
+def _as_utc_naive(value: datetime) -> datetime:
+    if value.tzinfo is None:
+        return value
+    return value.astimezone(timezone.utc).replace(tzinfo=None)
 
 
 def _with_expiry_flags(items: list[dict[str, Any]], expiry_key: str) -> list[dict[str, Any]]:
@@ -1550,15 +1629,28 @@ def _serialize_candidate_photo(photo: Attachment | None) -> dict[str, Any] | Non
 
 
 def _verify_password(plain_password: str, password_hash: str) -> bool:
-    return pwd_context.verify(plain_password, password_hash)
+    if password_hash.startswith(("$2a$", "$2b$", "$2y$")):
+        import bcrypt
+        try:
+            # Legacy bcrypt hashes used only the first 72 encoded bytes.
+            return bcrypt.checkpw(plain_password.encode("utf-8")[:72], password_hash.encode("ascii"))
+        except (ValueError, UnicodeError):
+            return False
+    try:
+        return pwd_context.verify(plain_password, password_hash)
+    except (ValueError, TypeError):
+        return False
 
 
-def _create_access_token(user: User) -> str:
+def _create_access_token(user: User, *, session_id: str | None = None) -> str:
     payload = {
         "sub": str(user.user_id),
         "username": user.username,
         "role": user.role.name if user.role else None,
-        "exp": datetime.utcnow() + timedelta(minutes=JWT_EXPIRE_MINUTES),
+        "iat": datetime.now(timezone.utc),
+        "exp": datetime.now(timezone.utc) + timedelta(minutes=JWT_EXPIRE_MINUTES),
+        "sid": session_id or uuid4().hex,
+        "ver": user.auth_version,
     }
     return jwt.encode(payload, JWT_SECRET_KEY, algorithm=JWT_ALGORITHM)
 
@@ -2362,6 +2454,11 @@ def _sync_notifications(db_session: Session, *, only_candidate_id: int | None = 
     today = date.today()
     warning_limit = today + timedelta(days=240)
     active_notification_keys: set[tuple[int, int | None, int | None, str]] = set()
+    notification_query = db_session.query(Notification)
+    if only_candidate_id is not None:
+        notification_query = notification_query.filter(Notification.candidate_id == only_candidate_id)
+    # Do not retire alerts created by another request after this scan started.
+    existing_notifications = notification_query.all()
 
     if only_candidate_id is not None:
         candidate = (
@@ -2387,10 +2484,7 @@ def _sync_notifications(db_session: Session, *, only_candidate_id: int | None = 
             )
         )
 
-    notification_query = db_session.query(Notification)
-    if only_candidate_id is not None:
-        notification_query = notification_query.filter(Notification.candidate_id == only_candidate_id)
-    for notification in notification_query.all():
+    for notification in existing_notifications:
         if not _is_expiry_notification_message(notification.message):
             db_session.delete(notification)
             continue
@@ -2413,7 +2507,7 @@ def get_current_user(
 
     token = credentials.credentials
     try:
-        payload = jwt.decode(token, JWT_SECRET_KEY, algorithms=[JWT_ALGORITHM])
+        payload = jwt.decode(token, JWT_SECRET_KEY, algorithms=[JWT_ALGORITHM], options={"require_exp": True, "require_iat": True, "require_sub": True})
         user_id = int(payload.get("sub"))
     except (JWTError, ValueError, TypeError) as exc:
         raise HTTPException(status_code=401, detail="Invalid or expired token") from exc
@@ -2421,6 +2515,11 @@ def get_current_user(
     user = db_session.get(User, user_id)
     if not user or not user.is_active:
         raise HTTPException(status_code=401, detail="User is inactive or not found")
+    version, session_id = payload.get("ver"), payload.get("sid")
+    if (not isinstance(version, str) or not user.auth_version
+            or not hmac.compare_digest(version, user.auth_version)
+            or not isinstance(session_id, str) or not re.fullmatch(r"[a-f0-9]{32}", session_id)):
+        raise HTTPException(status_code=401, detail="Invalid or expired token")
     return user
 
 
@@ -2492,6 +2591,8 @@ def import_text_create(
 _LOGIN_THROTTLE_LOCK = threading.Lock()
 _LOGIN_FAIL_COUNT: dict[tuple[str, str], int] = {}
 _LOGIN_LOCKOUT_UNTIL: dict[tuple[str, str], float] = {}
+_LOGIN_LAST_ATTEMPT: dict[tuple[str, str], float] = {}
+LOGIN_TRACKED_KEYS_LIMIT = 10000
 LOGIN_MAX_FAILED_ATTEMPTS = max(1, int(os.getenv("LOGIN_MAX_FAILED_ATTEMPTS", "8")))
 LOGIN_LOCKOUT_SECONDS = max(30, int(os.getenv("LOGIN_LOCKOUT_SECONDS", "900")))
 LOGIN_TOO_MANY_ATTEMPTS_DETAIL = (
@@ -2500,9 +2601,7 @@ LOGIN_TOO_MANY_ATTEMPTS_DETAIL = (
 
 
 def _login_throttle_client_identity(request: Request) -> str:
-    x_forwarded_for = request.headers.get("X-Forwarded-For")
-    if x_forwarded_for:
-        return x_forwarded_for.split(",", 1)[0].strip() or "unknown"
+    # Uvicorn resolves only trusted proxy headers; never trust a raw client XFF.
     client = getattr(request, "client", None)
     return getattr(client, "host", None) or "unknown"
 
@@ -2517,6 +2616,11 @@ def _login_throttle_apply_expired_unlocks(now: float) -> None:
     for key in expired:
         _LOGIN_LOCKOUT_UNTIL.pop(key, None)
         _LOGIN_FAIL_COUNT.pop(key, None)
+        _LOGIN_LAST_ATTEMPT.pop(key, None)
+    for key, last_attempt in list(_LOGIN_LAST_ATTEMPT.items()):
+        if now - last_attempt >= LOGIN_LOCKOUT_SECONDS and key not in _LOGIN_LOCKOUT_UNTIL:
+            _LOGIN_LAST_ATTEMPT.pop(key, None)
+            _LOGIN_FAIL_COUNT.pop(key, None)
 
 
 def login_throttle_reset_for_testing() -> None:
@@ -2524,13 +2628,17 @@ def login_throttle_reset_for_testing() -> None:
     with _LOGIN_THROTTLE_LOCK:
         _LOGIN_FAIL_COUNT.clear()
         _LOGIN_LOCKOUT_UNTIL.clear()
+        _LOGIN_LAST_ATTEMPT.clear()
 
 
-@app.post("/test/reset-login-throttle", include_in_schema=False)
 def test_reset_login_throttle_endpoint() -> dict[str, bool]:
     """Сброс блокировки входа для E2E/pytest (не для production)."""
     login_throttle_reset_for_testing()
     return {"ok": True}
+
+
+if _env_truthy("ENABLE_TEST_ENDPOINTS") and not _production_mode():
+    app.post("/test/reset-login-throttle", include_in_schema=False)(test_reset_login_throttle_endpoint)
 
 
 def _login_throttle_check_allowed(request: Request, username: str) -> None:
@@ -2539,6 +2647,9 @@ def _login_throttle_check_allowed(request: Request, username: str) -> None:
         now = time.time()
         _login_throttle_apply_expired_unlocks(now)
         until = _LOGIN_LOCKOUT_UNTIL.get(key)
+        if key not in _LOGIN_LAST_ATTEMPT and len(_LOGIN_LAST_ATTEMPT) >= LOGIN_TRACKED_KEYS_LIMIT:
+            raise HTTPException(status_code=429, detail=LOGIN_TOO_MANY_ATTEMPTS_DETAIL,
+                                headers={"Retry-After": str(LOGIN_LOCKOUT_SECONDS)})
         if until is not None and now < until:
             seconds_left = max(1, int(until - now))
             raise HTTPException(
@@ -2551,6 +2662,13 @@ def _login_throttle_check_allowed(request: Request, username: str) -> None:
 def _login_throttle_record_failure(request: Request, username: str) -> None:
     key = _login_throttle_key(request, username)
     with _LOGIN_THROTTLE_LOCK:
+        now = time.time()
+        _login_throttle_apply_expired_unlocks(now)
+        if key not in _LOGIN_LAST_ATTEMPT and len(_LOGIN_LAST_ATTEMPT) >= LOGIN_TRACKED_KEYS_LIMIT:
+            # Do not evict live lockouts when the table fills with fresh identities.
+            raise HTTPException(status_code=429, detail=LOGIN_TOO_MANY_ATTEMPTS_DETAIL,
+                                headers={"Retry-After": str(LOGIN_LOCKOUT_SECONDS)})
+        _LOGIN_LAST_ATTEMPT[key] = now
         count = _LOGIN_FAIL_COUNT.get(key, 0) + 1
         _LOGIN_FAIL_COUNT[key] = count
         if count >= LOGIN_MAX_FAILED_ATTEMPTS:
@@ -2563,9 +2681,11 @@ def _login_throttle_clear_success(request: Request, username: str) -> None:
     with _LOGIN_THROTTLE_LOCK:
         _LOGIN_FAIL_COUNT.pop(key, None)
         _LOGIN_LOCKOUT_UNTIL.pop(key, None)
+        _LOGIN_LAST_ATTEMPT.pop(key, None)
 
 
 def _ensure_default_auth_data(session: Session) -> None:
+    _validate_production_auth()
     role_names = {"admin": "Full access", "recruiter": "Can manage records", "viewer": "Read only"}
     for name, description in role_names.items():
         if not session.query(Role).filter(Role.name == name).one_or_none():
@@ -2573,12 +2693,13 @@ def _ensure_default_auth_data(session: Session) -> None:
     session.flush()
 
     default_admin_username = os.getenv("DEFAULT_ADMIN_USERNAME", "admin").strip() or "admin"
-    default_admin_password = os.getenv("DEFAULT_ADMIN_PASSWORD", "admin123")
+    default_admin_password = os.getenv("DEFAULT_ADMIN_PASSWORD", "admin12345")
     default_admin_full_name = os.getenv("DEFAULT_ADMIN_FULL_NAME", "Default Admin").strip() or "Default Admin"
 
     admin_role = session.query(Role).filter(Role.name == "admin").one()
     admin_user = session.query(User).filter(User.username == default_admin_username).one_or_none()
     if not admin_user:
+        _validated_password(default_admin_password)
         session.add(
             User(
                 username=default_admin_username,
@@ -2612,8 +2733,9 @@ def login(
 
 
 @app.post("/auth/refresh", response_model=LoginResponse)
-def refresh_access_token(current_user: User = Depends(get_current_user)) -> LoginResponse:
-    token = _create_access_token(current_user)
+def refresh_access_token(current_user: User = Depends(get_current_user), credentials: HTTPAuthorizationCredentials = Depends(bearer_scheme)) -> LoginResponse:
+    claims = jwt.decode(credentials.credentials, JWT_SECRET_KEY, algorithms=[JWT_ALGORITHM])
+    token = _create_access_token(current_user, session_id=claims["sid"])
     return LoginResponse(access_token=token, user=_serialize_user(current_user))
 
 
@@ -2637,7 +2759,7 @@ def register_user(
 
     user = User(
         username=username,
-        password_hash=pwd_context.hash(payload.password),
+        password_hash=pwd_context.hash(_validated_password(payload.password)),
         full_name=payload.full_name,
         role_id=role.role_id,
         is_active=payload.is_active,
@@ -2692,6 +2814,8 @@ def update_user_role(
         remove_admin_privileges=remove_admin_privileges,
     )
     user.role_id = role.role_id
+    if old_role != role_name:
+        user.auth_version = uuid4().hex
     _add_user_admin_action_audit_log(
         db_session,
         actor=_current_user,
@@ -2714,15 +2838,14 @@ def update_user_password(
     db_session: Session = Depends(get_db_session),
     _current_user: User = Depends(require_admin),
 ) -> dict[str, Any]:
-    new_password = payload.password.strip()
-    if len(new_password) < 6:
-        raise HTTPException(status_code=400, detail="Password must be at least 6 characters")
+    new_password = _validated_password(payload.password)
 
     user = db_session.get(User, user_id)
     if not user:
         raise HTTPException(status_code=404, detail=f"User {user_id} not found")
 
     user.password_hash = pwd_context.hash(new_password)
+    user.auth_version = uuid4().hex
     db_session.commit()
     db_session.refresh(user)
     _write_audit_log(
@@ -2795,6 +2918,8 @@ def update_user_active(
     )
 
     user.is_active = new_is_active
+    if old_is_active != new_is_active:
+        user.auth_version = uuid4().hex
     _add_user_admin_action_audit_log(
         db_session,
         actor=_current_user,
@@ -2857,6 +2982,63 @@ def update_notification(
         details=f"sent={payload.sent}",
     )
     return {"notification": _model_to_dict(notification)}
+
+
+@app.get("/comment-reminders/due")
+def list_due_comment_reminders(
+    db_session: Session = Depends(get_db_session),
+    _current_user: User = Depends(require_roles("admin", "recruiter", "viewer")),
+) -> dict[str, Any]:
+    reminders = (
+        db_session.query(CandidateComment)
+        .filter(
+            CandidateComment.reminder_user_id == _current_user.user_id,
+            CandidateComment.reminder_at.isnot(None),
+            CandidateComment.reminder_at <= datetime.utcnow(),
+            CandidateComment.reminder_dismissed_at.is_(None),
+        )
+        .order_by(CandidateComment.reminder_at.asc(), CandidateComment.comment_id.asc())
+        .all()
+    )
+    items: list[dict[str, Any]] = []
+    for reminder in reminders:
+        item = _serialize_candidate_comment(reminder)
+        candidate_data = _apply_composed_full_names(_model_to_dict(reminder.candidate))
+        item["candidate_name"] = candidate_data.get("full_name") or f"Моряк #{reminder.candidate_id}"
+        items.append(item)
+    return {"items": items}
+
+
+@app.put("/comment-reminders/{comment_id}/dismiss")
+def dismiss_comment_reminder(
+    comment_id: int,
+    payload: CommentReminderDismissUpdate,
+    db_session: Session = Depends(get_db_session),
+    _current_user: User = Depends(require_roles("admin", "recruiter", "viewer")),
+) -> dict[str, Any]:
+    reminder = (
+        db_session.query(CandidateComment)
+        .filter(
+            CandidateComment.comment_id == comment_id,
+            CandidateComment.reminder_user_id == _current_user.user_id,
+        )
+        .one_or_none()
+    )
+    if reminder is None or reminder.reminder_at is None:
+        raise HTTPException(status_code=404, detail=f"Comment reminder {comment_id} not found")
+
+    reminder.reminder_dismissed_at = datetime.utcnow() if payload.dismissed else None
+    db_session.commit()
+    db_session.refresh(reminder)
+    _write_audit_log(
+        db_session,
+        _current_user,
+        action="candidate.comment_reminder.dismiss",
+        entity_type="candidate",
+        entity_id=reminder.candidate_id,
+        details=f"comment_id={comment_id}; dismissed={payload.dismissed}",
+    )
+    return {"comment": _serialize_candidate_comment(reminder)}
 
 
 @app.get("/dashboard/summary")
@@ -3884,15 +4066,24 @@ def _render_candidate_template_response(
         )
     context = _serialize_candidate_context(candidate, db_session=db_session)
     output_name = build_generated_template_name(candidate, Path(template_display_name).stem, template_path.suffix)
-    output_path = GENERATED_DIR / output_name
-    render_template_to_file(template_path, context, output_path)
-    content_disposition = _attachment_content_disposition(output_name)
-    return FileResponse(
-        path=output_path,
-        media_type=template_media_type(output_path),
-        filename=output_name,
-        headers=_nosniff_headers({"Content-Disposition": content_disposition}),
-    )
+    workspace = GeneratedWorkspace(GENERATED_DIR)
+    try:
+        output_path = workspace.path / output_name
+        render_template_to_file(template_path, context, output_path)
+        content_disposition = _attachment_content_disposition(output_name)
+        return workspace.response(
+            output_path, media_type=template_media_type(output_path), filename=output_name,
+            headers=_nosniff_headers({"Content-Disposition": content_disposition}),
+        )
+    except BaseException:
+        workspace.cleanup()
+        raise
+
+
+app.include_router(intake_router(
+    get_db_session, require_roles("admin", "recruiter"), lambda: UPLOADS_DIR,
+    _sync_notifications, _sync_candidate_coc_rank_from_certificate, sessions=lambda: SessionLocal(),
+))
 
 
 @app.post("/upload")
@@ -3915,8 +4106,8 @@ async def upload(
             temp_file.write(content)
             temp_path = Path(temp_file.name)
 
-        parser = _get_parser(temp_path)
-        parsed_data = parser.parse(temp_path)
+        parsed_data = await run_in_threadpool(parse_application_bounded, temp_path)
+        parser = DocxParser() if suffix in {".doc", ".docx"} else None
         if file.filename:
             parsed_data.setdefault("personal_data", {}).setdefault("source_file_name", file.filename)
         duplicate_candidate = _find_duplicate_candidate(db_session, parsed_data)
@@ -3952,6 +4143,10 @@ async def upload(
         candidate_id = _save_parsed_data(parsed_data, parser, db_session)
     except HTTPException:
         raise
+    except ApplicationParserBusy as exc:
+        raise HTTPException(status_code=429, detail=str(exc), headers={"Retry-After": "5"}) from exc
+    except TimeoutError as exc:
+        raise HTTPException(status_code=504, detail=str(exc)) from exc
     except ValueError as exc:
         logger.warning("Upload rejected: %s", exc)
         raise HTTPException(status_code=400, detail=f"Bad Request: {exc}") from exc
@@ -3996,20 +4191,7 @@ async def upload_cv(
             temp_file.write(content)
             temp_path = Path(temp_file.name)
 
-        nltk_stopwords_ready = _ensure_nltk_resource("corpora/stopwords", "stopwords")
-        nltk_punkt_ready = _ensure_nltk_resource("tokenizers/punkt", "punkt")
-        if not nltk_stopwords_ready or not nltk_punkt_ready:
-            raise HTTPException(status_code=500, detail="NLTK resources are not available for CV parsing")
-
-        try:
-            from pyresparser import ResumeParser
-        except Exception as exc:
-            raise HTTPException(
-                status_code=500,
-                detail="pyresparser is not available in environment",
-            ) from exc
-
-        parsed = ResumeParser(str(temp_path)).get_extracted_data() or {}
+        parsed = await run_in_threadpool(parse_application_bounded, temp_path, mode="cv")
         candidate_payload = {
             "full_name": parsed.get("name"),
             "email": parsed.get("email"),
@@ -4026,6 +4208,12 @@ async def upload_cv(
         db_session.refresh(candidate)
     except HTTPException:
         raise
+    except ApplicationParserBusy as exc:
+        raise HTTPException(status_code=429, detail=str(exc), headers={"Retry-After": "5"}) from exc
+    except TimeoutError as exc:
+        raise HTTPException(status_code=504, detail=str(exc)) from exc
+    except ValueError as exc:
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
     except Exception as exc:
         db_session.rollback()
         logger.exception("CV upload processing failed: %s", exc)
@@ -4461,10 +4649,15 @@ def add_candidate_comment(
     text = (payload.comment_text or "").strip()
     if not text:
         raise HTTPException(status_code=400, detail="Comment text is required")
+    reminder_at = _as_utc_naive(payload.reminder_at) if payload.reminder_at else None
+    if reminder_at is not None and reminder_at <= datetime.utcnow():
+        raise HTTPException(status_code=400, detail="Reminder time must be in the future")
     comment = CandidateComment(
         candidate_id=id,
         comment_text=text,
         created_at=datetime.utcnow(),
+        reminder_at=reminder_at,
+        reminder_user_id=_current_user.user_id if reminder_at is not None else None,
     )
     db_session.add(comment)
     db_session.commit()
@@ -4475,7 +4668,7 @@ def add_candidate_comment(
         action="candidate.comment.create",
         entity_type="candidate",
         entity_id=id,
-        details=f"comment_id={comment.comment_id}",
+        details=f"comment_id={comment.comment_id}; reminder_at={reminder_at.isoformat() if reminder_at else '-'}",
     )
     return {"comment": _serialize_candidate_comment(comment)}
 
@@ -4624,13 +4817,22 @@ def build_candidate_submission_pack(
     db_session: Session = Depends(get_db_session),
     current_user: User = Depends(require_roles("admin", "recruiter", "viewer")),
 ) -> FileResponse:
+    workspace = GeneratedWorkspace(GENERATED_DIR)
+    try:
+        return _build_candidate_submission_response(id, payload, db_session, current_user, workspace)
+    except BaseException:
+        workspace.cleanup()
+        raise
+
+
+def _build_candidate_submission_response(id, payload, db_session, current_user, workspace):
     candidate = _load_candidate_for_templates(db_session, id)
     zip_bytes, zip_name = build_submission_zip(
         db_session=db_session,
         candidate=candidate,
         templates_dir=TEMPLATES_DIR,
         templates_manager_dir=TEMPLATES_MANAGER_DIR,
-        generated_dir=GENERATED_DIR,
+        generated_dir=workspace.path,
         serialize_context=lambda cand: _serialize_candidate_context(cand, db_session=db_session),
         modal_fields={
             "opening_vessel": payload.opening_vessel,
@@ -4640,7 +4842,7 @@ def build_candidate_submission_pack(
         attachment_ids=payload.attachment_ids,
         include_candidate_photo=payload.include_candidate_photo,
     )
-    temp_path = GENERATED_DIR / zip_name
+    temp_path = workspace.path / zip_name
     temp_path.write_bytes(zip_bytes)
     content_disposition = _attachment_content_disposition(zip_name)
     _write_audit_log(
@@ -4655,8 +4857,8 @@ def build_candidate_submission_pack(
             f"opening_vessel={payload.opening_vessel or ''}"
         ),
     )
-    return FileResponse(
-        path=temp_path,
+    return workspace.response(
+        temp_path,
         media_type="application/zip",
         filename=zip_name,
         headers=_nosniff_headers({"Content-Disposition": content_disposition}),
@@ -4677,6 +4879,13 @@ def update_candidate(
     invalid_fields = [key for key in updates.keys() if key not in allowed_fields]
     if invalid_fields:
         raise HTTPException(status_code=400, detail=f"Unsupported candidate fields: {', '.join(invalid_fields)}")
+
+    for key, value in updates.items():
+        if Candidate.__table__.columns[key].type.python_type is date:
+            parsed = _coerce_to_date(value)
+            if value not in (None, "") and parsed is None:
+                raise HTTPException(status_code=400, detail=f"{key} must be a valid ISO date")
+            updates[key] = parsed
 
     if "company_id" in updates:
         raw_company_id = updates["company_id"]
@@ -5049,7 +5258,7 @@ def update_sea_service_with_hyphen(
     db_session: Session = Depends(get_db_session),
     _current_user: User = Depends(require_roles("admin", "recruiter")),
 ) -> dict[str, Any]:
-    return update_sea_service(id=id, rec_id=rec_id, payload=payload, db_session=db_session)
+    return update_sea_service(id=id, rec_id=rec_id, payload=payload, db_session=db_session, _current_user=_current_user)
 
 
 @app.delete("/candidates/{id}/sea_service/{rec_id}")

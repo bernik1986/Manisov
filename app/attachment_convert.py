@@ -6,7 +6,7 @@ import io
 from pathlib import Path
 
 from fastapi import HTTPException
-from PIL import Image
+from PIL import Image, ImageOps
 
 IMAGE_ATTACHMENT_SUFFIXES = frozenset({".jpg", ".jpeg", ".png"})
 PDF_ATTACHMENT_SUFFIX = ".pdf"
@@ -14,21 +14,21 @@ STORED_ATTACHMENT_SUFFIX = PDF_ATTACHMENT_SUFFIX
 STORED_ATTACHMENT_MEDIA_TYPE = "application/pdf"
 
 
+def image_on_white(source: Image.Image) -> Image.Image:
+    """Return owned RGB pixels, preserving alpha and PNG transparency on white."""
+    with source.convert("RGBA") as rgba, rgba.getchannel("A") as alpha:
+        background = Image.new("RGB", source.size, "white")
+        background.paste(rgba, mask=alpha)
+        return background
+
+
 def image_bytes_to_pdf(content: bytes) -> bytes:
     """Raster image bytes → single-page PDF."""
     try:
-        with Image.open(io.BytesIO(content)) as img:
-            if img.mode in ("RGBA", "LA"):
-                background = Image.new("RGB", img.size, (255, 255, 255))
-                background.paste(img, mask=img.split()[-1])
-                img = background
-            elif img.mode == "P":
-                img = img.convert("RGB")
-            elif img.mode != "RGB":
-                img = img.convert("RGB")
-            out = io.BytesIO()
-            img.save(out, format="PDF")
-            return out.getvalue()
+        with Image.open(io.BytesIO(content)) as source, ImageOps.exif_transpose(source) as oriented:
+            with image_on_white(oriented) as img, io.BytesIO() as out:
+                img.save(out, format="PDF")
+                return out.getvalue()
     except Exception as exc:
         raise HTTPException(status_code=400, detail="Invalid or unsupported image file") from exc
 

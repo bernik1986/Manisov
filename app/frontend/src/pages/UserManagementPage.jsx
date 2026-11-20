@@ -58,9 +58,9 @@ export default function UserManagementPage() {
   }
 
   async function onSetPassword(userId) {
-    const password = (passwordInputs[userId] || "").trim();
-    if (password.length < 6) {
-      setError("Пароль: не менее 6 символов");
+    const password = passwordInputs[userId] || "";
+    if (password.trim().length < 8 || password.length > 1024) {
+      setError("Пароль: от 8 до 1024 символов");
       return;
     }
     setError("");
@@ -111,6 +111,8 @@ export default function UserManagementPage() {
           <input
             type="password"
             placeholder="Пароль"
+            minLength={8}
+            maxLength={1024}
             value={form.password}
             onChange={(event) => setForm((prev) => ({ ...prev, password: event.target.value }))}
             required
@@ -193,6 +195,8 @@ export default function UserManagementPage() {
                     <input
                       type="password"
                       autoComplete="new-password"
+                      minLength={8}
+                      maxLength={1024}
                       placeholder="••••••"
                       value={passwordInputs[item.user_id] || ""}
                       onChange={(event) =>

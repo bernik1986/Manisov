@@ -1,6 +1,7 @@
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
+import DocumentUploadPage from "./pages/DocumentUploadPage";
 import MainMenuPage from "./pages/MainMenuPage";
 import CandidatesPage from "./pages/CandidatesPage";
 import CandidateCardPage from "./pages/CandidateCardPage";
@@ -18,6 +19,7 @@ export default function App() {
   return (
     <Routes>
       <Route path="/login" element={isAuthenticated ? <Navigate to="/menu" replace /> : <LoginPage />} />
+      <Route path="/upload-documents" element={<DocumentUploadPage />} />
       <Route
         path="/menu"
         element={

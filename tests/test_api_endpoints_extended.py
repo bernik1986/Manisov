@@ -19,6 +19,7 @@ from app.main import ISSUE_EXPIRY_ORDER_ERROR_MSG, _with_expiry_flags, app, get_
 from models.db import Base
 from tests.canonical_test_helpers import find_certificate, find_document
 from models.schema import (
+    AuditLog,
     Application,
     Candidate,
     Certificate,
@@ -27,6 +28,7 @@ from models.schema import (
     FamilyContact,
     Notification,
     Role,
+    SeaService,
     TemplateFolder,
     User,
 )
@@ -54,7 +56,11 @@ def db_session(testing_session_local):
 
 
 @pytest.fixture
-def client(testing_session_local):
+def client(testing_session_local, tmp_path, monkeypatch):
+    for name in ("UPLOADS_DIR", "GENERATED_DIR", "TEMPLATES_MANAGER_DIR"):
+        path = tmp_path / name.lower()
+        path.mkdir()
+        monkeypatch.setattr(main_module, name, path)
     def override_get_db_session():
         session = testing_session_local()
         try:
@@ -101,6 +107,42 @@ def _auth_header(client: TestClient, username: str, password: str) -> dict[str, 
     return {"Authorization": f"Bearer {token}"}
 
 
+@pytest.mark.parametrize("route", ["sea_service", "sea-service"])
+def test_sea_service_edit_records_authenticated_user(client, auth_seed, db_session, route):
+    candidate = Candidate(surname="TEST")
+    db_session.add(candidate)
+    db_session.flush()
+    service = SeaService(candidate_id=candidate.candidate_id, vessel_name="BEFORE")
+    db_session.add(service)
+    db_session.commit()
+    headers = _auth_header(client, "recruiter_test", "recruit123")
+    response = client.put(f"/candidates/{candidate.candidate_id}/{route}/{service.sea_service_id}",
+                          json={"vessel_name": "AFTER"}, headers=headers)
+    assert response.status_code == 200, response.text
+    assert response.json()["sea_service"]["vessel_name"] == "AFTER"
+    entry = db_session.query(AuditLog).filter_by(action="sea_service.update").one()
+    assert entry.user.username == "recruiter_test"
+
+
+@pytest.mark.parametrize("field", ["date_of_birth", "passport_issue_date"])
+def test_candidate_profile_date_is_persisted_and_can_be_cleared(client, auth_seed, db_session, field):
+    candidate = Candidate(surname="TEST")
+    db_session.add(candidate)
+    db_session.commit()
+    headers = _auth_header(client, "recruiter_test", "recruit123")
+    url = f"/candidates/{candidate.candidate_id}"
+    response = client.put(url, json={field: "1990-08-15"}, headers=headers)
+    assert response.status_code == 200, response.text
+    db_session.expire_all()
+    assert getattr(db_session.get(Candidate, candidate.candidate_id), field) == date(1990, 8, 15)
+    assert client.put(url, json={field: "1990-02-31"}, headers=headers).status_code == 400
+    db_session.expire_all()
+    assert getattr(db_session.get(Candidate, candidate.candidate_id), field) == date(1990, 8, 15)
+    assert client.put(url, json={field: ""}, headers=headers).status_code == 200
+    db_session.expire_all()
+    assert getattr(db_session.get(Candidate, candidate.candidate_id), field) is None
+
+
 def test_upload_endpoint_accepts_file_for_authorized_user(
     client: TestClient,
     auth_seed,
@@ -110,7 +152,7 @@ def test_upload_endpoint_accepts_file_for_authorized_user(
         def parse(self, _file_path: Path) -> dict[str, str]:
             return {"status": "ok"}
 
-    monkeypatch.setattr(main_module, "_get_parser", lambda _path: DummyParser())
+    monkeypatch.setattr(main_module, "parse_application_bounded", lambda path: DummyParser().parse(path))
     monkeypatch.setattr(main_module, "_save_parsed_data", lambda *_args, **_kwargs: 42)
 
     headers = _auth_header(client, "admin_test", "admin123")

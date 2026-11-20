@@ -1,0 +1,15 @@
+[Unit]
+Description=Verified Manisov release %i
+After=docker.service network-online.target
+Requires=docker.service
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+UMask=0077
+EnvironmentFile=/etc/manisov/deploy.env
+Environment=DEPLOY_SHA=%i
+ExecStart=/bin/bash /usr/local/lib/manisov/deploy.sh
+TimeoutStartSec=infinity
+TimeoutStopSec=infinity

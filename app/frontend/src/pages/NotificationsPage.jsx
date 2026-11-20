@@ -1,7 +1,39 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { fetchCandidates, fetchNotifications } from "../api";
 import CrmLayout from "../components/CrmLayout";
+import { formatSubmissionDate } from "../utils/useDocumentUploadInbox.js";
+
+function DocumentUploadNotifications({ inbox }) {
+  if (!inbox.enabled && !inbox.failed) return null;
+  return (
+    <section className="detail-block" aria-labelledby="document-upload-notifications">
+      <h2 id="document-upload-notifications">Документы от моряков ({inbox.items.length})</h2>
+      {inbox.failed && <p role="status">Не удалось обновить список присланных документов.</p>}
+      {!inbox.failed && !inbox.items.length && <p className="empty-row">Нет документов, ожидающих проверки</p>}
+      <ul className="document-upload-notifications">
+        {inbox.items.map((item) => {
+          const date = formatSubmissionDate(item.created_at);
+          return (
+            <li key={item.submission_id}>
+              <div>
+                <strong>{item.status === "received" ? "Присланы новые документы" : "Документы на проверке"}</strong>
+                <div className="muted-text">
+                  {item.candidate_name || `Моряк №${item.candidate_id}`} · Файлов: {item.file_count}
+                  {date && ` · ${date}`}
+                </div>
+              </div>
+              <Link className="crm-upload-notice-link"
+                to={`/candidates/${encodeURIComponent(item.candidate_id)}?documentSubmission=${encodeURIComponent(item.submission_id)}`}>
+                Открыть карточку
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </section>
+  );
+}
 
 function getFocusTarget(item) {
   if (!item?.candidate_id) return null;
@@ -129,9 +161,9 @@ export default function NotificationsPage() {
     <CrmLayout
       title="Уведомления"
       subtitle="Просроченные и скоро истекающие документы и сертификаты по каждому кандидату."
+      renderUploadInbox={(inbox) => <DocumentUploadNotifications inbox={inbox} />}
     >
       <div className="card candidates-card" data-testid="notifications-content">
-
         {error ? <p className="error">{error}</p> : null}
 
         {loading ? (

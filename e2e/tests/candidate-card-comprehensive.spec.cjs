@@ -467,7 +467,7 @@ test.describe("Candidate card — comprehensive", () => {
     await expect(modal.getByText("V1")).toBeVisible({ timeout: 15_000 });
 
     await modal.getByRole("button", { name: "Редактировать" }).first().click();
-    await modal.locator("tbody tr").first().getByRole("textbox").nth(1).fill("V2-saved");
+    await modal.locator("tbody tr").first().locator('input[value="V1"]').fill("V2-saved");
     await modal.getByRole("button", { name: "Сохранить" }).first().click();
     await expect(page.locator("p.error")).toBeHidden({ timeout: 15_000 });
     await expect(modal.getByText("V2-saved")).toBeVisible({ timeout: 15_000 });
@@ -488,7 +488,7 @@ test.describe("Candidate card — comprehensive", () => {
     await expect(modal.getByText("V1")).toBeVisible({ timeout: 15_000 });
 
     await modal.getByRole("button", { name: "Редактировать" }).first().click();
-    await modal.locator("tbody tr").first().getByRole("textbox").nth(1).fill("V2-changed");
+    await modal.locator("tbody tr").first().locator('input[value="V1"]').fill("V2-changed");
     await modal.getByRole("button", { name: "Отмена" }).first().click();
     await expect(modal.getByText("V1")).toBeVisible();
 

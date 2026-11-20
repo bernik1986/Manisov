@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from datetime import date
+import os
 from pathlib import Path
 from typing import Any
 
@@ -109,6 +110,8 @@ def _persist_parsed_payload(parsed: dict[str, Any]) -> int:
 
 @pytest.mark.parametrize("docx_path", PROVIDED_DOCX_FILES)
 def test_provided_docx_extract_and_save(docx_path: Path) -> None:
+    if os.name != "nt" and "\\" in str(docx_path):
+        pytest.skip("External Windows questionnaire is unavailable on this platform")
     if not docx_path.exists():
         pytest.skip(f"File not available: {docx_path}")
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import dayjs from "dayjs";
 import {
@@ -35,6 +35,7 @@ import {
   updateSeaService,
 } from "../api";
 import { useAuth } from "../context/AuthContext";
+import DocumentIntake from "./DocumentIntake";
 import {
   CANONICAL_DOCUMENT_SPECS,
   canonicalDocumentPlaceholderLines,
@@ -744,6 +745,9 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
   const [candidatePhotoUrl, setCandidatePhotoUrl] = useState("");
   const [candidatePhotoBusy, setCandidatePhotoBusy] = useState(false);
   const [candidatePhotoError, setCandidatePhotoError] = useState("");
+  const candidateLoadRequest = useRef(0);
+  const candidateLoadSections = useRef({});
+  const candidateLifetime = useRef(null);
   const [applications, setApplications] = useState([]);
   const [recruitmentDraft, setRecruitmentDraft] = useState({});
   const [recruitmentSaving, setRecruitmentSaving] = useState(false);
@@ -770,10 +774,12 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
   const [attachments, setAttachments] = useState([]);
   const [comments, setComments] = useState([]);
   const [commentDraft, setCommentDraft] = useState("");
+  const [commentReminderDraft, setCommentReminderDraft] = useState("");
   const [commentSaving, setCommentSaving] = useState(false);
   const [attachmentBusy, setAttachmentBusy] = useState({});
   const [attachmentErrors, setAttachmentErrors] = useState({});
   const [loading, setLoading] = useState(true);
+  const [loadFailed, setLoadFailed] = useState(false);
   const [error, setError] = useState("");
   const [popupError, setPopupError] = useState("");
   const [templatesModalOpen, setTemplatesModalOpen] = useState(false);
@@ -1071,7 +1077,13 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
   }
 
   useEffect(() => {
+    const controller = new AbortController();
+    candidateLifetime.current = controller;
     loadCandidate({ showLoader: true });
+    return () => {
+      controller.abort();
+      candidateLoadRequest.current += 1;
+    };
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [candidateId]);
 
@@ -1130,8 +1142,12 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
       );
     } else if (focusTarget.startsWith("flag_document:")) {
       setExpandedSections(new Set([SECTION.FLAG_DOCUMENTS]));
+    } else if (focusTarget === "comments") {
+      setExpandedSections(new Set([SECTION.COMMENTS]));
     }
-  }, [focusTarget, diplomas, tankerDiplomas]);
+    // Initial loads resolve their own target; record refreshes must not switch tabs.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [focusTarget]);
 
   useEffect(() => {
     const first = applications[0];
@@ -1191,7 +1207,17 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
   }, [candidate?.surname, candidate?.first_name]); // eslint-disable-line react-hooks/exhaustive-deps
 
   async function loadCandidate(options = { showLoader: false }) {
+    const signal = candidateLifetime.current?.signal;
+    if (!signal || signal.aborted) return;
+    const request = ++candidateLoadRequest.current;
     const showLoader = options?.showLoader ?? false;
+    const intakeKinds = options?.intakeKinds;
+    const sections = [...(intakeKinds || [
+      "profile", "flag_document", "document", "visa", "certificate", "diploma", "medical",
+    ]), "attachments"];
+    // Partial intake loads supersede only their own sections, not a full-card reload.
+    sections.forEach(kind => { candidateLoadSections.current[kind] = request; });
+    const includesKind = kind => !signal.aborted && candidateLoadSections.current[kind] === request;
     if (showLoader) {
       setLoading(true);
       setCandidatePhoto(null);
@@ -1201,25 +1227,38 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
     setError("");
     try {
       const payload = await fetchCandidateById(candidateId);
-      setCandidate(_withComposedFullNames(mapDateFields(payload.candidate || payload, "ui")));
-      setCandidatePhoto(payload.photo || null);
-      setUkrContractForm(parseUkrContractJson(payload.candidate?.ukr_contract_json));
-      setApplications((payload.applications || []).map((item) => mapDateFields(item, "ui")));
-      setFamilyContacts((payload.family_contacts || []).map((item) => mapDateFields(item, "ui")));
-      setFlagDocuments((payload.flag_documents || []).map((item) => mapDateFields(item, "ui")));
-      setDocuments((payload.documents || []).map((item) => mapDateFields(item, "ui")));
-      setVisas((payload.visas || []).map((item) => mapDateFields(item, "ui")));
-      setCertificates((payload.certificates || []).map((item) => mapDateFields(item, "ui")));
-      setConventionalCertificates((payload.conventional_certificates || []).map((item) => mapDateFields(item, "ui")));
-      setEcdisCertificates((payload.ecdis_certificates || []).map((item) => mapDateFields(item, "ui")));
-      setCompanyCertificates((payload.company_certificates || []).map((item) => mapDateFields(item, "ui")));
-      setBwtsCertificates((payload.bwts_certificates || []).map((item) => mapDateFields(item, "ui")));
-      setDiplomas((payload.diplomas || []).map((item) => mapDateFields(item, "ui")));
-      setTankerDiplomas((payload.tanker_diplomas || []).map((item) => mapDateFields(item, "ui")));
-      setMedicalDocuments((payload.medical_documents || []).map((item) => mapDateFields(item, "ui")));
-      setSeaService(sortSeaServiceRows((payload.sea_service || payload.seaService || []).map((item) => mapDateFields(item, "ui"))));
-      setAttachments(payload.attachments || []);
-      setComments(payload.comments || []);
+      // Ignore responses from a previous card or an older overlapping refresh.
+      if (!sections.some(includesKind)) return;
+      const record = payload.candidate || payload;
+      if (String(record.candidate_id) !== String(candidateId)) throw new Error("Candidate identity mismatch");
+      // Intake owns scan records only; never reinitialize the other editable forms.
+      if (includesKind("profile")) {
+        setCandidate(_withComposedFullNames(mapDateFields(record, "ui")));
+        setCandidatePhoto(payload.photo || null);
+        setUkrContractForm(parseUkrContractJson(record.ukr_contract_json));
+        setApplications((payload.applications || []).map((item) => mapDateFields(item, "ui")));
+        setFamilyContacts((payload.family_contacts || []).map((item) => mapDateFields(item, "ui")));
+        setSeaService(sortSeaServiceRows((payload.sea_service || payload.seaService || []).map((item) => mapDateFields(item, "ui"))));
+        setComments(payload.comments || []);
+        setLoadFailed(false);
+      }
+      if (includesKind("flag_document")) setFlagDocuments((payload.flag_documents || []).map((item) => mapDateFields(item, "ui")));
+      if (includesKind("document")) setDocuments((payload.documents || []).map((item) => mapDateFields(item, "ui")));
+      if (includesKind("visa")) setVisas((payload.visas || []).map((item) => mapDateFields(item, "ui")));
+      if (includesKind("certificate")) {
+        setCertificates((payload.certificates || []).map((item) => mapDateFields(item, "ui")));
+        setConventionalCertificates((payload.conventional_certificates || []).map((item) => mapDateFields(item, "ui")));
+        setEcdisCertificates((payload.ecdis_certificates || []).map((item) => mapDateFields(item, "ui")));
+        setCompanyCertificates((payload.company_certificates || []).map((item) => mapDateFields(item, "ui")));
+        setBwtsCertificates((payload.bwts_certificates || []).map((item) => mapDateFields(item, "ui")));
+      }
+      if (includesKind("diploma")) {
+        setDiplomas((payload.diplomas || []).map((item) => mapDateFields(item, "ui")));
+        setTankerDiplomas((payload.tanker_diplomas || []).map((item) => mapDateFields(item, "ui")));
+      }
+      if (includesKind("medical")) setMedicalDocuments((payload.medical_documents || []).map((item) => mapDateFields(item, "ui")));
+      if (includesKind("attachments")) setAttachments(payload.attachments || []);
+      if (!includesKind("profile")) return;
       if (focusTarget?.startsWith("document:")) {
         const docId = focusTarget.split(":")[1];
         const inVisaSection = (payload.visas || []).some(
@@ -1243,15 +1282,21 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
         setExpandedSections(new Set([SECTION.FLAG_DOCUMENTS]));
       }
     } catch (requestError) {
+      if (!sections.some(includesKind)) return;
+      if (intakeKinds) throw requestError;
+      if (!includesKind("profile")) return;
+      setLoadFailed(true);
       setError("Не удалось загрузить карточку кандидата");
     } finally {
-      if (showLoader) {
+      if (includesKind("profile")) {
         setLoading(false);
       }
     }
   }
 
   async function onSaveProfile() {
+    const signal = candidateLifetime.current?.signal;
+    if (!signal || signal.aborted || loading || loadFailed || savingProfile) return;
     setSavingProfile(true);
     setError("");
     const badProfileDate = firstBadDateInRecord(candidate);
@@ -1271,11 +1316,12 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
         )
       );
       await updateCandidate(candidateId, mapDateFields(payload, "api"));
+      if (signal.aborted) return;
       await loadCandidate();
     } catch (requestError) {
-      setError("Не удалось сохранить персональные данные");
+      if (!signal.aborted) setError("Не удалось сохранить персональные данные");
     } finally {
-      setSavingProfile(false);
+      if (!signal.aborted) setSavingProfile(false);
     }
   }
 
@@ -1314,13 +1360,15 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
     setCommentSaving(true);
     setError("");
     try {
-      const response = await createCandidateComment(candidateId, text);
+      const reminderAt = commentReminderDraft ? new Date(commentReminderDraft).toISOString() : null;
+      const response = await createCandidateComment(candidateId, text, reminderAt);
       if (response?.comment) {
         setComments((prev) => [response.comment, ...prev]);
       } else {
         await loadCandidate({ showLoader: false });
       }
       setCommentDraft("");
+      setCommentReminderDraft("");
     } catch (requestError) {
       const detail = requestError?.response?.data?.detail;
       setError(detail || "Не удалось сохранить комментарий");
@@ -2298,7 +2346,18 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
     return <p>Загрузка карточки кандидата...</p>;
   }
 
+  if (loadFailed) {
+    return (
+      <div data-testid="candidate-load-error">
+        <p className="error" role="alert">{error}</p>
+        <button type="button" onClick={() => loadCandidate({ showLoader: true })}>Повторить загрузку</button>
+      </div>
+    );
+  }
+
   async function onDeleteCandidate() {
+    const signal = candidateLifetime.current?.signal;
+    if (!signal || signal.aborted) return;
     if (
       !window.confirm(
         "Удалить кандидата и все связанные данные (документы, сертификаты, вложения)? Действие нельзя отменить."
@@ -2310,6 +2369,7 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
     setError("");
     try {
       await deleteCandidate(candidateId);
+      if (signal.aborted) return;
       const fromList =
         typeof location.state?.candidatesListPath === "string" ? location.state.candidatesListPath : "/candidates";
       navigate(fromList, { replace: true });
@@ -2400,6 +2460,11 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
           </button>
         ) : null}
       </div>
+
+      {canEditRelations ? (
+        <DocumentIntake key={candidateId} candidateId={candidateId}
+          onSaved={(intakeKinds) => loadCandidate({ intakeKinds })} />
+      ) : null}
 
       <nav className="candidate-section-nav" aria-label="Разделы карточки кандидата" data-testid="candidate-section-nav">
         {CANDIDATE_SECTION_NAV_ITEMS.map(({ id, label }) => (
@@ -2997,6 +3062,29 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
               placeholder="Новый комментарий"
               rows={4}
             />
+            <div className="candidate-comment-reminder-fields">
+              <label>
+                Напомнить в дату и время
+                <input
+                  type="datetime-local"
+                  value={commentReminderDraft}
+                  min={dayjs().add(1, "minute").format("YYYY-MM-DDTHH:mm")}
+                  onChange={(event) => setCommentReminderDraft(event.target.value)}
+                />
+              </label>
+              <button
+                type="button"
+                className="secondary-btn"
+                onClick={() => setCommentReminderDraft(dayjs().add(1, "month").format("YYYY-MM-DDTHH:mm"))}
+              >
+                Через месяц
+              </button>
+              {commentReminderDraft ? (
+                <button type="button" className="secondary-btn" onClick={() => setCommentReminderDraft("")}>
+                  Без напоминания
+                </button>
+              ) : null}
+            </div>
             <button type="button" onClick={onAddComment} disabled={commentSaving || !commentDraft.trim()}>
               {commentSaving ? "Сохранение..." : "Добавить комментарий"}
             </button>
@@ -3010,6 +3098,11 @@ export default function CandidateDetail({ candidateId, focusTarget = "" }) {
               <article key={comment.comment_id} className="candidate-comment-item">
                 <time dateTime={comment.created_at || ""}>{formatCommentDate(comment.created_at)}</time>
                 <p>{comment.comment_text}</p>
+                {comment.reminder_at ? (
+                  <div className={`candidate-comment-reminder-status${comment.reminder_dismissed_at ? " is-closed" : ""}`}>
+                    {comment.reminder_dismissed_at ? "Напоминание закрыто" : "Напомнить"}: {formatCommentDate(comment.reminder_at)}
+                  </div>
+                ) : null}
               </article>
             ))
           )}

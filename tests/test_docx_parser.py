@@ -68,6 +68,8 @@ def _assert_dates_are_valid(payload: dict[str, Any]) -> None:
 
 def test_docx_parser_reshetov_questionnaire() -> None:
     docx_path = Path(os.getenv("DOCX_SAMPLE_PATH", str(DEFAULT_DOCX_PATH)))
+    if os.name != "nt" and "\\" in str(docx_path):
+        pytest.skip("External Windows questionnaire is unavailable on this platform")
     if not docx_path.exists():
         pytest.skip(f"Sample questionnaire not found: {docx_path}")
 

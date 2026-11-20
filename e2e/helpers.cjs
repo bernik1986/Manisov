@@ -3,7 +3,7 @@ const path = require("path");
 const { expect } = require("@playwright/test");
 
 /** Default user from `app.main` _ensure_default_auth_data */
-const ADMIN = { user: "admin", pass: "admin123" };
+const ADMIN = { user: "admin", pass: "admin12345" };
 const API_BASE = process.env.PW_API_BASE || "http://127.0.0.1:8000";
 const API_REQUEST_TIMEOUT = 90_000;
 const E2E_ROOT = path.join(__dirname);
@@ -207,20 +207,12 @@ function sectionPanel(detail, panelId) {
 }
 
 /**
- * Document table row by type input value (not first row — canonical slots come first).
- * @param {import('@playwright/test').Locator} panel
- * @param {string} docType
- */
-/** Canonical document slots always render first (12 rows). Custom rows append after them. */
-const CANONICAL_DOCUMENT_ROW_COUNT = 12;
-
-/**
- * Nth custom document row (0 = first row after canonical slots).
+ * Custom rows have a delete action; the number of canonical slots can change.
  * @param {import('@playwright/test').Locator} panel
  * @param {number} [index]
  */
 function customDocumentRow(panel, index = 0) {
-  return panel.locator("tbody tr").nth(CANONICAL_DOCUMENT_ROW_COUNT + index);
+  return panel.locator('tbody tr:has(button:text-is("Удалить"))').nth(index);
 }
 
 /**

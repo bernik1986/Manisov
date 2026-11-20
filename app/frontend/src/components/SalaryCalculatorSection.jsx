@@ -23,7 +23,9 @@ export default function SalaryCalculatorSection({
   const [form, setForm] = useState(() => createEmptySalaryCalculatorForm());
   const [ranks, setRanks] = useState([]);
   const [errors, setErrors] = useState([]);
-  const [busy, setBusy] = useState(false);
+  const [previewing, setPreviewing] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const busy = previewing || saving;
   const [message, setMessage] = useState("");
   const [lastSavedAt, setLastSavedAt] = useState("");
 
@@ -34,17 +36,19 @@ export default function SalaryCalculatorSection({
 
   const configuredRanks = useMemo(() => new Set(ranks), [ranks]);
 
-  const applyCalculation = useCallback((calc) => {
+  const applyCalculation = useCallback((calc, { preserveInputs = false } = {}) => {
     if (!calc) {
       return;
     }
     const components = calc.components || {};
     setForm((prev) => ({
       ...prev,
-      company_id: calc.company_id != null ? String(calc.company_id) : prev.company_id,
-      rank: calc.rank || prev.rank,
-      total_wage: calc.total_wage != null ? String(calc.total_wage) : prev.total_wage,
-      period_of_employment: calc.period_of_employment ?? prev.period_of_employment,
+      ...(preserveInputs ? {} : {
+        company_id: calc.company_id != null ? String(calc.company_id) : prev.company_id,
+        rank: calc.rank || prev.rank,
+        total_wage: calc.total_wage != null ? String(calc.total_wage) : prev.total_wage,
+        period_of_employment: calc.period_of_employment ?? prev.period_of_employment,
+      }),
       basic_monthly_wage: components.basic_monthly_wage ?? "",
       monthly_overtime: components.monthly_overtime ?? "",
       overtime_rate: components.overtime_rate ?? "",
@@ -64,7 +68,7 @@ export default function SalaryCalculatorSection({
       if (!candidateId || !draft.company_id || !draft.rank) {
         return;
       }
-      setBusy(true);
+      setPreviewing(true);
       setMessage("");
       try {
         const payload = await previewSalaryCalculation(candidateId, {
@@ -73,12 +77,13 @@ export default function SalaryCalculatorSection({
           total_wage: draft.total_wage === "" ? null : Number(draft.total_wage),
           period_of_employment: draft.period_of_employment || null,
         });
-        applyCalculation(payload.calculation);
+        // A preview describes an older draft, not the user's latest input.
+        applyCalculation(payload.calculation, { preserveInputs: true });
       } catch (requestError) {
         const detail = requestError?.response?.data?.detail;
         setErrors(Array.isArray(detail?.errors) ? detail.errors : [String(detail || requestError.message)]);
       } finally {
-        setBusy(false);
+        setPreviewing(false);
       }
     },
     [applyCalculation, candidateId]
@@ -147,7 +152,7 @@ export default function SalaryCalculatorSection({
     if (!canEdit) {
       return;
     }
-    setBusy(true);
+    setSaving(true);
     setMessage("");
     setErrors([]);
     try {
@@ -183,7 +188,7 @@ export default function SalaryCalculatorSection({
         setErrors([String(detail || "Не удалось сохранить расчёт")]);
       }
     } finally {
-      setBusy(false);
+      setSaving(false);
     }
   }
 
@@ -194,7 +199,7 @@ export default function SalaryCalculatorSection({
     if (!window.confirm("Очистить сохранённый расчёт зарплаты для этого кандидата?")) {
       return;
     }
-    setBusy(true);
+    setSaving(true);
     try {
       const payload = await resetSalaryCalculation(candidateId);
       setForm(createEmptySalaryCalculatorForm());
@@ -206,7 +211,7 @@ export default function SalaryCalculatorSection({
     } catch {
       setErrors(["Не удалось сбросить расчёт"]);
     } finally {
-      setBusy(false);
+      setSaving(false);
     }
   }
 
@@ -290,7 +295,7 @@ export default function SalaryCalculatorSection({
             type="text"
             value={form.period_of_employment}
             readOnly={!canEdit}
-            disabled={busy}
+            disabled={saving}
             onChange={(event) =>
               setForm((prev) => ({ ...prev, period_of_employment: event.target.value }))
             }

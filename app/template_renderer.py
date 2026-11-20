@@ -1,17 +1,15 @@
 from __future__ import annotations
 
-from copy import deepcopy
 from pathlib import Path
 from typing import Any
 from uuid import uuid4
 
 from docx.shared import Mm
 from docxtpl import DocxTemplate, InlineImage
-from jinja2 import Environment, StrictUndefined
 from openpyxl import load_workbook
 from openpyxl.drawing.image import Image as ExcelImage
 
-from app.attachment_naming import safe_file_part
+from app.template_security import TemplateEnvironment
 
 DOCX_TEMPLATE_SUFFIXES = frozenset({".docx"})
 EXCEL_TEMPLATE_SUFFIXES = frozenset({".xlsx", ".xlsm"})
@@ -23,7 +21,7 @@ TEMPLATE_MEDIA_TYPES = {
     ".xlsm": "application/vnd.ms-excel.sheet.macroEnabled.12",
 }
 
-_JINJA_ENV = Environment(undefined=StrictUndefined, autoescape=False, finalize=lambda value: "" if value is None else value)
+_JINJA_ENV = TemplateEnvironment()
 
 
 def template_media_type(template_path: Path) -> str:
@@ -35,6 +33,8 @@ def is_renderable_template_path(template_path: Path) -> bool:
 
 
 def build_generated_template_name(candidate: Any, template_stem: str, suffix: str) -> str:
+    from app.attachment_naming import safe_file_part
+
     applications = getattr(candidate, "applications", None) or []
     first_application = applications[0] if applications else None
     raw_position = (
@@ -53,19 +53,24 @@ def build_generated_template_name(candidate: Any, template_stem: str, suffix: st
 
 
 def render_docx_template(template_path: Path, context: dict[str, Any], output_path: Path) -> None:
+    from app.template_runtime import render_template_bounded
+
+    render_template_bounded(template_path, context, output_path)
+
+
+def _render_docx_template(template_path: Path, context: dict[str, Any], output_path: Path, photo_path: Path | None) -> None:
     from app.docx_template_jinja import strip_email_hyperlinks_from_docx
     from app.template_field_values import prepare_docx_template_context
 
     render_context = prepare_docx_template_context(context, template_path)
     doc = DocxTemplate(str(template_path))
-    raw_photo_path = render_context.pop("candidate_photo_path", "")
-    photo_path = Path(str(raw_photo_path)) if raw_photo_path else None
     photo_value: Any = ""
     if photo_path and photo_path.is_file():
         photo_value = InlineImage(doc, str(photo_path), width=Mm(35))
     render_context["candidate_photo"] = photo_value
     render_context["photo"] = photo_value
-    doc.render(render_context)
+    # DOCX historically treats absent optional fields as empty/false.
+    doc.render(render_context, jinja_env=TemplateEnvironment(autoescape=True, strict_undefined=False))
     output_path.parent.mkdir(parents=True, exist_ok=True)
     doc.save(str(output_path))
     strip_email_hyperlinks_from_docx(output_path)
@@ -81,11 +86,17 @@ def _render_excel_text(value: str, context: dict[str, Any]) -> str:
 
 
 def render_excel_template(template_path: Path, context: dict[str, Any], output_path: Path) -> None:
+    from app.template_runtime import render_template_bounded
+
+    render_template_bounded(template_path, context, output_path)
+
+
+def _render_excel_template(template_path: Path, context: dict[str, Any], output_path: Path, photo_path: Path | None) -> None:
     from app.template_field_values import sanitize_email_values_for_template_render, sanitize_records_for_template_render
 
-    render_context = deepcopy(context)
-    raw_photo_path = render_context.pop("candidate_photo_path", "")
-    photo_path = Path(str(raw_photo_path)) if raw_photo_path else None
+    render_context = context
+    render_context["candidate_photo"] = ""
+    render_context["photo"] = ""
     sanitize_email_values_for_template_render(render_context)
     sanitize_records_for_template_render(render_context)
     keep_vba = template_path.suffix.lower() == ".xlsm"

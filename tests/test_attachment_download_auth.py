@@ -4,7 +4,7 @@ from pathlib import Path
 
 import pytest
 from fastapi.testclient import TestClient
-from passlib.context import CryptContext
+import bcrypt
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import StaticPool
@@ -12,9 +12,6 @@ from sqlalchemy.pool import StaticPool
 from app.main import app, get_db_session
 from models.db import Base
 from models.schema import Attachment, Candidate, Document, Role, User
-
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
-
 
 @pytest.fixture()
 def client_with_attachment(tmp_path: Path):
@@ -47,7 +44,7 @@ def client_with_attachment(tmp_path: Path):
         session.add(
             User(
                 username="dl_admin",
-                password_hash=pwd_context.hash("admin123"),
+                password_hash=bcrypt.hashpw(b"admin123", bcrypt.gensalt()).decode("ascii"),
                 role_id=role.role_id,
                 is_active=True,
             )

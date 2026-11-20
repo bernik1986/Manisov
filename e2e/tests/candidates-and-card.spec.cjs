@@ -83,25 +83,110 @@ test.describe("Seamens list: filters and table", () => {
     await expect(page).toHaveURL(/[?&]q=NonexistentSurnameE2E/, { timeout: 8_000 });
   });
 
-  test("pagination: next page when available", async ({ page }, testInfo) => {
+  test("pagination: next page when available", async ({ page }) => {
+    const { API_BASE, getAuthToken, apiDeleteCandidate, uniqueUser } = require("../helpers.cjs");
+    test.setTimeout(120_000);
+    page.setDefaultTimeout(15_000);
     await loginAsAdmin(page);
-    await page.goto("/candidates");
-    await waitForCandidateListReady(page);
-    const next = page.getByLabel("Следующая страница");
-    if ((await next.count()) === 0) {
-      testInfo.skip(true, "Pagination hidden when total_pages <= 1");
-      return;
+    const headers = { Authorization: `Bearer ${await getAuthToken(page)}` };
+    const prefix = uniqueUser("E2EPAGE").replace(/_/g, "").toUpperCase();
+    const candidateIds = [];
+    const surnames = [];
+    try {
+      for (let index = 1; index <= 21; index += 1) {
+        const created = await page.request.post(`${API_BASE}/candidates`, { headers });
+        expect(created.ok(), await created.text()).toBeTruthy();
+        const { candidate_id: id } = await created.json();
+        expect(id).toBeTruthy();
+        candidateIds.push(id);
+        const surname = `${prefix}${String(index).padStart(2, "0")}`;
+        const updated = await page.request.put(`${API_BASE}/candidates/${id}`, {
+          headers,
+          data: { surname, first_name: "PAGINATION" },
+        });
+        expect(updated.ok(), await updated.text()).toBeTruthy();
+        surnames.unshift(surname);
+      }
+
+      await page.goto(`/candidates?q=${encodeURIComponent(prefix)}`);
+      await waitForCandidateListReady(page);
+      const section = page.getByTestId("candidate-list-section");
+      const rows = section.locator("tbody tr");
+      const names = rows.locator("td:first-child");
+      const next = page.getByLabel("Следующая страница");
+      const previous = page.getByLabel("Предыдущая страница");
+      await expect(section.locator(".candidate-list-range")).toHaveText("Показано 1–20 из 21");
+      await expect(rows).toHaveCount(20);
+      await expect(names).toHaveText(surnames.slice(0, 20));
+      await expect(previous).toBeDisabled();
+      await expect(next).toBeEnabled();
+      await next.click();
+      await expect(page).toHaveURL(/[?&]page=2(?:&|$)/);
+      expect(new URL(page.url()).searchParams.get("q")).toBe(prefix);
+      await expect(section.locator(".candidate-list-range")).toHaveText("Показано 21–21 из 21");
+      await expect(rows).toHaveCount(1);
+      await expect(names).toHaveText(surnames.slice(20));
+      await expect(next).toBeDisabled();
+      await expect(previous).toBeEnabled();
+      await previous.click();
+      await expect(names).toHaveText(surnames.slice(0, 20));
+      expect(new URL(page.url()).searchParams.get("page") || "1").toBe("1");
+    } finally {
+      const cleanupErrors = [];
+      for (const id of candidateIds) {
+        try {
+          const deleted = await apiDeleteCandidate(page, id);
+          expect(deleted.ok(), await deleted.text()).toBeTruthy();
+        } catch (error) {
+          cleanupErrors.push(`candidate ${id}: ${error.message}`);
+        }
+      }
+      expect.soft(cleanupErrors, "Pagination fixture cleanup").toEqual([]);
+      const remaining = await page.request.get(`${API_BASE}/candidates/paged`, {
+        headers, params: { q: prefix },
+      });
+      expect(remaining.ok(), await remaining.text()).toBeTruthy();
+      expect((await remaining.json()).total).toBe(0);
     }
-    if (!(await next.isEnabled())) {
-      testInfo.skip(true, "Need more than 20 candidates to test page 2");
-      return;
-    }
-    await next.click();
-    await expect(page).toHaveURL(/page=2/);
   });
 });
 
 test.describe("Candidate card: create, generate modal, focus param, delete", () => {
+  test("a late initial card response cannot erase a newly uploaded photo", async ({ page }) => {
+    await loginAsAdmin(page);
+    let requests = 0;
+    let release;
+    let delivered;
+    const held = new Promise((resolve) => { release = resolve; });
+    const completed = new Promise((resolve) => { delivered = resolve; });
+    await page.route(/\/api\/candidates\/\d+$/, async (route) => {
+      if (route.request().method() !== "GET" || ++requests !== 1) return route.continue();
+      const response = await route.fetch();
+      await held;
+      await route.fulfill({ response });
+      delivered();
+    });
+    try {
+      const detail = await startEmptyCandidateDetail(page);
+      expect(requests).toBeGreaterThan(1);
+      const png = Buffer.from(
+        "iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAIAAAD91JpzAAAAFElEQVR4nGP4z8DAwMDAxMDAwMDAAAANHQEDasKb6QAAAABJRU5ErkJggg==",
+        "base64"
+      );
+      await detail.getByTestId("candidate-photo-upload").locator('input[type="file"]').setInputFiles({
+        name: "candidate.png", mimeType: "image/png", buffer: png,
+      });
+      await expect(detail.getByAltText("Фото кандидата")).toBeVisible();
+      release();
+      await completed;
+      await page.evaluate(() => new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve))));
+      await expect(detail.getByAltText("Фото кандидата")).toBeVisible();
+      await deleteCurrentCandidate(page);
+    } finally {
+      release();
+    }
+  });
+
   test("candidate photo preview is available in Podacha", async ({ page }) => {
     await loginAsAdmin(page);
     const detail = await startEmptyCandidateDetail(page);

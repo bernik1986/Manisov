@@ -85,6 +85,38 @@ main {
   font-weight: 600;
 }
 
+.crm-upload-notice-count {
+  display: inline-block;
+  margin-inline-start: 8px;
+  padding: 1px 7px;
+  border-radius: 999px;
+  background: #1e40af;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.crm-upload-notice-link {
+  color: #1e40af;
+  font-weight: 600;
+}
+
+.document-upload-notifications {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.document-upload-notifications li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding: 10px 0;
+  border-top: 1px solid #e2e8f0;
+}
+
 .crm-nav-link.active {
   border-color: #bfdbfe;
   background: #eff6ff;
@@ -147,6 +179,81 @@ main {
 .crm-content-body {
   padding: 16px 20px 20px;
   overflow: auto;
+}
+
+.comment-reminder-alerts {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 1000;
+  width: min(390px, calc(100vw - 36px));
+  max-height: calc(100vh - 36px);
+  overflow-y: auto;
+  display: grid;
+  gap: 10px;
+}
+
+.comment-reminder-alert {
+  position: relative;
+  display: grid;
+  gap: 7px;
+  padding: 16px 42px 16px 16px;
+  border: 1px solid #f59e0b;
+  border-left-width: 5px;
+  border-radius: 12px;
+  background: #fffbeb;
+  box-shadow: 0 16px 36px rgb(15 23 42 / 20%);
+}
+
+.comment-reminder-alert p,
+.comment-reminder-alert strong {
+  margin: 0;
+  overflow-wrap: anywhere;
+}
+
+.comment-reminder-alert time,
+.comment-reminder-alert small {
+  color: #92400e;
+  font-size: 12px;
+}
+
+.comment-reminder-label {
+  color: #b45309;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.comment-reminder-close {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #78350f;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.comment-reminder-close:hover {
+  background: #fef3c7;
+}
+
+.comment-reminder-open {
+  justify-self: start;
+  padding: 6px 9px;
+  border: 1px solid #f59e0b;
+  border-radius: 7px;
+  background: #fff;
+  color: #92400e;
+  font-weight: 700;
+  cursor: pointer;
 }
 
 .crm-kpi-grid {
@@ -926,6 +1033,40 @@ button:hover {
 
 .candidate-comments-form button {
   align-self: flex-start;
+}
+
+.candidate-comment-reminder-fields {
+  display: flex;
+  align-items: end;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.candidate-comment-reminder-fields label {
+  display: grid;
+  gap: 5px;
+  color: #475569;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.candidate-comment-reminder-fields input {
+  min-height: 38px;
+  padding: 7px 9px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.candidate-comment-reminder-status {
+  margin-top: 8px;
+  color: #b45309;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.candidate-comment-reminder-status.is-closed {
+  color: #64748b;
 }
 
 .candidate-comments-list {

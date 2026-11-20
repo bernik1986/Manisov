@@ -1,4 +1,5 @@
 import axios from "axios";
+import { setReviewDraftSession } from "./utils/documentIntakeDrafts.js";
 
 function resolveApiBaseUrl() {
   const configured = import.meta.env.VITE_API_BASE_URL;
@@ -17,15 +18,12 @@ export const apiClient = axios.create({
 const DOCUMENT_GENERATION_TIMEOUT_MS = 120000;
 
 const TOKEN_REFRESH_THRESHOLD_SECONDS = 5 * 60;
-let refreshPromise = null;
-
-function clearAuthAndRedirectToLogin() {
-  localStorage.removeItem("authToken");
-  localStorage.removeItem("authUser");
-  if (typeof window !== "undefined" && window.location.pathname !== "/login") {
-    window.location.assign("/login");
-  }
-}
+const AUTH_GENERATION_KEY = "authSessionGeneration";
+const authListeners = new Set();
+let authSnapshot = null;
+let authGeneration = 0;
+let sessionController = new AbortController();
+let refreshJob = null;
 
 function decodeJwtPayload(token) {
   try {
@@ -40,6 +38,17 @@ function decodeJwtPayload(token) {
   }
 }
 
+export function reviewDraftSession(token) {
+  const claims = decodeJwtPayload(token);
+  if (!claims) return "";
+  // The local marker also distinguishes real logins using sidless test tokens.
+  // Neither exp nor iat is a login identity: both may change during refresh.
+  return JSON.stringify([
+    claims.sub ?? null, claims.sid ?? null, claims.ver ?? null,
+    localStorage.getItem(AUTH_GENERATION_KEY) || "",
+  ]);
+}
+
 function getSecondsToExpiry(token) {
   const payload = decodeJwtPayload(token);
   const exp = Number(payload?.exp);
@@ -47,11 +56,97 @@ function getSecondsToExpiry(token) {
   return exp - Math.floor(Date.now() / 1000);
 }
 
-async function refreshAccessToken(currentToken) {
-  if (refreshPromise) {
-    return refreshPromise;
+function validCredentials(token, user, allowExpired = false) {
+  const claims = decodeJwtPayload(token);
+  const secondsToExpiry = getSecondsToExpiry(token);
+  return Boolean(claims && Number.isFinite(secondsToExpiry) &&
+    (secondsToExpiry > 0 || allowExpired) && user &&
+    typeof user === "object" && !Array.isArray(user) &&
+    (user.user_id != null || user.username) &&
+    (claims.sub == null || user.user_id == null || String(claims.sub) === String(user.user_id)));
+}
+
+function synchronizeAuth() {
+  let token = localStorage.getItem("authToken");
+  let user;
+  try {
+    user = JSON.parse(localStorage.getItem("authUser") || "null");
+  } catch {
+    user = null;
   }
-  refreshPromise = apiClient
+  // A renewal already accepted by the server may arrive after the old expiry.
+  // Storage identity/role/generation changes still invalidate that pending job.
+  const renewing = refreshJob?.generation === authGeneration &&
+    refreshJob.token === token && authSnapshot?.token === token;
+  if (!validCredentials(token, user, renewing)) {
+    token = null;
+    user = null;
+  }
+  const session = token ? reviewDraftSession(token) : "";
+  const revision = JSON.stringify([
+    session, user?.user_id ?? user?.username ?? null, user?.role ?? null,
+    localStorage.getItem(AUTH_GENERATION_KEY),
+  ]);
+  const identityChanged = authSnapshot && authSnapshot.revision !== revision;
+  if (identityChanged) {
+    authGeneration += 1;
+    sessionController.abort();
+    sessionController = new AbortController();
+    refreshJob = null;
+  }
+  if (!authSnapshot || identityChanged || authSnapshot.token !== token ||
+      JSON.stringify(authSnapshot.user) !== JSON.stringify(user)) {
+    authSnapshot = { token, user, session, revision };
+    setReviewDraftSession(session);
+    authListeners.forEach(listener => listener());
+  }
+  return authSnapshot;
+}
+
+export function getAuthSnapshot() {
+  return authSnapshot || synchronizeAuth();
+}
+
+export function subscribeAuth(listener) {
+  authListeners.add(listener);
+  synchronizeAuth();
+  return () => authListeners.delete(listener);
+}
+
+function newSessionGeneration() {
+  return Array.from(crypto.getRandomValues(new Uint8Array(16)), byte => byte.toString(16).padStart(2, "0")).join("");
+}
+
+export function logout() {
+  localStorage.removeItem("authToken");
+  localStorage.removeItem("authUser");
+  // Always publish logout, including when another tab has a pending login.
+  localStorage.setItem(AUTH_GENERATION_KEY, newSessionGeneration());
+  synchronizeAuth();
+}
+
+if (typeof window !== "undefined") {
+  window.addEventListener("storage", event => {
+    if (event.storageArea && event.storageArea !== localStorage) return;
+    if (event.key == null || ["authToken", "authUser", AUTH_GENERATION_KEY].includes(event.key)) {
+      synchronizeAuth();
+    }
+  });
+  window.addEventListener("focus", synchronizeAuth);
+}
+
+function assertCurrentRequest(config) {
+  synchronizeAuth();
+  if (config._authGeneration !== authGeneration) {
+    throw new axios.CanceledError("Authentication session changed", config);
+  }
+}
+
+async function refreshAccessToken(currentToken, generation) {
+  if (refreshJob?.generation === generation) return refreshJob.promise;
+  const job = { generation, token: currentToken };
+  refreshJob = job;
+  job.promise = apiClient
     .post(
       "/auth/refresh",
       {},
@@ -61,72 +156,115 @@ async function refreshAccessToken(currentToken) {
       }
     )
     .then((response) => {
+      assertCurrentRequest(response.config);
+      // A different tab may already have refreshed this same login session.
+      if (authSnapshot.token !== currentToken) return authSnapshot.token;
       const newToken = response?.data?.access_token;
-      if (newToken) {
-        localStorage.setItem("authToken", newToken);
+      const newUser = response?.data?.user || authSnapshot.user;
+      if (!validCredentials(newToken, newUser) ||
+          reviewDraftSession(newToken) !== reviewDraftSession(currentToken)) {
+        throw new Error("Invalid refresh session");
       }
-      if (response?.data?.user) {
-        localStorage.setItem("authUser", JSON.stringify(response.data.user));
-      }
-      return newToken || currentToken;
+      localStorage.setItem("authUser", JSON.stringify(newUser));
+      localStorage.setItem("authToken", newToken);
+      synchronizeAuth();
+      return newToken;
     })
     .catch((error) => {
-      clearAuthAndRedirectToLogin();
+      synchronizeAuth();
+      if (generation !== authGeneration) {
+        throw new axios.CanceledError("Authentication session changed", error.config);
+      }
+      if (authSnapshot.token !== currentToken) return authSnapshot.token;
+      logout();
       throw error;
     })
     .finally(() => {
-      refreshPromise = null;
+      if (refreshJob === job) refreshJob = null;
     });
-  return refreshPromise;
+  return job.promise;
 }
 
-apiClient.interceptors.request.use(async (config) => {
-  const token = localStorage.getItem("authToken");
-  if (!token) {
-    return config;
-  }
+apiClient.interceptors.request.use((config) => {
+  const { token } = synchronizeAuth();
+  config._authGeneration = authGeneration;
+  config._authToken = token;
+  const sessionSignal = sessionController.signal;
   const requestUrl = String(config?.url || "");
+  const isLoginRequest = requestUrl.includes("/auth/login");
   const skipRefresh =
     Boolean(config?._skipAuthRefresh) ||
-    requestUrl.includes("/auth/login") ||
+    isLoginRequest ||
     requestUrl.includes("/auth/refresh");
 
-  let effectiveToken = token;
-  const secondsToExpiry = getSecondsToExpiry(token);
-  const tokenIsNearExpiry =
-    secondsToExpiry !== null &&
-    secondsToExpiry > 0 &&
-    secondsToExpiry <= TOKEN_REFRESH_THRESHOLD_SECONDS;
-  if (!skipRefresh && tokenIsNearExpiry) {
-    effectiveToken = await refreshAccessToken(token);
-  }
+  // Capture identity synchronously at invocation, before any refresh can await.
+  const adapter = axios.getAdapter(config.adapter);
+  config.adapter = async request => {
+    assertCurrentRequest(request);
+    const secondsToExpiry = getSecondsToExpiry(token);
+    if (token && !skipRefresh && (refreshJob?.generation === request._authGeneration ||
+        (secondsToExpiry > 0 && secondsToExpiry <= TOKEN_REFRESH_THRESHOLD_SECONDS))) {
+      await refreshAccessToken(token, request._authGeneration);
+    }
+    assertCurrentRequest(request);
+    const effectiveToken = isLoginRequest ? null : authSnapshot.token;
+    request._authToken = effectiveToken;
+    if (effectiveToken) request.headers.set("Authorization", `Bearer ${effectiveToken}`);
+    else request.headers.delete("Authorization");
 
-  config.headers = config.headers || {};
-  config.headers.Authorization = `Bearer ${effectiveToken}`;
+    const controller = new AbortController();
+    const signals = [sessionSignal, request.signal].filter(Boolean);
+    const abort = () => controller.abort();
+    signals.forEach(signal => {
+      signal.addEventListener("abort", abort, { once: true });
+      if (signal.aborted) abort();
+    });
+    request.signal = controller.signal;
+    try {
+      return await adapter(request);
+    } finally {
+      signals.forEach(signal => signal.removeEventListener("abort", abort));
+    }
+  };
   return config;
-});
+}, error => { throw error; }, { synchronous: true });
 
 apiClient.interceptors.response.use(
-  (response) => response,
+  (response) => {
+    assertCurrentRequest(response.config);
+    return response;
+  },
   (error) => {
+    if (error.config) {
+      try {
+        assertCurrentRequest(error.config);
+      } catch (staleError) {
+        return Promise.reject(staleError);
+      }
+    }
     const status = error?.response?.status;
     const requestUrl = String(error?.config?.url || "");
-    const detail = String(error?.response?.data?.detail || "").toLowerCase();
     const isLoginRequest = requestUrl.includes("/auth/login");
     const isRefreshRequest = requestUrl.includes("/auth/refresh");
-    const isAuthError =
-      detail.includes("invalid or expired token") ||
-      detail.includes("authentication required") ||
-      detail.includes("user is inactive");
-    if (status === 401 && isAuthError && !isLoginRequest && !isRefreshRequest) {
-      clearAuthAndRedirectToLogin();
+    if (status === 401 && !isLoginRequest && !isRefreshRequest &&
+        error.config?._authToken && error.config._authToken === authSnapshot.token) {
+      logout();
     }
     return Promise.reject(error);
   }
 );
 
 export async function login(payload) {
+  logout();
   const response = await apiClient.post("/auth/login", payload);
+  assertCurrentRequest(response.config);
+  if (!validCredentials(response.data?.access_token, response.data?.user)) {
+    throw new Error("Invalid login response");
+  }
+  localStorage.setItem("authUser", JSON.stringify(response.data.user));
+  localStorage.setItem("authToken", response.data.access_token);
+  localStorage.setItem(AUTH_GENERATION_KEY, newSessionGeneration());
+  synchronizeAuth();
   return response.data;
 }
 
@@ -179,6 +317,16 @@ export async function fetchDashboardSummary() {
 
 export async function markNotificationSent(notificationId, sent = true) {
   const response = await apiClient.put(`/notifications/${notificationId}`, { sent });
+  return response.data;
+}
+
+export async function fetchDueCommentReminders() {
+  const response = await apiClient.get("/comment-reminders/due");
+  return response.data;
+}
+
+export async function dismissCommentReminder(commentId) {
+  const response = await apiClient.put(`/comment-reminders/${commentId}/dismiss`, { dismissed: true });
   return response.data;
 }
 
@@ -251,9 +399,10 @@ export async function deleteCandidatePhoto(candidateId) {
   return response.data;
 }
 
-export async function createCandidateComment(candidateId, commentText) {
+export async function createCandidateComment(candidateId, commentText, reminderAt = null) {
   const response = await apiClient.post(`/candidates/${candidateId}/comments`, {
     comment_text: commentText,
+    reminder_at: reminderAt,
   });
   return response.data;
 }
@@ -375,6 +524,7 @@ export async function uploadCvFile(file) {
   const formData = new FormData();
   formData.append("file", file);
   const response = await apiClient.post("/upload_cv", formData, {
+    timeout: 120000,
     timeout: 120000,
     headers: {
       "Content-Type": "multipart/form-data",

@@ -186,6 +186,19 @@ def build_submission_zip(
 
     entries: list[tuple[str, bytes]] = []
     used_names: set[str] = set()
+    max_input_bytes = 80 * 1024 * 1024
+    input_bytes = 0
+
+    def append_file(name: str, path: Path) -> None:
+        nonlocal input_bytes
+        size = path.stat().st_size
+        if input_bytes + size > max_input_bytes:
+            raise HTTPException(413, "Selected submission files exceed the processing limit")
+        content = path.read_bytes()
+        if len(content) + input_bytes > max_input_bytes:
+            raise HTTPException(413, "Selected submission files exceed the processing limit")
+        input_bytes += len(content)
+        entries.append((unique_zip_name(name), content))
 
     def unique_zip_name(name: str) -> str:
         base = safe_scan_part(Path(name).stem) or "file"
@@ -202,7 +215,7 @@ def build_submission_zip(
                 return alt
             idx += 1
 
-    for template_file_id in template_file_ids:
+    for template_file_id in dict.fromkeys(template_file_ids):
         template_path, template_file_name = resolve_template_path(
             db_session,
             templates_dir=templates_dir,
@@ -211,8 +224,11 @@ def build_submission_zip(
         )
         output_name = build_generated_template_name(candidate, Path(template_file_name).stem, template_path.suffix)
         output_path = generated_dir / output_name
-        render_template_to_file(template_path, base_context, output_path)
-        entries.append((unique_zip_name(output_name), output_path.read_bytes()))
+        try:
+            render_template_to_file(template_path, base_context, output_path)
+            append_file(output_name, output_path)
+        finally:
+            output_path.unlink(missing_ok=True)
 
     if attachment_ids:
         rows = (
@@ -235,7 +251,7 @@ def build_submission_zip(
             if not file_path.exists():
                 raise HTTPException(status_code=404, detail=f"Attachment file missing: {row.file_name}")
             display_name = attachment_download_filename(db_session, candidate, row)
-            entries.append((unique_zip_name(display_name), file_path.read_bytes()))
+            append_file(display_name, file_path)
 
     if include_candidate_photo:
         photo = find_candidate_photo(candidate.attachments)
@@ -246,7 +262,7 @@ def build_submission_zip(
             raise HTTPException(status_code=404, detail="Candidate photo file is missing")
         raw_name_parts = ["PHOTO", candidate.surname or "candidate", candidate.first_name or ""]
         photo_name = "_".join(safe_file_part(part) for part in raw_name_parts if str(part).strip())
-        entries.append((unique_zip_name(f"{photo_name}.jpg"), photo_path.read_bytes()))
+        append_file(f"{photo_name}.jpg", photo_path)
 
     try:
         zip_bytes = build_size_limited_submission_zip(entries, max_bytes=MAX_SUBMISSION_ZIP_BYTES)

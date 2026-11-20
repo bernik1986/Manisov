@@ -93,34 +93,98 @@ test.describe("PODACHA, downloads, scan preview, Ukrainian contract", () => {
   });
 
   test("generate documents: select template and download", async ({ page }) => {
+    const { execFileSync } = require("node:child_process");
+    const fs = require("node:fs");
+    const { API_BASE, getAuthToken, uniqueUser } = require("../helpers.cjs");
+    page.setDefaultTimeout(15_000);
     await loginAsAdmin(page);
-    const detail = await startEmptyCandidateDetail(page);
-    await candidateSectionNav(page).getByRole("button", { name: "Персональные данные" }).click();
-    await detail.getByLabel("Фамилия").fill(`E2E-Gen-${Date.now()}`);
-    await detail.getByRole("button", { name: "Сохранить профиль" }).click();
-    await expect(detail.locator("p.error")).toBeHidden({ timeout: 15_000 });
+    const headers = { Authorization: `Bearer ${await getAuthToken(page)}` };
+    const name = uniqueUser("E2EGEN").toUpperCase();
+    const fileName = `${name}.docx`;
+    const cleanupUrls = [];
+    let downloadPath;
+    try {
+      const folderResponse = await page.request.post(`${API_BASE}/templates-manager/folders`, {
+        headers, data: { name },
+      });
+      expect(folderResponse.ok(), await folderResponse.text()).toBeTruthy();
+      const { folder } = await folderResponse.json();
+      expect(folder.folder_id).toBeTruthy();
+      cleanupUrls.push(`${API_BASE}/templates-manager/folders/${folder.folder_id}`);
 
-    await page.getByTestId("btn-generate-documents").click();
-    await expect(page.getByRole("heading", { name: "Выберите шаблоны для генерации" })).toBeVisible();
-    await expect(page.getByText("Загрузка шаблонов...")).toBeHidden({ timeout: 30_000 });
+      const template = execFileSync("python", ["-c", [
+        "import sys",
+        "from io import BytesIO",
+        "from docx import Document",
+        "doc = Document()",
+        "doc.add_paragraph('Synthetic generator fixture: {{ surname }} / {{ first_name }}')",
+        "output = BytesIO()",
+        "doc.save(output)",
+        "sys.stdout.buffer.write(output.getvalue())",
+      ].join("\n")], { timeout: 30_000, windowsHide: true });
+      const upload = await page.request.post(`${API_BASE}/templates-manager/files`, {
+        headers,
+        multipart: {
+          folder_id: String(folder.folder_id),
+          file: {
+            name: fileName,
+            mimeType: "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+            buffer: template,
+          },
+        },
+      });
+      expect(upload.ok(), await upload.text()).toBeTruthy();
+      const { file } = await upload.json();
+      expect(file).toMatchObject({ file_name: fileName, folder_id: folder.folder_id });
+      expect(file.template_file_id).toBeTruthy();
 
-    const checkboxes = page.locator(".templates-select-item input[type='checkbox']");
-    const count = await checkboxes.count();
-    if (count === 0) {
-      test.skip(true, "No templates in manager");
-      return;
+      const created = await page.request.post(`${API_BASE}/candidates`, { headers });
+      expect(created.ok(), await created.text()).toBeTruthy();
+      const { candidate_id: candidateId } = await created.json();
+      expect(candidateId).toBeTruthy();
+      cleanupUrls.push(`${API_BASE}/candidates/${candidateId}`);
+      const updated = await page.request.put(`${API_BASE}/candidates/${candidateId}`, {
+        headers, data: { surname: name, first_name: "SYNTHETIC" },
+      });
+      expect(updated.ok(), await updated.text()).toBeTruthy();
+      await page.goto(`/candidates/${candidateId}`);
+      await expect(page.getByTestId("candidate-detail")).toBeVisible();
+      await page.getByTestId("btn-generate-documents").click();
+      const heading = page.getByRole("heading", { name: "Выберите шаблоны для генерации" });
+      await expect(heading).toBeVisible();
+      await expect(page.getByText("Загрузка шаблонов...")).toBeHidden({ timeout: 30_000 });
+      await page.locator(".templates-select-modal").getByRole("button", { name }).click();
+      const templateItem = page.locator(".templates-select-item").filter({ hasText: fileName });
+      await expect(templateItem).toHaveCount(1);
+      await templateItem.getByRole("checkbox").check();
+      await expect(templateItem.getByRole("checkbox")).toBeChecked();
+      const generate = page.getByRole("button", { name: "Сгенерировать выбранные (1)", exact: true });
+      await expect(generate).toBeEnabled();
+
+      const downloaded = await expectDownloadAfter(page, () => generate.click());
+      downloadPath = downloaded.savePath;
+      expect(downloaded.fileName).toMatch(/\.docx$/i);
+      expect(await downloaded.download.failure()).toBeNull();
+      const renderedText = execFileSync("python", ["-c", [
+        "import json, sys",
+        "from docx import Document",
+        "print(json.dumps([p.text for p in Document(sys.argv[1]).paragraphs]))",
+      ].join("\n"), downloadPath], { encoding: "utf8", timeout: 30_000, windowsHide: true });
+      expect(JSON.parse(renderedText)).toEqual([`Synthetic generator fixture: ${name} / SYNTHETIC`]);
+      await expect(heading).toBeHidden({ timeout: 15_000 });
+    } finally {
+      const cleanupErrors = [];
+      for (const url of cleanupUrls.reverse()) {
+        try {
+          const deleted = await page.request.delete(url, { headers });
+          expect(deleted.ok(), await deleted.text()).toBeTruthy();
+        } catch (error) {
+          cleanupErrors.push(`${url}: ${error.message}`);
+        }
+      }
+      if (downloadPath) fs.rmSync(downloadPath, { force: true });
+      expect.soft(cleanupErrors, "Generator fixture cleanup").toEqual([]);
     }
-    await checkboxes.first().check();
-
-    const { fileName } = await expectDownloadAfter(page, async () => {
-      await page.getByRole("button", { name: /Сгенерировать выбранные/ }).click();
-    });
-    expect(fileName.length).toBeGreaterThan(3);
-    await expect(page.getByRole("heading", { name: "Выберите шаблоны для генерации" })).toBeHidden({
-      timeout: 15_000,
-    });
-
-    await deleteCurrentCandidate(page);
   });
 
 });

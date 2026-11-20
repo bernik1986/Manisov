@@ -4,10 +4,11 @@ from __future__ import annotations
 
 import re
 import shutil
-import tempfile
 from pathlib import Path
 from zipfile import ZIP_DEFLATED, ZipFile
 import xml.etree.ElementTree as ET
+
+from app.template_security import validate_ooxml_archive
 
 # docxtpl: empty number must stay empty even if template uses default(cert.certificate_code).
 _JINJA_NUMBER_FALLBACK_RE = re.compile(
@@ -43,6 +44,7 @@ def patch_docx_number_jinja(xml: str) -> tuple[str, int]:
 
 def patch_docx_file(path: Path) -> int:
     """Patch word/document.xml inside a DOCX. Returns number of replacements."""
+    validate_ooxml_archive(path)
     with ZipFile(path, "r") as zin:
         names = zin.namelist()
         chunks = {name: zin.read(name) for name in names}
@@ -170,6 +172,7 @@ def _is_word_content_xml(name: str) -> bool:
 
 def strip_email_hyperlinks_from_docx(path: Path) -> int:
     """Make rendered email placeholders plain text, removing mailto hyperlinks."""
+    validate_ooxml_archive(path)
     with ZipFile(path, "r") as zin:
         names = zin.namelist()
         chunks = {name: zin.read(name) for name in names}

@@ -1,53 +1,122 @@
-name: Optional VPS Deploy
+name: Release Verification and Deploy
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request:
   workflow_dispatch:
 
+permissions:
+  contents: read
+
 concurrency:
-  group: production-deploy
-  cancel-in-progress: true
+  group: production-deploy-${{ github.event_name == 'pull_request' && github.ref || 'main' }}
+  cancel-in-progress: false
 
 jobs:
-  deploy:
+  verify:
+    name: verify
     runs-on: ubuntu-latest
-
+    timeout-minutes: 45
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: manisov_hardening_test
+          POSTGRES_USER: synthetic_test
+          POSTGRES_PASSWORD: synthetic-ci-only
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd "pg_isready -U synthetic_test -d manisov_hardening_test"
+          --health-interval 5s --health-timeout 5s --health-retries 10
+    env:
+      MANISOV_ENV: test
+      AUTO_ALEMBIC_ON_STARTUP: "0"
+      JWT_SECRET_KEY: ci-only-0123456789abcdef-0123456789abcdef
+      DEFAULT_ADMIN_USERNAME: admin
+      DEFAULT_ADMIN_PASSWORD: admin12345
     steps:
-      - name: Check SSH deploy secrets
-        id: deploy_secrets
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - name: Install pinned runtime and test dependencies
+        run: |
+          python -m pip install --no-deps pip==26.2 setuptools==79.0.1 wheel==0.46.3 packaging==26.3
+          python -m pip install --no-build-isolation --no-deps -r requirements-test.txt
+          python -m pip check
+          sudo apt-get update
+          sudo apt-get install -y tesseract-ocr tesseract-ocr-eng tesseract-ocr-rus tesseract-ocr-ukr
+      - name: Deployment and migration safety tests
+        run: |
+          for script in deploy.sh scripts/restore_release.sh scripts/check_release_container.sh scripts/deploy_timer.sh scripts/install_deployment.sh; do bash -n "$script"; done
+          python -m unittest discover -s scripts/deployment_tests -v
+      - name: Backend regression
+        run: |
+          mkdir -p templates/manager_files
+          env -u ENABLE_TEST_ENDPOINTS python -m pytest -q
+      - name: PostgreSQL migrations and competing scan approvals
+        env:
+          DATABASE_URL: postgresql+psycopg2://synthetic_test:synthetic-ci-only@127.0.0.1:5432/manisov_hardening_test
+          MANISOV_ISOLATED_DATABASE: "1"
+        run: python scripts/check_postgresql_intake.py
+      - name: Frontend reproducible install and build
+        run: |
+          npm ci
+          npm ci --prefix app/frontend
+          npm audit --prefix app/frontend --audit-level=moderate
+          npm run build --prefix app/frontend
+          npx playwright install --with-deps chromium
+      - name: Browser regression
+        run: |
+          npx playwright test --reporter=list
+          npx playwright test --config app/frontend/tests/document-intake.config.cjs
+          npx playwright test --config app/frontend/tests/auth-session.config.cjs
+      - name: Build and check production image
+        run: |
+          docker build -t manisov-ci:${{ github.sha }} .
+          bash scripts/check_release_container.sh manisov-ci:${{ github.sha }}
+          git archive HEAD:app/frontend | docker build -t manisov-frontend-ci:${{ github.sha }} -
+
+  deploy:
+    needs: verify
+    if: github.ref == 'refs/heads/main' && github.event_name != 'pull_request'
+    runs-on: ubuntu-latest
+    environment: production
+    timeout-minutes: 90
+    steps:
+      - name: Validate optional SSH configuration
+        id: ssh
         env:
           VPS_HOST: ${{ secrets.VPS_HOST }}
           VPS_USER: ${{ secrets.VPS_USER }}
           VPS_SSH_KEY: ${{ secrets.VPS_SSH_KEY }}
+          VPS_KNOWN_HOSTS: ${{ secrets.VPS_KNOWN_HOSTS }}
         run: |
-          if [ -n "$VPS_HOST" ] && [ -n "$VPS_USER" ] && [ -n "$VPS_SSH_KEY" ]; then
-            echo "configured=true" >> "$GITHUB_OUTPUT"
+          if [[ -z "$VPS_HOST$VPS_USER$VPS_SSH_KEY$VPS_KNOWN_HOSTS" ]]; then
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "Timer may deploy this SHA only after the same verify job succeeds."
           else
-            echo "configured=false" >> "$GITHUB_OUTPUT"
-            echo "::notice title=Deployment skipped::VPS_* secrets are not configured. Production is deployed by the server-side manisov-deploy.timer."
+            test -n "$VPS_HOST" && test -n "$VPS_USER" && test -n "$VPS_SSH_KEY" && test -n "$VPS_KNOWN_HOSTS"
+            mkdir -p ~/.ssh
+            chmod 700 ~/.ssh
+            printf '%s\n' "$VPS_SSH_KEY" > ~/.ssh/deploy
+            printf '%s\n' "$VPS_KNOWN_HOSTS" > ~/.ssh/known_hosts
+            chmod 600 ~/.ssh/deploy ~/.ssh/known_hosts
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
           fi
-
-      - name: Run deploy script on server
-        if: steps.deploy_secrets.outputs.configured == 'true'
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.VPS_HOST }}
-          username: ${{ secrets.VPS_USER }}
-          key: ${{ secrets.VPS_SSH_KEY }}
-          script_stop: true
-          script: |
-            cd /var/www/Manisov
-            git fetch origin
-            git reset --hard origin/main
-            chmod +x ./deploy.sh
-            SKIP_GIT_SYNC=1 bash ./deploy.sh
-
-      - name: Use server-side timer deploy
-        if: steps.deploy_secrets.outputs.configured != 'true'
+      - name: Start durable server-side deployment
+        if: steps.ssh.outputs.enabled == 'true'
+        env:
+          VPS_HOST: ${{ secrets.VPS_HOST }}
+          VPS_USER: ${{ secrets.VPS_USER }}
+          DEPLOY_SHA: ${{ github.sha }}
         run: |
-          echo "SSH deploy secrets are not configured in GitHub."
-          echo "Production deploy is handled by systemd timer on the VPS:"
-          echo "  manisov-deploy.timer -> /usr/local/bin/manisov-auto-deploy.sh"
-          echo "The timer pulls origin/main and runs deploy.sh automatically."
+          # systemd owns the process even if SSH disconnects or this job is cancelled.
+          # The installed template runs the same locked, CI-gated entry point as the timer.
+          ssh -i ~/.ssh/deploy -o BatchMode=yes -o StrictHostKeyChecking=yes "$VPS_USER@$VPS_HOST" \
+            "sudo systemctl start --wait manisov-release@$DEPLOY_SHA.service"

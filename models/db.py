@@ -5,6 +5,7 @@ import logging
 import os
 import tempfile
 from pathlib import Path
+from uuid import uuid4
 
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session, declarative_base, sessionmaker
@@ -126,6 +127,27 @@ def init_db() -> None:
     # SQLite: create_all does not add new columns to existing tables; keep minimal ALTERs in sync with Alembic.
     if DATABASE_URL.startswith("sqlite"):
         inspector = inspect(engine)
+        if "users" in inspector.get_table_names():
+            columns = {column["name"] for column in inspector.get_columns("users")}
+            with engine.begin() as conn:
+                if "auth_version" not in columns:
+                    conn.execute(text("ALTER TABLE users ADD COLUMN auth_version VARCHAR(32) NOT NULL DEFAULT ''"))
+                user_ids = conn.execute(text("SELECT user_id FROM users WHERE auth_version = '' OR auth_version IS NULL")).scalars().all()
+                for user_id in user_ids:
+                    conn.execute(text("UPDATE users SET auth_version = :version WHERE user_id = :id"),
+                                 {"version": uuid4().hex, "id": user_id})
+        if "candidate_comments" in inspector.get_table_names():
+            columns = {col["name"] for col in inspector.get_columns("candidate_comments")}
+            with engine.begin() as conn:
+                for name, definition in (
+                    ("reminder_at", "DATETIME"),
+                    ("reminder_user_id", "INTEGER CONSTRAINT fk_candidate_comments_reminder_user_id_users REFERENCES users(user_id) ON DELETE SET NULL"),
+                    ("reminder_dismissed_at", "DATETIME"),
+                ):
+                    if name not in columns:
+                        conn.execute(text(f"ALTER TABLE candidate_comments ADD COLUMN {name} {definition}"))
+                for name in ("reminder_at", "reminder_user_id"):
+                    conn.execute(text(f"CREATE INDEX IF NOT EXISTS ix_candidate_comments_{name} ON candidate_comments ({name})"))
         if "candidates" in inspector.get_table_names():
             col_names = {c["name"] for c in inspector.get_columns("candidates")}
             alters: list[str] = []

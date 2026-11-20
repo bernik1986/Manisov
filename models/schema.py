@@ -1,8 +1,9 @@
 from __future__ import annotations
 
 from datetime import date, datetime
+from uuid import uuid4
 
-from sqlalchemy import Boolean, Date, DateTime, Float, ForeignKey, Integer, String, Text, UniqueConstraint, event
+from sqlalchemy import Boolean, Date, DateTime, Float, ForeignKey, Index, Integer, JSON, LargeBinary, String, Text, UniqueConstraint, event
 from sqlalchemy.orm import Mapped, mapped_column, relationship
 
 from .db import Base
@@ -25,6 +26,7 @@ class User(Base):
     user_id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
     username: Mapped[str] = mapped_column(String(100), unique=True, nullable=False, index=True)
     password_hash: Mapped[str] = mapped_column(String(255), nullable=False)
+    auth_version: Mapped[str] = mapped_column(String(32), default=lambda: uuid4().hex, nullable=False)
     full_name: Mapped[str | None] = mapped_column(String(150))
     is_active: Mapped[bool] = mapped_column(Boolean, default=True, nullable=False)
     role_id: Mapped[int | None] = mapped_column(ForeignKey("roles.role_id"), index=True)
@@ -32,10 +34,15 @@ class User(Base):
 
     role: Mapped[Role | None] = relationship(back_populates="users")
     audit_logs: Mapped[list["AuditLog"]] = relationship(back_populates="user")
+    document_intake_files: Mapped[list["DocumentIntakeFile"]] = relationship(cascade="all, delete")
 
 
 class Candidate(Base):
     __tablename__ = "candidates"
+
+    document_intake_files: Mapped[list["DocumentIntakeFile"]] = relationship(cascade="all, delete")
+    document_upload_link: Mapped["DocumentUploadLink | None"] = relationship(cascade="all, delete")
+    document_upload_submissions: Mapped[list["DocumentUploadSubmission"]] = relationship(cascade="all, delete")
 
     # A. Candidate profile / identification
     candidate_id: Mapped[int] = mapped_column(Integer, primary_key=True, index=True)
@@ -386,8 +393,52 @@ class CandidateComment(Base):
     candidate_id: Mapped[int] = mapped_column(ForeignKey("candidates.candidate_id"), nullable=False, index=True)
     comment_text: Mapped[str] = mapped_column(Text, nullable=False)
     created_at: Mapped[datetime] = mapped_column(DateTime, default=datetime.utcnow, nullable=False, index=True)
+    reminder_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True, index=True)
+    reminder_user_id: Mapped[int | None] = mapped_column(
+        ForeignKey("users.user_id", name="fk_candidate_comments_reminder_user_id_users", ondelete="SET NULL"),
+        nullable=True,
+        index=True,
+    )
+    reminder_dismissed_at: Mapped[datetime | None] = mapped_column(DateTime, nullable=True)
 
     candidate: Mapped["Candidate"] = relationship(back_populates="comments")
+
+
+class DocumentIntakeFile(Base):
+    __tablename__ = "document_intake_files"
+    __table_args__ = (Index("ix_document_intake_owner", "candidate_id", "owner_id", "batch_id"),)
+
+    file_id: Mapped[str] = mapped_column(String(32), primary_key=True)
+    batch_id: Mapped[str] = mapped_column(String(32), nullable=False)
+    candidate_id: Mapped[int] = mapped_column(ForeignKey("candidates.candidate_id", ondelete="CASCADE"))
+    owner_id: Mapped[int | None] = mapped_column(ForeignKey("users.user_id", ondelete="CASCADE"))
+    position: Mapped[int] = mapped_column(Integer)
+    created_at: Mapped[datetime] = mapped_column(DateTime, index=True)
+    name: Mapped[str] = mapped_column(String(255))
+    content_type: Mapped[str | None] = mapped_column(String(30))
+    content: Mapped[bytes | None] = mapped_column(LargeBinary, deferred=True)
+    result: Mapped[dict] = mapped_column(JSON)
+    saved_key: Mapped[str | None] = mapped_column(String(64))
+
+
+class DocumentUploadLink(Base):
+    __tablename__ = "document_upload_links"
+
+    candidate_id: Mapped[int] = mapped_column(ForeignKey("candidates.candidate_id", ondelete="CASCADE"), primary_key=True)
+    token: Mapped[str] = mapped_column(String(43), unique=True)
+
+
+class DocumentUploadSubmission(Base):
+    __tablename__ = "document_upload_submissions"
+    __table_args__ = (UniqueConstraint("candidate_id", "request_id", name="uq_document_upload_request"),)
+
+    submission_id: Mapped[str] = mapped_column(String(32), primary_key=True)
+    candidate_id: Mapped[int] = mapped_column(ForeignKey("candidates.candidate_id", ondelete="CASCADE"), index=True)
+    request_id: Mapped[str] = mapped_column(String(32))
+    created_at: Mapped[datetime] = mapped_column(DateTime)
+    file_count: Mapped[int] = mapped_column(Integer)
+    status: Mapped[str] = mapped_column(String(12))
+    closed_at: Mapped[datetime | None] = mapped_column(DateTime)
 
 
 class CompanyFolder(Base):

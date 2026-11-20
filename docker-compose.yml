@@ -1,16 +1,16 @@
 services:
   db:
     image: postgres:16-alpine
-    container_name: maritime-db
     restart: unless-stopped
     environment:
       POSTGRES_DB: ${POSTGRES_DB:?POSTGRES_DB is required}
       POSTGRES_USER: ${POSTGRES_USER:?POSTGRES_USER is required}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?POSTGRES_PASSWORD is required}
-    ports:
-      - "127.0.0.1:5432:5432"
     volumes:
       - postgres_data:/var/lib/postgresql/data
+    cpus: 2.0
+    mem_limit: 2g
+    pids_limit: 256
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U \"$${POSTGRES_USER}\" -d \"$${POSTGRES_DB}\""]
       interval: 5s
@@ -18,16 +18,30 @@ services:
       retries: 10
 
   backend:
+    image: ${BACKEND_IMAGE:?Use deploy.sh to build an immutable backend image}
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: maritime-backend
-    restart: unless-stopped
+    restart: "no"
+    init: true
+    user: "10001:10001"
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    cpus: 2.0
+    mem_limit: 4g
+    pids_limit: 256
+    tmpfs:
+      - /tmp:size=256m,mode=1777
     depends_on:
       db:
         condition: service_healthy
     environment:
       DATABASE_URL: ${DATABASE_URL:?DATABASE_URL is required}
+      MANISOV_ENV: production
+      AUTO_ALEMBIC_ON_STARTUP: "0"
+      ENABLE_TEST_ENDPOINTS: "0"
+      CORS_ALLOWED_ORIGINS: ${CORS_ALLOWED_ORIGINS:-}
       JWT_SECRET_KEY: ${JWT_SECRET_KEY:?JWT_SECRET_KEY is required}
       DEFAULT_ADMIN_USERNAME: ${DEFAULT_ADMIN_USERNAME:?DEFAULT_ADMIN_USERNAME is required}
       DEFAULT_ADMIN_PASSWORD: ${DEFAULT_ADMIN_PASSWORD:?DEFAULT_ADMIN_PASSWORD is required}
@@ -35,29 +49,43 @@ services:
     expose:
       - "8000"
     volumes:
-      - ./uploads:/app/uploads
-      - ./generated:/app/generated
-      - ./templates:/app/templates
-      - ./app:/app/app
-      - ./parser:/app/parser
-      - ./synonyms.py:/app/synonyms.py
-      - ./models:/app/models
-      - ./migrations:/app/migrations
-      - ./alembic.ini:/app/alembic.ini
-    command: >
-      sh -c "alembic upgrade head &&
-      uvicorn app.main:app --host 0.0.0.0 --port 8000"
+      - ${DATA_DIR:?DATA_DIR is required}/uploads:/app/uploads
+      - ${DATA_DIR:?DATA_DIR is required}/generated:/app/generated
+      - ${DATA_DIR:?DATA_DIR is required}/templates:/app/templates
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/healthz', timeout=4).read()"]
+      interval: 5s
+      timeout: 5s
+      start_period: 30s
+      retries: 20
 
   frontend:
+    image: ${FRONTEND_IMAGE:?Use deploy.sh to build an immutable frontend image}
     build:
       context: ./app/frontend
       dockerfile: Dockerfile
-    container_name: maritime-frontend
-    restart: unless-stopped
+    restart: "no"
+    read_only: true
+    security_opt: [no-new-privileges:true]
+    cpus: 1.0
+    mem_limit: 256m
+    pids_limit: 128
+    tmpfs:
+      - /var/cache/nginx:size=32m
+      - /var/run:size=1m
+      - /tmp:size=16m
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
     ports:
-      - "80:80"
+      - "${HTTP_BIND:-0.0.0.0}:${HTTP_PORT:-80}:80"
+    healthcheck:
+      test: ["CMD-SHELL", "wget -q -O /dev/null http://127.0.0.1/ && wget -q -O /dev/null http://127.0.0.1/api/healthz"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
 
 volumes:
   postgres_data:
+    external: true
+    name: ${POSTGRES_VOLUME:?Set the EXISTING PostgreSQL volume name explicitly}

@@ -22,8 +22,14 @@ test.describe("Date fields (DD-MM-YYYY) — all candidate sections", () => {
     await expect(panel.getByText("Некорректная дата")).toBeVisible();
     await dob.fill("15-08-1990");
     await expect(panel.getByText("Некорректная дата")).toBeHidden();
+    const saved = page.waitForResponse((response) => /\/api\/candidates\/\d+$/.test(response.url()) && response.request().method() === "PUT");
     await detail.getByRole("button", { name: "Сохранить профиль" }).click();
+    const response = await saved;
+    expect(response.ok(), await response.text()).toBeTruthy();
     await expect(detail.locator("p.error")).toBeHidden({ timeout: 15_000 });
+    await page.reload();
+    await nav(page).locator('[data-section-tab="profile:Персональные данные"]').click();
+    await expect(dob).toHaveValue("15-08-1990");
     await leaveCandidateList(page);
   });
 
